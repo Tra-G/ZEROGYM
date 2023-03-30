@@ -1,10 +1,5 @@
 <?php
 
-// Restrict direct access
-if (basename(__FILE__) === basename($_SERVER['PHP_SELF'])) {
-    die("Error: Access Denied");
-}
-
 // Database credentials
 define('DB_HOST', 'localhost');
 define('DB_USERNAME', 'root');

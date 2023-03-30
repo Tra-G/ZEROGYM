@@ -1,27 +1,35 @@
 <?php
 
-// Restrict direct access
-if (basename(__FILE__) === basename($_SERVER['PHP_SELF'])) {
-    die("Error: Access Denied");
+// Define the root URL of the website
+if (!defined('APP_ROOT')) {
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
+    $domain = $_SERVER['HTTP_HOST'];
+    $path = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    define('APP_ROOT', $protocol . $domain . $path);
 }
 
 // Start Session
 session_start();
 
 // Include the db.php file
-require_once('db.php');
+include('db.php');
 
 // Set the timezone
 date_default_timezone_set("Africa/Lagos");
 
 // Dynamic page title
 function pageTitle($site_name){
-	echo "ZeroGym | ".$site_name;
+	return "ZeroGym | ".$site_name;
+}
+
+// Routing function
+function route($url) {
+    header('Location: ' . APP_ROOT . '/'.$url);
 }
 
 // Redirection function
 function redirect($url) {
-    echo "<script>window.location.href = '$url';</script>";
+    return APP_ROOT . '/'.$url;
 }
 
 // Session check
@@ -40,7 +48,8 @@ function session_check() {
  */
 
 // Create new rows
-function insertRow($conn, $table, $data) {
+function insertRow($table, $data) {
+    global $conn;
     // Construct the SQL query
     $keys = array_keys($data);
     $values = array_values($data);
@@ -71,7 +80,7 @@ function insertRow($conn, $table, $data) {
         'phone' => '555-555-5555'
     );
 
-    $id = insertRow($conn, 'users', $data);
+    $id = insertRow('users', $data);
 
     if (is_numeric($id)) {
         echo "New row created with ID " . $id;
@@ -82,7 +91,8 @@ function insertRow($conn, $table, $data) {
 }
 
 // Read from database with selector
-function getRowBySelector($conn, $table, $selectorColumn, $selectorValue) {
+function getRowBySelector($table, $selectorColumn, $selectorValue) {
+    global $conn;
     // Prepare the SQL query
     $stmt = $conn->prepare("SELECT * FROM $table WHERE $selectorColumn = ?");
 
@@ -108,7 +118,7 @@ function getRowBySelector($conn, $table, $selectorColumn, $selectorValue) {
     $selectorColumn = 'id'; // Change this to the name of the selector column
     $selectorValue = 1; // Change this to the selector value you want to use
 
-    $row = getRowBySelector($conn, $table, $selectorColumn, $selectorValue);
+    $row = getRowBySelector($table, $selectorColumn, $selectorValue);
 
     if ($row) {
         // Display the data from the selected row
@@ -122,7 +132,8 @@ function getRowBySelector($conn, $table, $selectorColumn, $selectorValue) {
 }
 
 // Update rows by selector
-function updateRowBySelector($conn, $table, $data, $selectorColumn, $selectorValue) {
+function updateRowBySelector($table, $data, $selectorColumn, $selectorValue) {
+    global $conn;
     // Construct the SQL query
     $set = array();
     foreach ($data as $key => $value) {
@@ -158,7 +169,7 @@ function updateRowBySelector($conn, $table, $data, $selectorColumn, $selectorVal
     $selectorColumn = 'id'; // Change this to the name of the selector column
     $selectorValue = 1; // Change this to the selector value you want to use
 
-    $rowsAffected = updateRowBySelector($conn, $table, $data, $selectorColumn, $selectorValue);
+    $rowsAffected = updateRowBySelector($table, $data, $selectorColumn, $selectorValue);
 
     if (is_numeric($rowsAffected)) {
         echo "Rows affected: " . $rowsAffected;
@@ -169,7 +180,8 @@ function updateRowBySelector($conn, $table, $data, $selectorColumn, $selectorVal
 }
 
 // Delete rows from database
-function deleteRowBySelector($conn, $table, $selectorColumn, $selectorValue) {
+function deleteRowBySelector($table, $selectorColumn, $selectorValue) {
+    global $conn;
     // Construct the SQL query
     $sql = "DELETE FROM $table WHERE $selectorColumn = " . $conn->real_escape_string($selectorValue);
 
@@ -187,7 +199,7 @@ function deleteRowBySelector($conn, $table, $selectorColumn, $selectorValue) {
     $selectorColumn = 'id'; // Change this to the name of the selector column
     $selectorValue = 1; // Change this to the selector value you want to use
 
-    $rowsAffected = deleteRowBySelector($conn, $table, $selectorColumn, $selectorValue);
+    $rowsAffected = deleteRowBySelector($table, $selectorColumn, $selectorValue);
 
     if (is_numeric($rowsAffected)) {
         echo "Rows affected: " . $rowsAffected;
