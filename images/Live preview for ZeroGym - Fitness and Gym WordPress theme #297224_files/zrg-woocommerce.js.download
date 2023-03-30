@@ -1,0 +1,141 @@
+/**
+ * Zero Gym Global Woocommerce Scripts
+ *
+ * @author  Balcomsoft
+ * @package Zero Gym
+ * @version 1.0.0
+ * @since   1.0.0
+ */
+
+(function () {
+	"use strict";
+
+	/**
+	 * Zero Gum Woocommerce Cart Events.
+	 */
+	(function ($) {
+		let $supports_html5_storage;
+
+		try {
+			$supports_html5_storage = 'sessionStorage' in window && window.sessionStorage !== null;
+			window.sessionStorage.setItem( 'wc', 'test' );
+			window.sessionStorage.removeItem( 'wc' );
+			window.localStorage.setItem( 'wc', 'test' );
+			window.localStorage.removeItem( 'wc' );
+		} catch (err) {
+			$supports_html5_storage = false;
+		}
+
+		/**
+		 * Zero Gum Update Cart Fragments,
+		 */
+		var update_cart_fragments = function (response) {
+			if (response && response.fragments) {
+				var fragments = response.fragments,
+					cart_hash = response.cart_hash;
+
+				$.each(
+					fragments,
+					function (key, value) {
+						$( key ).replaceWith( value );
+					}
+				);
+
+				if (typeof wc_cart_fragments_params === 'undefined') {
+					return;
+				}
+				/* Storage Handling */
+				if ($supports_html5_storage) {
+					var prev_cart_hash = sessionStorage.getItem( 'wc_cart_hash' );
+
+					if (prev_cart_hash === null || prev_cart_hash === undefined || prev_cart_hash === '') {
+						set_cart_creation_timestamp();
+					}
+					sessionStorage.setItem( wc_cart_fragments_params.fragment_name, JSON.stringify( fragments ) );
+					set_cart_hash( cart_hash );
+				}
+			}
+		};
+
+		/**
+		 * Cart session creation time to base expiration on
+		 */
+		var set_cart_creation_timestamp = function () {
+			if ($supports_html5_storage) {
+				sessionStorage.setItem( 'wc_cart_created', (new Date()).getTime() );
+			}
+		}
+
+		/**
+		 * Set the cart hash in both session and local storage
+		 */
+		var set_cart_hash = function (cart_hash) {
+			if ($supports_html5_storage && wc_cart_fragments_params) {
+				localStorage.setItem( wc_cart_fragments_params.cart_hash_key, cart_hash );
+				sessionStorage.setItem( wc_cart_fragments_params.cart_hash_key, cart_hash );
+			}
+		}
+
+		/**
+		 * On Change Cart Item Quantity
+		 */
+		var on_change_cart_item_quantity = function (e) {
+			e.preventDefault();
+			let quantityField = $( this ).parent().find( '.zrg-product-count-field' );
+			let quantity      = parseInt( quantityField.val() );
+
+			if ($( this ).hasClass( 'zrg-product-add' )) {
+				quantityField.val( quantity + 1 );
+				quantityField.trigger( 'change' );
+			}
+
+			if ($( this ).hasClass( 'zrg-product-subtract' ) && quantity > 1) {
+				quantityField.val( quantity - 1 );
+				quantityField.trigger( 'change' );
+			}
+		}
+
+		/**
+		 * On Changed Cart Item Quantity
+		 */
+		var on_changed_cart_item_quantity = function () {
+			let quantity      = $( this ).val();
+			let cart_item_key = $( this ).data( "cart_item_key" );
+			let product_id    = $( this ).data( "product_id" );
+			$.ajax(
+				{
+					method: "post",
+					url: zrgWoocommerceFields.ajaxUrl,
+					data: {
+						action: 'zrg_woocommerce_change_cart_item_quantity',
+						quantity: quantity,
+						cart_item_key: cart_item_key,
+						product_id: product_id,
+						nonce: zrgWoocommerceFields.cartItemQuantityNonce
+					}
+				}
+			).success(
+				function (response) {
+					update_cart_fragments( response );
+					$( document.body ).trigger( 'wc_fragments_refreshed' );
+				}
+			)
+
+		}
+
+		/**
+		 * Initial Functions
+		 */
+		$(
+			function () {
+				$( document ).ready(
+					function () {
+						$( document.body )
+							.on( 'click', '.zrg-product-counter:not(.non-active)', on_change_cart_item_quantity )
+							.on( 'change', '.zrg-product-count-field', on_changed_cart_item_quantity )
+					}
+				);
+			}
+		)
+	}).apply( this, [window.jQuery] )
+})();
