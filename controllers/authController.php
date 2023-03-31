@@ -37,10 +37,13 @@ class authController {
                     $_SESSION["logged"] = true;
                     $_SESSION["user_id"] = $user['id'];
 
+                    // go to proper dashboard
                     if ($user["role"] == "admin")
                         route("admin/dashboard");
-                    else
+                    else if ($user["role"] == "user")
                         route("user/dashboard");
+                    else
+                        $errors[] = "No user found";
                 }
                 else{
                     $errors[] = "Incorrect password";
