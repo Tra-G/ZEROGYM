@@ -16,6 +16,11 @@
     <a href='<?php echo redirect('admin/users'); ?>'>All Users</a><br>
     <a href='<?php echo redirect('admin/gyms'); ?>'>All Gyms</a><br>
     <a href='<?php echo redirect('admin/plans'); ?>'>All Plans</a><br>
+    <a href='<?php echo redirect('admin/blog'); ?>'>Blog</a><br>
+    <a href='<?php echo redirect('admin/payments'); ?>'>Payments History</a><br><br>
+
+    <a href='<?php echo redirect('admin/profile'); ?>'>Edit Profile</a><br>
+    <a href='<?php echo redirect('admin/change/password'); ?>'>Change Password</a><br>
 
 
     <br><br><a href='<?php echo redirect('logout'); ?>'>Logout</a>

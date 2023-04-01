@@ -362,7 +362,7 @@ class adminController {
                     exit();
                 }
                 catch (Exception $e) {
-                    $errors[] = $e;
+                    $errors[] = "Something went wrong";
                 }
             }
         }
@@ -444,7 +444,260 @@ class adminController {
             route("admin/plans/".$id);
         exit();
     }
-}
 
+    // All posts
+    public function blogIndex() {
+        $title = pageTitle("Blog Posts");
+
+        $total_posts = getRows('blog_posts')['count'];
+        $blog_rows = getRows('blog_posts')['rows'];
+
+        return array(
+            'title' => $title,
+            'blog_rows' => $blog_rows,
+            'total_posts' => $total_posts,
+        );
+    }
+
+    // New blog post
+    public function blogNew() {
+        $title = pageTitle("Add New Post");
+        $errors = [];
+
+        // check if form is submitted
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $user_id = $this->admin['id'];
+            $post_title = trim($_POST['title']);
+            $post_content = $_POST['content'];
+
+            // Validate input
+            $errors = array();
+            if (empty($user_id) || empty($post_title) || empty($post_content)) {
+                $errors[] = "All fields are required.";
+            }
+
+            // Insert if no error
+            if (count($errors) == 0) {
+                $data_array = array(
+                    'user_id' => $user_id,
+                    'title' => $post_title,
+                    'content' => $post_content,
+                );
+
+                try {
+                    insertRow('blog_posts', $data_array);
+                    route("admin/blog");
+                    exit();
+                }
+                catch (Exception $e) {
+                    $errors[] = "Something went wrong";
+                }
+            }
+        }
+
+        return array(
+            'title' => $title,
+            'errors' => $errors,
+        );
+    }
+
+    // Edit blog post
+    public function blogEdit($id) {
+        $title = pageTitle("Edit Blog Post");
+        $errors = [];
+
+        if (getRowBySelector('blog_posts', 'id', $id)) {
+            $post = getRowBySelector('blog_posts', 'id', $id);
+        }
+        else {
+            route("admin/dashboard");
+            exit();
+        }
+
+        // check if form is submitted
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $title = trim($_POST['title']);
+            $content = trim($_POST['content']);
+
+            if (empty($title) || empty($content)) {
+                $errors[] = "Title and content fields are required.";
+            }
+
+            // Insert if no error
+            if (count($errors) == 0) {
+
+                $data_array = array(
+                    'title' => $title,
+                    'content' => $content,
+                );
+
+                try {
+                    updateRowBySelector('blog_posts', $data_array, 'id', $id);
+                    route("admin/blog");
+                    exit();
+                }
+                catch (Exception $e) {
+                    $errors[] = "Something went wrong";
+                }
+            }
+        }
+
+        return array(
+            'title' => $title,
+            'errors' => $errors,
+            'post' => $post,
+        );
+    }
+
+    // Delete blog post
+    public function blogDelete($id) {
+        if (!getRowBySelector('blog_posts', 'id', $id))
+            route("admin/dashboard");
+
+        $delete = deleteRowBySelector('blog_posts', 'id', $id);
+        if ($delete)
+            route("admin/blog");
+        else
+            route("admin/blog/".$id);
+        exit();
+    }
+
+    // Payments History
+    public function payments() {
+        $title = pageTitle("Payments History");
+
+        $total_revenue = sumAmounts('payments', 'amount');
+        $all_payments = getRows('payments')['rows'];
+
+
+        return array(
+            'title' => $title,
+            'total_revenue' => $total_revenue,
+            'all_payments' => $all_payments,
+        );
+    }
+
+    // Profile
+    public function profile() {
+        $title = pageTitle("Edit Profile");
+        $errors = [];
+        $success = [];
+
+        // check if form is submitted
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $name = trim($_POST['name']);
+            $email = trim($_POST['email']);
+            $phone = trim($_POST['phone']);
+            $address = trim($_POST['address']);
+            $city = trim($_POST['city']);
+            $state = trim($_POST['state']);
+            $zip_code = trim($_POST['zip_code']);
+
+            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($state) || empty($zip_code)) {
+                $errors[] = "All fields are required.";
+            }
+
+            // Validate email
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors[] = "Invalid email format.";
+            }
+            if (getRowBySelector('users', 'email', $email) && $this->admin['email'] != $email) {
+                $errors[] = "Email is already taken.";
+            }
+
+            // Validate phone number
+            if (getRowBySelector('users', 'phone', $phone) && $this->admin['phone'] != $phone) {
+                $errors[] = "Phone number is already taken.";
+            }
+            if (!ctype_digit($phone)) {
+                $errors[] = "Phone number is not valid";
+            }
+
+            // Insert if no error
+            if (count($errors) == 0) {
+
+                $data_array = array(
+                    'name' => $name,
+                    'email' => $email,
+                    'phone' => $phone,
+                    'address' => $address,
+                    'city' => $city,
+                    'state' => $state,
+                    'zip_code' => $zip_code,
+                );
+
+                try {
+                    updateRowBySelector('users', $data_array, 'id', $this->admin['id']);
+                    $this->admin = getRowBySelector('users', 'id', $_SESSION['user_id']);
+                    $success[] = "Profile updated successfully";
+                }
+                catch (Exception $e) {
+                    $errors[] = "Something went wrong";
+                }
+            }
+        }
+
+        return array(
+            'title' => $title,
+            'errors' => $errors,
+            'success' => $success,
+            'admin' => $this->admin,
+        );
+    }
+
+    // Change password
+    public function changePassword() {
+        $title = pageTitle("Change Password");
+        $errors = [];
+        $success = [];
+
+        // check if form is submitted
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $old_password = trim($_POST['old_password']);
+            $new_password = trim($_POST['new_password']);
+            $confirm_password = trim($_POST['confirm_password']);
+
+            if (empty($old_password) || empty($new_password) || empty($confirm_password)) {
+                $errors[] = "All fields are required.";
+            }
+
+            if ($new_password != $confirm_password) {
+                $errors[] = "Password confirmation incorrect";
+            }
+
+            // Insert if no error
+            if (count($errors) == 0) {
+            $user = getRowBySelector('users', 'id', $this->admin['id']);
+                if ($user) {
+                    $hashed_password = $user['password'];
+                    if(password_verify($old_password, $hashed_password)){
+                        $data_array = array(
+                            'password' => password_hash($new_password, PASSWORD_DEFAULT),
+                        );
+                        try {
+                            updateRowBySelector('users', $data_array, 'id', $this->admin['id']);
+                            $success[] = "Password changed successfully";
+                        }
+                        catch (Exception $e) {
+                            $errors[] = "Something went wrong";
+                        }
+                    }
+                    else{
+                        $errors[] = "Incorrect password";
+                    }
+                }
+                else {
+                    $errors[] = "No user was not found";
+                }
+            }
+        }
+
+        return array(
+            'title' => $title,
+            'errors' => $errors,
+            'success' => $success,
+        );
+    }
+}
 
 ?>

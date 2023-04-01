@@ -161,6 +161,25 @@ $routes = array(
         'action' => 'blogDelete',
         'view' => 'admin/blog/delete'
     ),
+
+    // Admin - Payment History
+    '|^admin/payments$|' => array(
+        'controller' => 'adminController',
+        'action' => 'payments',
+        'view' => 'admin/payments'
+    ),
+
+    // Admin Profile Management
+    '|^admin/profile$|' => array(
+        'controller' => 'adminController',
+        'action' => 'profile',
+        'view' => 'admin/profile'
+    ),
+    '|^admin/change/password$|' => array(
+        'controller' => 'adminController',
+        'action' => 'changePassword',
+        'view' => 'admin/password'
+    ),
 );
 
 // Get the requested URL
