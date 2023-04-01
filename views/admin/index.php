@@ -11,9 +11,12 @@
     <b>Total Gyms: <?php echo $total_gyms; ?></b><br>
     <b>Total Plans: <?php echo $total_plans; ?></b><br>
     <b>Total Blog Posts: <?php echo $total_blog; ?></b><br>
-    <b>Total Revenue: <?php echo $total_revenue; ?></b><br>
+    <b>Total Revenue: <?php echo $total_revenue; ?></b><br><br>
 
-    <br><a href='<?php echo redirect('admin/users'); ?>'>All Users</a>
+    <a href='<?php echo redirect('admin/users'); ?>'>All Users</a><br>
+    <a href='<?php echo redirect('admin/gyms'); ?>'>All Gyms</a><br>
+    <a href='<?php echo redirect('admin/plans'); ?>'>All Plans</a><br>
+
 
     <br><br><a href='<?php echo redirect('logout'); ?>'>Logout</a>
 </body>

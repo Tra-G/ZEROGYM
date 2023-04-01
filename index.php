@@ -63,12 +63,104 @@ $routes = array(
         'action' => 'index',
         'view' => 'admin/index'
     ),
+
+    // Admin - User Management
     '|^admin/users$|' => array(
         'controller' => 'adminController',
-        'action' => 'allUsers',
-        'view' => 'admin/allusers'
+        'action' => 'userIndex',
+        'view' => 'admin/users/index'
+    ),
+    '|^admin/users/(\d+)$|' => array(
+        'controller' => 'adminController',
+        'action' => 'userView',
+        'view' => 'admin/users/view'
+    ),
+    '|^admin/users/(\d+)/edit$|' => array(
+        'controller' => 'adminController',
+        'action' => 'userEdit',
+        'view' => 'admin/users/edit'
+    ),
+    '|^admin/users/(\d+)/delete$|' => array(
+        'controller' => 'adminController',
+        'action' => 'userDelete',
+        'view' => 'admin/users/delete'
     ),
 
+    // Admin - Gyms Management
+    '|^admin/gyms$|' => array(
+        'controller' => 'adminController',
+        'action' => 'gymIndex',
+        'view' => 'admin/gyms/index'
+    ),
+    '|^admin/gyms/new$|' => array(
+        'controller' => 'adminController',
+        'action' => 'gymNew',
+        'view' => 'admin/gyms/new'
+    ),
+    '|^admin/gyms/(\d+)$|' => array(
+        'controller' => 'adminController',
+        'action' => 'gymView',
+        'view' => 'admin/gyms/view'
+    ),
+    '|^admin/gyms/(\d+)/edit$|' => array(
+        'controller' => 'adminController',
+        'action' => 'gymEdit',
+        'view' => 'admin/gyms/edit'
+    ),
+    '|^admin/gyms/(\d+)/delete$|' => array(
+        'controller' => 'adminController',
+        'action' => 'gymDelete',
+        'view' => 'admin/gyms/delete'
+    ),
+
+    // Admin - Plans Management
+    '|^admin/plans$|' => array(
+        'controller' => 'adminController',
+        'action' => 'planIndex',
+        'view' => 'admin/plans/index'
+    ),
+    '|^admin/plans/new$|' => array(
+        'controller' => 'adminController',
+        'action' => 'planNew',
+        'view' => 'admin/plans/new'
+    ),
+    '|^admin/plans/(\d+)$|' => array(
+        'controller' => 'adminController',
+        'action' => 'planView',
+        'view' => 'admin/plans/view'
+    ),
+    '|^admin/plans/(\d+)/edit$|' => array(
+        'controller' => 'adminController',
+        'action' => 'planEdit',
+        'view' => 'admin/plans/edit'
+    ),
+    '|^admin/plans/(\d+)/delete$|' => array(
+        'controller' => 'adminController',
+        'action' => 'planDelete',
+        'view' => 'admin/plans/delete'
+    ),
+
+    // Admin - Blog Management
+    '|^admin/blog$|' => array(
+        'controller' => 'adminController',
+        'action' => 'blogIndex',
+        'view' => 'admin/blog/index'
+    ),
+    '|^admin/blog/new$|' => array(
+        'controller' => 'adminController',
+        'action' => 'blogNew',
+        'view' => 'admin/blog/new'
+    ),
+    '|^admin/blog/(\d+)/edit$|' => array(
+        'controller' => 'adminController',
+        'action' => 'blogEdit',
+        'view' => 'admin/blog/edit'
+    ),
+    '|^admin/blog/(\d+)/delete$|' => array(
+        'controller' => 'adminController',
+        'action' => 'blogDelete',
+        'view' => 'admin/blog/delete'
+    ),
 );
 
 // Get the requested URL
