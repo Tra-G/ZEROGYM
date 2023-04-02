@@ -56,6 +56,41 @@ $routes = array(
         'action' => 'index',
         'view' => 'user/index'
     ),
+    '|^user/plan/cancel$|' => array(
+        'controller' => 'userController',
+        'action' => 'cancelPlan',
+        'view' => 'user/cancel'
+    ),
+    '|^user/gym/view$|' => array(
+        'controller' => 'userController',
+        'action' => 'gymView',
+        'view' => 'user/gym'
+    ),
+    '|^user/gym/select$|' => array(
+        'controller' => 'userController',
+        'action' => 'gymSelect',
+        'view' => 'user/select'
+    ),
+    '|^user/pay$|' => array(
+        'controller' => 'paymentController',
+        'action' => 'pay',
+        'view' => 'user/pay'
+    ),
+    '|^user/training/change$|' => array(
+        'controller' => 'userController',
+        'action' => 'training',
+        'view' => 'user/training'
+    ),
+    '|^user/profile$|' => array(
+        'controller' => 'userController',
+        'action' => 'profile',
+        'view' => 'user/profile'
+    ),
+    '|^user/change/password$|' => array(
+        'controller' => 'userController',
+        'action' => 'password',
+        'view' => 'user/password'
+    ),
 
     // Admin
     '|^admin/dashboard$|' => array(
