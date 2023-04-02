@@ -11,9 +11,9 @@
     <?php
     foreach ($all_payments as $pay) {
         echo "<li>";
-        echo $plan['membership_id']."<br>";
-        echo $plan['amount']."<br>";
-        echo $plan['payment_date']."<br>";
+        echo $pay['membership_id']."<br>";
+        echo $pay['amount']."<br>";
+        echo $pay['payment_date']."<br>";
         echo "</li>";
     }
     ?>
