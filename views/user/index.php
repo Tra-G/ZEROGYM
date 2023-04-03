@@ -11,11 +11,9 @@
 
     <b>Plan: <?php echo $plan['name']; ?></b> [<a href="<?php echo redirect('user/plan/cancel'); ?>">Cancel</a>]<br>
 
-    <b>Training Days: <?php echo $total_training_days; ?></b><br>
+    <b>Training Days: <?php echo $total_training_days > 0 ? $days : "[<a href='".redirect('user/training/change')."'>Select Now</a>]" ?>
 
-    <b>Training Days Selected: <?php echo $days; ?></b>[<a href="<?php echo redirect('user/training/change'); ?>">Change</a>]<br>
-
-    <b>Selected Gym: <?php echo ($gym !== "None") ? $gym['name'] : $gym; ?></b>
+    <br><b>Selected Gym: <?php echo ($gym !== "None") ? $gym['name'] : $gym; ?></b>
     <?php if ($gym !== "None"): ?>
         [<a href="<?php echo redirect('user/gym/view'); ?>">View</a>]
     <?php endif; ?>

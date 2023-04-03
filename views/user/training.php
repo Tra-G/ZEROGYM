@@ -34,6 +34,7 @@
 </head>
 <body>
     <h2>Pick Training Days</h2>
+    <b>Please be aware, this cannot be changed later</b><br><br>
     <?php if (!empty($errors)): ?>
       <ul>
         <?php foreach ($errors as $error): ?>
@@ -41,13 +42,10 @@
         <?php endforeach; ?>
       </ul>
     <?php endif; ?>
-    <b>Plan: <?php echo $plan['name']; ?></b><br>
-    <b>Training Programs: <?php echo $plan['training_days']; ?></b><br>
-
-    <h2>Select Days</h2>
+    <b>Plan: <?php echo $plan['name']; ?></b><br><br>
     <form action="" method="post">
-        <label for="num-days">Select training days:</label>
-        <input type="text" name="dates" id="datePick" placeholder="Select">
+        <label for="num-days">Select <?php echo $plan['training_days']; ?> days:</label><br>
+        <input type="text" name="dates" id="datePick" placeholder="Select" autocomplete="off"><br>
         <button type="submit">Submit</button>
     </form>
 

@@ -46,8 +46,9 @@ class UserController {
         $title = pageTitle("Dashboard");
         $plan = getRowBySelector('plans', 'id', $this->membership['plan']);
         $days = $this->membership['training_days'];
-        $training_days = explode(", ", $days);
-        $total_training_days = count($training_days);
+
+        // get total days
+        $total_training_days = empty($days) ? 0 : count(explode(", ", $days));
 
         if ($this->membership['gym_id']) {
             $gym_select = getRowBySelector('gyms', 'id', $this->membership['gym_id']);
@@ -74,6 +75,16 @@ class UserController {
     public function training() {
         $title = pageTitle('Training Days');
         $errors = [];
+        $days = $this->membership['training_days'];
+
+        // get total days
+        $total_training_days = empty($days) ? 0 : count(explode(", ", $days));
+
+        // Restrict if training days is set
+        if ($total_training_days > 0) {
+            route("user/dashboard");
+            exit();
+        }
 
         // boundaries
         $start_date = $this->membership['start_date'];
@@ -102,6 +113,11 @@ class UserController {
                 if ($datetime && $datetime->format('d/m/Y') === $date) {
                     $validCount++;
                 }
+            }
+
+            // valid count must correspond to plan limit
+            if ($validCount !== $plan['training_days']) {
+                $errors[] = "Please select ".$plan['training_days']." days";
             }
 
             // error if valid dates != total of dates

@@ -72,7 +72,7 @@ function insertRow($table, $data) {
         // If the query was successful, return the ID of the newly created row
         return $stmt->insert_id;
     } else {
-        // If the query failed, return an error message
+        // If the query failed, return null
         return null;
     }
 
@@ -158,8 +158,8 @@ function updateRowBySelector($table, $data, $selectorColumn, $selectorValue) {
         // If the query was successful, return the number of rows affected
         return $stmt->affected_rows;
     } else {
-        // If the query failed, return an error message
-        return "Error: " . $sql . "<br>" . $conn->error;
+        // If the query failed, return null
+        return null;
     }
 
     /* Usage:
@@ -193,8 +193,8 @@ function deleteRowBySelector($table, $selectorColumn, $selectorValue) {
         // If the query was successful, return the number of rows affected
         return $conn->affected_rows;
     } else {
-        // If the query failed, return an error message
-        return "Error: " . $sql . "<br>" . $conn->error;
+        // If the query failed, null
+        return null;
     }
 
     /* Usage:

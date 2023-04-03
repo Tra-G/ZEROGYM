@@ -71,11 +71,6 @@ $routes = array(
         'action' => 'gymSelect',
         'view' => 'user/select'
     ),
-    '|^user/pay$|' => array(
-        'controller' => 'paymentController',
-        'action' => 'pay',
-        'view' => 'user/pay'
-    ),
     '|^user/training/change$|' => array(
         'controller' => 'userController',
         'action' => 'training',
@@ -90,6 +85,23 @@ $routes = array(
         'controller' => 'userController',
         'action' => 'password',
         'view' => 'user/password'
+    ),
+
+    // User Payment (Stripe)
+    '|^user/pay$|' => array(
+        'controller' => 'paymentController',
+        'action' => 'index',
+        'view' => 'user/payment/index'
+    ),
+    '|^user/pay/(\d+)$|' => array(
+        'controller' => 'paymentController',
+        'action' => 'payInit',
+        'view' => 'user/payment/init'
+    ),
+    '|^user/pay/(\d+)/confirm$|' => array(
+        'controller' => 'paymentController',
+        'action' => 'payConfirm',
+        'view' => 'user/payment/confirm'
     ),
 
     // Admin
