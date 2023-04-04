@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Define the root URL of the website
 if (!defined('APP_ROOT')) {
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
@@ -69,7 +72,7 @@ function insertRow($table, $data) {
         // If the query was successful, return the ID of the newly created row
         return $stmt->insert_id;
     } else {
-        // If the query failed, return an error message
+        // If the query failed, return null
         return null;
     }
 
@@ -155,8 +158,8 @@ function updateRowBySelector($table, $data, $selectorColumn, $selectorValue) {
         // If the query was successful, return the number of rows affected
         return $stmt->affected_rows;
     } else {
-        // If the query failed, return an error message
-        return "Error: " . $sql . "<br>" . $conn->error;
+        // If the query failed, return null
+        return null;
     }
 
     /* Usage:
@@ -190,8 +193,8 @@ function deleteRowBySelector($table, $selectorColumn, $selectorValue) {
         // If the query was successful, return the number of rows affected
         return $conn->affected_rows;
     } else {
-        // If the query failed, return an error message
-        return "Error: " . $sql . "<br>" . $conn->error;
+        // If the query failed, null
+        return null;
     }
 
     /* Usage:
@@ -207,6 +210,70 @@ function deleteRowBySelector($table, $selectorColumn, $selectorValue) {
         echo $rowsAffected;
     }
     */
+}
+
+
+// Return the matched rows
+function getRows($table, $selectorColumn = null, $selectorValue = null) {
+    global $conn;
+    if ($selectorColumn && $selectorValue) {
+        // If a selector is provided, prepare the SQL query with the selector
+        $stmt = $conn->prepare("SELECT * FROM $table WHERE $selectorColumn = ?");
+        $stmt->bind_param("s", $selectorValue);
+    } else {
+        // If no selector is provided, prepare the SQL query without a selector
+        $stmt = $conn->prepare("SELECT * FROM $table");
+    }
+
+    // Execute the query
+    $stmt->execute();
+
+    // Get the result set
+    $result = $stmt->get_result();
+
+    // Get the total number of matched rows
+    $count = $result->num_rows;
+
+    // Get all the matched rows
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
+
+    return array('count' => $count, 'rows' => $rows);
+
+    /* Usage:
+    $table = 'users'; // Change this to the name of the table you want to select from
+
+    // With selector
+    $selectorColumn = 'id'; // Change this to the name of the selector column
+    $selectorValue = 1; // Change this to the selector value you want to use
+    $result = getRows($table, $selectorColumn, $selectorValue);
+
+    // Without selector
+    $result = getRows($table);
+
+    $count = $result['count'];
+    $rows = $result['rows'];
+
+    echo "Total rows: " . $count . "<br>";
+    echo "Matched rows: " . json_encode($rows);
+    */
+}
+
+// Get total of a column in a table
+function sumAmounts($table, $amountColumn) {
+    global $conn;
+    // Prepare the SQL query
+    $stmt = $conn->prepare("SELECT COALESCE(SUM(`$amountColumn`), 0) FROM `$table`");
+
+    // Execute the query
+    $stmt->execute();
+
+    // Get the result set
+    $result = $stmt->get_result();
+
+    // Get the total amount
+    $total = $result->fetch_row()[0];
+
+    return $total;
 }
 
 ?>

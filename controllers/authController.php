@@ -37,10 +37,13 @@ class authController {
                     $_SESSION["logged"] = true;
                     $_SESSION["user_id"] = $user['id'];
 
+                    // go to proper dashboard
                     if ($user["role"] == "admin")
                         route("admin/dashboard");
-                    else
+                    else if ($user["role"] == "user")
                         route("user/dashboard");
+                    else
+                        $errors[] = "No user found";
                 }
                 else{
                     $errors[] = "Incorrect password";
@@ -75,6 +78,17 @@ class authController {
             $city = trim($_POST['city']);
             $state = trim($_POST['state']);
             $zip_code = trim($_POST['zip_code']);
+
+            $states = array(
+                "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
+                "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Federal Capital Territory",
+                "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara",
+                "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers",
+                "Sokoto", "Taraba", "Yobe", "Zamfara"
+            );
+            if (!in_array($state, $states)) {
+                $errors[] = "Invalid state";
+            }
 
             if (empty($name) || empty($email) || empty($password) || empty($phone) || empty($address) || empty($city) || empty($state) || empty($zip_code)) {
                 $errors[] = "All fields are required.";
