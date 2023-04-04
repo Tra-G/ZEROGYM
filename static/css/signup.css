@@ -39,7 +39,8 @@ body {
 }
 
 .form-content{
-    margin-top: 80px;
+    margin-top: 90px;
+    /* padding-top: 90px; */
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -106,8 +107,9 @@ body {
 }
 
 .footer-div{
-    padding-top: 70px;
-    padding: 8px;
+    /* padding-top: 0px; */
+    margin-top: 90px;
+    /* padding: 8px; */
     height: 10vh; 
     /* width: 100%; */
     display: flex;
@@ -124,10 +126,16 @@ footer{
 }
 
 footer span p{
+    padding-left: 20px;
     color: #d0cfd0;
     font-size: 14px; 
     font-weight: 400;
     line-height: 20px
+}
+
+.footer-second-span{
+    padding-right: 20px;
+
 }
 
 .footer-div div{
