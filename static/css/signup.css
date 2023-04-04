@@ -39,6 +39,7 @@ body {
 }
 
 .form-content{
+    margin-top: 80px;
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -48,14 +49,15 @@ body {
 }
 
 .form{
-    border: 2px solid red ;
+    /* border: 2px solid red ; */
     display:grid;
     grid-template-rows: repeat(6, 44px px 44px 0px 0px 0px 0px 0px );
     /* grid-template-rows: repeat(6, 0.5fr 0.5fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 40px ); */
-    justify-content:center;
+    /* justify-content:center; */
     /* grid-gap: 9px; */
-    align-items:center;
+    /* align-items:center; */
     height: inherit;
+    grid-template-columns: 28vw;
     /* height: 80vh; */
     /* max-height:100vh ; */
 }
@@ -104,6 +106,8 @@ body {
 }
 
 .footer-div{
+    padding-top: 70px;
+    padding: 8px;
     height: 10vh; 
     /* width: 100%; */
     display: flex;
@@ -114,7 +118,7 @@ body {
 footer{
     display: flex;
     flex-direction: row;
-    padding: 8px;
+    /* padding: 8px; */
     justify-content: space-between;
     width: 100%
 }
@@ -191,6 +195,11 @@ footer span p{
     margin-top: 5px
 } 
 
+.btndiv{
+    /* width: inherit; */
+    margin-top:16px ;
+}
+
 /* 768px */
   @media screen and (max-width: 971px) {
     .container {
@@ -212,14 +221,14 @@ footer span p{
     
     }
     .form-content{
-        margin-top: 70px;
+        margin-top: 150px;
     }
 
     .form{
         height: 90vh ;
         /* margin-top:90px ; */
         grid-template-rows: repeat(6, 0px 0px 0px 0px 0px 0px 0px 0px );
-        width: 65vw;
+        width: 80vw;
         height: fit-content;
         display: flex;
         flex-direction: column;
@@ -228,7 +237,7 @@ footer span p{
     }
 
     .footer-div{
-        margin-top:90px ;
+        padding-top:90px ;
 
     }
 
