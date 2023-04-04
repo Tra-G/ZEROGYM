@@ -136,6 +136,7 @@ class paymentController {
                                 'plan' => $plan,
                                 'start_date' => $currentDate,
                                 'end_date' => $end_date,
+                                'training_days' => NULL,
                                 'amount' => $paidAmount,
                                 'status' => 'active',
                             );

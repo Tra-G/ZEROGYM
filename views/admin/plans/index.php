@@ -15,7 +15,7 @@
         echo $plan['name'];
         echo "<br>[<a href='".redirect("admin/plans/".$plan['id'])."'>View</a>]";
         echo "[<a href='".redirect("admin/plans/".$plan['id']."/edit")."'>Edit</a>]";
-        echo "[<a href='".redirect("admin/plans/".$plan['id']."/delete")."'>Delete</a>]";
+        echo "[<a href='".redirect("admin/plans/".$plan['id']."/delete")."' onclick=\"if(confirm('Are you sure you want to delete this plan?')) { return true; } else { return false; }\">Delete</a>]";
         echo "</li><br>";
     }
     ?>

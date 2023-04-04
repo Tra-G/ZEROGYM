@@ -14,7 +14,7 @@
         echo "<li>";
         echo $blog_rows['title'];
         echo " [<a href='".redirect("admin/blog/".$blog_rows['id']."/edit")."'>Edit</a>]";
-        echo "[<a href='".redirect("admin/blog/".$blog_rows['id']."/delete")."'>Delete</a>]";
+        echo "[<a href='".redirect("admin/blog/".$blog_rows['id']."/delete")."' onclick=\"if(confirm('Are you sure you want to delete this blog post?')) { return true; } else { return false; }\">Delete</a>]";
         echo "</li><br>";
     }
     ?>

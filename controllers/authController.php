@@ -79,6 +79,17 @@ class authController {
             $state = trim($_POST['state']);
             $zip_code = trim($_POST['zip_code']);
 
+            $states = array(
+                "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
+                "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Federal Capital Territory",
+                "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara",
+                "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers",
+                "Sokoto", "Taraba", "Yobe", "Zamfara"
+            );
+            if (!in_array($state, $states)) {
+                $errors[] = "Invalid state";
+            }
+
             if (empty($name) || empty($email) || empty($password) || empty($phone) || empty($address) || empty($city) || empty($state) || empty($zip_code)) {
                 $errors[] = "All fields are required.";
             }

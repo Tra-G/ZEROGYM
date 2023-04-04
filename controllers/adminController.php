@@ -569,7 +569,6 @@ class adminController {
         $total_revenue = sumAmounts('payments', 'amount');
         $all_payments = getRows('payments')['rows'];
 
-
         return array(
             'title' => $title,
             'total_revenue' => $total_revenue,

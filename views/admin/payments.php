@@ -6,14 +6,13 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
-    <h1>Payment History: <?php echo $total_revenue; ?></h1>
+    <h1>Total: <?php echo $total_revenue; ?></h1>
     <ol>
     <?php
     foreach ($all_payments as $pay) {
         echo "<li>";
-        echo $pay['membership_id']."<br>";
-        echo $pay['amount']."<br>";
-        echo $pay['payment_date']."<br>";
+        echo "Amount: ".$pay['amount']." | ";
+        echo "Date: ".$pay['created_at']."<br>";
         echo "</li>";
     }
     ?>

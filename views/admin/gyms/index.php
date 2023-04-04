@@ -15,7 +15,7 @@
         echo $gym['name'];
         echo "<br>[<a href='".redirect("admin/gyms/".$gym['id'])."'>View</a>]";
         echo "[<a href='".redirect("admin/gyms/".$gym['id']."/edit")."'>Edit</a>]";
-        echo "[<a href='".redirect("admin/gyms/".$gym['id']."/delete")."'>Delete</a>]";
+        echo "[<a href='".redirect("admin/gyms/".$gym['id']."/delete")."' onclick=\"if(confirm('Are you sure you want to delete this?')) { return true; } else { return false; }\">Delete</a>]";
         echo "</li><br>";
     }
     ?>
