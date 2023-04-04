@@ -1,5 +1,5 @@
 body {
-    max-height: 100vh;
+    max-height: 150vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,7 +12,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: 50vw 50vw;
-    height: 100vh;
+    /* height: 100vh; */
     
   }
   
@@ -55,7 +55,8 @@ body {
     justify-content:center;
     /* grid-gap: 9px; */
     align-items:center;
-    height: 80vh;
+    height: inherit;
+    /* height: 80vh; */
     /* max-height:100vh ; */
 }
 
@@ -83,12 +84,12 @@ body {
 
 .form-textfield input{
     width: 98%;
-    height: 30px;
+    height: 44px;
 }
 
 .form button{
     width:100%;
-    height: 30px;
+    height: 44px;
     background-color: #Deef0b;
     border: none;
     color: #1d1d1d;;
@@ -210,16 +211,25 @@ footer span p{
         margin-top:0vw
     
     }
+    .form-content{
+        margin-top: 70px;
+    }
 
     .form{
-        /* height: 70vh ; */
+        height: 90vh ;
+        /* margin-top:90px ; */
         grid-template-rows: repeat(6, 0px 0px 0px 0px 0px 0px 0px 0px );
         width: 65vw;
-        height: 90vh;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .footer-div{
+        margin-top:90px ;
+
     }
 
     .form-textfield{
