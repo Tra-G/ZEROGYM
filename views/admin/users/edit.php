@@ -28,8 +28,6 @@
       <input type="text" name="city" id="city" value="<?php echo $user['city']; ?>"><br>
       <label for="state">State:</label>
       <input type="text" name="state" id="state" value="<?php echo $user['state']; ?>"><br>
-      <label for="zip_code">Zip Code:</label>
-      <input type="text" name="zip_code" id="zip_code" value="<?php echo $user['zip_code']; ?>"><br>
       <input type="submit" value="Save Changes">
     </form>
   </body>

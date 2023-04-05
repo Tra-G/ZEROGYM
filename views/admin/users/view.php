@@ -13,7 +13,6 @@
     <b>Address: <?php echo $user['address']; ?></b><br>
     <b>City: <?php echo $user['city']; ?></b><br>
     <b>State: <?php echo $user['state']; ?></b><br>
-    <b>Zip Code: <?php echo $user['zip_code']; ?></b><br>
     <b>Joined: <?php echo $user['created_at']; ?></b>
 
     <h2>Plan Details</h2>

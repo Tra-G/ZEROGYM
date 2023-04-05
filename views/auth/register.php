@@ -74,9 +74,6 @@
             <option value="Zamfara">Zamfara</option>
             </select>
         <br>
-        <label for="zip_code">Zip Code:</label>
-        <input type="text" name="zip_code" id="zip_code" required>
-        <br>
         <button type="submit">Register</button>
     </form>
 </body>

@@ -42,9 +42,6 @@
 		<label for="state">State:</label>
 		<input type="text" id="state" name="state" value="<?php echo ($admin['state']); ?>"><br>
 
-		<label for="zip_code">Zip Code:</label>
-		<input type="text" id="zip_code" name="zip_code" value="<?php echo ($admin['zip_code']); ?>"><br>
-
 		<input type="submit" value="Update">
 	</form>
 

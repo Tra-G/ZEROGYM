@@ -63,12 +63,8 @@
         <option value="Zamfara"<?php if ($gym['state'] == 'Zamfara') { echo ' selected'; } ?>>Zamfara</option>
     </select>
         <br>
-      <label for="zip_code">Zip Code:</label>
-      <input type="text" name="zip_code" id="zip_code" value="<?php echo $gym['zip_code']; ?>"><br>
-      <label for="latitude">Latitude:</label>
-      <input type="text" name="latitude" id="latitude" value="<?php echo $gym['latitude']; ?>"><br>
-      <label for="longitude">Longitude:</label>
-      <input type="text" name="longitude" id="longitude" value="<?php echo $gym['longitude']; ?>"><br>
+      <label for="map">Map Frame URL:</label>
+      <textarea name="map" id="map"><?php echo $gym['map']; ?></textarea><br>
       <input type="submit" value="Save Changes">
     </form>
   </body>

@@ -214,15 +214,26 @@ function deleteRowBySelector($table, $selectorColumn, $selectorValue) {
 
 
 // Return the matched rows
-function getRows($table, $selectorColumn = null, $selectorValue = null) {
+function getRows($table, $selectorColumn = null, $selectorValue = null, $orderByColumn = null, $orderByDirection = 'ASC') {
     global $conn;
+    $sql = "SELECT * FROM $table";
+
     if ($selectorColumn && $selectorValue) {
-        // If a selector is provided, prepare the SQL query with the selector
-        $stmt = $conn->prepare("SELECT * FROM $table WHERE $selectorColumn = ?");
+        // If a selector is provided, append the WHERE clause to the SQL query
+        $sql .= " WHERE $selectorColumn = ?";
+    }
+
+    if ($orderByColumn) {
+        // If an order by column is provided, append the ORDER BY clause to the SQL query
+        $sql .= " ORDER BY $orderByColumn $orderByDirection";
+    }
+
+    // Prepare the SQL query
+    $stmt = $conn->prepare($sql);
+
+    if ($selectorColumn && $selectorValue) {
+        // If a selector is provided, bind the selector value to the prepared statement
         $stmt->bind_param("s", $selectorValue);
-    } else {
-        // If no selector is provided, prepare the SQL query without a selector
-        $stmt = $conn->prepare("SELECT * FROM $table");
     }
 
     // Execute the query
@@ -242,12 +253,14 @@ function getRows($table, $selectorColumn = null, $selectorValue = null) {
     /* Usage:
     $table = 'users'; // Change this to the name of the table you want to select from
 
-    // With selector
+    // With selector and order by
     $selectorColumn = 'id'; // Change this to the name of the selector column
     $selectorValue = 1; // Change this to the selector value you want to use
-    $result = getRows($table, $selectorColumn, $selectorValue);
+    $orderByColumn = 'name'; // Change this to the name of the column you want to order by
+    $orderByDirection = 'DESC'; // Change this to the order direction you want to use
+    $result = getRows($table, $selectorColumn, $selectorValue, $orderByColumn, $orderByDirection);
 
-    // Without selector
+    // Without selector or order by
     $result = getRows($table);
 
     $count = $result['count'];

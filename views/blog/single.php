@@ -6,6 +6,8 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
-    <h2>Blog: <?php echo $title; ?></h2>
+    <h2><?php echo $post['title']; ?></h2>
+    Date: <?php echo $post['created_at']; ?><br><br>
+    <?php echo $post['content']; ?>
 </body>
 </html>
