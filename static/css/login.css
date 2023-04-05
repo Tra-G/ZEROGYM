@@ -227,7 +227,7 @@ swiper-container {
     margin-top: 5px
 }  */
 
-/* 768px */
+
   @media screen and (max-width: 971px) {
     .container {
       grid-template-columns: 1fr;
