@@ -81,9 +81,6 @@
         </select>
         <br>
 
-		<label for="zip_code">Zip Code:</label>
-		<input type="text" id="zip_code" name="zip_code" value="<?php echo ($user['zip_code']); ?>"><br>
-
 		<input type="submit" value="Update">
 	</form>
 

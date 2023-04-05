@@ -65,14 +65,8 @@
             <option value="Zamfara">Zamfara</option>
         </select><br>
 
-        <label for="zip_code">Zip Code:</label>
-        <input type="text" id="zip_code" name="zip_code" required><br>
-
-        <label for="latitude">Latitude:</label>
-        <input type="number" step="any" id="latitude" name="latitude" required><br>
-
-        <label for="longitude">Longitude:</label>
-        <input type="number" step="any" id="longitude" name="longitude" required><br>
+        <label for="map">Map Frame URL:</label>
+        <textarea name="map" id="map"></textarea><br>
 
         <input type="submit" value="Add Gym">
     </form>

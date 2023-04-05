@@ -88,9 +88,8 @@ class adminController {
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
             $state = trim($_POST['state']);
-            $zip_code = trim($_POST['zip_code']);
 
-            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($state) || empty($zip_code)) {
+            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($state)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -112,7 +111,6 @@ class adminController {
                     'address' => $address,
                     'city' => $city,
                     'state' => $state,
-                    'zip_code' => $zip_code,
                 );
 
                 updateRowBySelector('users', $data_array, 'id', $id);
@@ -165,17 +163,12 @@ class adminController {
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
             $state = trim($_POST['state']);
-            $zip_code = trim($_POST['zip_code']);
-            $latitude = trim($_POST['latitude']);
-            $longitude = trim($_POST['longitude']);
+            $map = trim($_POST['map']);
 
             // Validate input
             $errors = array();
-            if (empty($name) || empty($address) || empty($city) || empty($state) || empty($zip_code) || empty($latitude) || empty($longitude)) {
+            if (empty($name) || empty($address) || empty($city) || empty($state) || empty($map)) {
                 $errors[] = "All fields are required.";
-            }
-            if (!is_numeric($latitude) || !is_numeric($longitude)) {
-                $errors[] = "Latitude and longitude must be numeric.";
             }
 
             // Insert if no error
@@ -185,9 +178,7 @@ class adminController {
                     'address' => $address,
                     'city' => $city,
                     'state' => $state,
-                    'zip_code' => $zip_code,
-                    'latitude' => $latitude,
-                    'longitude' => $longitude,
+                    'map' => $map,
                 );
 
                 try {
@@ -238,17 +229,10 @@ class adminController {
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
             $state = trim($_POST['state']);
-            $zip_code = trim($_POST['zip_code']);
-            $latitude = trim($_POST['latitude']);
-            $longitude = trim($_POST['longitude']);
+            $map = trim($_POST['map']);
 
-            if (empty($name) || empty($address) || empty($city) || empty($state) || empty($zip_code) || empty($latitude) || empty($longitude)) {
+            if (empty($name) || empty($address) || empty($city) || empty($state) || empty($map)) {
                 $errors[] = "All fields are required.";
-            }
-
-            // Validate latitude and longitude
-            if (!is_numeric($latitude) || !is_numeric($longitude)) {
-                $errors[] = "Latitude and longitude must be numeric.";
             }
 
             // Insert if no error
@@ -259,9 +243,7 @@ class adminController {
                     'address' => $address,
                     'city' => $city,
                     'state' => $state,
-                    'zip_code' => $zip_code,
-                    'latitude' => $latitude,
-                    'longitude' => $longitude,
+                    'map' => $map,
                 );
 
                 try {
@@ -590,9 +572,8 @@ class adminController {
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
             $state = trim($_POST['state']);
-            $zip_code = trim($_POST['zip_code']);
 
-            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($state) || empty($zip_code)) {
+            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($state)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -622,7 +603,6 @@ class adminController {
                     'address' => $address,
                     'city' => $city,
                     'state' => $state,
-                    'zip_code' => $zip_code,
                 );
 
                 try {

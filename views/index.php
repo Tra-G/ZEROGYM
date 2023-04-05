@@ -7,9 +7,10 @@
   </head>
   <body>
     <h1>Hello, world!</h1>
-    <a href="login">Login</a><br>
-    <a href="register">Register</a><br>
-    <a href="logout">Logout</a><br><br>
+    <a href="<?php echo redirect("login") ?>">Login</a><br>
+    <a href="<?php echo redirect("register") ?>">Register</a><br>
+    <a href="<?php echo redirect("blog") ?>">Blog</a><br>
+    <a href="<?php echo redirect("logout") ?>">Logout</a><br><br>
 
     <h3>Exercise Generator API from [<a href="https://api-ninjas.com/api/exercises">API Ninjas</a>]</h3>
 
@@ -64,7 +65,7 @@
             <option value="expert">Expert</option>
         </select><br><br>
         <button type="submit">Generate</button>
-        </form>
+    </form>
 
   </body>
 </html>

@@ -14,7 +14,6 @@
         echo $user_row['name'];
         echo "<br>[<a href='".redirect("admin/users/".$user_row['id'])."'>View</a>]";
         echo "[<a href='".redirect("admin/users/".$user_row['id']."/edit")."'>Edit</a>]";
-        echo "[<a href='".redirect("admin/users/".$user_row['id']."/delete")."' onclick=\"if(confirm('Are you sure you want to delete this user?')) { return true; } else { return false; }\">Delete</a>]";
         echo "</li><br>";
     }
     ?>
