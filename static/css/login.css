@@ -31,6 +31,18 @@ body {
     grid-template-columns:repeat(2,11.04vw 30vw);
 }
 
+.icon-bar i{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:38px;
+    font-size: 2em;
+    color:#ffff; 
+    background-color:#Deef0b; 
+    width:50px; 
+    height:50px
+ }
+
 .form-content{
     height: 100vh;
     display: flex;
@@ -143,7 +155,41 @@ footer span p{
     justify-content: center; 
     align-items: center
 }
-.right-column-picture{
+
+/*SWIPER CSS*/
+
+swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  body {
+    background: #eee;
+  }
+
+  swiper-container {
+    width: 100%;
+    height: 300px;
+    margin: 20px 0;
+  }
+
+/* .right-column-picture{
     background: rgba(255, 255, 255, 0.1);
     max-height: 320px;
     width: inherit;
@@ -179,7 +225,7 @@ footer span p{
     max-height: 30px;
     width: inherit;
     margin-top: 5px
-} 
+}  */
 
 /* 768px */
   @media screen and (max-width: 971px) {
@@ -192,8 +238,22 @@ footer span p{
     }
 
     .icon-bar{
-        display: none;
+        padding-top: 20px;
+        /* display: none; */
     }
+
+    .icon-bar i{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border-radius:38px;
+        font-size: 1.3em;
+        color:#ffff; 
+        background-color:#Deef0b; 
+        width:40px; 
+        height:40px;
+        
+     }
 
     .form{
         /* height: 70vh ; */

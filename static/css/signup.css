@@ -38,6 +38,18 @@ body {
 
 }
 
+.icon-bar i{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:38px;
+    font-size: 2em;
+    color:#ffff; 
+    background-color:#Deef0b; 
+    width:50px; 
+    height:50px
+ }
+
 .form-content{
     margin-top: 90px;
     /* padding-top: 90px; */
@@ -145,12 +157,44 @@ footer span p{
     align-items: center;
 }
 
+/*SWIPER CSS*/
+
+swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  body {
+    background: #eee;
+  }
+
+  swiper-container {
+    width: 100%;
+    height: 300px;
+    margin: 20px 0;
+  }
+
 .right-column{
     background: linear-gradient(45deg, #1C5436 0%, #Deef0b 100%)
 }
 
 .right-column div{
-    /* border:2px solid green; */
     height:100%;
     display: flex;
     flex-direction: column;
@@ -165,14 +209,15 @@ footer span p{
     justify-content: center; 
     align-items: center
 }
-.right-column-picture{
+/* .right-column-picture{
     background: rgba(255, 255, 255, 0.1);
     max-height: 320px;
     width: inherit;
     border-radius: 12.8px
-}
+} */
 
-.right-column-heading{
+
+/* .right-column-heading{
     max-height: 30px;
     width: inherit;
 }
@@ -201,7 +246,7 @@ footer span p{
     max-height: 30px;
     width: inherit;
     margin-top: 5px
-} 
+}  */
 
 .btndiv{
     /* width: inherit; */
@@ -219,7 +264,8 @@ footer span p{
     }
 
     .icon-bar{
-        display: none;
+        padding-top: 50px;
+        /* display: none; */
     }
 
     .icon-bar span{
@@ -228,8 +274,21 @@ footer span p{
         margin-top:0vw
     
     }
+
+    .icon-bar i{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border-radius:38px;
+        font-size: 1.3em;
+        color:#ffff; 
+        background-color:#Deef0b; 
+        width:40px; 
+        height:40px
+     }
+
     .form-content{
-        margin-top: 150px;
+        margin-top: 130px;
     }
 
     .form{
@@ -245,7 +304,7 @@ footer span p{
     }
 
     .footer-div{
-        padding-top:90px ;
+        padding-top:50px ;
 
     }
 
