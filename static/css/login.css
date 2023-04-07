@@ -272,6 +272,7 @@ swiper-container {
     .btndiv{
         width: inherit;
         margin-top:16px ;
+        /* padding-left: 0%; */
     }
 
    
