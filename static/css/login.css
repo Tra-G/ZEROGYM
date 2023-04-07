@@ -31,18 +31,6 @@ body {
     grid-template-columns:repeat(2,11.04vw 30vw);
 }
 
-.icon-bar i{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border-radius:38px;
-    font-size: 2em;
-    color:#ffff; 
-    background-color:#Deef0b; 
-    width:50px; 
-    height:50px
- }
-
 .form-content{
     height: 100vh;
     display: flex;
@@ -155,41 +143,7 @@ footer span p{
     justify-content: center; 
     align-items: center
 }
-
-/*SWIPER CSS*/
-
-swiper-container {
-    width: 100%;
-    height: 100%;
-  }
-
-  swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  body {
-    background: #eee;
-  }
-
-  swiper-container {
-    width: 100%;
-    height: 300px;
-    margin: 20px 0;
-  }
-
-/* .right-column-picture{
+.right-column-picture{
     background: rgba(255, 255, 255, 0.1);
     max-height: 320px;
     width: inherit;
@@ -225,9 +179,9 @@ swiper-container {
     max-height: 30px;
     width: inherit;
     margin-top: 5px
-}  */
+} 
 
-
+/* 768px */
   @media screen and (max-width: 971px) {
     .container {
       grid-template-columns: 1fr;
@@ -238,22 +192,8 @@ swiper-container {
     }
 
     .icon-bar{
-        padding-top: 20px;
-        /* display: none; */
+        display: none;
     }
-
-    .icon-bar i{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        border-radius:38px;
-        font-size: 1.3em;
-        color:#ffff; 
-        background-color:#Deef0b; 
-        width:40px; 
-        height:40px;
-        
-     }
 
     .form{
         /* height: 70vh ; */
@@ -272,7 +212,6 @@ swiper-container {
     .btndiv{
         width: inherit;
         margin-top:16px ;
-        /* padding-left: 0%; */
     }
 
    
