@@ -15,7 +15,7 @@
             <div class="icon-bar">
                 <div>
                     <span>
-                        <i class="fas fa-arrow-left" style="display:flex; justify-content: center; align-items: center; border-radius:38px; font-size: 2em; color:#ffff; background-color:#Deef0b;; width:50px; height:50px"></i>
+                        <i class="fas fa-arrow-left" id="back-arrow"></i>
                     </span>
                     <div>
 
@@ -102,7 +102,44 @@
             <!-- Right column content -->
             <div>
                 <div class="right-column-content">
-                    <div class="right-column-picture">
+                    <swiper-container class="mySwiper" space-between="30" pagination="true" pagination-clickable="true">
+                        <swiper-slide class="slide1">
+                            <div class="swiper-details" style="color:#ffff">
+                                <p class="cardtext">Build your perfect body and accelerate a healthy growth</p>
+                                <span >
+                                    <a href="#">
+                                        <button class="swiper-button">Learn More</button>                                        
+                                    </a>
+                                </span>
+                            </div>
+                            <!-- <img src="../images/img29.jpg"> -->
+                        </swiper-slide>
+                        <swiper-slide class="slide2">
+                            <div class="swiper-details" style="color:#ffff">
+                                <p class="cardtext">Make the most of your workout. Get results you can see and feel.</p>
+                                <span >
+                                    <a href="#">
+                                        <button class="swiper-button">Learn More</button>                                        
+                                    </a>
+                                </span>
+                            </div>
+                            <!-- <img src="../images/img15.jpg"> -->
+                        </swiper-slide>
+                        <swiper-slide class="slide3">
+                            <div class="swiper-details" style="color:#ffff">
+                                <p class="cardtext">Learn Fitness From Professionals. Learn To Defend Your Health.</p>
+                                <span >
+                                    <a href="#">
+                                        <button class="swiper-button">Learn More</button>                                        
+                                    </a>
+                                </span>
+                            </div>
+                            <!-- <img src="../images/img16.jpg"> -->
+                        </swiper-slide>
+                       
+                    </swiper-container>
+                    
+                    <!-- <div class="right-column-picture">
                         
                     </div>
 
@@ -115,7 +152,7 @@
                         
                     </div>
 
-                    <div class="right-column-icon" >
+                    <div class="right-column-icon" > -->
                         
                     </div>
                 </div>
@@ -123,6 +160,6 @@
             </div>
         </div>
     </div>
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>  
 </body>
 </html>
