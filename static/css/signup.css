@@ -38,6 +38,18 @@ body {
 
 }
 
+#back-arrow{
+    display:flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius:38px; 
+    font-size: 2em; 
+    color:#ffff; 
+    background-color:#Deef0b;
+    width:50px; 
+    height:50px
+}
+
 .form-content{
     margin-top: 90px;
     /* padding-top: 90px; */
@@ -219,7 +231,15 @@ footer span p{
     }
 
     .icon-bar{
-        display: none;
+        /* border:1px solid red; */
+        /* display: none; */
+        padding-top: 25px;
+        padding-left: 25px;
+    }
+    #back-arrow{
+        font-size: 1.5rem;
+        width:40px; 
+        height:40px
     }
 
     .icon-bar span{
@@ -229,7 +249,7 @@ footer span p{
     
     }
     .form-content{
-        margin-top: 150px;
+        margin-top: 120px;
     }
 
     .form{
