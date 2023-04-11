@@ -1,0 +1,387 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: var(--primaryColor);
+    color: #fff;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    background-color: #191919;
+    box-shadow: 0 0 5px #232323;
+    color: #fff;
+    height: 5.5rem;
+    padding: 1.6rem 0;
+    z-index: 1;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navtext{
+    font-size: 1.5rem;
+}
+
+.navtext span{
+    color: #DEEF0B;
+}
+
+.nav-title a{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+li{
+    list-style: none;
+}
+
+.hamburger{
+    display: none;
+}
+
+.hamburger span{
+    display: block;
+    background-color: #fff;
+    width: 25px;
+    height: 2px;
+    margin: 4px;
+}
+
+.account{
+    display: flex;
+    align-items: center;
+}
+
+.account a{
+    padding: .4rem 1.4rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.login:hover{
+    background-color: #DEEF0B;
+    color: #000;
+}
+
+.login:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.sign:hover{
+    color: #DEEF0B;
+}
+
+.sign:hover{
+    transition-duration: 0.3s;
+}
+
+.login{
+    border: 1px solid #DEEF0B;
+}
+.navlinks ul{
+    display: flex;
+    align-items: center;
+}
+
+.navlinks a{
+    padding: 0 .8rem;
+    font-size: 1.1rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.navlinks a:hover{
+    color: #DEEF0B;
+}
+
+.navlinks a{
+    transition-duration: 0.3s;
+}
+
+
+
+/*BACKGROUND*/
+.sms{
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.photo img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.photo{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/img19.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+}
+
+.photo-details{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.photo-text{
+    margin-top: 10rem;
+}
+
+.photo-text span{
+    display: block;
+}
+
+.photo-span1{
+    font-size: 2.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.photo-span2{
+    font-size: 2.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: #DEEF0B;
+}
+
+
+/*SECT 1*/
+.about{
+    margin: 2rem 0;
+}
+
+.about1{
+    font-size: 3rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+/*SECT 2*/
+.sect2-about{
+    width: 90rem;
+    margin: 0 auto;
+}
+
+.sect2-flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.item-image img{
+    object-fit: cover;
+    height: 100%;
+    width: 100vh;
+}
+
+.item-image{
+    height: 32rem;
+}
+
+.text-container{
+    width: 34rem;
+}
+
+.sect2text1{
+    margin-bottom: 2.3rem;
+    font-size: 2rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.sect2text2{
+    margin: 2rem 0;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    white-space: 4px;
+    font-weight: 200;
+    color: #d0cfd0;
+}
+
+.sect2btn{
+    padding: .7rem 2rem;
+    font-size: 1rem;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+    background-color: #DEEF0B;
+    outline: none;
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.liststyle{
+    display: flex;
+    align-items: center;
+    margin: 1.3rem 0;
+}
+
+.liststyle li{
+    margin-left: 1rem;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/*SECT 4 - OUR TRAINERS*/
+.sect5{
+    width: 87rem;
+    margin: 2rem auto;
+    padding: 1rem 0;
+}
+
+.sect5-container{ 
+    margin: 3rem 0;
+}
+
+.sect5-header{
+    margin: 3.5rem 0;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.sect5-header span{
+    color: #DEEF0B;
+}
+
+.sect5-cont{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sect5-image img{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+
+.sect5-image img:hover{
+    transform: scale(1.05);
+}
+
+.sect5-image img:hover{
+    transition-duration: 0.3s;
+}
+
+.sect5-image{
+    width: 20rem;
+    /*height: 10rem;*/
+    margin: .5rem .7rem;
+}
+
+.coach{
+    display: block;
+    text-align: center;
+    margin: .5rem 0;
+}
+
+.coachname{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.coachwork{
+    font-family: 'Roboto', sans-serif;
+    font-size: .9rem;
+    color: #d0cfd0;
+}
+
+.line{
+    width: 100%;
+    background-color: #414040;
+    height: 1px;
+}
+
+
+/*FOOTER*/
+footer{
+    width: 87rem;
+    margin: 3rem auto;
+    /*padding: 1rem 0;*/
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-header{
+    font-size: 1.9rem;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.footer-text li{
+    padding: .6rem 0;
+    color: #d0cfd0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-text p{
+    padding: .6rem 0;
+    color: #d0cfd0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    width: 23rem;
+}
+
+.footer-text input{
+    margin: 1rem 0;
+    padding: 0 .8rem;
+    display: block;
+    width: 23rem;
+    height: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+}
+
+.footer-text button{
+    padding: .8rem 2rem;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+    background-color: #DEEF0B;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+
+
+
+
+
+

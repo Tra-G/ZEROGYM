@@ -1,5 +1,3 @@
-git54
-
 
 *, ::before, ::after{
     margin: 0;
@@ -15,7 +13,7 @@ font-family: 'Ubuntu', sans-serif;
 
 
 COLOR
-color:#626262
+color:#d0cfd0
 color: #DEEF0B;   - primary color
 color: #fff;  - white
 background-color: #1D1D1D; -  background color
@@ -271,6 +269,7 @@ swiper-slide img {
     border-radius: 2rem;
 }
 
+/*
 .sect2-icon{
     background-color: #DEEF0B;
     color: #000;
@@ -280,7 +279,7 @@ swiper-slide img {
     left: 24rem;
     bottom: -25rem;
     z-index: 2;
-}
+}*/
 
 
 /*SECTION 3*/
@@ -319,8 +318,8 @@ swiper-slide img {
     width: 20rem;
     background-color: #1D1D1D;
     margin: .8rem;
-    border-radius: 1rem;
-    overflow: hidden;
+    /*border-radius: 1rem;
+    overflow: hidden;*/
 }
 
 .cardbox img:hover{
