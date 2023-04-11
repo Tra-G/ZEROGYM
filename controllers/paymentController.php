@@ -103,7 +103,7 @@ class paymentController {
                     $charge = \Stripe\Charge::create(array(
                         'customer' => $customer->id,
                         'amount'   => $priceCents,
-                        'currency' => CURRENCY,
+                        'currency' => CURRENCY_NAME,
                         'description' => $description,
                     ));
                 }catch(Exception $e) {
@@ -168,7 +168,7 @@ class paymentController {
                                 'user_id' => $this->user['id'],
                                 'membership_id' => $membership_id,
                                 'amount' => $paidAmount,
-                                'currency' => CURRENCY,
+                                'currency' => CURRENCY_NAME,
                                 'txn_id' => $transactionID,
                                 'payment_status' => $payment_status,
                             );
