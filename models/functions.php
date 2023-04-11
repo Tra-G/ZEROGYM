@@ -20,6 +20,10 @@ include('db.php');
 // Set the timezone
 date_default_timezone_set("Africa/Lagos");
 
+// Set General Site Currency
+define('CURRENCY', '£');
+define('CURRENCY_NAME', 'GBP');
+
 // Dynamic page title
 function pageTitle($site_name){
 	return "ZeroGym | ".$site_name;

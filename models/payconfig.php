@@ -1,7 +1,5 @@
 <?php
 
-define('CURRENCY', 'USD');
-
 /* Stripe API configuration
  * Remember to switch to your live publishable and secret key in production!
  * See your keys here: https://dashboard.stripe.com/account/apikeys
