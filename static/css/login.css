@@ -383,8 +383,13 @@ a{
     outline: none;
     border-bottom: 1px solid #fff;
     width: 100%;
-    padding: 0 .5rem;
+    padding: 0 1.6rem;
     color: #fff;
+}
+
+.fa{
+    position: relative;
+    left: 1rem;
 }
 
 .reminder{
