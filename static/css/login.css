@@ -372,6 +372,8 @@ a{
 }
 
 .textinput{
+    display: flex;
+    align-items: center;
     margin: 3rem 0;
 }
 
@@ -381,7 +383,7 @@ a{
     outline: none;
     border-bottom: 1px solid #fff;
     width: 100%;
-    /*padding: 0 .3rem;*/
+    padding: 0 .5rem;
     color: #fff;
 }
 
