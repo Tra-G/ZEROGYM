@@ -385,3 +385,71 @@ footer{
 
 
 
+
+
+
+@media screen and (max-width: 400px) {
+    .navbar{
+        justify-content: space-between;
+        margin: 0 1rem;
+    }
+    .navlinks{
+        display: none;
+    }
+
+    .navtext{
+        font-size: 1.3rem; 
+    }
+
+    .nav-title a{
+        font-size: unset;
+    }
+
+    .account{
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger span{
+        display: block;
+    }
+
+
+    /*BACKGROUND*/
+    .photo-text span{
+        font-size: 1.5rem;
+    }
+
+    .about1{
+        font-size: 1.8rem;
+    }
+
+    .sect2-about{
+        width: unset;
+        margin: 0 auto;
+    }
+
+    .sect2-flex{
+        display: block;
+    }
+    
+    .item-image img{
+        object-fit: cover;
+        height: 70%;
+        width: 100vh;
+    }
+    
+    .item-image{
+        height: unset;
+    }
+    
+    .text-container{
+        width: 34rem;
+    }
+}
+
+
+

@@ -82,7 +82,7 @@ li{
     width: 25px;
     height: 2px;
     margin: 4px;
-}
+} 
 
 .account{
     display: flex;
@@ -180,6 +180,10 @@ swiper-slide img {
     width: 35rem;
     margin-left: 6rem;
     margin-top: 15rem;
+}
+
+.card-details{
+    transition-duration: 0.3s;
 }
 
 .cardtext{
