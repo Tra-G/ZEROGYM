@@ -435,11 +435,16 @@ footer{
     .sect2-flex{
         display: block;
     }
+
+    .item-image{
+        width: 90%;
+        margin: 0 auto;
+    }
     
     .item-image img{
         object-fit: cover;
-        height: 70%;
-        width: 100vh;
+        height: 70vh;
+        width: 100%;
     }
     
     .item-image{
@@ -447,7 +452,15 @@ footer{
     }
     
     .text-container{
-        width: 34rem;
+        width: 90%;
+        margin: 2rem auto;
+    }
+
+    .sect2text1{
+        font-size: 1.4rem;
+    }
+    .sect2text2{
+        font-size: .8rem;
     }
 }
 
