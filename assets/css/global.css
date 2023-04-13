@@ -1,0 +1,68 @@
+/* Global and Utility Styles Sheet */
+
+/* Factory reset */
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #1d1d1d;
+    --secondaryColor: #Deef0b; 
+    --textColor: #d0cfd0;
+}
+
+html{
+    background-color: var(--primaryColor);
+    max-width: 2000px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+li{
+    list-style: none;
+}
+
+
+/* Utility Classes */
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    border-radius: .25rem;
+    height: 2rem;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.flex{
+    display: flex;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}

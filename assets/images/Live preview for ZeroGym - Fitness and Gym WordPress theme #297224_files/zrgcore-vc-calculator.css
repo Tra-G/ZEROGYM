@@ -1,0 +1,358 @@
+/* BMI calc */
+.zrgcore-bmi {
+	color: var(--zrg-secondary-color-inverse);
+	position: relative;
+	padding: 68px 23px 68px 52px;
+}
+.zrgcore-bmi:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: var(--zrg-bg-secondary-color);
+	opacity: 0.8;
+	-webkit-box-shadow: 0px 4px 10px rgb(0 0 0 / 35%);
+			box-shadow: 0px 4px 10px rgb(0 0 0 / 35%);
+}
+.bmi-header {
+	position: relative;
+}
+.zrgcore-bmi .zrgcore-units-list {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 28px;
+	letter-spacing: -0.01em;
+	text-transform: uppercase;
+	margin-bottom: 64px;
+	padding-left: 0;
+	list-style: none;
+}
+.zrgcore-bmi .zrgcore-units {
+	position: relative;
+	-webkit-transition: .3s all;
+	-o-transition: .3s all;
+	transition: .3s all;
+	cursor: pointer;
+	opacity: 0.4;
+}
+.zrgcore-bmi .zrgcore-units.active {
+	opacity: 1;
+}
+.zrgcore-bmi .zrgcore-units:not(:last-child) {
+	margin-right: 56px;
+}
+.zrgcore-bmi .zrgcore-metric {
+	width: 100%;
+}
+.zrgcore-bmi .zrgcore-metric input {
+	background-color: transparent;
+	border: 1px solid #FFFFFF;
+	border-radius: 90px;
+	padding: 16px 0 16px 30px;
+	color: var(--zrg-secondary-color-inverse);
+	width: 100%;
+	-webkit-transition: .3s all;
+	-o-transition: .3s all;
+	transition: .3s all;
+}
+.zrgcore-bmi .zrgcore-metric input::-webkit-input-placeholder {
+	color: var(--zrg-secondary-color-inverse);
+	opacity: 0.4;
+}
+.zrgcore-bmi .zrgcore-metric input::-moz-placeholder {
+	color: var(--zrg-secondary-color-inverse);
+	opacity: 0.4;
+}
+.zrgcore-bmi .zrgcore-metric input:-ms-input-placeholder {
+	color: var(--zrg-secondary-color-inverse);
+	opacity: 0.4;
+}
+.zrgcore-bmi .zrgcore-metric input::-ms-input-placeholder {
+	color: var(--zrg-secondary-color-inverse);
+	opacity: 0.4;
+}
+.zrgcore-bmi .zrgcore-metric input::placeholder {
+	color: var(--zrg-secondary-color-inverse);
+	opacity: 0.4;
+}
+.zrgcore-bmi .zrgcore-metric input:focus {
+	outline: none;
+	background: var(--zrg-primary-color-inverse);
+	border-color: var(--zrg-primary-color);
+}
+.zrgcore-bmi .zrgcore-metric > span {
+	display: inline-block;
+	margin-bottom: 12px;
+}
+.zrgcore-bmi .zrgcore-metric-error {
+	visibility: hidden;
+	position: absolute;
+	bottom: -35px;
+	color: red;
+}
+.zrgcore-bmi .zrgcore-metric-error.active {
+	visibility: visible;
+}
+.zrgcore-bmi .zrgcore-gender {
+	margin-top: 53px;
+	margin-bottom: 44px;
+}
+.zrgcore-bmi .zrgcore-gender h4 {
+	color: var(--zrg-primary-color);
+}
+.zrgcore-bmi .zrgcore-bmi-result-unit {
+	position: relative;
+}
+.zrgcore-bmi .zrgcore-bmi-result-unit:after {
+	content: "2";
+	position: absolute;
+	top: -15px;
+	right: -5px;
+	font-size: 15px;
+}
+.zrgcore-bmi .zrgcore-bmi-status {
+	color: var(--zrg-primary-color);
+}
+.zrgcore-bmi .zrgcore-gender label {
+	margin-left: 26px;
+	cursor: pointer;
+}
+.zrgcore-bmi .zrgcore-gender label span {
+	margin-left: 8px;
+}
+.zrgcore-bmi .zrgcore-bmi-btn:not(.reset-wrapper) {
+	padding: 16px 40px;
+}
+.zrgcore-bmi .zrgcore-bmi-btn:not(.reset-wrapper):after {
+	z-index: 1;
+}
+.zrgcore-bmi .zrgcore-bmi-btn.reset-wrapper {
+	position: relative;
+	background-color: transparent;
+	-webkit-box-shadow: none;
+			box-shadow: none;
+	border: none;
+	color: var(--zrg-secondary-color-inverse);
+	-webkit-text-decoration: dashed;
+			text-decoration: dashed;
+	border-bottom: 1px dashed var(--zrg-secondary-color-inverse);
+	margin-left: 50px;
+	padding: 0;
+}
+.zrgcore-bmi .zrgcore-stats-content {
+	position: relative;
+	z-index: 3;
+}
+.zrgcore-bmi .zrgcore-stats-progress {
+	top: -64px;
+	left: 30px;
+	z-index: -1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+}
+.zrgcore-bmi .zrgcore-stats li {
+	list-style: disc;
+}
+.zrgcore-bmi .zrgcore-stats h3 span {
+	color: var(--zrg-primary-color);
+}
+.zrgcore-bmi .zrgcore-stats p {
+	margin-bottom: 50px;
+}
+.zrgcore-bmi .zrgcore-stats .zrgcore-content {
+	position: relative;
+	z-index: 4;
+	left: -50px;
+}
+.zrgcore-bmi .zrgcore-stats .zrgcore-content li {
+	line-height: 34px;
+	white-space: nowrap;
+}
+.progress-wrapper {
+	position: relative;
+	width: 100%;
+	height: 391px;
+}
+.progress-ring {
+	position: absolute;
+	width: 386px;
+	height: 386px;
+	stroke-linecap: round;
+	stroke-dasharray: 570;
+	stroke-dashoffset: 570;
+	stroke: var(--zrg-secondary-color-inverse);
+	-webkit-transition: .3s all;
+	-o-transition: .3s all;
+	transition: .3s all;
+}
+.progress-ring:first-child {
+	stroke: var(--zrg-primary-color);
+	stroke-dasharray: 1212;
+	stroke-dashoffset: 1300;
+	z-index: 2;
+	-webkit-transform: scaleX(-1);
+		-ms-transform: scaleX(-1);
+			transform: scaleX(-1);
+}
+.progress-ring:last-child {
+	opacity: 0.1;
+}
+/* ==========  ==========*/
+.zrgcore-bmi input[type="radio"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: var(--zrg-secondary-color-inverse);
+	margin: 0;
+	font: inherit;
+	color: currentColor;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	-webkit-transform: translateY(-0.075em);
+		-ms-transform: translateY(-0.075em);
+			transform: translateY(-0.075em);
+}
+.zrgcore-bmi input[type="radio"]:hover {
+	background-color: var(--zrg-primary-color);
+}
+.zrgcore-bmi input[type="radio"]:checked {
+	background-color: var(--zrg-primary-color);
+}
+.zrgcore-bmi input[type="radio"] {
+	display: -ms-grid;
+	display: grid;
+	place-content: center;
+}
+.zrgcore-bmi input[type="radio"]::before {
+	position: absolute;
+	top: calc(50% - 5px);
+	left: calc(50% - 5px);
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	-webkit-transform: scale(0);
+		-ms-transform: scale(0);
+			transform: scale(0);
+	background-color: #04070B;
+	-webkit-transition: 120ms -webkit-transform ease-in-out;
+	transition: 120ms -webkit-transform ease-in-out;
+	-o-transition: 120ms transform ease-in-out;
+	transition: 120ms transform ease-in-out;
+	transition: 120ms transform ease-in-out, 120ms -webkit-transform ease-in-out;
+}
+.zrgcore-bmi input[type="radio"]:checked::before {
+	-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+			transform: scale(1);
+}
+.zrgcore-bmi input[type=number]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+.zrgcore-bmi .zrgcore-nav-indicator {
+	position: absolute;
+	bottom: -10px;
+	-webkit-transition: .4s;
+	-o-transition: .4s;
+	transition: .4s;
+	height: 3px;
+	z-index: 1;
+	left: 0;
+}
+.zrgcore-bmi circle {
+	cx: 193;
+	cy: 193;
+	r: 180;
+}
+/* Statuses */
+.progress-ring.ex-obese {
+	stroke-dasharray: 980;
+}
+.progress-ring.obese {
+	stroke-dasharray: 1030;
+}
+.progress-ring.overweight {
+	stroke-dasharray: 1080;
+}
+.progress-ring.healthy {
+	stroke-dasharray: 1130;
+}
+.progress-ring.underweight {
+	stroke-dasharray: 1180;
+}
+/* Round */
+/* MEDIA */
+@media only screen and (max-width: 1196px) {
+	.zrgcore-bmi circle {
+		r: 150;
+	}
+	.progress-ring {
+		stroke-dasharray: 500;
+		stroke-dashoffset: 528;
+	}
+	.progress-ring:first-child {
+		stroke-dasharray: 1120;
+		stroke-dashoffset: 1300;
+	}
+	/* Statuses */
+	.progress-ring.ex-obese {
+		stroke-dasharray: 960;
+	}
+	.progress-ring.obese {
+		stroke-dasharray: 990;
+	}
+	.progress-ring.overweight {
+		stroke-dasharray: 1020;
+	}
+	.progress-ring.healthy {
+		stroke-dasharray: 1050;
+	}
+	.progress-ring.underweight {
+		stroke-dasharray: 1080;
+	}
+}
+@media only screen and (max-width: 992px) {
+	.zrgcore-bmi {
+		padding: 50px;
+	}
+	.zrgcore-bmi .zrgcore-stats-progress {
+		margin-top: 150px;
+	}
+	.zrgcore-bmi .zrgcore-stats .zrgcore-content {
+		left: initial;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.zrgcore-bmi .zrgcore-metric {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	.zrgcore-bmi .zrgcore-gender {
+		margin-top: 20px;
+	}
+	.zrgcore-bmi .zrgcore-metric-error {
+		bottom: -10px;
+	}
+	.zrgcore-bmi .zrgcore-stats .zrgcore-content li {
+		white-space: initial;
+	}
+}
+@media only screen and (max-width: 576px) {
+	.zrgcore-bmi {
+		padding: 30px;
+	}
+}
