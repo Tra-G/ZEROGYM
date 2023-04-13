@@ -1,0 +1,45 @@
+.zrgcore-button-left {
+	text-align: right;
+}
+
+.zrgcore-margin-bottom-40 {
+	margin-bottom: 40px;
+}
+
+.zrgcore-margin-bottom-60 {
+	margin-bottom: 60px;
+}
+
+
+.zrgcore-margin-bottom-25 {
+	margin-bottom: 25px;
+}
+
+.zrgcore-secondary-background{
+	background-color: var(--zrg-bg-secondary-color);
+}
+
+.zrgcore-testimonial-box .zrg-display-3 {
+	font: var(--zrg-display3) !important;
+}
+
+.zrgcore-testimonial-box .zrg-text-1 {
+	font: var(--zrg-text1) !important;
+}
+
+.zrgcore-linear-background {
+	background: linear-gradient(270.55deg, #DE0148 -6.51%, #BCFE2F 105.18%) !important;
+}
+
+.zrgcore-button-light .zrg_btn_filled {
+	background: var(--zrg-secondary-color-inverse) !important;
+}
+
+span.zrgcore-title-color-dark {
+	color: var(--zrg-bg-secondary-color) !important;
+	display: unset;
+}
+
+.zrgcore-text-right {
+	text-align: right;
+}

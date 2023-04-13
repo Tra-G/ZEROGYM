@@ -39,6 +39,11 @@ function redirect($url) {
     return APP_ROOT . '/'.$url;
 }
 
+// Assets folder
+function assets($file) {
+    return APP_ROOT . '/assets/'.$file;
+}
+
 // Session check
 function session_check() {
     // return true if user is logged in
