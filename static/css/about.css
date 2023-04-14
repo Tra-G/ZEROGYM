@@ -157,13 +157,13 @@ li{
 }
 
 .photo-span1{
-    font-size: 2.5rem;
+    font-size: 3.2rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
 .photo-span2{
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     color: #DEEF0B;
@@ -221,6 +221,7 @@ li{
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     white-space: 4px;
+    word-spacing: 3px;
     font-weight: 200;
     color: #d0cfd0;
 }
@@ -343,7 +344,7 @@ footer{
     margin: 1rem 0;
 }
 
-.footer-text li{
+.footer-text1 li{
     padding: .6rem 0;
     color: #d0cfd0;
     font-family: 'Roboto', sans-serif;
@@ -453,16 +454,69 @@ footer{
     
     .text-container{
         width: 90%;
-        margin: 2rem auto;
+        margin: 1.5rem auto;
     }
 
+    /*SECT 2*/
+
     .sect2text1{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
     }
     .sect2text2{
         font-size: .8rem;
+        margin: 1.5rem 0;
     }
-}
 
+    .liststyle li{
+        margin-left: 1rem;
+        font-size: .8rem;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /*SECT 3*/
+    .sect5{
+        width: unset;
+        margin: 1rem auto;
+        padding: 1rem 0;
+    }
+
+
+    /*FOOTER*/
+    footer{
+        display: flex;
+        justify-content: center;
+        width: unset;
+        margin: 3rem auto;
+    }
+
+    .footer-container{
+        display: unset;
+        justify-content: unset;
+    }
+
+    .footer-head{
+        font-size: 1.3rem;
+    }
+
+    .flex2{
+        display: inline-block;
+        margin: 0 1.4rem;
+    }
+
+    .footer-text input{
+        width: 100%;
+    }
+
+    .new{
+        padding-top: 1.5rem;
+    }
+
+    .footer-text{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+}
 
 

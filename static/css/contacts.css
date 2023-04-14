@@ -1,3 +1,119 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    background-color: #191919;
+    box-shadow: 0 0 5px #232323;
+    color: #fff;
+    height: 5.5rem;
+    padding: 1.6rem 0;
+    z-index: 1;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navtext{
+    font-size: 1.5rem;
+}
+
+.navtext span{
+    color: #DEEF0B;
+}
+
+.nav-title a{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+li{
+    list-style: none;
+}
+
+.hamburger{
+    display: none;
+}
+
+.hamburger span{
+    display: block;
+    background-color: #fff;
+    width: 25px;
+    height: 2px;
+    margin: 4px;
+} 
+
+.account{
+    display: flex;
+    align-items: center;
+}
+
+.account a{
+    padding: .4rem 1.4rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.login:hover{
+    background-color: #DEEF0B;
+    color: #000;
+}
+
+.login:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.sign:hover{
+    color: #DEEF0B;
+}
+
+.sign:hover{
+    transition-duration: 0.3s;
+}
+
+.login{
+    border: 1px solid #DEEF0B;
+}
+.navlinks ul{
+    display: flex;
+    align-items: center;
+}
+
+.navlinks a{
+    padding: 0 .8rem;
+    font-size: 1.1rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.navlinks a:hover{
+    color: #DEEF0B;
+}
+
+.navlinks a{
+    transition-duration: 0.3s;
+}
+
+
+
 .contact-container{
     min-height: 100vh;
     background-image: url(../images/img11.jpg);
@@ -142,6 +258,65 @@ section.contact-footer > address{
     background-color: var(--secondaryColor);
     filter: brightness(.8);
 }
+
+
+
+footer{
+    width: 87rem;
+    margin: 3rem auto;
+    background-color: var(--primaryColor);
+    /*padding: 1rem 0;*/
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-header{
+    font-size: 1.9rem;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.footer-text1 li{
+    padding: .6rem 0;
+    color: #d0cfd0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-text p{
+    padding: .6rem 0;
+    color: #d0cfd0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    width: 23rem;
+}
+
+.footer-text input{
+    margin: 1rem 0;
+    padding: 0 .8rem;
+    display: block;
+    width: 23rem;
+    height: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+}
+
+.footer-text button{
+    padding: .8rem 2rem;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+    background-color: #DEEF0B;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+    font-size: .9rem;
+}
+
 
 
 /* MEDIA QUERY */

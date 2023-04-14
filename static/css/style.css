@@ -121,12 +121,31 @@ li{
     align-items: center;
 }
 
+/*
+.navlinks ul{
+    display: block;
+    background-color: #1d1d1d;
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    padding-top: 5rem;
+    padding-left: 2.4rem;
+    font-size: 1.7rem;
+}*/
+
 .navlinks a{
     padding: 0 .8rem;
     font-size: 1.1rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
+
+.navlinks ul.show {
+    display: block;
+  }
 
 .navlinks a:hover{
     color: #DEEF0B;
@@ -177,17 +196,19 @@ swiper-slide img {
 }
 
 .card-details{
-    width: 35rem;
+    width: 40rem;
     margin-left: 6rem;
     margin-top: 15rem;
+    transform: translate(-14px, -32px);
 }
 
 .card-details{
     transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
 .cardtext{
-    font-size: 2.7rem;
+    font-size: 3.5rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     margin-bottom: 2.7rem;
@@ -201,7 +222,7 @@ swiper-slide img {
     border: none;
     outline: none;
     background-color: #DEEF0B;
-    padding: .7rem 1.5rem;
+    padding: 1rem 1.8rem;
     font-family: 'Sono', sans-serif;
     font-weight: 500;
     border-radius: 2rem;
@@ -217,6 +238,7 @@ swiper-slide img {
 
 .cardbutton:hover{
     transition-duration: 0.3s;
+
 }
 
 /*Section 2*/
@@ -604,7 +626,7 @@ footer{
     margin: 1rem 0;
 }
 
-.footer-text li{
+.footer-text1 li{
     padding: .6rem 0;
     color: #d0cfd0;
     font-family: 'Roboto', sans-serif;
@@ -646,8 +668,6 @@ footer{
 
 
 
-
-
 @media screen and (max-width: 400px) {
     
     .navbar{
@@ -657,6 +677,10 @@ footer{
     .navlinks{
         display: none;
     }
+
+    .navlinks ul.show {
+        display: block;
+      }
 
     .navtext{
         font-size: 1.3rem; 
@@ -858,35 +882,37 @@ footer{
 
     /*FOOTER*/
     footer{
+        display: flex;
+        justify-content: center;
         width: unset;
         margin: 3rem auto;
-        /*padding: 1rem 0;*/
     }
 
     .footer-container{
-        display: block;
-        flex-direction: column;
+        display: unset;
         justify-content: unset;
     }
-    
-    .footer-header{
-        font-size: 1.9rem;
-        font-family: 'Ubuntu', sans-serif;
-        text-align: unset;
-        font-weight: 500;
-        margin: 1rem 0;
+
+    .footer-head{
+        font-size: 1.3rem;
     }
-    
+
+    .flex2{
+        display: inline-block;
+        margin: 0 1.4rem;
+    }
+
     .footer-text input{
-        padding: 0 .8rem;
-        display: block;
-        width: 18rem;
+        width: 100%;
     }
-    
-    .footer-text p{
-        padding: .6rem 0;
-        font-size: 1rem;
-        width: 15rem;
+
+    .new{
+        padding-top: 1.5rem;
+    }
+
+    .footer-text{
+        width: 90%;
+        margin: 0 auto;
     }
 
    
@@ -1105,31 +1131,40 @@ footer{
     
 
     /*FOOTER*/
-    .footer-container{
+    footer{
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        width: unset;
+        margin: 3rem auto;
+    }
+
+    .footer-container{
+        display: unset;
         justify-content: unset;
     }
-    
-    .footer-header{
-        font-size: 1.9rem;
-        font-family: 'Ubuntu', sans-serif;
-        text-align: unset;
-        font-weight: 500;
-        margin: 1rem 0;
+
+    .footer-head{
+        font-size: 1.3rem;
     }
-    
+
+    .flex2{
+        display: inline-block;
+        margin: 0 1.4rem;
+    }
+
     .footer-text input{
-        padding: 0 .8rem;
-        display: block;
-        width: 18rem;
+        width: 100%;
     }
-    
-    .footer-text p{
-        padding: .6rem 0;
-        font-size: 1rem;
-        width: 15rem;
-    } 
+
+    .new{
+        padding-top: 1.5rem;
+    }
+
+    .footer-text{
+        width: 90%;
+        margin: 0 auto;
+    }
+
     
 }
    
@@ -1148,6 +1183,11 @@ footer{
     .navlinks{
         display: none;
     }
+
+    
+    .navlinks ul.show {
+        display: block;
+      }
 
     .navtext{
         font-size: 1.3rem; 
