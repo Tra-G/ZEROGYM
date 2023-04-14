@@ -1,0 +1,1383 @@
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+FONT
+font-family: 'Roboto', sans-serif;
+font-family: 'Sono', sans-serif;    - for button
+font-family: 'Ubuntu', sans-serif;
+
+
+COLOR
+color:#d0cfd0
+color: #DEEF0B;   - primary color
+color: #fff;  - white
+background-color: #1D1D1D; -  background color
+body{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+*/
+
+body{
+    background-color: #1D1D1D;
+    color: #fff;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    background-color: #191919;
+    box-shadow: 0 0 5px #232323;
+    color: #fff;
+    height: 5.5rem;
+    padding: 1.6rem 0;
+    z-index: 1;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navtext{
+    font-size: 1.5rem;
+}
+
+.navtext span{
+    color: #DEEF0B;
+}
+
+.nav-title a{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+li{
+    list-style: none;
+}
+
+.hamburger{
+    display: none;
+}
+
+.hamburger span{
+    display: block;
+    background-color: #fff;
+    width: 25px;
+    height: 2px;
+    margin: 4px;
+} 
+
+.account{
+    display: flex;
+    align-items: center;
+}
+
+.account a{
+    padding: .4rem 1.4rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.login:hover{
+    background-color: #DEEF0B;
+    color: #000;
+}
+
+.login:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.sign:hover{
+    color: #DEEF0B;
+}
+
+.sign:hover{
+    transition-duration: 0.3s;
+}
+
+.login{
+    border: 1px solid #DEEF0B;
+}
+.navlinks ul{
+    display: flex;
+    align-items: center;
+}
+
+.navlinks a{
+    padding: 0 .8rem;
+    font-size: 1.1rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.navlinks a:hover{
+    color: #DEEF0B;
+}
+
+.navlinks a{
+    transition-duration: 0.3s;
+}
+/*BACKGROUND IMAGE*/
+.sms{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    height: 89vh;
+    /*border: 2px solid red;*/
+}
+
+swiper-slide {
+    display: flex;
+    width: 100%;
+}  
+
+swiper-slide img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.slide1{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/img28.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide2{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/img10.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide3{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/img11.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-details{
+    width: 35rem;
+    margin-left: 6rem;
+    margin-top: 15rem;
+}
+
+.card-details{
+    transition-duration: 0.3s;
+}
+
+.cardtext{
+    font-size: 2.7rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-bottom: 2.7rem;
+}
+
+.navigation{
+    color: #fff;
+}
+
+.cardbutton{
+    border: none;
+    outline: none;
+    background-color: #DEEF0B;
+    padding: .7rem 1.5rem;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+    border-radius: 2rem;
+}
+
+.cardbutton a{
+    color: #000; 
+}
+
+.cardbutton:hover{
+    background-color: #9ca704;
+}
+
+.cardbutton:hover{
+    transition-duration: 0.3s;
+}
+
+/*Section 2*/
+.sect2{
+    width: 87rem;
+    margin: 5rem auto;
+}
+
+.sect2-head{
+    text-align: center;
+    margin-bottom: 2.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container2{
+    width: 37rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container2-header{
+    font-size: 3.4rem;
+}
+
+.container2-header span{
+    color: #DEEF0B;
+}
+
+.container2-text{
+    margin: 2.5rem 0;
+    width: 25rem;
+    word-spacing: 3px;
+    font-size: 1.1rem;
+}
+
+.container1 img {
+    width: 80%;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.container2-btn{
+    background-color: #DEEF0B;
+    color: #000;
+    padding: .7rem 1.3rem;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+    border-radius: 2rem;
+}
+
+/*
+.sect2-icon{
+    background-color: #DEEF0B;
+    color: #000;
+    padding: 1rem 2.5rem;
+    border-radius: 5rem;
+    position: absolute;
+    left: 24rem;
+    bottom: -25rem;
+    z-index: 2;
+}*/
+
+
+/*SECTION 3*/
+.sect3{
+    background-color: #171717;
+    margin: 5rem 0;
+    padding-bottom: 4rem;
+}
+
+.sect3-container{
+    width: 87rem;
+    margin: 2rem auto;
+}
+
+.sect3-header h1{
+    text-align: center;
+    margin: 2rem 0;
+    font-family: 'Ubuntu', sans-serif;
+    padding-top: 5rem;
+    font-size: 2.4rem;
+}
+
+.cardbox img{
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cardbox{
+    width: 20rem;
+    background-color: #1D1D1D;
+    margin: .8rem;
+    /*border-radius: 1rem;
+    overflow: hidden;*/
+}
+
+.cardbox img:hover{
+    transform: scale(1.05);
+}
+
+.cardbox img{
+    transition-duration: 0.3s;
+}
+
+.card-text{
+    /*margin: .1rem auto;
+    width: 80%;*/
+    text-align: center;
+}
+
+.cardtext2{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.cardtitle{
+    margin: 1rem 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.cardtitle:hover{
+    color: #DEEF0B;
+}
+
+
+/*SECT 4*/
+.sect4{
+    width: 87rem;
+    margin: 5rem auto;
+    padding: 2rem 0;
+}
+
+.sect4header{
+    text-align: center;
+    margin: 2rem 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.sect4-container{
+    display: flex;
+}
+
+.con{
+    width: 30rem;
+    background-color: #171717;
+    margin: 1rem;
+    padding: 2rem 0;
+    box-shadow: 0, 0, 5rem;
+}
+
+.con-head{
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.6rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.con-price{
+    background-color: #1D1D1D;
+    max-width: 15rem;
+    padding: 2rem 0;
+    margin: 0 auto;
+    box-shadow: 0, 0, 3rem;
+    text-align: center;
+    border-radius: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.price1{
+    font-size: 2rem;
+    color: #DEEF0B;
+}
+
+.price2{
+    color: #d0cfd0;
+}
+
+.benefits{
+    max-width: 15rem;
+    margin: 2rem auto;
+}
+
+.benefits li{
+    padding: .4rem .8rem;
+    color: #d0cfd0;
+}
+
+.benefits-icon{
+    display: flex;
+    align-items: center;
+}
+
+.benefits-btn{
+    text-align: center;
+}
+
+.benefits-btn span a{
+    border: 2px solid #DEEF0B;
+    padding: .6rem 2rem;
+    border-radius: 1.5rem;
+    margin: 2rem 0;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+}
+
+.benefits-btn span:hover a{
+    background-color: #DEEF0B;
+    color: #000;
+}
+
+.benefits-btn span:hover a{
+    transition-duration: 0.4s;
+}
+
+.Platinum{
+    margin: 1.2rem 0;
+}
+
+
+
+/*SECT 5*/
+.sect5{
+    width: 87rem;
+    margin: 2rem auto;
+    padding: 1rem 0;
+}
+
+.sect5-container{ 
+    margin: 3rem 0;
+}
+
+.sect5-header{
+    margin: 3.5rem 0;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.sect5-header span{
+    color: #DEEF0B;
+}
+
+.sect5-cont{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sect5-image img{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+
+.sect5-image img:hover{
+    transform: scale(1.05);
+}
+
+.sect5-image img:hover{
+    transition-duration: 0.3s;
+}
+
+.sect5-image{
+    width: 20rem;
+    /*height: 10rem;*/
+    margin: .5rem .7rem;
+}
+
+.coach{
+    display: block;
+    text-align: center;
+    margin: .5rem 0;
+}
+
+.coachname{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.coachwork{
+    font-family: 'Roboto', sans-serif;
+    font-size: .9rem;
+    color: #d0cfd0;
+}
+
+
+/*SECT 6*/
+
+.sect6-container{
+    padding-top: 1rem;
+    background: #DEEF0B;
+}
+
+.sect6-story{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.sect6-text1{
+    font-size: 5.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: #171717;
+    width: 40rem;
+    margin-bottom: 2.5rem;
+}
+
+.sect6-text2 a{
+    margin: 1rem 0;
+    border: 2px solid #171717;
+    color: #000;
+    font-family: 'Sono', sans-serif;
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 4rem;
+    font-size: 1.1rem;
+}
+
+.sect6-text2 a:hover{
+    background-color: #171717;
+    color: #fff;
+}
+
+.sect6-text2 a:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.sect6image img{
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.line{
+    width: 100%;
+    background-color: #171717;
+    height: 2rem;
+    box-shadow: 0, 0, 5rem;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+
+/*FOOTER*/
+footer{
+    width: 87rem;
+    margin: 3rem auto;
+    /*padding: 1rem 0;*/
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-header{
+    font-size: 1.9rem;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.footer-text li{
+    padding: .6rem 0;
+    color: #d0cfd0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-text p{
+    padding: .6rem 0;
+    color: #d0cfd0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    width: 23rem;
+}
+
+.footer-text input{
+    margin: 1rem 0;
+    padding: 0 .8rem;
+    display: block;
+    width: 23rem;
+    height: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+}
+
+.footer-text button{
+    padding: .8rem 2rem;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+    background-color: #DEEF0B;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 400px) {
+    
+    .navbar{
+        justify-content: space-between;
+        margin: 0 1rem;
+    }
+    .navlinks{
+        display: none;
+    }
+
+    .navtext{
+        font-size: 1.3rem; 
+    }
+
+    .account{
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger span{
+        display: block;
+    }
+
+    /*BACKGROUND IMAGE*/
+    .sms{
+        height: 70vh;
+    }
+
+    .card-details{
+        width: unset;
+        margin-left: 3rem;
+        margin-top: 16rem;
+    }
+
+    .cardtext{
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        margin-bottom: 1.7rem;
+    }
+
+    .cardbutton{
+        padding: .6rem .8rem;
+    }
+
+
+    /*SECT 2*/
+
+    .sect2{
+        width: 90%;
+        margin: auto;
+    }
+    
+    .sect2-head{
+        text-align: center;
+        margin: 2rem 0;
+        font-size: 1.8rem;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container2{
+        width: unset;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .container2-header{
+        width: unset;
+        margin: 1rem 0 auto;
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    .container2-text{
+        margin: 1.5rem 0;
+        width: unset;
+        text-align: center;
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .container1 img {
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+    }
+
+    .container2-btn{
+       width: 7rem;
+        margin: 0 auto;
+        padding: .5rem .8rem;
+        border-radius: 2rem;
+        text-align: center;
+    }
+    
+
+    /*SECT 3*/
+    .sect3{
+        margin: 3rem 0;
+        padding-bottom: 1rem;
+    }
+
+    .sect3-container{
+        width: unset;
+        margin: unset;
+    }
+    
+    .sect3-header h1{
+        text-align: center;
+        margin: 2.5rem 0;
+        padding-top: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .cardtitle{
+        text-align: center;
+    }
+    
+
+    /*SECT 4*/
+    .sect4{
+        width: unset;
+        margin: 3rem 0;
+        padding: 2rem 0;
+    }
+
+    .sect4-container{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sect4header{
+        text-align: center;
+        margin: 2rem 0;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 2.4rem;
+        font-weight: 500;
+    }
+    
+    .con{
+        width: unset;
+        background-color: #171717;
+        margin: 1rem;
+        padding: 2rem 0;
+    }
+
+
+    /*SECT 5*/
+    .sect5{
+        width: unset;
+        margin: 1rem 0;
+        padding: .5rem 0;
+    }
+    
+    .sect5-container{ 
+        margin: 1rem 0;
+    }
+
+
+    /*SECT 6*/
+    .sect6-story{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sect6image{
+        margin-top: 3rem;
+    }
+
+    .sect6image img{
+        width: 23rem;
+    }
+
+    .sect6-text{
+        text-align: center;
+    }
+
+    .sect6-text1{
+        font-size: 2.5rem;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 500;
+        color: #171717;
+        width: 20rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .sect6-text2 a{
+        margin-top: 1rem;
+        border: 2px solid #171717;
+        color: #000;
+        padding: .7rem;
+        border-radius: 4rem;
+        font-size: 1rem;
+    }
+
+    
+
+    /*FOOTER*/
+    footer{
+        width: unset;
+        margin: 3rem auto;
+        /*padding: 1rem 0;*/
+    }
+
+    .footer-container{
+        display: block;
+        flex-direction: column;
+        justify-content: unset;
+    }
+    
+    .footer-header{
+        font-size: 1.9rem;
+        font-family: 'Ubuntu', sans-serif;
+        text-align: unset;
+        font-weight: 500;
+        margin: 1rem 0;
+    }
+    
+    .footer-text input{
+        padding: 0 .8rem;
+        display: block;
+        width: 18rem;
+    }
+    
+    .footer-text p{
+        padding: .6rem 0;
+        font-size: 1rem;
+        width: 15rem;
+    }
+
+   
+    
+}
+    
+
+
+
+
+@media screen and (max-width: 500px) {
+    
+    .navbar{
+        justify-content: space-between;
+        margin: 0 1rem;
+    }
+    .navlinks{
+        display: none;
+    }
+
+    .navtext{
+        font-size: 1.3rem; 
+    }
+
+    .account{
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger span{
+        display: block;
+    }
+
+    /*BACKGROUND IMAGE*/
+    .sms{
+        height: 70vh;
+    }
+
+    .card-details{
+        width: unset;
+        margin-left: 3rem;
+        margin-top: 16rem;
+    }
+
+    .cardtext{
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        margin-bottom: 1.7rem;
+    }
+
+    .cardbutton{
+        padding: .6rem .8rem;
+    }
+
+
+    /*SECT 2*/
+    .sect2{
+        width: 90%;
+        margin: auto;
+    }
+    
+    .sect2-head{
+        text-align: center;
+        margin: 2rem 0;
+        font-size: 1.8rem;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container2{
+        width: unset;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .container2-header{
+        width: unset;
+        margin: 1rem 0 auto;
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    .container2-text{
+        margin: 1.5rem 0;
+        width: unset;
+        text-align: center;
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .container1 img {
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+    }
+
+    .container2-btn{
+       width: 7rem;
+        margin: 0 auto;
+        padding: .5rem .8rem;
+        border-radius: 2rem;
+        text-align: center;
+    }
+    
+
+    /*SECT 3*/
+    .sect3{
+        margin: 3rem 0;
+        padding-bottom: 1rem;
+    }
+
+    .sect3-container{
+        width: unset;
+        margin: unset;
+    }
+    
+    .sect3-header h1{
+        text-align: center;
+        margin: 2.5rem 0;
+        padding-top: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .cardtitle{
+        text-align: center;
+    }
+    
+
+    /*SECT 4*/
+    .sect4{
+        width: unset;
+        margin: 3rem 0;
+        padding: 2rem 0;
+    }
+
+    .sect4-container{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sect4header{
+        text-align: center;
+        margin: 2rem 0;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 2.4rem;
+        font-weight: 500;
+    }
+    
+    .con{
+        width: unset;
+        background-color: #171717;
+        margin: 1rem;
+        padding: 2rem 0;
+    }
+
+
+    /*SECT 5*/
+    .sect5{
+        width: unset;
+        margin: 1rem 0;
+        padding: .5rem 0;
+    }
+    
+    .sect5-container{ 
+        margin: 1rem 0;
+    }
+
+
+    /*SECT 6*/
+    .sect6-story{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sect6image{
+        margin-top: 3rem;
+    }
+
+    .sect6image img{
+        width: 23rem;
+    }
+
+    .sect6-text{
+        text-align: center;
+    }
+
+    .sect6-text1{
+        font-size: 2.5rem;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 500;
+        color: #171717;
+        width: 20rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .sect6-text2 a{
+        margin-top: 1rem;
+        border: 2px solid #171717;
+        color: #000;
+        padding: .7rem;
+        border-radius: 4rem;
+        font-size: 1rem;
+    }
+
+    
+
+    /*FOOTER*/
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+    }
+    
+    .footer-header{
+        font-size: 1.9rem;
+        font-family: 'Ubuntu', sans-serif;
+        text-align: unset;
+        font-weight: 500;
+        margin: 1rem 0;
+    }
+    
+    .footer-text input{
+        padding: 0 .8rem;
+        display: block;
+        width: 18rem;
+    }
+    
+    .footer-text p{
+        padding: .6rem 0;
+        font-size: 1rem;
+        width: 15rem;
+    } 
+    
+}
+   
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    
+    .navbar{
+        justify-content: space-between;
+        margin: 0 1rem;
+    }
+    .navlinks{
+        display: none;
+    }
+
+    .navtext{
+        font-size: 1.3rem; 
+    }
+
+    .account{
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger span{
+        display: block;
+    }
+
+    /*BACKGROUND IMAGE*/
+    .sms{
+        height: 70vh;
+    }
+
+    .card-details{
+        width: unset;
+        margin-left: 3rem;
+        margin-top: 16rem;
+    }
+
+    .cardtext{
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        margin-bottom: 1.7rem;
+    }
+
+    .cardbutton{
+        padding: .6rem .8rem;
+    }
+
+
+    /*SECT 2*/
+    .sect2{
+        width: 90%;
+        margin: auto;
+    }
+    
+    .sect2-head{
+        text-align: center;
+        margin: 2rem 0;
+        font-size: 1.8rem;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container2{
+        width: unset;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .container2-header{
+        width: unset;
+        margin: 1rem 0 auto;
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    .container2-text{
+        margin: 1.5rem 0;
+        width: unset;
+        text-align: center;
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .container1 img {
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+    }
+
+    .container2-btn{
+       width: 7rem;
+        margin: 0 auto;
+        padding: .5rem .8rem;
+        border-radius: 2rem;
+        text-align: center;
+    }
+    
+
+    /*SECT 3*/
+    .sect3{
+        margin: 3rem 0;
+        padding-bottom: 1rem;
+    }
+
+    .sect3-container{
+        width: unset;
+        margin: unset;
+    }
+    
+    .sect3-header h1{
+        text-align: center;
+        margin: 2.5rem 0;
+        padding-top: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .cardtitle{
+        text-align: center;
+    }
+    
+
+    /*SECT 4*/
+    .sect4{
+        width: unset;
+        margin: 3rem 0;
+        padding: 2rem 0;
+    }
+
+    .sect4-container{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sect4header{
+        text-align: center;
+        margin: 2rem 0;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 2.4rem;
+        font-weight: 500;
+    }
+    
+    .con{
+        width: unset;
+        background-color: #171717;
+        margin: 1rem;
+        padding: 2rem 0;
+    }
+
+
+    /*SECT 5*/
+    .sect5{
+        width: unset;
+        margin: 1rem 0;
+        padding: .5rem 0;
+    }
+    
+    .sect5-container{ 
+        margin: 1rem 0;
+    }
+
+
+    /*SECT 6*/
+    .sect6-story{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sect6image{
+        margin-top: 3rem;
+    }
+
+    .sect6image img{
+        width: 23rem;
+    }
+
+    .sect6-text{
+        text-align: center;
+    }
+
+    .sect6-text1{
+        font-size: 2.5rem;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 500;
+        color: #171717;
+        width: 20rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .sect6-text2 a{
+        margin-top: 1rem;
+        border: 2px solid #171717;
+        color: #000;
+        padding: .7rem;
+        border-radius: 4rem;
+        font-size: 1rem;
+    }
+
+    
+
+    /*FOOTER*/
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+    }
+    
+    .footer-header{
+        font-size: 1.9rem;
+        font-family: 'Ubuntu', sans-serif;
+        text-align: unset;
+        font-weight: 500;
+        margin: 1rem 0;
+    }
+    
+    .footer-text input{
+        padding: 0 .8rem;
+        display: block;
+        width: 18rem;
+    }
+    
+    .footer-text p{
+        padding: .6rem 0;
+        font-size: 1rem;
+        width: 15rem;
+    } 
+    
+}
+
+
+
+
+
+
+

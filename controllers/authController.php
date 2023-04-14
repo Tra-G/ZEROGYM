@@ -76,7 +76,7 @@ class authController {
             $phone = trim($_POST['phone']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $state = trim($_POST['state']);
+            $state = ucfirst(strtolower(trim($_POST['state'])));
 
             $states = array(
                 "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
