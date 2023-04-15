@@ -1,0 +1,327 @@
+.dashboard-container{
+    background-color: var(--textColor);
+    min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.mobile-menu-open,
+.mobile-close-sidebar{
+    display: none;
+}
+
+.active{
+    background-color: rgba(0, 0, 0, .4);
+    color: var(--secondaryColor);
+}
+
+#sidebar{
+    width: 25%;
+    background-color: var(--primaryColor);
+    color:var(--textColor);
+    padding: 2rem;
+    min-height: 100vh;
+    transition: all .5s linear;
+}
+
+#sidebar > .heading{
+    margin: 1rem 0;
+}
+
+.user-info > .profile-pic{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--textColor);
+    margin: .5rem 0;
+    margin-right: 1.5rem;
+}
+
+.user-info > .profile-pic > img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.user-info > div > .user-name{
+    margin-bottom: .25rem;
+}
+.user-info > div > .plan{
+padding:.1rem .25rem;
+border-radius: 1rem;
+background-color: rgba(218, 165, 32, .2);
+border: 1px solid rgb(218, 165, 32);
+color: goldenrod;
+display: inline-flex;
+}
+
+.membership-status > p > span{
+    color: var(--secondaryColor);
+    font-weight: 800;
+}
+
+.membership-status > small{
+    color: var(--secondaryColor);
+    color: red;
+}
+
+.dashboard-lists{
+    margin: 1.5rem 0;
+}
+
+.dashboard-list{
+    border-bottom: 1px solid var(--textColor);
+    padding-bottom: .25rem;
+    padding-top: 1rem;
+    cursor: pointer;
+    transition: all .25s linear;
+}
+
+.dashboard-list > i{
+    margin-right: 1rem;
+    color: var(--secondaryColor);
+    pointer-events: none;
+}
+
+.dashboard-list > p{
+    pointer-events: none;
+}
+
+.dashboard-list:hover{
+    color: var(--secondaryColor);
+}
+
+#dashboard-display{
+    flex: 1;
+}
+
+.display-heading{
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+}
+
+.dashboard-modal{
+    background-color: white;
+    width: 80%;
+    max-width: 80%;
+    height: 70vh;
+    border-radius: .5rem;
+    box-shadow: 0 0 40px 15px rgba(0, 0, 0, .2);
+}
+
+.dashboard-modal > .welcome{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: #444;
+    flex-direction: column;
+    text-align: center;
+}
+
+.dashboard-modal > .welcome > small{
+    color: #999;
+    font-weight: 500;
+    text-align: center;
+    margin-top: .5rem;
+}
+
+.modal-content{
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-content > #calendar{
+    width: 100%;
+    height: 100%;
+    background-color: #444;
+}
+
+.modal-content > .form {
+    height: 100%;
+}
+
+.form > ul{
+    flex-direction: column;
+}
+
+.choose-plan > .plan-heading{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.choose-plan > li > p{
+    padding: .5rem ;
+    font-weight: 700;
+    margin-top: .5rem;
+}
+
+.gold-plan > p{
+    background-color: rgba(218, 165, 32, .2);
+    border: 1px solid rgb(218, 165, 32);
+    color: rgb(138, 104, 17);
+}
+
+.silver-plan > p{
+    background-color: rgba(192, 192, 192, .2);
+    color: rgb(83, 80, 80);
+    border:1px solid rgb(192, 192, 192);
+}
+
+.platinum-plan > p{
+    background-color: rgba(165, 42, 42, .2);
+    color: rgb(165, 42, 42);
+    border: 1px solid rgb(165, 42, 42); 
+}
+
+.plan-submit_btn{
+    background-color: var(--secondaryColor);
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.change-password,
+.edit-profile{
+    height: 100%;
+    width: 100%;
+}
+
+.change-password > form,
+.edit-profile > form{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.change-password > form > input,
+.edit-profile > form > input{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 300px;
+    margin-bottom: 1rem;
+    padding-bottom: .25rem;
+    outline: none;
+}
+
+.change-password > form > button.btn,
+.edit-profile > form > button.btn{
+    width: 300px;
+    background-color: var(--secondaryColor);
+}
+
+.edit-profile > form > h3{
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid black;
+}
+
+.selected-gym{
+    padding: 1rem;
+  
+}
+
+.selected-gym > #map{
+    border: 2px solid #ccc;
+    flex: 1;
+    height: calc(100% - 80px);
+}
+
+.choose-plan > li > ul,
+.selected-gym > div > ul{
+ 
+border: 1px solid #ccc;
+border-top: none;
+padding: .5rem;
+font-size: .85rem;
+transition: all .5 linear;
+}
+
+.selected-gym > div > ul{
+    border: none;
+    height: 80px;
+}
+
+
+.choose-plan > li > ul > li,
+.selected-gym > div > ul > li{
+    display: flex;
+}
+
+.choose-plan > li > ul > li > p,
+.selected-gym > div > ul >li > p{
+    color: #444;
+    font-weight: 700;
+}
+.choose-plan > li > ul > li > span,
+.selected-gym > div > ul >li > span{
+    color: #888;
+    font-size: .75rem;
+    margin-left: .5rem;
+}
+
+
+
+/* Media Query */
+@media screen and (max-width: 1200px) {
+    
+    .dashboard-container{
+        display: block;
+        position: relative;
+    }
+
+    #sidebar{
+        position: absolute;
+        z-index: 2;
+        width: 70%;
+        left: -100%;
+        min-height: 100vh;
+    }
+
+    #sidebar > h3.heading{
+        justify-content: space-between;
+    }
+
+    #dashboard-display{
+        width: 100%;
+        min-height: 100vh;
+        padding: 0;
+    }
+
+    .mobile-menu-close{
+        font-size: 1.5rem;
+        display: inline;
+    }
+    
+    .mobile-menu-open{
+        top: 2rem;
+        left: 2rem;
+        display: flex;
+    }
+    
+    .mobile-menu-open > i{
+        margin-right: .5rem;
+    }
+    
+    .dashboard-modal{
+        width: 100%;
+        min-height: 70vh;
+        overflow: scroll;
+    }
+
+    .modal-content,
+    .welcome{
+        padding: 1rem;
+    }
+
+    .planning{
+        padding: 0;
+    }
+
+    .change-password > form > input,
+    .edit-profile > form > input,
+    .change-password > form > button.btn,
+    .edit-profile > form > button.btn
+    {
+        width: 80%;
+    }
+}
