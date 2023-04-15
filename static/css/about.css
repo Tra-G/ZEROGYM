@@ -321,6 +321,7 @@ li{
     width: 100%;
     background-color: #414040;
     height: 1px;
+    padding: 2rem 0;
 }
 
 
@@ -328,7 +329,6 @@ li{
 footer{
     width: 87rem;
     margin: 3rem auto;
-    /*padding: 1rem 0;*/
 }
 
 .footer-container{
