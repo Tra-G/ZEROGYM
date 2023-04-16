@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Sono:wght@400;500&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <!-- DASHBOARD -->
+    <section class="dashboard-container flex">
+        <div class="logo absolute flex align-center">
+            <i class="fa-solid fa-dumbbell"></i><p>zero<span>gym</span></p>
+        </div>
+        <section id="sidebar">
+           
+            <h3 class="heading flex align-center">
+                <p>DASHBOARD</p> 
+                <i class="fa fa-xmark mobile-menu-close"></i>
+            </h3>
+            <div class="user-info flex align-center">
+                    <div class="profile-pic">
+                        <img src="../images/img12.jpg" alt="">
+                    </div>
+                    <div>
+                        <h4 class="user-name">Tester .C Junior</h4>
+                        <small class="plan align-center">Gold</small>
+                    </div>
+            </div>
+            <div class="membership-status">
+                <p>Membership Staus: <span>ACTIVE</span></p>
+                <small>Expires: 2023-11-23</small>
+            </div>
+
+            <ul class="dashboard-lists">
+                <li class="dashboard-list flex align-center" data-modal="planning"> <i class="fa fa-calendar-week"></i> <p>Planning</p></li>
+                <li class="dashboard-list flex align-center" data-modal="change-plan"> <i class="fa fa-pen"></i> <p>Change Plan</p></li>
+                <li class="dashboard-list flex align-center" data-modal="selected-gym"> <i class="fa fa-house"></i> <p>Selected Gym</p></li>
+                <li class="dashboard-list flex align-center" data-modal="edit-profile"> <i class="fa fa-user"></i> <p>Edit Profile</p></li>
+                <li class="dashboard-list flex align-center" data-modal="change-password"> <i class="fa fa-lock"></i> <p>Change Password</p></li>
+            </ul>
+            <button class="btn">Logout</button>
+        </section>
+
+        <!-- DISPLAY MODAL CONTENT -->
+        <section id="dashboard-display" class="relative flex align-center justify-center">
+            <!--Menu For Mobile -->
+            <div class="mobile-menu-open absolute flex align-center">
+                <i class="fa fa-bars"></i> <span>Menu</span>
+            </div>
+            <h3 class="display-heading absolute">
+                NAME
+            </h3>
+            
+            <div class="dashboard-modal flex align-center justify-center">
+                <!-- <h1>WELCOME TO YOUR DASHBOARD
+                </h1>  -->
+                <h1 class="welcome flex align-center justify-center">
+                    <p> 
+                        WELCOME TO YOUR DASHBOARD 
+                    </p>
+                    <small>Kindly click on any of options on the sidebar to perform an operation</small>
+                </h1>
+                <!-- Planning -->
+                <div class="planning modal-content planning">
+                    <div id="calendar"></div>
+                </div>
+                <!-- Change Plans -->
+                <div class="modal-content change-plan">
+                    <form action="#" class="flex align-center justify-center form">
+                        <ul class="choose-plan flex  justify-center">
+                            <h3 class="plan-heading">Kindly Select Your Favourite Plan</h3>
+                            <li class="platinum-plan">
+                                <p>
+
+                                    <input type="radio" id="platinum" name="fav_plan" value="platinum">
+                                    <label for="platinum">Platinum</label>
+                                </p>
+                                    <ul class="change_plan-dropdown">
+                                <li>
+                                    <p>Description:</p> <span>pool, access all facilities...</span>
+                                </li>
+                                <li>
+                                    <p>Price: </p> <span>$129</span>
+                                </li>
+                                <li>
+                                    <p>Duration: </p> <span>30 days</span>
+                                </li>
+                                <li>
+                                    <p>Trainning Programs: </p> <span>20</span>
+                                </li>
+                            </ul>
+                            </li>
+                            <li class="gold-plan">
+                                <p>    
+                                    <input type="radio" id="gold" name="fav_plan" value="Gold">
+                                    <label for="gold">Gold</label>
+                                </p>
+                                      <ul class="change_plan-dropdown">
+                                <li>
+                                    <p>Description:</p> <span>video access, etc...</span>
+                                </li>
+                                <li>
+                                    <p>Price: </p> <span>$69</span>
+                                </li>
+                                <li>
+                                    <p>Duration: </p> <span>30 days</span>
+                                </li>
+                                <li>
+                                    <p>Trainning Programs: </p> <span>10</span>
+                                </li>
+                            </ul>
+                            </li>
+                            <li class="silver-plan">
+                                <p>
+                                    <input type="radio" id="silver" name="fav_plan" value="Silver">
+                                    <label for="silver">Silver</label>
+                                </p>
+                                      <ul class="change_plan-dropdown">
+                                <li>
+                                    <p>Description:</p> <span>Sweat Shirt...</span>
+                                </li>
+                                <li>
+                                    <p>Price: </p> <span>$39</span>
+                                </li>
+                                <li>
+                                    <p>Duration: </p> <span>30 days</span>
+                                </li>
+                                <li>
+                                    <p>Trainning Programs: </p> <span>5</span>
+                                </li>
+                            </ul>
+                            </li>
+
+                            <button class="btn plan-submit_btn">Submit</button>
+                        </ul>
+                    </form>
+
+                </div>
+                <!-- Select Gym -->
+                <div class="modal-content selected-gym flex justify-center">
+                    <div class="selected-gym-btns flex align-center justify-center">
+                        <button class="btn view-btn">View Gym</button>
+                        <button class="btn change-btn">Change Gym</button>
+                    </div>
+                    <div class="view-gym">
+                        <div class="flex justify-center">
+                            <ul class="gym-address">
+                                <li>
+                                    <p>Name:</p> <span>Fitness First</span>
+                                </li>
+                                <li>
+                                    <p>Address: </p> <span>123 Main Street</span>
+                                </li>
+                                <li>
+                                    <p>City: </p> <span>Any Town</span>
+                                </li>
+                                <li>
+                                    <p>State: </p> <span>Lagos</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="map" class="flex align-center justify-center">
+                            MAP GOES HERE
+                        </div>
+                    </div>
+                    <form action="#" class="gym-options" style="display: none;">
+                        <ul class="flex  align-center">
+                            <h3 class="heading">Select An Option</h3>
+                            <li>
+                                <input type="radio" id="Fitness_first" name="gym_option" value="Fitness_first">
+                                <label for="Fitness_first">Fitness First</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="gym_one" name="gym_option" value="gym_one">
+                                <label for="gym_one">GYM One</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="gym_two" name="gym_option" value="gym_two">
+                                <label for="gym_two">GYM Two</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="gym_three" name="gym_option" value="gym_three">
+                                <label for="gym_three">Gym Three</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="gym_four" name="gym_option" value="gym_four">
+                                <label for="gym_four">GYM Four</label>
+                            </li>
+
+                            <button class="btn">Save option</button>
+                        </ul>
+                    </form action="#">
+                </div>
+                <!-- Edit Profile -->
+                <div class="modal-content edit-profile">
+                    <form action="#" class="flex align-center justify-center">
+                        <h3>Update Profile Information</h3>
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <input type="tel" placeholder="Phone">
+                        <input type="text" name=""  placeholder="Address">
+                        <input type="text" name=""  placeholder="City">
+                        <input type="text" name=""  placeholder="State">
+                        <button class="btn">Save New Changes</button>
+                    </form>
+                </div>
+                <!-- Change Password -->
+                <div class="modal-content change-password">
+                    <form action="#" class="flex align-center justify-center">
+                        <input type="password" name=""  placeholder="Old Password">
+                        <input type="password" name=""  placeholder="New Password">
+                        <input type="password" name=""  placeholder="Confirm Password">
+                        <button class="btn">Save New Password</button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script src="../index.js"></script>
+</body>
+</html>
