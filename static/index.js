@@ -4,15 +4,6 @@ const dasbBoardModal = document.querySelector('.dashboard-modal');
 const openSideBar = document.querySelector('.mobile-menu-open');
 const closeSidebar = document.querySelector('.mobile-menu-close');
 const selectGym = document.querySelector('.selected-gym');
-const hamburger = document.querySelector(".hamburger");
-const menu = document.querySelector(".navlinks ul");
-
-// handle menu toggle on mobile screens
-hamburger.addEventListener("click", function() {
-  menu.classList.toggle("show");
-});
-
-
 
 // Open/Show sidebar
 function showSideBar() {
