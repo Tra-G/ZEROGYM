@@ -3,6 +3,8 @@ const sidebarList = document.querySelector('.dashboard-lists');
 const dasbBoardModal = document.querySelector('.dashboard-modal');
 const openSideBar = document.querySelector('.mobile-menu-open');
 const closeSidebar = document.querySelector('.mobile-menu-close');
+const selectGym = document.querySelector('.selected-gym');
+
 
 // Open/Show sidebar
 function showSideBar() {
@@ -29,10 +31,12 @@ openSideBar.addEventListener('click', showSideBar);
 
 
 
+
 // Event Listener to handle side bar
 sidebarList.addEventListener('click', (e) => {
     const displayHeading = document.querySelector('.display-heading');
     const welcomeMsg = document.querySelector('.welcome');
+    let contentHeader = '';
 
     // Hide Welcome Msg
     welcomeMsg.style.display = 'none';
@@ -45,16 +49,42 @@ sidebarList.addEventListener('click', (e) => {
         }
         // set active classs 
         if (list == target) {
-            list.classList.add('active')
+            list.classList.add('active');
+            contentHeader = list.lastChild.innerHTML;
         }
     })
     
     const modalName = target.getAttribute('data-modal');
-    displayHeading.innerHTML = modalName;
+    displayHeading.innerHTML = contentHeader;
     // Show the modal for the clicked item
     displayModal(modalName);
+    handleResetGymBtn();
     closeSideBar();
 });
+
+// Reset Selected Gym Button Options to Original State
+function handleResetGymBtn() {
+    document.querySelector('.selected-gym-btns').style.display = 'flex';
+    document.querySelector('.view-gym').style.display = 'none';
+    document.querySelector('.gym-options').style.display = 'none';
+}
+
+// handle select and change gym
+selectGym.addEventListener('click', (e) => {
+    let target = e.target;
+
+    if (target.classList.contains('view-btn')) {
+        document.querySelector('.selected-gym-btns').style.display = 'none';
+        document.querySelector('.view-gym').style.display = 'block';
+    }
+    else if (target.classList.contains('change-btn')) {
+        document.querySelector('.selected-gym-btns').style.display = 'none';
+        document.querySelector('.gym-options').style.display = 'block';
+    }
+    else {
+        return;
+    }
+})
 
 
 // Function to handle modal_display

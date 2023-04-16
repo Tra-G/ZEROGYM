@@ -14,6 +14,9 @@
 <body>
     <!-- DASHBOARD -->
     <section class="dashboard-container flex">
+        <div class="logo absolute flex align-center">
+            <i class="fa-solid fa-dumbbell"></i><p>zero<span>gym</span></p>
+        </div>
         <section id="sidebar">
            
             <h3 class="heading flex align-center">
@@ -141,8 +144,13 @@
                 </div>
                 <!-- Select Gym -->
                 <div class="modal-content selected-gym flex justify-center">
-                    <div class="flex justify-center">
-                           <ul class="gym-address">
+                    <div class="selected-gym-btns flex align-center justify-center">
+                        <button class="btn view-btn">View Gym</button>
+                        <button class="btn change-btn">Change Gym</button>
+                    </div>
+                    <div class="view-gym">
+                        <div class="flex justify-center">
+                            <ul class="gym-address">
                                 <li>
                                     <p>Name:</p> <span>Fitness First</span>
                                 </li>
@@ -156,10 +164,38 @@
                                     <p>State: </p> <span>Lagos</span>
                                 </li>
                             </ul>
+                        </div>
+                        <div id="map" class="flex align-center justify-center">
+                            MAP GOES HERE
+                        </div>
                     </div>
-                    <div id="map" class="flex align-center justify-center">
-                        MAP GOES HERE
-                    </div>
+                    <form action="#" class="gym-options" style="display: none;">
+                        <ul class="flex  align-center">
+                            <h3 class="heading">Select An Option</h3>
+                            <li>
+                                <input type="radio" id="Fitness_first" name="gym_option" value="Fitness_first">
+                                <label for="Fitness_first">Fitness First</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="gym_one" name="gym_option" value="gym_one">
+                                <label for="gym_one">GYM One</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="gym_two" name="gym_option" value="gym_two">
+                                <label for="gym_two">GYM Two</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="gym_three" name="gym_option" value="gym_three">
+                                <label for="gym_three">Gym Three</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="gym_four" name="gym_option" value="gym_four">
+                                <label for="gym_four">GYM Four</label>
+                            </li>
+
+                            <button class="btn">Save option</button>
+                        </ul>
+                    </form action="#">
                 </div>
                 <!-- Edit Profile -->
                 <div class="modal-content edit-profile">

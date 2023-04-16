@@ -4,9 +4,32 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+.dashboard-container > .logo{
+    right: 2rem;
+    top: 2rem;
+    color: var(--secondaryColor); 
+    background-color: rgba(0, 0, 0, .2);
+    padding: .25rem;
+    font-weight: 700;
+}
+
+.dashboard-container > .logo > i{
+    font-size: 1.5rem;
+    margin-right: .25rem;
+}
+
+.dashboard-container > .logo > p{
+    color: white;
+}
+
+.dashboard-container > .logo > p > span{
+    color: var(--secondaryColor);
+}
+
 .mobile-menu-open,
-.mobile-close-sidebar{
+.mobile-menu-close{
     display: none;
+    cursor: pointer;
 }
 
 .active{
@@ -220,15 +243,75 @@ display: inline-flex;
   
 }
 
-.selected-gym > #map{
+.selected-gym > div > #map{
     border: 2px solid #ccc;
     flex: 1;
-    height: calc(100% - 80px);
+    height: calc(100% - 85px);
+    margin-top: .5rem;
+}
+
+.selected-gym > .selected-gym-btns{
+    border: 2px solid #ccc;
+    height: 100%;
+}
+
+.selected-gym-btns > button{
+    margin: 0 1rem;
+    border: 1px solid var(--secondaryColor);
+}
+
+.selected-gym-btns > button.change-btn{
+    background-color: var(--secondaryColor);
+}
+
+.selected-gym > .view-gym{
+    display: none;
+    height: 100%;
+}
+
+.selected-gym > form.gym-options{
+    height: 100%;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.selected-gym > form > ul{
+    height: 100%;
+}
+
+.selected-gym > form > ul{
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.selected-gym > form > ul > h3.heading{
+    margin: 1rem 0;
+    border-bottom: 2px solid #333;
+}
+
+.selected-gym > form > ul > li {
+    display: flex;
+    min-width: 250px;
+    /* border: 1px solid #ccc; */
+    padding: .5rem;
+    margin-bottom: .5rem;
+    color: #333;
+    font-weight: 700;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .2);
+}
+
+.selected-gym > form > ul > li > input{
+    margin: 0 .5rem;
+}
+
+.selected-gym > form > ul > button {
+    background-color: var(--secondaryColor);
+    min-width: 250px;
+    margin-top: 1rem;
 }
 
 .choose-plan > li > ul,
 .selected-gym > div > ul{
- 
 border: 1px solid #ccc;
 border-top: none;
 padding: .5rem;
@@ -243,17 +326,18 @@ transition: all .5 linear;
 
 
 .choose-plan > li > ul > li,
-.selected-gym > div > ul > li{
+.selected-gym > div > div > ul > li{
     display: flex;
+    align-items: center;
 }
 
 .choose-plan > li > ul > li > p,
-.selected-gym > div > ul >li > p{
+.selected-gym > div > div > ul >li > p{
     color: #444;
     font-weight: 700;
 }
 .choose-plan > li > ul > li > span,
-.selected-gym > div > ul >li > span{
+.selected-gym > div  > div > ul >li > span{
     color: #888;
     font-size: .75rem;
     margin-left: .5rem;
@@ -267,6 +351,11 @@ transition: all .5 linear;
     .dashboard-container{
         display: block;
         position: relative;
+    }
+
+    .dashboard-container > .logo{
+        right: 1rem;
+        top: 1rem;
     }
 
     #sidebar{
@@ -293,8 +382,8 @@ transition: all .5 linear;
     }
     
     .mobile-menu-open{
-        top: 2rem;
-        left: 2rem;
+        top: 1.2rem;
+        left: 1rem;
         display: flex;
     }
     
