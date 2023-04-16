@@ -1,0 +1,187 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1D1D1D;
+    color: #fff;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    background-color: #191919;
+    box-shadow: 0 0 5px #232323;
+    color: #fff;
+    height: 5.5rem;
+    padding: 1.6rem 0;
+    z-index: 1;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navtext{
+    font-size: 1.5rem;
+}
+
+.navtext span{
+    color: #DEEF0B;
+}
+
+.nav-title a{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+li{
+    list-style: none;
+}
+
+.hamburger{
+    display: none;
+}
+
+.hamburger span{
+    display: block;
+    background-color: #fff;
+    width: 25px;
+    height: 2px;
+    margin: 4px;
+} 
+
+.account{
+    display: flex;
+    align-items: center;
+}
+
+.account a{
+    padding: .4rem 1.4rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.login:hover{
+    background-color: #DEEF0B;
+    color: #000;
+}
+
+.login:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.sign:hover{
+    color: #DEEF0B;
+}
+
+.sign:hover{
+    transition-duration: 0.3s;
+}
+
+.login{
+    border: 1px solid #DEEF0B;
+}
+.navlinks ul{
+    display: flex;
+    align-items: center;
+}
+
+.navlinks a{
+    padding: 0 .8rem;
+    font-size: 1.1rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.navlinks a:hover{
+    color: #DEEF0B;
+}
+
+.navlinks a{
+    transition-duration: 0.3s;
+}
+
+
+
+/*SECT 1*/
+.blogpost{
+    margin-top: 5rem;
+}
+
+.blog-header{
+    font-size: 3rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.blog-image{
+    margin: 3rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/img30.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 62vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-flex{
+    display: flex;
+    justify-content: center;
+}
+
+.input-flex input{
+    width: 25rem;
+    height: 3rem;
+    border: 1px solid #d0cfd0;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.input-flex button{
+    width: 4rem;
+    background-color: #DEEF0B;
+    outline: none;
+    border: none;
+}
+/*
+.blog-img img{
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+}
+
+.blog-card{
+    width: 25rem;
+    height: 30rem;
+}
+
+
+/*
+.blog-img{
+    width: 20rem;
+    height: 20rem;
+}
+*/
+
+
