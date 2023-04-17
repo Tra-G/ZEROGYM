@@ -594,6 +594,15 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
-    <script src="../index.js"></script>
+    <script >
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".navlinks ul");
+        
+        // Handle menu toogle on smaller screens
+            hamburger.addEventListener("click", function() {
+            menu.classList.toggle("show");
+        });
+
+    </script>
 </body>
 </html>
