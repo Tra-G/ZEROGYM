@@ -18,8 +18,8 @@ body{
     background-color: #191919;
     box-shadow: 0 0 5px #232323;
     color: #fff;
-    height: 5.5rem;
-    padding: 1.6rem 0;
+    height: 6.4rem;
+    padding: 2rem 0;
     z-index: 1;
 }
 
@@ -30,7 +30,7 @@ body{
 }
 
 .navtext{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .navtext span{
@@ -64,7 +64,7 @@ li{
     width: 25px;
     height: 2px;
     margin: 4px;
-}
+} 
 
 .account{
     display: flex;
@@ -75,6 +75,7 @@ li{
     padding: .4rem 1.4rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
+    font-size: 1.2rem;
 }
 
 .login:hover{
@@ -103,12 +104,31 @@ li{
     align-items: center;
 }
 
+/*
+.navlinks ul{
+    display: block;
+    background-color: #1d1d1d;
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    padding-top: 5rem;
+    padding-left: 2.4rem;
+    font-size: 1.7rem;
+}*/
+
 .navlinks a{
     padding: 0 .8rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
+
+.navlinks ul.show {
+    display: block;
+  }
 
 .navlinks a:hover{
     color: #DEEF0B;
@@ -321,7 +341,6 @@ li{
     width: 100%;
     background-color: #414040;
     height: 1px;
-    padding: 2rem 0;
 }
 
 
@@ -390,6 +409,12 @@ footer{
 
 
 @media screen and (max-width: 400px) {
+    .nav{ 
+        height: 6.2rem;
+        padding: 2.3rem 0;
+
+    }
+
     .navbar{
         justify-content: space-between;
         margin: 0 1rem;

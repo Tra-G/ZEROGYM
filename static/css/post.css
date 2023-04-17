@@ -1,0 +1,152 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1D1D1D;
+    color: #fff;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    background-color: #191919;
+    box-shadow: 0 0 5px #232323;
+    color: #fff;
+    height: 6.4rem;
+    padding: 2rem 0;
+    z-index: 1;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navtext{
+    font-size: 1.8rem;
+}
+
+.navtext span{
+    color: #DEEF0B;
+}
+
+.nav-title a{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+li{
+    list-style: none;
+}
+
+.hamburger{
+    display: block;
+}
+
+.hamburger span{
+    display: block;
+    background-color: #fff;
+    width: 25px;
+    height: 2px;
+    margin: 4px;
+} 
+
+.account{
+    display: none;
+    align-items: center;
+}
+
+.account a{
+    padding: .4rem 1.4rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.login:hover{
+    background-color: #DEEF0B;
+    color: #000;
+}
+
+.login:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.sign:hover{
+    color: #DEEF0B;
+}
+
+.sign:hover{
+    transition-duration: 0.3s;
+}
+
+.login{
+    border: 1px solid #DEEF0B;
+}
+.navlinks ul{
+    display: none;
+    align-items: center;
+}
+
+/*
+.navlinks ul{
+    display: block;
+    background-color: #1d1d1d;
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    padding-top: 5rem;
+    padding-left: 2.4rem;
+    font-size: 1.7rem;
+}*/
+
+.navlinks a{
+    padding: 0 .8rem;
+    font-size: 1.2rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.navlinks ul.show {
+    display: block;
+  }
+
+.navlinks a:hover{
+    color: #DEEF0B;
+}
+
+.navlinks a{
+    transition-duration: 0.3s;
+}
+
+
+@media screen and (max-width: 320px) {
+    body{
+        background-color: RED;
+    }
+    .account{
+        display: flex;
+    }
+
+    .navlinks ul{
+        display: flex;
+    }
+}

@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+ 
 /*
 FONT
 font-family: 'Roboto', sans-serif;
@@ -36,8 +36,8 @@ body{
     background-color: #191919;
     box-shadow: 0 0 5px #232323;
     color: #fff;
-    height: 5.5rem;
-    padding: 1.6rem 0;
+    height: 6.4rem;
+    padding: 2rem 0;
     z-index: 1;
 }
 
@@ -48,7 +48,7 @@ body{
 }
 
 .navtext{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .navtext span{
@@ -93,6 +93,7 @@ li{
     padding: .4rem 1.4rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
+    font-size: 1.2rem;
 }
 
 .login:hover{
@@ -138,7 +139,7 @@ li{
 
 .navlinks a{
     padding: 0 .8rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
@@ -154,13 +155,16 @@ li{
 .navlinks a{
     transition-duration: 0.3s;
 }
+
+
+
+
 /*BACKGROUND IMAGE*/
 .sms{
-    margin-top: 5rem;
+    margin-top: 6rem;
     margin-bottom: 3rem;
     width: 100%;
     height: 89vh;
-    /*border: 2px solid red;*/
 }
 
 swiper-slide {
@@ -669,6 +673,11 @@ footer{
 
 
 @media screen and (max-width: 400px) {
+    .nav{ 
+        height: 6.2rem;
+        padding: 2.3rem 0;
+
+    }
     
     .navbar{
         justify-content: space-between;
@@ -903,7 +912,7 @@ footer{
     }
 
     .footer-text input{
-        width: 100%;
+        width: 80%;
     }
 
     .new{

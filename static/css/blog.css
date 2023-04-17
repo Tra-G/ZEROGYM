@@ -17,8 +17,8 @@ body{
     background-color: #191919;
     box-shadow: 0 0 5px #232323;
     color: #fff;
-    height: 5.5rem;
-    padding: 1.6rem 0;
+    height: 6.4rem;
+    padding: 2rem 0;
     z-index: 1;
 }
 
@@ -29,7 +29,7 @@ body{
 }
 
 .navtext{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .navtext span{
@@ -74,6 +74,7 @@ li{
     padding: .4rem 1.4rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
+    font-size: 1.2rem;
 }
 
 .login:hover{
@@ -102,12 +103,31 @@ li{
     align-items: center;
 }
 
+/*
+.navlinks ul{
+    display: block;
+    background-color: #1d1d1d;
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    padding-top: 5rem;
+    padding-left: 2.4rem;
+    font-size: 1.7rem;
+}*/
+
 .navlinks a{
     padding: 0 .8rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
+
+.navlinks ul.show {
+    display: block;
+  }
 
 .navlinks a:hover{
     color: #DEEF0B;
@@ -211,6 +231,10 @@ li{
     font-size: 1.4rem;
     font-weight: 500;
     margin-bottom: 1rem;
+}
+
+.blog-text2 a:hover{
+    color: #DEEF0B;
 }
 
 .blog-text3{
@@ -598,6 +622,38 @@ footer{
 }
 
 
+@media screen and (max-width: 768px) {
+    footer{
+        width: unset;
+        margin: 3rem auto;
+    }
 
+    .footer-container{
+        display: unset;
+        justify-content: unset;
+    }
+
+    .footer-head{
+        font-size: 1.3rem;
+    }
+
+    .flex2{
+        display: inline-block;
+        margin: 0 1.4rem;
+    }
+
+    .footer-text input{
+        width: 100%;
+    }
+
+    .footer-text P{
+        width: unset;
+    }
+
+    .footer-text{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
 
 
