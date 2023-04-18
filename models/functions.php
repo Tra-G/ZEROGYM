@@ -1,48 +1,88 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+/**
+ * REQUIRED VARIABLES
+ *
+ * environment variables unpacking
+ * error reporting
+ * app root
+ * start session
+ * timezone
+*/
 
-// Define the root URL of the website
-if (!defined('APP_ROOT')) {
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
-    $domain = $_SERVER['HTTP_HOST'];
-    $path = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-    define('APP_ROOT', $protocol . $domain . $path);
+// environment variables unpacking
+$env_file = __DIR__ . '/../.env';
+if (file_exists($env_file)) {
+    $lines = file($env_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        // Skip comment lines
+        if (strpos(trim($line), '#') === 0) {
+            continue;
+        }
+        list($key, $value) = explode('=', $line, 2);
+        putenv("$key=$value");
+        $_ENV[$key] = $value;
+        $_SERVER[$key] = $value;
+    }
 }
 
-// Start Session
+
+// error reporting
+if (getenv('APP_ENV') === 'development') {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+}
+else {
+    error_reporting(0);
+}
+
+
+// app root
+define('APP_ROOT', $_ENV['APP_ROOT']);
+
+
+// start Session
 session_start();
 
-// Include the db.php file
-include('db.php');
 
-// Set the timezone
-date_default_timezone_set("Africa/Lagos");
+// timezone
+date_default_timezone_set($_ENV['TIME_ZONE']);
 
-// Set General Site Currency
-define('CURRENCY', '£');
-define('CURRENCY_NAME', 'GBP');
 
-// Dynamic page title
+/**
+ * REUSEABLE FUNCTIONS
+ *
+ * pageTitle: Outputs the universal page title and current page title
+ * route: To set page header after an action has been completed
+ * redirect: Outputs the correct url to use with href tag
+ * assets: Outputs the url to the correct assets folder
+ * session_check: Checks if a user is logged in
+*/
+
+
+// dynamic page title
 function pageTitle($site_name){
-	return "ZeroGym | ".$site_name;
+	return  $_ENV['SITE_NAME'] . " | ".$site_name;
 }
+
 
 // Routing function
 function route($url) {
     header('Location: ' . APP_ROOT . '/'.$url);
 }
 
+
 // Redirection function
 function redirect($url) {
     return APP_ROOT . '/'.$url;
 }
 
+
 // Assets folder
 function assets($file) {
     return APP_ROOT . '/assets/'.$file;
 }
+
 
 // Session check
 function session_check() {
@@ -52,14 +92,26 @@ function session_check() {
 
 
 /**
- * Implementing CRUD Operations
+ * CRUD OPERATIONS
+ *
  * insertRow: Insert data into table
  * getRowBySelector: Get rows with a selector
  * updateRowBySelector: Update rows with a selector
  * deleteRowBySelector: Delete rows based on selector
- */
+ * getRows: Gets rows and total rows based on optional selector
+ * sumAmounts: Get total sum of a column
+*/
 
-// Create new rows
+
+// Database connection
+try {
+    $conn = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME']);
+}
+catch (Exception $e) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+
 function insertRow($table, $data) {
     global $conn;
     // Construct the SQL query
@@ -102,7 +154,7 @@ function insertRow($table, $data) {
     */
 }
 
-// Read from database with selector
+
 function getRowBySelector($table, $selectorColumn, $selectorValue) {
     global $conn;
     // Prepare the SQL query
@@ -143,7 +195,7 @@ function getRowBySelector($table, $selectorColumn, $selectorValue) {
      */
 }
 
-// Update rows by selector
+
 function updateRowBySelector($table, $data, $selectorColumn, $selectorValue) {
     global $conn;
     // Construct the SQL query
@@ -191,7 +243,7 @@ function updateRowBySelector($table, $data, $selectorColumn, $selectorValue) {
     */
 }
 
-// Delete rows from database
+
 function deleteRowBySelector($table, $selectorColumn, $selectorValue) {
     global $conn;
     // Construct the SQL query
@@ -222,7 +274,6 @@ function deleteRowBySelector($table, $selectorColumn, $selectorValue) {
 }
 
 
-// Return the matched rows
 function getRows($table, $selectorColumn = null, $selectorValue = null, $orderByColumn = null, $orderByDirection = 'ASC') {
     global $conn;
     $sql = "SELECT * FROM $table";
