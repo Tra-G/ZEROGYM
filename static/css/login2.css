@@ -99,7 +99,12 @@ a{
 .textinput{
     display: flex;
     align-items: center;
-    margin: 3rem 0;
+    margin: 3.5rem 0;
+    /* padding: 0.2rem; */
+}
+
+.textinput i{
+    padding-bottom: 0.5rem;
 }
 
 .textinput input{
@@ -124,19 +129,26 @@ a{
 }
 
 .signup-btn{
+    width: 100%;
+    border: none;
     background-color: var(--secondaryColor);
     margin: 1rem 0;
     padding: .8rem 0;
     border-radius: .3rem;
     text-align: center;
-}
-
-.signup-btn a{
+    
     color: #000;
     text-align: center;
     font-family: 'Sono', sans-serif;
     font-weight: 500;
 }
+
+/* .signup-btn a{
+    color: #000;
+    text-align: center;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+} */
 
 
 .log{
@@ -249,9 +261,6 @@ a{
     }
 
     .form-container{
-        border: 2px solid var(--textColor);
-        border: 2px solid #555;
-        border-radius: .25rem;
         width: 100%;
         height: 98vh;
         padding: 14px;
