@@ -3,14 +3,11 @@
 // load the functions
 require_once(__DIR__ . "/../models/functions.php");
 
-// load the payment configuration file
-require_once(__DIR__ . "/../models/payconfig.php");
-
 // Include the Stripe PHP library
 require_once (__DIR__ . "/../models/stripe-php/init.php");
 
 // Set Stripe API key
-\Stripe\Stripe::setApiKey(STRIPE_API_KEY);
+\Stripe\Stripe::setApiKey(getenv('STRIPE_API_KEY'));
 
 class paymentController {
 
@@ -51,7 +48,7 @@ class paymentController {
         return array(
             'title' => $title,
             'plan' => $plan_check,
-            'public_key' => STRIPE_PUBLISHABLE_KEY,
+            'public_key' => getenv('STRIPE_PUBLISHABLE_KEY'),
         );
     }
 
@@ -77,7 +74,7 @@ class paymentController {
             $email = $this->user['email'];
 
             // Set API key
-            \Stripe\Stripe::setApiKey(STRIPE_API_KEY);
+            \Stripe\Stripe::setApiKey(getenv('STRIPE_API_KEY'));
 
             // Add customer to stripe
             try {

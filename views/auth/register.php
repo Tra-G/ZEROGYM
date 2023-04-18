@@ -13,10 +13,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-        <div>
-        <div class="flex-item">
-            <div class="first-half">
-                <div class="container-flex">
+    <div class="container-all">
+        <div class="left-column">
+
+
+            <div class="form-content">
+                <form style="width:inherit" action="" method="post">
+                    <div class="form-container">
                     <div>
                         <div class="titlehead">
                             <div class="nav-title">
@@ -29,19 +32,19 @@
 
                             <div>
                                 <p class="titlehead1">Welcome to zero<span style="color: #DEEF0B;">gym</span></p>
-                                <p class="titlehead2">Let's get you up and running with zerogym</p>
+                                <?php if (!empty($errors)): ?>
+                                        <ul>
+                                            <?php foreach ($errors as $error): ?>
+                                                <li class="titlehead2"><?php echo $error; ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php else: ?>
+                                    <p class="titlehead2">Let's get you up and running with zerogym</p>
+                                    <?php endif; ?>
                             </div>
                         </div>
 
-                        <form action="" method="post" id="register_form">
                             <div class="signup">
-                            <?php if (!empty($errors)): ?>
-                                <ul>
-                                    <?php foreach ($errors as $error): ?>
-                                        <li class="titlehead2"><?php echo $error; ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            <?php endif; ?>
 
                                 <div>
                                     <div class="textinput">
@@ -84,10 +87,10 @@
                                             <span>I agree to the Terms and Conditions</span>
                                         </div>
 
-                                    <div class="signup-btn">
-                                        <a href="#" onclick="document.getElementById('register_form').submit();">
-                                            Sign Up
-                                        </a>
+                                    <div>
+                                        <button class="signup-btn">
+                                            Signup
+                                        </button>
                                     </div>
 
                                     <div class="log">
@@ -95,18 +98,23 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="bottom"></div>
+                        </div>
+                    </div>
+
                         </form>
 
                     </div>
-                </div>
-            </div>
 
-            <div class="second-half">
+                </div>
+                <div class="right-column">
+            <!-- Right column content -->
+            <div>
+
 
             </div>
         </div>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 </body>
