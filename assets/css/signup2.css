@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    color: var(--textColor);
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+.container-all {
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 37vw 1fr; /* Two columns with equal width */
+    /* gap: 20px; Gap between columns */
+  }
+  
+/* .column {
+    border: 1px solid yellow;
+    padding: 20px; Add padding to the columns
+} */
+
+#left-column{
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+  
+.column img {
+    /* border: 1px solid green; */
+    max-width: 100%; 
+    height:100%;
+    object-fit: cover;
+    /* Make sure the image fits within its container */
+}
+
+  
+.nav-title a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+}
+
+
+.titlehead{
+    text-align: center;
+    /* margin: 4.5rem 0; */
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.titlehead1{
+    margin: .6rem 0;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-weight: 600;
+}
+
+.titlehead2{
+    font-size: 1rem;
+    color:#d0cfd0;
+}
+
+.signup{
+    width: 20rem;
+    margin: auto;
+    /* padding-top: 10px; */
+}
+
+.textinput{
+    display: flex;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.textinput i{
+    padding-bottom: 0.5rem;
+}
+
+.textinput input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #b5b1b5;
+    width: 100%;
+    padding: 0 1.6rem;
+    color: #fff;
+}
+
+.fa{
+    position: relative;
+    left: 1rem;
+}
+
+.reminder{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.signup-btn{
+    width: 100%;
+    border: none;
+    background-color: var(--secondaryColor);
+    margin: 1rem 0;
+    padding: .8rem 0;
+    border-radius: .3rem;
+    text-align: center;
+    
+    color: #000;
+    text-align: center;
+    font-family: 'Sono', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* .signup-btn a{
+    color: #000;
+    text-align: center;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+} */
+
+
+.log{
+    text-align: center;
+    color: #d0cfd0;
+}
+
+@media screen and (max-width: 971px) {
+    .container-all {
+        grid-template-columns: 50vw 50vw;
+    }
+
+}
+
+@media screen and (max-width: 971px) {
+    .container-all {
+      grid-template-columns: 1fr;
+    }
+
+    
+    
+    #right-column{
+        display: none;
+    }
+
+    .column img {
+        display: none;
+    }
+}    
+
+
+  
