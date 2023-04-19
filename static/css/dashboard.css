@@ -150,7 +150,6 @@ display: inline-flex;
 }
 
 .modal-content{
-    display: none;
     height: 100%;
     width: 100%;
 }
@@ -253,20 +252,21 @@ display: inline-flex;
 .selected-gym > .selected-gym-btns{
     border: 2px solid #ccc;
     height: 100%;
+    width: 100%;
 }
 
-.selected-gym-btns > button{
+.selected-gym-btns > a > button{
     margin: 0 1rem;
     border: 1px solid var(--secondaryColor);
 }
 
-.selected-gym-btns > button.change-btn{
+.selected-gym-btns > a > button.change-btn{
     background-color: var(--secondaryColor);
 }
 
 .selected-gym > .view-gym{
-    display: none;
     height: 100%;
+    width: 100%;
 }
 
 .selected-gym > form.gym-options{
@@ -308,6 +308,16 @@ display: inline-flex;
     background-color: var(--secondaryColor);
     min-width: 250px;
     margin-top: 1rem;
+}
+
+.selected-gym > form > ul >  a{
+    background-color: red;
+    min-width: 250px;
+    margin-top: 1rem;
+    padding: .45rem 0;
+    border-radius: .25rem;
+    text-align: center;
+    color: white;
 }
 
 .choose-plan > li > ul,
