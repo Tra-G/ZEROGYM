@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Sono:wght@400;500&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <title>Dashboard-planning</title>
+</head>
+<body>
+    <!-- DASHBOARD -->
+    <section class="dashboard-container flex">
+        <div class="logo absolute flex align-center">
+            <i class="fa-solid fa-dumbbell"></i><p>zero<span>gym</span></p>
+        </div>
+        <section id="sidebar">
+           
+            <h3 class="heading flex align-center">
+                <p>DASHBOARD</p> 
+                <i class="fa fa-xmark mobile-menu-close"></i>
+            </h3>
+            <div class="user-info flex align-center">
+                    <div class="profile-pic">
+                        <img src="../images/img12.jpg" alt="">
+                    </div>
+                    <div>
+                        <h4 class="user-name">Tester .C Junior</h4>
+                        <small class="plan align-center">Gold</small>
+                    </div>
+            </div>
+            <div class="membership-status">
+                <p>Membership Staus: <span>ACTIVE</span></p>
+                <small>Expires: 2023-11-23</small>
+            </div>
+
+            <ul class="dashboard-lists">
+                 <a href="./dashboard_planning.html">
+                    <li class="dashboard-list flex align-center" data-modal="planning"> <i class="fa fa-calendar-week"></i> Planning</li>
+                </a>
+                <a href="./dashboard_subscription.html">
+                    <li class="dashboard-list flex align-center" data-modal="change-plan"> <i class="fa fa-pen"></i> <p>Change Plan</p></li>
+                </a>
+                <a href="./dashboard_select-gym.html">    
+                    <li class="dashboard-list flex align-center" data-modal="selected-gym"> <i class="fa fa-house"></i> <p>Selected Gym</p></li>
+                </a>
+                <a href="./dashboard_edit-profile.html">
+                    <li class="dashboard-list flex align-center" data-modal="edit-profile"> <i class="fa fa-user"></i> <p>Edit Profile</p></li>
+                </a>
+                <a href="./dashboard_change-pwd.html">
+                    <li class="dashboard-list flex align-center active" data-modal="change-password"> <i class="fa fa-lock"></i> <p>Change Password</p></li>
+                </a>
+            </ul>
+            <button class="btn">Logout</button>
+        </section>
+
+        <!-- DISPLAY MODAL CONTENT -->
+        <section id="dashboard-display" class="relative flex align-center justify-center">
+            <!--Menu For Mobile -->
+            <div class="mobile-menu-open absolute flex align-center">
+                <i class="fa fa-bars"></i> <span>Menu</span>
+            </div>
+            <h3 class="display-heading absolute">
+                CHANGE PASSWORD
+            </h3>
+            
+            <div class="dashboard-modal flex align-center justify-center">          
+                <!-- Planning -->
+                <!-- Change Password -->
+                <div class="modal-content change-password">
+                    <form action="#" class="flex align-center justify-center">
+                        <input type="password" name=""  placeholder="Old Password">
+                        <input type="password" name=""  placeholder="New Password">
+                        <input type="password" name=""  placeholder="Confirm Password">
+                        <button class="btn">Save New Password</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script src="../index.js"></script>
+</body>
+</html>
