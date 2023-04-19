@@ -1,5 +1,4 @@
 body {
-    max-height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,55 +7,36 @@ body {
     font-family: 'Ubuntu', sans-serif;
     
 }
-
 .container-all {
+    /* border: 1px solid red; */
     display: grid;
-    grid-template-columns: 37vw 63vw;
-    max-height: 100vh;
-    width: 100vw;
-    
-    
+    grid-template-columns: 37vw 1fr; /* Two columns with equal width */
+    /* gap: 20px; Gap between columns */
   }
   
-.left-column, .right-column {
-    display: flex;
-    flex-direction: column;
-    
-    /* padding: 20px; */
-}
-.left-column{
+/* .column {
+    border: 1px solid yellow;
+    padding: 20px; Add padding to the columns
+} */
+
+#left-column{
+    padding: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border:1px solid red; */
-    /* background-color: #1C5436; */
+
+}
+  
+.column img {
+    /* border: 1px solid green; */
+    max-width: 100%; 
+    height:100%;
+    object-fit: cover;
+    /* Make sure the image fits within its container */
 }
 
-
-
-.form-content{
-    /* border:1px solid red; */
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    
-}
-
-.form-container{
-    /* border:1px solid green; */
-    height: 90vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    /* margin: 5rem 0; */
-}
-
+  
 .nav-title a{
     display: flex;
     align-items: center;
@@ -156,138 +136,29 @@ a{
     text-align: center;
     color: #d0cfd0;
 }
-.right-column{
-    background-color: #fff;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/img9.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+
+@media screen and (max-width: 971px) {
+    .container-all {
+        grid-template-columns: 50vw 50vw;
+    }
+
 }
 
-.right-column-content{
-    height: 100%;
-    display: flex;
-    flex-direction:column; 
-    /* width: 460px;  */
-    justify-content: center; 
-    align-items: center
-}
-
-
-
-
-
-/* .right-column-picture{
-    background: rgba(255, 255, 255, 0.1);
-    max-height: 320px;
-    width: inherit;
-    border-radius: 12.8px
-}
-.right-column-heading{
-    max-height: 30px;
-    width: inherit;
-}
-.right-column-heading p{
-    color:black;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 30px;
-    text-align: center
-}
-.right-column-text{
-    max-height: 58px; 
-    width: inherit
-}
-.right-column-text p {
-    color: black; 
-    font-size: 16px;
-    font-weight: 400; 
-    line-height: 24px; 
-    text-align: center; 
-    margin-top:5px
-}
-.right-column-icon{
-    max-height: 30px;
-    width: inherit;
-    margin-top: 5px
-}  */
-
-
-  @media screen and (max-width: 971px) {
+@media screen and (max-width: 971px) {
     .container-all {
       grid-template-columns: 1fr;
     }
 
-    /* .left-column{
-        border: 1px solid red;
-    } */
-
-    .right-column{
+    
+    
+    #right-column{
         display: none;
     }
 
-    
-    .form-content{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50vw;
-        padding-top: 130px;
+    .column img {
+        display: none;
     }
+}    
 
 
-    .form{
-        /* height: 70vh ; */
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .form-container{
-        width: 100%;
-        height: 99vh;
-        
-    }
-
-    
-
-
-    .form-textfield{
-        width: inherit;
-    }
-
-    .btndiv{
-        width: inherit;
-        margin-top:16px ;
-    }
-
-    .bottom{
-        padding-top: 50px;
-    }
-
-   
-  }
-
-  @media screen and (max-width: 831px) {
-    .form-content{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80vw;
-    }
-
-  }
-
-  @media screen and (max-width: 453px) {
-    .form-content{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 98vw;
-    }
-
-  }
+  
