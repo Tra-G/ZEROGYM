@@ -538,11 +538,11 @@ swiper-slide img {
 }
 
 .sect6-story{
-    display: flex;
-    justify-content: space-around;
-    padding: 0 1rem;
-    align-items: center;
-}
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
 
 .sect6-text1{
     font-size: 5.5rem;

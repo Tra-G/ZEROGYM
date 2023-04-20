@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #1D1D1D;
+    color: #fff;
+}
+
 a{
     color: #fff;
     text-decoration: none;
@@ -14,7 +19,8 @@ li{
 }
 
 .nav{
-    background-color: #1D1D1D;
+    background-color: #191919;
+    box-shadow: 0 0 5px #232323;
     position: sticky;
     top: 0;
 }
@@ -103,10 +109,513 @@ li{
 }
 
 
+
+/*BACKGROUND IMAGE*/
+.sms{
+    width: 100%;
+    height: 60vh;
+}
+
+swiper-slide {
+    display: flex;
+    width: 100%;
+}  
+
+swiper-slide img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.slide1{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/img28.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide2{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/img10.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide3{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/img11.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-details{
+    width: 25rem;
+    margin-left: 6rem;
+    margin-top: 15rem;
+    transform: translate(-14px, -32px);
+}
+
+.cardtext{
+    font-size: 1.7rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-bottom: 2.7rem;
+    color: #fff;
+}
+
+.cardbutton{
+    border: none;
+    outline: none;
+    background-color: #DEEF0B;
+    padding: .6rem 1rem;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+    border-radius: 2rem;
+}
+
+.cardbutton a{
+    color: #000; 
+}
+
+.cardbutton:hover{
+    background-color: #9ca704;
+}
+
+.cardbutton:hover{
+    transition-duration: 0.3s;
+
+}
+
+
+/*SECT 2*/
+.sect2{
+    width: 90%;
+    margin: 5rem auto;
+}
+
+.sect2-head{
+    text-align: center;
+    margin-bottom: 2.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.flex-container{
+    display: block;
+}
+
+.container2{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container2-header{
+    font-size: 2.1rem;
+    margin-top: 2rem;
+}
+
+.container2-header span{
+    color: #DEEF0B;
+}
+
+.container2-text{
+    margin: 2rem 0;
+    word-spacing: 3px;
+    font-size: 1.1rem;
+}
+
+.container1 img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.container2-btn{
+    background-color: #DEEF0B;
+    color: #000;
+    padding: .5rem 1.1rem;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+    border-radius: 2rem;
+}
+
+
+/*SECTION 3*/
+.sect3{
+    background-color: #171717;
+    margin: 3rem 0;
+    padding-bottom: 4rem;
+}
+
+.sect3-container{
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.sect3-header h1{
+    text-align: center;
+    margin: 2rem 0;
+    font-family: 'Ubuntu', sans-serif;
+    padding-top: 5rem;
+    font-size: 2.1rem;
+}
+
+.cardbox img{
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cardbox{
+    width: 100%;
+    background-color: #1D1D1D;
+    margin: .8rem;
+}
+
+.cardbox img:hover{
+    transform: scale(1.05);
+}
+
+.cardbox img{
+    transition-duration: 0.3s;
+}
+
+.card-text{
+    text-align: center;
+}
+
+.cardtext2{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.cardtitle{
+    margin: 1rem 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.cardtitle:hover{
+    color: #DEEF0B;
+}
+
+
+
+/*SECT 4*/
+.sect4{
+    width: 95%;
+    margin: 5rem auto;
+    padding: 2rem 0;
+}
+
+.sect4header{
+    text-align: center;
+    margin: 2rem 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+.sect4-container{
+    display: block;
+}
+
+.con{
+    background-color: #171717;
+    margin: 1rem;
+    padding: 2rem 0;
+    box-shadow: 0, 0, 5rem;
+}
+
+.con-head{
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.4rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.con-price{
+    background-color: #1D1D1D;
+    max-width: 13rem;
+    padding: 2rem 0;
+    margin: 0 auto;
+    box-shadow: 0, 0, 3rem;
+    text-align: center;
+    border-radius: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.price1{
+    font-size: 1.7rem;
+    color: #DEEF0B;
+}
+
+.price2{
+    color: #d0cfd0;
+}
+
+.benefits{
+    max-width: 15rem;
+    margin: 2rem auto;
+}
+
+.benefits li{
+    padding: .4rem .8rem;
+    color: #d0cfd0;
+}
+
+.benefits-icon{
+    display: flex;
+    align-items: center;
+}
+
+.benefits-btn{
+    text-align: center;
+}
+
+.benefits-btn span a{
+    border: 2px solid #DEEF0B;
+    padding: .4rem 1.7rem;
+    border-radius: 1.5rem;
+    margin: 2rem 0;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+}
+
+.benefits-btn span:hover a{
+    background-color: #DEEF0B;
+    color: #000;
+}
+
+.benefits-btn span:hover a{
+    transition-duration: 0.4s;
+}
+
+.Platinum{
+    margin: 1.2rem 0;
+}
+
+
+
+
+/*SECT 5*/
+.sect5{
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1rem 0;
+}
+
+.sect5-container{ 
+    margin: 3rem 0;
+}
+
+.sect5-header{
+    margin: 3.5rem 0;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 600;
+}
+
+.sect5-header span{
+    color: #DEEF0B;
+}
+
+.sect5-cont{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sect5-image img{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+
+.sect5-image img:hover{
+    transform: scale(1.05);
+}
+
+.sect5-image img:hover{
+    transition-duration: 0.3s;
+}
+
+.sect5-image{
+    width: 20rem;
+    /*height: 10rem;*/
+    margin: .5rem .7rem;
+}
+
+.coach span{
+    display: block;
+    text-align: center;
+    margin: .5rem 0;
+}
+
+.coachname{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.coachwork{
+    font-family: 'Roboto', sans-serif;
+    font-size: .8rem;
+    color: #d0cfd0;
+}
+
+
+
+/*SECT 6*/
+.sect6-container{
+    padding-top: 1rem;
+    background: #DEEF0B;
+}
+
+.sect6-story{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.sect6-text{
+    width: 90%;
+}
+
+.sect6-text1{
+    font-size: 2.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: #171717;
+    width: 100%;
+    margin-bottom: 2.5rem;
+}
+
+.sect6-text2 a{
+    margin: 1rem 0;
+    border: 2px solid #171717;
+    color: #000;
+    font-family: 'Sono', sans-serif;
+    font-weight: 600;
+    padding: .8rem 1.2rem;
+    border-radius: 4rem;
+    font-size: 1.1rem;
+}
+
+.sect6-text2 a:hover{
+    background-color: #171717;
+    color: #fff;
+}
+
+.sect6-text2 a:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.sect6image{
+    margin-top: 3rem;
+}
+
+.sect6image img{
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+}
+
+.line{
+    width: 100%;
+    background-color: #171717;
+    height: 2rem;
+    box-shadow: 0, 0, 5rem;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+
+
+
+/*FOOTER*/
+footer{
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-item{
+    padding: 1rem 0;
+}
+
+.footer-header{
+    font-size: 1.3rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    margin-bottom: .7rem;
+}
+
+.footer-text1 ul{
+    font-family: 'Ubuntu', sans-serif;
+    color: #d0cfd0;
+}
+
+.footer-text1 li{
+    margin-bottom: .8rem;
+}
+
+.footer-text1 li:hover{
+    color: #DEEF0B;
+    cursor: pointer;
+}
+
+.footer-text p{
+    font-family: 'Ubuntu', sans-serif;
+    color: #d0cfd0;
+}
+
+.footer-item input{
+    margin: 1rem 0;
+    width: 100%;
+    height: 3rem;
+    padding: 0 .6rem;
+    outline: none;
+    border: 1px solid #d0cfd0;
+    background-color: transparent;
+}
+
+.footer-btn{
+    width: 50%;
+    padding: .8rem 2rem;
+    border: none;
+    outline: none;
+    background-color: #DEEF0B;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+
+
+
 @media screen and (min-width: 600px) {
     .navbar{
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+        margin: 0 4rem;
     }
 
     .nav-title a{
@@ -149,6 +658,180 @@ li{
         font-family: 'Ubuntu', sans-serif;
         border-bottom: unset;
     }
+
+
+
+    /*BACKGROUND*/
+    .sms{
+        height: 89vh;
+    }
+
+    .card-details{
+        width: 40rem;
+    }
+
+    .cardtext{
+        font-size: 3.5rem;
+    }
+
+    .cardbutton{
+        padding: 1rem 1.8rem;
+    }
+
+
+    /*sect 2*/
+    .sect2{
+        width: 87rem;
+    }
+    
+    .flex-container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container2{
+        width: 37rem;
+    }
+    .container2-header{
+        font-size: 3.4rem;
+        margin-top: unset;
+    }
+
+    .container1 img {
+        width: 80%;
+        height: 30rem;
+    }
+
+    .container2-text{
+        margin: 2.5rem 0;
+        width: 25rem;
+        word-spacing: 3px;
+        font-size: 1.1rem;
+    }
+
+    .container2-btn{
+        padding: .7rem 1.3rem;
+    }
+
+
+
+    /*SECT 3*/
+    .sect3{
+        margin: 5rem 0;
+    }
+
+    .sect3-container{
+        width: 87rem;
+    }
+
+    .sect3-header h1{
+        font-size: 2.4rem;
+    }
+
+    .cardbox{
+        width: 20rem;
+    }
+
+
+
+    /*SECT 4*/
+    .sect4{
+        width: 87rem;
+    }
+
+    .sect4-container{
+        display: flex;
+    }
+
+    .con{
+        width: 30rem;
+    }
+
+    .sect4header{
+        font-size: 2.4rem;
+    }
+
+    .con-head{
+        font-size: 1.6rem;
+    }
+
+    .con-price{
+        max-width: 15rem;
+    }
+
+    .price1{
+        font-size: 2rem;
+    }
+
+    .benefits-btn span a{
+        padding: .6rem 2rem;
+    }
+
+
+    /*SECT 5*/
+    .sect5{
+        width: 87rem;
+    }
+
+    .sect5-header{
+        font-size: 2.4rem;
+    }
+
+    .coachname{
+        font-size: 1.4rem;
+    }
+
+
+
+    /*SECT 6*/
+    .sect6-story{
+        display: flex;
+        flex-direction: unset;
+        justify-content: space-around;
+        padding: 0 1rem;
+        align-items: center;
+    }
+    
+    .sect6-text1{
+        font-size: 5.5rem;
+        width: 40rem;
+    }
+
+    .sect6image{
+        margin-top: unset;
+    }
+
+    .sect6image img{
+        width: unset;
+    }
+
+    .sect6-text2 a{
+        margin: 1rem 0;
+        border: 2px solid #171717;
+        color: #000;
+        font-family: 'Sono', sans-serif;
+        font-weight: 600;
+        padding: 1rem 2rem;
+        border-radius: 4rem;
+        font-size: 1.1rem;
+    }
+
+
+
+
+    /*FOOTER*/
+    .footer-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-item{
+        padding: unset;
+    }
+
+    .footer-btn{
+        width: 30%;
+    }
 }
 
 
@@ -161,73 +844,3 @@ li{
 
 
 
-
-/*
-
-.navbar{
-    display: flex;
-    background-color: #1D1D1D;
-    color: #fff;
-    position: sticky;
-    top: 0;
-  }
-  
-  .navbar div{
-    padding: 15px;
-  }
-  
-  .menu{
-    display: none;
-  }
-  
-  .menu ul{
-    list-style: none;
-    display: none;
-  }
-  
-  .menu li{
-    font-size: 17px;
-    padding: 10px 60px;
-    text-align: center;
-  }
-  
-  .hamburger{
-    display: none;
-  }
-  
-  .hamburger span{
-    display: block;
-    background-color: #fff;
-    width: 30px;
-    height: 3px;
-    margin: 6px;
-  }
-  
-  li:hover{
-    color: aqua;
-  }
-  
-  .menu ul.show {
-    display: block;
-  }
-
-  .tet{
-    display: none;
-    color: #fff;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .tet{
-        display: block;
-    }
-
-    .menu{
-        display: block;
-    }
-
-    .hamburger{
-        display: block;
-    }
-  }
-  */
