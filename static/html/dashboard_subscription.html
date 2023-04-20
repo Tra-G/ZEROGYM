@@ -42,7 +42,7 @@
                     <li class="dashboard-list flex align-center" data-modal="planning"> <i class="fa fa-calendar-week"></i> Planning</li>
                 </a>
                 <a href="./dashboard_subscription.html">
-                    <li class="dashboard-list flex align-center" data-modal="change-plan"> <i class="fa fa-pen"></i> <p>Change Plan</p></li>
+                    <li class="dashboard-list flex align-center active" data-modal="change-plan"> <i class="fa fa-pen"></i> <p>Change Plan</p></li>
                 </a>
                 <a href="./dashboard_select-gym.html">    
                     <li class="dashboard-list flex align-center" data-modal="selected-gym"> <i class="fa fa-house"></i> <p>Selected Gym</p></li>
@@ -64,22 +64,11 @@
                 <i class="fa fa-bars"></i> <span>Menu</span>
             </div>
             <h3 class="display-heading absolute">
-                NAME
+                CHANGE SUBCRIPTION
             </h3>
             
             <div class="dashboard-modal flex align-center justify-center">
-                <!-- <h1>WELCOME TO YOUR DASHBOARD
-                </h1>  -->
-                <h1 class="welcome flex align-center justify-center">
-                    <p> 
-                        WELCOME TO YOUR DASHBOARD 
-                    </p>
-                    <small>Kindly click on any of options on the sidebar to perform an operation</small>
-                </h1>
-                <!-- Planning -->
-                <div class="planning modal-content planning">
-                    <div id="calendar"></div>
-                </div>
+              
                 <!-- Change Plans -->
                 <div class="modal-content change-plan">
                     <form action="#" class="flex align-center justify-center form">
@@ -152,84 +141,7 @@
                     </form>
 
                 </div>
-                <!-- Select Gym -->
-                <div class="modal-content selected-gym flex justify-center">
-                    <div class="selected-gym-btns flex align-center justify-center">
-                        <button class="btn view-btn">View Gym</button>
-                        <button class="btn change-btn">Change Gym</button>
-                    </div>
-                    <div class="view-gym">
-                        <div class="flex justify-center">
-                            <ul class="gym-address">
-                                <li>
-                                    <p>Name:</p> <span>Fitness First</span>
-                                </li>
-                                <li>
-                                    <p>Address: </p> <span>123 Main Street</span>
-                                </li>
-                                <li>
-                                    <p>City: </p> <span>Any Town</span>
-                                </li>
-                                <li>
-                                    <p>State: </p> <span>Lagos</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="map" class="flex align-center justify-center">
-                            MAP GOES HERE
-                        </div>
-                    </div>
-                    <form action="#" class="gym-options" style="display: none;">
-                        <ul class="flex  align-center">
-                            <h3 class="heading">Select An Option</h3>
-                            <li>
-                                <input type="radio" id="Fitness_first" name="gym_option" value="Fitness_first">
-                                <label for="Fitness_first">Fitness First</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="gym_one" name="gym_option" value="gym_one">
-                                <label for="gym_one">GYM One</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="gym_two" name="gym_option" value="gym_two">
-                                <label for="gym_two">GYM Two</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="gym_three" name="gym_option" value="gym_three">
-                                <label for="gym_three">Gym Three</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="gym_four" name="gym_option" value="gym_four">
-                                <label for="gym_four">GYM Four</label>
-                            </li>
-
-                            <button class="btn">Save option</button>
-                        </ul>
-                    </form>
-                </div>
-                <!-- Edit Profile -->
-                <div class="modal-content edit-profile">
-                    <form action="#" class="flex align-center justify-center">
-                        <h3>Update Profile Information</h3>
-                        <input type="text" placeholder="Name">
-                        <input type="email" placeholder="Email">
-                        <input type="tel" placeholder="Phone">
-                        <input type="text" name=""  placeholder="Address">
-                        <input type="text" name=""  placeholder="City">
-                        <input type="text" name=""  placeholder="State">
-                        <button class="btn">Save New Changes</button>
-                    </form>
-                </div>
-                <!-- Change Password -->
-                <div class="modal-content change-password">
-                    <form action="#" class="flex align-center justify-center">
-                        <input type="password" name=""  placeholder="Old Password">
-                        <input type="password" name=""  placeholder="New Password">
-                        <input type="password" name=""  placeholder="Confirm Password">
-                        <button class="btn">Save New Password</button>
-                    </form>
-
-                </div>
+          
             </div>
         </section>
     </section>
