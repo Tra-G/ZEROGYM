@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!--Stylesheet link-->
     <link rel="stylesheet" href="../css/blog.css">
-    <link rel="stylesheet" href="../css/global.css">
-    <title>Blog</title>
+    <title>blog</title>
 </head>
 <body>
     <div class="nav">
@@ -26,6 +25,7 @@
             </div>
 
             <div class="navlinks">
+                <i style="color: #fff;" class="fa fa-times" aria-hidden="true"></i>
                 <ul>
                     <a href="index.html">
                         <li>Home</li>
@@ -46,15 +46,15 @@
                         <li>Join Us</li>
                     </a>
                 </ul>
-            </div>
 
-            <div class="account">
-                <a class="login" href="login.html">
-                    <li>Login</li>
-                </a>
+                <div class="account">
+                    <a class="login" href="login.html">
+                        <li>Login</li>
+                    </a>          
+                </div>
+            </div>
 
             
-            </div>
 
             <div class="hamburger">
                 <span></span>
@@ -62,6 +62,7 @@
                 <span></span>
             </div>
         </div>
+    </div>
     </div>
 
     <div class="blogpost">
@@ -72,7 +73,7 @@
             
         </div>
 
-        <div>
+        <div class="searchbar">
             <div class="input-flex">
                 <input type="search" placeholder="Enter Your Search">
                 <button>Search</button>
@@ -80,7 +81,7 @@
         </div>
     </div>
 
-  
+
     <div class="card-details">
         <div class="blog-container">
             <div class="blog-item1">
@@ -193,12 +194,12 @@
     </div>
 
     <div class="line"></div>
-    
+
 
     <footer>
         <div class="footer-container">
-            <div class="footer-item flex2">
-                <div class="footer-header footer-head">
+            <div class="footer-item">
+                <div class="footer-header">
                     <p>INFORMATION</p>
                 </div>
 
@@ -213,8 +214,8 @@
                 </div>
             </div>
 
-            <div class="footer-item flex2">
-                <div class="footer-header footer-head">
+            <div class="footer-item">
+                <div class="footer-header support">
                     <p>SUPPORT</p>
                 </div>
 
@@ -229,10 +230,8 @@
                 </div>
             </div>
 
-            
-
             <div class="footer-item">
-                <div class="footer-header footer-head new">
+                <div class="footer-header">
                     <p>NEWSLETTER</p>
                 </div>
 
@@ -240,12 +239,28 @@
                     <p>Subscribe to our latest newsletter to get news about special discounts.</p>
                     <input type="search" placeholder="Enter your email">
                     <div class="footerbtn">
-                        <button>Subscribe</button>
+                        <button class="footer-btn">Subscribe</button>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
+
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".navlinks");
+        const closeIcon = document.querySelector('.fa-times');
+
+        hamburger.addEventListener("click", function() {
+            menu.classList.toggle("show");
+        });
+
+        closeIcon.addEventListener('click', () => {
+  menu.classList.remove('show');
+});
+
+    </script>
 </body>
 </html>
