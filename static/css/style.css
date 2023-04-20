@@ -122,7 +122,6 @@ li{
     align-items: center;
 }
 
-
 .navlinks a{
     padding: 0 .8rem;
     font-size: 1.2rem;
@@ -130,9 +129,6 @@ li{
     font-weight: 500;
 }
 
-.navlinks ul.show {
-    display: block;
-  }
 
 .navlinks a:hover{
     color: #DEEF0B;
@@ -1170,21 +1166,15 @@ footer{
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 900px) {
     
     .navbar{
         justify-content: space-between;
         margin: 0 1rem;
     }
     .navlinks{
-        display: none;
+        display: unset;
     }
-
-    
-    .navlinks ul.show {
-        display: block;
-      }
-
     .navtext{
         font-size: 1.3rem; 
     }

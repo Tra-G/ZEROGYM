@@ -1,0 +1,233 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.nav{
+    background-color: #1D1D1D;
+    position: sticky;
+    top: 0;
+}
+
+.nav-title a{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+}
+
+.hamburger{
+    display: block;
+}
+
+.hamburger span{
+    display: block;
+    width: 2rem;
+    height: 2px;
+    background-color: #fff;
+    margin: 4px;
+}
+
+.navlinks{
+    display: none;
+    background-color: #1D1D1D;
+    position: absolute;
+    width: 80%;
+    height: 70vh;
+    top: 0;
+    right: 0;
+}
+
+.navlinks ul, .account{
+    position: relative;
+    left: 2rem;
+    top: 4rem;
+}
+
+.navlinks li{
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    font-family: 'Ubuntu', sans-serif;
+    border-bottom: 1px solid #414040;
+}
+
+.navlinks li:hover{
+    color: #DEEF0B;
+}
+
+.navlinks li:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.account{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1rem;
+}
+
+.account a:hover{
+    color: #DEEF0B;
+}
+
+.account:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.navlinks.show {
+    display: block;
+  }
+
+.fa-times{
+    position: absolute;
+    right: 2rem;
+    top: 1.4rem;
+    font-size: 1.8rem;
+}
+
+
+@media screen and (min-width: 600px) {
+    .navbar{
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-title a{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .navlinks{
+        display: flex;
+        justify-content: space-between;
+        background-color: unset;
+        position: unset;
+        width: unset;
+        height: unset;
+        top:unset;
+        right: unset;
+    }
+
+    .hamburger{
+        display: none;
+    }
+
+    .fa-times{
+        display: none;
+    }
+
+    .navlinks ul{
+        display: flex;
+    }
+
+    .navlinks ul, .account{
+        position: unset;
+        left: unset;
+        top: unset;
+    }
+
+    .navlinks li{
+        padding: 0 1rem;
+        font-size: 1.1rem;
+        font-family: 'Ubuntu', sans-serif;
+        border-bottom: unset;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+.navbar{
+    display: flex;
+    background-color: #1D1D1D;
+    color: #fff;
+    position: sticky;
+    top: 0;
+  }
+  
+  .navbar div{
+    padding: 15px;
+  }
+  
+  .menu{
+    display: none;
+  }
+  
+  .menu ul{
+    list-style: none;
+    display: none;
+  }
+  
+  .menu li{
+    font-size: 17px;
+    padding: 10px 60px;
+    text-align: center;
+  }
+  
+  .hamburger{
+    display: none;
+  }
+  
+  .hamburger span{
+    display: block;
+    background-color: #fff;
+    width: 30px;
+    height: 3px;
+    margin: 6px;
+  }
+  
+  li:hover{
+    color: aqua;
+  }
+  
+  .menu ul.show {
+    display: block;
+  }
+
+  .tet{
+    display: none;
+    color: #fff;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .tet{
+        display: block;
+    }
+
+    .menu{
+        display: block;
+    }
+
+    .hamburger{
+        display: block;
+    }
+  }
+  */
