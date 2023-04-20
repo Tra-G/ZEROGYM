@@ -13,7 +13,7 @@ font-family: 'Ubuntu', sans-serif;
 
 
 COLOR
-color:#d0cfd0
+color: #d0cfd0;
 color: #DEEF0B;   - primary color
 color: #fff;  - white
 background-color: #1D1D1D; -  background color
@@ -122,20 +122,6 @@ li{
     align-items: center;
 }
 
-/*
-.navlinks ul{
-    display: block;
-    background-color: #1d1d1d;
-    color: #000;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80%;
-    height: 100vh;
-    padding-top: 5rem;
-    padding-left: 2.4rem;
-    font-size: 1.7rem;
-}*/
 
 .navlinks a{
     padding: 0 .8rem;
@@ -676,16 +662,17 @@ footer{
     .nav{ 
         height: 6.2rem;
         padding: 2.3rem 0;
-
     }
     
     .navbar{
         justify-content: space-between;
         margin: 0 1rem;
     }
+    
     .navlinks{
-        display: none;
+        display: block;
     }
+
 
     .navlinks ul.show {
         display: block;
@@ -1395,7 +1382,7 @@ footer{
 
     
 
-    /*FOOTER*/
+    /*FOOTER
     .footer-container{
         display: flex;
         flex-direction: column;
@@ -1421,7 +1408,7 @@ footer{
         font-size: 1rem;
         width: 15rem;
     } 
-    
+    */
 }
 
 
