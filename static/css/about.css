@@ -4,37 +4,25 @@
     box-sizing: border-box;
 }
 
-
 body{
-    background-color: var(--primaryColor);
+    background-color: #1D1D1D;
     color: #fff;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
 }
 
 .nav{
-    position: fixed;
-    top: 0;
-    left: 0; 
-    width: 100%;
     background-color: #191919;
     box-shadow: 0 0 5px #232323;
-    color: #fff;
-    height: 6.4rem;
-    padding: 2rem 0;
-    z-index: 1;
-}
-
-.navbar{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.navtext{
-    font-size: 1.8rem;
-}
-
-.navtext span{
-    color: #DEEF0B;
+    position: sticky;
+    top: 0;
 }
 
 .nav-title a{
@@ -42,107 +30,87 @@ body{
     align-items: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
-a{
-    text-decoration: none;
-    color: #fff;
-}
-
-li{
-    list-style: none;
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
 }
 
 .hamburger{
-    display: none;
+    display: block;
 }
 
 .hamburger span{
     display: block;
-    background-color: #fff;
-    width: 25px;
+    width: 2rem;
     height: 2px;
+    background-color: #fff;
     margin: 4px;
-} 
-
-.account{
-    display: flex;
-    align-items: center;
 }
 
-.account a{
-    padding: .4rem 1.4rem;
+.navlinks{
+    display: none;
+    background-color: #1D1D1D;
+    position: absolute;
+    width: 80%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+}
+
+.navlinks ul, .account{
+    position: relative;
+    left: 2rem;
+    top: 4rem;
+}
+
+.navlinks li{
+    padding: 1rem 0;
+    font-size: 1.1rem;
     font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
+    border-bottom: 1px solid #414040;
 }
 
-.login:hover{
-    background-color: #DEEF0B;
-    color: #000;
+.navlinks li:hover{
+    color: #DEEF0B;
 }
 
-.login:hover{
+.navlinks li:hover{
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
 }
 
-.sign:hover{
+.account{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1rem;
+}
+
+.account a:hover{
     color: #DEEF0B;
 }
 
-.sign:hover{
-    transition-duration: 0.3s;
+.account:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
 }
 
-.login{
-    border: 1px solid #DEEF0B;
-}
-.navlinks ul{
-    display: flex;
-    align-items: center;
-}
-
-/*
-.navlinks ul{
-    display: block;
-    background-color: #1d1d1d;
-    color: #000;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80%;
-    height: 100vh;
-    padding-top: 5rem;
-    padding-left: 2.4rem;
-    font-size: 1.7rem;
-}*/
-
-.navlinks a{
-    padding: 0 .8rem;
-    font-size: 1.2rem;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-}
-
-.navlinks ul.show {
+.navlinks.show {
     display: block;
   }
 
-.navlinks a:hover{
-    color: #DEEF0B;
+.fa-times{
+    position: absolute;
+    right: 2rem;
+    top: 1.4rem;
+    font-size: 1.8rem;
 }
-
-.navlinks a{
-    transition-duration: 0.3s;
-}
-
 
 
 /*BACKGROUND*/
 .sms{
-    margin-top: 5rem;
     margin-bottom: 2rem;
     width: 100%;
 }
@@ -177,13 +145,13 @@ li{
 }
 
 .photo-span1{
-    font-size: 3.2rem;
+    font-size: 2.2rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
 .photo-span2{
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     color: #DEEF0B;
@@ -196,7 +164,7 @@ li{
 }
 
 .about1{
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     text-align: center;
@@ -205,40 +173,41 @@ li{
 
 /*SECT 2*/
 .sect2-about{
-    width: 90rem;
+    width: 90%;
     margin: 0 auto;
 }
 
 .sect2-flex{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
 }
 
 .item-image img{
     object-fit: cover;
     height: 100%;
-    width: 100vh;
+    width: 100%;
 }
 
 .item-image{
-    height: 32rem;
+    height: 24rem;
 }
 
 .text-container{
-    width: 34rem;
+    width: 100%;
 }
 
 .sect2text1{
+    margin-top: 1.5rem;
     margin-bottom: 2.3rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
 .sect2text2{
     margin: 2rem 0;
-    font-size: 1rem;
+    font-size: .9rem;
     font-family: 'Roboto', sans-serif;
     white-space: 4px;
     word-spacing: 3px;
@@ -247,7 +216,7 @@ li{
 }
 
 .sect2btn{
-    padding: .7rem 2rem;
+    padding: .5rem 1.3rem;
     font-size: 1rem;
     font-family: 'Sono', sans-serif;
     font-weight: 500;
@@ -265,14 +234,15 @@ li{
 
 .liststyle li{
     margin-left: 1rem;
-    font-size: 1rem;
+    font-size: .9rem;
     font-family: 'Roboto', sans-serif;
 }
 
 
-/*SECT 4 - OUR TRAINERS*/
+
+/*SECT 5 - OUR TRAINERS*/
 .sect5{
-    width: 87rem;
+    width: 90%;
     margin: 2rem auto;
     padding: 1rem 0;
 }
@@ -319,7 +289,7 @@ li{
     margin: .5rem .7rem;
 }
 
-.coach{
+.coach span{
     display: block;
     text-align: center;
     margin: .5rem 0;
@@ -346,202 +316,187 @@ li{
 
 /*FOOTER*/
 footer{
-    width: 87rem;
-    margin: 3rem auto;
+    width: 90%;
+    margin: 2rem auto;
 }
 
 .footer-container{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+.footer-item{
+    padding: 1rem 0;
 }
 
 .footer-header{
-    font-size: 1.9rem;
+    font-size: 1.3rem;
     font-family: 'Ubuntu', sans-serif;
-    text-align: center;
     font-weight: 500;
-    margin: 1rem 0;
+    margin-bottom: .7rem;
+}
+
+.footer-text1 ul{
+    font-family: 'Ubuntu', sans-serif;
+    color: #d0cfd0;
 }
 
 .footer-text1 li{
-    padding: .6rem 0;
-    color: #d0cfd0;
-    font-family: 'Roboto', sans-serif;
+    margin-bottom: .8rem;
+}
+
+.footer-text1 li:hover{
+    color: #DEEF0B;
+    cursor: pointer;
 }
 
 .footer-text p{
-    padding: .6rem 0;
+    font-family: 'Ubuntu', sans-serif;
     color: #d0cfd0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    width: 23rem;
 }
 
-.footer-text input{
+.footer-item input{
     margin: 1rem 0;
-    padding: 0 .8rem;
-    display: block;
-    width: 23rem;
+    width: 100%;
     height: 3rem;
+    padding: 0 .6rem;
     outline: none;
-    border: none;
-    border-radius: 2rem;
+    border: 1px solid #d0cfd0;
+    background-color: transparent;
 }
 
-.footer-text button{
+.footer-btn{
+    width: 50%;
     padding: .8rem 2rem;
-    outline: none;
     border: none;
-    border-radius: 2rem;
+    outline: none;
     background-color: #DEEF0B;
     font-family: 'Sono', sans-serif;
     font-weight: 500;
-    font-size: .9rem;
+    font-size: 1rem;
 }
 
 
 
-
-
-
-
-
-
-
-@media screen and (max-width: 400px) {
-    .nav{ 
-        height: 6.2rem;
-        padding: 2.3rem 0;
-
-    }
-
+@media screen and (min-width: 600px) {
     .navbar{
         justify-content: space-between;
-        margin: 0 1rem;
-    }
-    .navlinks{
-        display: none;
-    }
-
-    .navtext{
-        font-size: 1.3rem; 
+        align-items: center;
+        margin: 0 4rem;
     }
 
     .nav-title a{
-        font-size: unset;
+        font-size: 1.5rem;
+        font-weight: 500;
     }
 
-    .account{
-        display: none;
+    .navlinks{
+        display: flex;
+        justify-content: space-between;
+        background-color: unset;
+        position: unset;
+        width: unset;
+        height: unset;
+        top:unset;
+        right: unset;
     }
 
     .hamburger{
-        display: block;
+        display: none;
     }
 
-    .hamburger span{
-        display: block;
+    .fa-times{
+        display: none;
+    }
+
+    .navlinks ul{
+        display: flex;
+    }
+
+    .navlinks ul, .account{
+        position: unset;
+        left: unset;
+        top: unset;
+    }
+
+    .navlinks li{
+        padding: 0 1rem;
+        font-size: 1.1rem;
+        font-family: 'Ubuntu', sans-serif;
+        border-bottom: unset;
     }
 
 
     /*BACKGROUND*/
-    .photo-text span{
-        font-size: 1.5rem;
+    .photo-span1{
+        font-size: 3.2rem;
+    }
+
+    .photo-span2{
+        font-size: 3rem;
     }
 
     .about1{
-        font-size: 1.8rem;
+        font-size: 3rem;
     }
 
+
+    /*SECT 2*/
     .sect2-about{
-        width: unset;
-        margin: 0 auto;
+        width: 90rem;
     }
 
     .sect2-flex{
-        display: block;
+        justify-content: space-evenly;
+        flex-direction: unset;
     }
 
     .item-image{
-        width: 90%;
-        margin: 0 auto;
-    }
-    
-    .item-image img{
-        object-fit: cover;
-        height: 70vh;
-        width: 100%;
-    }
-    
-    .item-image{
-        height: unset;
+        height: 32rem;
     }
     
     .text-container{
-        width: 90%;
-        margin: 1.5rem auto;
+        width: 34rem;
     }
 
-    /*SECT 2*/
+    .item-image img{
+        width: 100vh;
+    }
 
     .sect2text1{
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
+        margin-top: unset;
+        font-size: 2rem;
     }
+
     .sect2text2{
-        font-size: .8rem;
-        margin: 1.5rem 0;
+        font-size: 1rem;
+    }
+
+    .sect2btn{
+        padding: .7rem 2rem;
     }
 
     .liststyle li{
-        margin-left: 1rem;
-        font-size: .8rem;
-        font-family: 'Roboto', sans-serif;
-    }
-
-    /*SECT 3*/
-    .sect5{
-        width: unset;
-        margin: 1rem auto;
-        padding: 1rem 0;
+        font-size: 1rem;
     }
 
 
-    /*FOOTER*/
-    footer{
-        display: flex;
-        justify-content: center;
-        width: unset;
-        margin: 3rem auto;
-    }
-
-    .footer-container{
-        display: unset;
-        justify-content: unset;
-    }
-
-    .footer-head{
-        font-size: 1.3rem;
-    }
-
-    .flex2{
-        display: inline-block;
-        margin: 0 1.4rem;
-    }
-
-    .footer-text input{
-        width: 100%;
-    }
-
-    .new{
-        padding-top: 1.5rem;
-    }
-
-    .footer-text{
-        width: 90%;
-        margin: 0 auto;
-    }
-
+    /*SECT 5 - OUR TRAINERS*/
+.sect5{
+    width: 87rem;
 }
 
+/*FOOTER*/
+.footer-container{
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+.footer-item{
+    padding: unset;
+}
+
+.footer-btn{
+    width: 30%;
+}
+}
