@@ -21,7 +21,9 @@ li{
 .nav{
     background-color: #191919;
     box-shadow: 0 0 5px #232323;
-    position: sticky;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
     top: 0;
 }
 
@@ -59,6 +61,10 @@ li{
     height: 100vh;
     top: 0;
     right: 0;
+}
+
+.navlinks > i.fa-times{
+    z-index: 10;
 }
 
 .navlinks ul, .account{

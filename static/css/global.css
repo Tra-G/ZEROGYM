@@ -31,6 +31,12 @@ button{
     cursor: pointer;
 }
 
+input:focus{
+    border-width: 2px !important;
+    border-color: var(--secondaryColor) !important;
+    transform: all .5s linear;
+}
+
 
 /* Utility Classes */
 .container{
