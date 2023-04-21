@@ -84,6 +84,7 @@ li{
 }
 
 .account{
+    display: block;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
 }
@@ -93,6 +94,28 @@ li{
 }
 
 .account:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.account1{
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background-color: #DEEF0B;
+    padding: .4rem 1.5rem;
+}
+
+.account1 a{
+    color: #000;
+}
+
+.account1:hover {
+    background-color: #9ca704;
+}
+
+.account1:hover{
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
 }
@@ -386,8 +409,12 @@ footer{
     }
 
     .nav-title a{
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 500;
+    }
+
+    .navbar{
+        padding: 2rem 1.2rem;
     }
 
     .navlinks{
@@ -399,6 +426,9 @@ footer{
         height: unset;
         top:unset;
         right: unset;
+    }
+    .navlinks li{
+        font-size: 1.3rem;
     }
 
     .hamburger{
@@ -426,6 +456,13 @@ footer{
         border-bottom: unset;
     }
 
+    .account1{
+        display: block;
+    }
+
+    .account{
+        display: none;
+    }
 
     /*BACKGROUND*/
     .photo-span1{
