@@ -22,6 +22,7 @@
             </div>
 
             <div class="navlinks">
+                <i style="color: #fff;" class="fa fa-times" aria-hidden="true"></i>
                 <ul>
                     <a href="index.html">
                         <li>Home</li>
@@ -41,25 +42,32 @@
                     <a href="signup.html">
                         <li>Join Us</li>
                     </a>
-                </ul>
-            </div>
 
-            <div class="account">
-                <a class="login" href="login.html">
-                    <li>Login</li>
-                </a>
+                    
+                </ul>
+
+                <div class="account">
+                    <a class="login" href="login.html">
+                        <li>Login</li>
+                    </a>          
+                </div>
+            </div>
 
             
-            </div>
 
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+            <div class="account1">
+                <a class="login" href="login.html">
+                    <li>Login</li>
+                </a>          
+            </div>
         </div>
     </div>
-
+    </div>
 
     <section class="contact-container relative flex align-center justify-center">
         <span class="overlay absolute"></span>
@@ -175,5 +183,23 @@
             </div>
         </div>
     </footer>
+
+
+
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".navlinks");
+        const closeIcon = document.querySelector('.fa-times');
+
+        hamburger.addEventListener("click", function() {
+            menu.classList.toggle("show");
+        });
+
+        closeIcon.addEventListener('click', () => {
+  menu.classList.remove('show');
+});
+
+    </script>
 </body>
 </html>

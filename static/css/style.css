@@ -827,13 +827,17 @@ footer{
         display: flex;
         flex-direction: unset;
         justify-content: space-around;
-        padding: 0 1rem;
+        padding: unset;
         align-items: center;
     }
     
     .sect6-text1{
         font-size: 5.5rem;
         width: 40rem;
+    }
+
+    .sect6-text{
+        width: unset;
     }
 
     .sect6image{

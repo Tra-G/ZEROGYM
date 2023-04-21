@@ -4,31 +4,16 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #1D1D1D;
+    color: #fff;
+}
+
 .nav{
-    position: fixed;
-    top: 0;
-    left: 0; 
-    width: 100%;
     background-color: #191919;
     box-shadow: 0 0 5px #232323;
-    color: #fff;
-    height: 6.3rem;
-    padding: 2rem 1rem;
-    z-index: 1;
-}
-
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navtext{
-    font-size: 1.8rem;
-}
-
-.navtext span{
-    color: #DEEF0B;
+    position: sticky;
+    top: 0;
 }
 
 .nav-title a{
@@ -36,16 +21,13 @@
     align-items: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    font-size: .9rem;
+    font-size: 1.2rem;
 }
 
-a{
-    text-decoration: none;
-    color: #fff;
-}
-
-li{
-    list-style: none;
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
 }
 
 .hamburger{
@@ -54,73 +36,89 @@ li{
 
 .hamburger span{
     display: block;
-    background-color: #fff;
-    width: 25px;
+    width: 2rem;
     height: 2px;
+    background-color: #fff;
     margin: 4px;
-} 
-
-.account{
-    display: none;
-    align-items: center;
-}
-
-.account a{
-    padding: .4rem 1.4rem;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
-}
-
-.login:hover{
-    background-color: #DEEF0B;
-    color: #000;
-}
-
-.login:hover{
-    transition-duration: 0.4s;
-    transition-timing-function: ease-in-out;
-}
-
-.sign:hover{
-    color: #DEEF0B;
-}
-
-.sign:hover{
-    transition-duration: 0.3s;
-}
-
-.login{
-    border: 1px solid #DEEF0B;
 }
 
 .navlinks{
     display: none;
+    background-color: #1D1D1D;
+    position: absolute;
+    width: 80%;
+    height: 100vh;
+    top: 0;
+    right: 0;
 }
 
-.navlinks ul{
-    display: none;
-    align-items: center;
+.navlinks ul, .account{
+    position: relative;
+    left: 2rem;
+    top: 4rem;
 }
 
-
-.navlinks a{
-    padding: 0 .8rem;
-    font-size: 1.2rem;
+.navlinks li{
+    padding: 1rem 0;
+    font-size: 1.1rem;
     font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
+    border-bottom: 1px solid #414040;
 }
 
-.navlinks ul.show {
-    display: block;
-  }
-
-.navlinks a:hover{
+.navlinks li:hover{
     color: #DEEF0B;
 }
 
-.navlinks a{
-    transition-duration: 0.3s;
+.navlinks li:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.account{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1rem;
+}
+
+.account a:hover{
+    color: #DEEF0B;
+}
+
+.account:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.account1{
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background-color: #DEEF0B;
+    padding: .4rem 1.5rem;
+}
+
+.account1 a{
+    color: #000;
+}
+
+.account1:hover {
+    background-color: #9ca704;
+}
+
+.account1:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.navlinks.show {
+    display: block;
+  }
+
+.fa-times{
+    position: absolute;
+    right: 2rem;
+    top: 1.4rem;
+    font-size: 1.8rem;
 }
 
 
@@ -333,6 +331,71 @@ footer{
 
 /* Phone Screen and tablets- Max-width 700px */
 @media  screen and (max-width: 1200px) {
+    .navbar{
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 4rem;
+    }
+
+    .nav-title a{
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    
+    .navbar{
+        padding: 2rem 1.2rem;
+    }
+
+    .navlinks{
+        display: flex;
+        justify-content: space-between;
+        background-color: unset;
+        position: unset;
+        width: unset;
+        height: unset;
+        top:unset;
+        right: unset;
+    }
+
+    .navlinks li{
+        font-size: 1.3rem;
+    }
+    
+
+    .hamburger{
+        display: none;
+    }
+
+    .fa-times{
+        display: none;
+    }
+
+    .navlinks ul{
+        display: flex;
+    }
+
+    .navlinks ul, .account{
+        position: unset;
+        left: unset;
+        top: unset;
+    }
+
+    .navlinks li{
+        padding: 0 1rem;
+        font-size: 1.1rem;
+        font-family: 'Ubuntu', sans-serif;
+        border-bottom: unset;
+    }
+
+    .account{
+        display: none;
+    }
+
+    .account1{
+        display: block;
+        font-size: 1.1rem;
+    }
+
     
     .contact-container {
         align-items: start;
