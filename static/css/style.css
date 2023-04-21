@@ -534,7 +534,7 @@ swiper-slide img {
     font-size: 1.1rem;
 }
 
-.sect6-text2 a:hover{
+.sect6-text2 a:hover{  
     background-color: #171717;
     color: #fff;
 }
@@ -633,7 +633,7 @@ footer{
 
 
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1024px) {
     .navbar{
         justify-content: space-between;
         align-items: center;
@@ -720,7 +720,9 @@ footer{
 
     /*sect 2*/
     .sect2{
-        width: 87rem;
+        width: 90%;
+        margin: 3rem auto;
+        padding: 1rem 0;
     }
     
     .flex-container{
@@ -760,7 +762,8 @@ footer{
     }
 
     .sect3-container{
-        width: 87rem;
+        width: 90%;
+        margin: 0 auto;
     }
 
     .sect3-header h1{
@@ -768,14 +771,17 @@ footer{
     }
 
     .cardbox{
-        width: 20rem;
+        width: 23%;
+        margin: .5rem;
     }
 
-
+    .cardbox img{
+        height: 45vh;
+    }
 
     /*SECT 4*/
     .sect4{
-        width: 87rem;
+        width: 90%;
     }
 
     .sect4-container{
@@ -809,7 +815,7 @@ footer{
 
     /*SECT 5*/
     .sect5{
-        width: 87rem;
+        width: 90%;
     }
 
     .sect5-header{
@@ -818,6 +824,12 @@ footer{
 
     .coachname{
         font-size: 1.4rem;
+    }
+
+    .sect5-image{
+        width: 23%;
+        /*height: 10rem;*/
+        margin: .5rem .5rem;
     }
 
 
@@ -830,14 +842,15 @@ footer{
         padding: unset;
         align-items: center;
     }
-    
+
     .sect6-text1{
         font-size: 5.5rem;
-        width: 40rem;
+        
     }
 
     .sect6-text{
-        width: unset;
+        width: 50%;
+        margin: 0 auto;
     }
 
     .sect6image{
@@ -878,93 +891,5 @@ footer{
 }
 
 
-
-
-/*
-@media screen and (max-width: 768px) {
-    .navbar{
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 4rem;
-    }
-
-    .nav-title a{
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
-
-    .navlinks{
-        display: flex;
-        justify-content: space-between;
-        background-color: unset;
-        position: unset;
-        width: unset;
-        height: unset;
-        top:unset;
-        right: unset;
-    }
-
-    .hamburger{
-        display: none;
-    }
-
-    .fa-times{
-        display: none;
-    }
-
-    .navlinks ul{
-        display: flex;
-    }
-
-    .navlinks ul, .account{
-        position: unset;
-        left: unset;
-        top: unset;
-    }
-
-    .navlinks li{
-        padding: 0 1rem;
-        font-size: 1.1rem;
-        font-family: 'Ubuntu', sans-serif;
-        border-bottom: unset;
-    }
-
-
-    /*sect 2
-    .sect2{
-        width: 87rem;
-    }
-    
-    .flex-container{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .container2{
-        width: 37rem;
-    }
-    .container2-header{
-        font-size: 3.4rem;
-        margin-top: unset;
-    }
-
-    .container1 img {
-        width: 80%;
-        height: 30rem;
-    }
-
-    .container2-text{
-        margin: 2.5rem 0;
-        width: 25rem;
-        word-spacing: 3px;
-        font-size: 1.1rem;
-    }
-
-    .container2-btn{
-        padding: .7rem 1.3rem;
-    }
-
-}
-*/
 
 
