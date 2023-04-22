@@ -139,6 +139,9 @@ li{
 
 
 /*BACKGROUND IMAGE*/
+.containerbox{
+    margin-top: 95px;
+}
 .sms{
     width: 100%;
     height: 60vh;
@@ -762,9 +765,6 @@ footer{
     }
 
 }
-
-
-
 
 
 

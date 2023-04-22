@@ -158,7 +158,7 @@ li{
 /*SEARCH BAR*/
 .searchbar{
     width: 90%;
-    margin: 1rem auto;
+    margin: 3rem auto;
 }
 
 .input-flex input{
@@ -194,6 +194,7 @@ li{
     width: 20rem;
     height: 34rem;
     /*box-shadow: 0 0 1rem #383535;*/
+    margin: 1rem;
 }
 
 .blog-item1{
@@ -313,8 +314,48 @@ footer{
 }
 
 
-/**/
-@media screen and (min-width: 600px) {
+
+
+
+@media screen and (min-width: 750px) {
+    .navlinks{
+        width: 50%;
+    }
+
+
+    /*SECT 2*/
+    .card-details{
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        padding: 2rem 0;
+    }
+
+
+
+    /*FOOTER*/
+    .footer-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-btn{
+        width: 50%;
+        padding: .6rem 1.3rem;
+    }
+
+    .news{
+        width: 35%;
+    }
+
+    .footer-item input{
+        width: 100%;
+    }
+}
+
+
+
+
+@media screen and (min-width: 1024px) {
     .navbar{
         justify-content: space-between;
         align-items: center;
@@ -379,6 +420,14 @@ footer{
         font-size: 1.1rem;
     }
 
+
+   /*SECT 2*/
+.card-details{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
     /*FOOTER*/
     .footer-container{
         flex-direction: row;
@@ -390,6 +439,14 @@ footer{
     }
 
     .footer-btn{
-        width: 30%;
+        width: 50%;
+    }
+
+    .news{
+        width: 35%;
+    }
+
+    .footer-item input{
+        width: 100%;
     }
 }
