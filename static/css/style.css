@@ -759,7 +759,7 @@ footer{
     }
 
     .footer-btn{
-        font-size: .8rem;
+        font-size: .9rem;
         width: 55%;
         padding: .8rem 1.1rem;
     }
@@ -1024,7 +1024,8 @@ footer{
     }
 
     .footer-btn{
-        width: 50%;
+        width: 35%;
+        padding: .8rem 1.4rem;
     }
 
     .news{
