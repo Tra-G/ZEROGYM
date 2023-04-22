@@ -84,7 +84,6 @@ li{
 }
 
 .account{
-    display: block;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
 }
@@ -132,202 +131,116 @@ li{
 }
 
 
-/*BACKGROUND*/
-.sms{
-    margin-bottom: 2rem;
-    width: 100%;
+/*SECT 1*/
+.blog-header{
+    font-size: 3rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
 }
 
-.photo img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-}
-
-.photo{
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/img19.jpg);
+.blog-image{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/img30.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 60vh;
-}
+    height: 62vh;
 
-.photo-details{
     display: flex;
-    flex-direction: column;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
 }
 
-.photo-text{
-    margin-top: 10rem;
-}
-
-.photo-text span{
-    display: block;
-}
-
-.photo-span1{
-    font-size: 2.2rem;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-}
-
-.photo-span2{
-    font-size: 2rem;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-    color: #DEEF0B;
-}
-
-
-/*SECT 1*/
-.about{
-    margin: 2rem 0;
-}
-
-.about1{
-    font-size: 2rem;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-    text-align: center;
-}
-
-
-/*SECT 2*/
-.sect2-about{
-    width: 95%;
-    margin: 0 auto;
-}
-
-.sect2-flex{
+.input-flex{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.item-image img{
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-.item-image{
-    height: 24rem;
-}
-
-.text-container{
-    width: 100%;
-}
-
-.sect2text1{
-    margin-top: 1.5rem;
-    margin-bottom: 2.3rem;
-    font-size: 1.5rem;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-}
-
-.sect2text2{
-    margin: 2rem 0;
-    font-size: .9rem;
-    font-family: 'Roboto', sans-serif;
-    white-space: 4px;
-    word-spacing: 3px;
-    font-weight: 200;
-    color: #d0cfd0;
-}
-
-.sect2btn{
-    padding: .5rem 1.3rem;
-    font-size: 1rem;
-    font-family: 'Sono', sans-serif;
-    font-weight: 500;
-    background-color: #DEEF0B;
-    outline: none;
-    border: none;
-    margin-bottom: 1.5rem;
-}
-
-.liststyle{
-    display: flex;
-    align-items: center;
-    margin: 1.3rem 0;
-}
-
-.liststyle li{
-    margin-left: 1rem;
-    font-size: .9rem;
-    font-family: 'Roboto', sans-serif;
-}
-
-
-
-/*SECT 5 - OUR TRAINERS*/
-.sect5{
-    width: 95%;
-    margin: 2rem auto;
-    padding: 1rem 0;
-}
-
-.sect5-container{ 
-    margin: 3rem 0;
-}
-
-.sect5-header{
-    margin: 3.5rem 0;
-    font-family: 'Ubuntu', sans-serif;
-    text-align: center;
-    font-size: 2.4rem;
-    font-weight: 600;
-}
-
-.sect5-header span{
-    color: #DEEF0B;
-}
-
-.sect5-cont{
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
-.sect5-image img{
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
+/*SEARCH BAR*/
+.searchbar{
+    width: 90%;
+    margin: 3rem auto;
 }
 
-.sect5-image img:hover{
-    transform: scale(1.05);
-}
-
-.sect5-image img:hover{
-    transition-duration: 0.3s;
-}
-
-.sect5-image{
-    width: 20rem;
-    /*height: 10rem;*/
-    margin: .5rem .7rem;
-}
-
-.coach span{
-    display: block;
-    text-align: center;
-    margin: .5rem 0;
-}
-
-.coachname{
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.4rem;
+.input-flex input{
+    width: 25rem;
+    height: 3rem;
+    border: 1px solid #d0cfd0;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 1rem;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
-.coachwork{
-    font-family: 'Roboto', sans-serif;
-    font-size: .9rem;
+.input-flex button{
+    width: 4rem;
+    background-color: #DEEF0B;
+    outline: none;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+/*SECT 2*/
+.blog-img img{
+    width: 100%;
+    display: block;
+    height: 40vh;
+    object-fit: cover;
+}
+
+.blog-card{
+    width: 20rem;
+    height: 34rem;
+    /*box-shadow: 0 0 1rem #383535;*/
+    margin: 1rem;
+}
+
+.blog-item1{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-details{
+    margin: 3rem 0;
+}
+
+.blog-card{
+    margin: 1rem .6rem;
+}
+
+.blog-text1{
+    margin: 1rem 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.blog-text2{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.blog-text2 a:hover{
+    color: #DEEF0B;
+}
+
+.blog-text3{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
     color: #d0cfd0;
+}
+
+.blog-btn{
+    font-family: 'Sono', sans-serif;
+    margin: 1rem 0;
+    background-color: #DEEF0B;
+    width: 8rem;
+    color: #000;
+    text-align: center;
+    padding: .5rem .7rem;
 }
 
 .line{
@@ -335,6 +248,7 @@ li{
     background-color: #414040;
     height: 1px;
 }
+
 
 
 /*FOOTER*/
@@ -402,63 +316,41 @@ footer{
 
 
 
+
 @media screen and (min-width: 750px) {
-.navlinks{
-    width: 50%;
-}
+    .navlinks{
+        width: 50%;
+    }
 
 
-/*SECT 2*/
-.sect2-flex{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.text-container{
-    width: 90%;
-}
-
-.item-image img{
-    width: 90%;
-}
-
-.item-image{
-    height: 55vh;
-}
+    /*SECT 2*/
+    .card-details{
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        padding: 2rem 0;
+    }
 
 
-/*SECT 5*/
-.sect5-image{
-    width: 22%;
-    margin: .5rem .5rem;
-}
 
-/*FOOTER*/
-.footer-container{
-    flex-direction: row;
-    justify-content: space-between;
-}
+    /*FOOTER*/
+    .footer-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-.footer-item{
-    padding: unset;
-}
+    .footer-btn{
+        width: 50%;
+        padding: .6rem 1.3rem;
+        font-size: .9rem;
+    }
 
-.footer-btn{
-    width: 50%;
-    padding: .8rem 1.6rem;
-    font-size: .8rem;
-}
+    .news{
+        width: 35%;
+    }
 
-.news{
-    width: 35%;
-}
-
-.footer-item input{
-    width: 100%;
-}
-
-
+    .footer-item input{
+        width: 100%;
+    }
 }
 
 
@@ -475,7 +367,7 @@ footer{
         font-size: 1.6rem;
         font-weight: 500;
     }
-
+    
     .navbar{
         padding: 2rem 1.2rem;
     }
@@ -490,7 +382,8 @@ footer{
         top:unset;
         right: unset;
     }
-    .navlinks li{
+
+    .navlinks li a{
         font-size: 1.3rem;
     }
 
@@ -519,90 +412,43 @@ footer{
         border-bottom: unset;
     }
 
-    .account1{
-        display: block;
-    }
-
     .account{
         display: none;
     }
 
-    /*BACKGROUND*/
-    .photo-span1{
-        font-size: 3.2rem;
-    }
-
-    .photo-span2{
-        font-size: 3rem;
-    }
-
-    .about1{
-        font-size: 2.7rem;
+    .account1{
+        display: block;
+        font-size: 1.1rem;
     }
 
 
-    /*SECT 2*/
-    .sect2-flex{
-        justify-content: space-evenly;
-        flex-direction: unset;
-    }
-
-    .item-image{
-        height: 35rem;
-    }
-    
-    .text-container{
-        width: 65%;
-    }
-
-    .item-image img{
-        width: 90%;
-    }
-
-    .sect2text1{
-        margin-top: unset;
-        font-size: 2rem;
-    }
-
-    .sect2text2{
-        font-size: 1rem;
-    }
-
-    .sect2btn{
-        padding: .7rem 2rem;
-    }
-
-    .liststyle li{
-        font-size: 1rem;
-    }
-
-
-    /*SECT 5 - OUR TRAINERS*/
-    .sect5-image{
-        width: 23%;
-        margin: .5rem .5rem;
-    }
-
-/*FOOTER*/
-.footer-container{
-    flex-direction: row;
-    justify-content: space-between;
+   /*SECT 2*/
+.card-details{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
 }
 
-.footer-item{
-    padding: unset;
-}
+    /*FOOTER*/
+    .footer-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-.footer-btn{
-    width: 35%;
-    padding: .8rem 1.4rem;
-}
+    .footer-item{
+        padding: unset;
+    }
 
-.news{
-    width: 35%;
-}
+    .footer-btn{
+        width: 35%;
+        padding: .8rem 1.4rem;
+    }
 
-.footer-item input{
-    width: 100%;
-}
+    .news{
+        width: 35%;
+    }
+
+    .footer-item input{
+        width: 100%;
+    }
 }
