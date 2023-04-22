@@ -33,8 +33,21 @@ openSideBar.addEventListener('click', showSideBar);
 
 // Calendar Event (Library -- FullCalendar.io)
 document.addEventListener('DOMContentLoaded', function() {
-var calendarEl = document.getElementById('calendar');
-var calendar = new FullCalendar.Calendar(calendarEl, {
+let calendarEl = document.getElementById('calendar');
+let calendar = new FullCalendar.Calendar(calendarEl, {
+    // selectable: true,
+    // select: function (start, end, jsEvent, view) {
+    //     let title = prompt('Enter Event Title:');
+    //     if (title) {
+    //         let eventData = {
+    //             title: title,
+    //             start: start,
+    //             end: end
+    //         };
+
+    //         calendarEl.fullCalendar('renderEvent', eventData, true);
+    //     }
+    // },
     initialView: 'dayGridMonth',
         events: [
 {

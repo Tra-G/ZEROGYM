@@ -7,120 +7,8 @@
 body{
     background-color: #1D1D1D;
     color: #fff;
+
 }
-
-.nav{
-    background-color: #191919;
-    box-shadow: 0 0 5px #232323;
-    position: sticky;
-    top: 0;
-}
-
-.nav-title a{
-    display: flex;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 1rem;
-}
-
-.hamburger{
-    display: block;
-}
-
-.hamburger span{
-    display: block;
-    width: 2rem;
-    height: 2px;
-    background-color: #fff;
-    margin: 4px;
-}
-
-.navlinks{
-    display: none;
-    background-color: #1D1D1D;
-    position: absolute;
-    width: 80%;
-    height: 100vh;
-    top: 0;
-    right: 0;
-}
-
-.navlinks ul, .account{
-    position: relative;
-    left: 2rem;
-    top: 4rem;
-}
-
-.navlinks li{
-    padding: 1rem 0;
-    font-size: 1.1rem;
-    font-family: 'Ubuntu', sans-serif;
-    border-bottom: 1px solid #414040;
-}
-
-.navlinks li:hover{
-    color: #DEEF0B;
-}
-
-.navlinks li:hover{
-    transition-duration: 0.4s;
-    transition-timing-function: ease-in-out;
-}
-
-.account{
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.1rem;
-}
-
-.account a:hover{
-    color: #DEEF0B;
-}
-
-.account:hover{
-    transition-duration: 0.4s;
-    transition-timing-function: ease-in-out;
-}
-
-.account1{
-    display: none;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    background-color: #DEEF0B;
-    padding: .4rem 1.5rem;
-}
-
-.account1 a{
-    color: #000;
-}
-
-.account1:hover {
-    background-color: #9ca704;
-}
-
-.account1:hover{
-    transition-duration: 0.4s;
-    transition-timing-function: ease-in-out;
-}
-
-.navlinks.show {
-    display: block;
-  }
-
-.fa-times{
-    position: absolute;
-    right: 2rem;
-    top: 1.4rem;
-    font-size: 1.8rem;
-}
-
 
 .contact-container{
     min-height: 100vh;
@@ -331,79 +219,13 @@ footer{
 
 /* Phone Screen and tablets- Max-width 700px */
 @media  screen and (max-width: 1200px) {
-    .navbar{
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 4rem;
-    }
-
-    .nav-title a{
-        font-size: 1.6rem;
-        font-weight: 500;
-    }
-    
-    .navbar{
-        padding: 2rem 1.2rem;
-    }
-
-    .navlinks{
-        display: flex;
-        justify-content: space-between;
-        background-color: unset;
-        position: unset;
-        width: unset;
-        height: unset;
-        top:unset;
-        right: unset;
-    }
-
-    .navlinks li{
-        font-size: 1.3rem;
-    }
-    
-
-    .hamburger{
-        display: none;
-    }
-
-    .fa-times{
-        display: none;
-    }
-
-    .navlinks ul{
-        display: flex;
-    }
-
-    .navlinks ul, .account{
-        position: unset;
-        left: unset;
-        top: unset;
-    }
-
-    .navlinks li{
-        padding: 0 1rem;
-        font-size: 1.1rem;
-        font-family: 'Ubuntu', sans-serif;
-        border-bottom: unset;
-    }
-
-    .account{
-        display: none;
-    }
-
-    .account1{
-        display: block;
-        font-size: 1.1rem;
-    }
-
-    
     .contact-container {
         align-items: start;
     }
 
     .contact-container > div.contact-box{
         flex-direction: column;
-        margin-top: 4rem;
+        margin-top: 7rem;
         width: 90%;
         padding: 1rem;
     }

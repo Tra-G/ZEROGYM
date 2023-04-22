@@ -354,6 +354,103 @@ transition: all .5 linear;
 }
 
 
+.payment-page{
+    min-width: 300px;
+    padding: 1rem;
+    max-width: 320px;
+    background-color: white;
+    border-radius: .25rem;
+    box-shadow: 0 0 25px 2px rgba(0, 0, 0, .2);
+}
+
+.payment-page > ul.payment-info{
+    margin: 1rem 0;
+}
+
+ul.payment-info > li{
+    display: flex;
+    margin-bottom: .5rem;
+}
+
+ul.payment-info > li > span{
+    color: #888;
+    margin-left: .5rem;
+}
+
+.payment-modal{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.payment-page > form {
+    margin: 3rem 0;
+}
+
+.payment-page > form label{
+    font-weight: 700;
+}
+
+.form-control{
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.form-control > li{
+    width: 40%;
+    display: flex;
+}
+
+.form-control > label{
+    margin-bottom: .5rem;
+}
+
+.form-control > i{
+    right: .25rem;
+    bottom: .40rem;
+    font-size: 1.25rem;
+    /* transform: translateY(-50%); */
+}
+
+.form-control > li > input,
+.form-control > input{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaa;
+    padding:0 .25rem;
+    font-size: 1.25rem;
+}
+
+.form-control > li > label{
+    margin-right: .5rem;
+}
+
+form > .form-btns{
+    width: 100%;
+    flex-direction: column;
+    margin: 3rem 0;
+}
+
+form > .form-btns > button{
+    margin-bottom: .25rem;
+    background-color: var(--secondaryColor);
+}
+
+form > .form-btns > button.cancel-payment{
+    margin-bottom: .25rem;
+    background-color: red;
+    color: white;
+}
+
+.card-display{
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+    bottom: 2rem;
+}
+
+
 
 /* Media Query */
 @media screen and (max-width: 1200px) {
@@ -400,6 +497,11 @@ transition: all .5 linear;
     .mobile-menu-open > i{
         margin-right: .5rem;
     }
+
+    .display-heading{
+    top: 70px;
+    font-size: 0.8rem;
+}
     
     .dashboard-modal{
         width: 100%;
