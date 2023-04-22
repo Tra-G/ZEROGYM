@@ -270,7 +270,7 @@ swiper-slide img {
 }
 
 .sect3-container{
-    width: 90%;
+    width: 95%;
     margin: 2rem auto;
 }
 
@@ -429,7 +429,7 @@ swiper-slide img {
 
 /*SECT 5*/
 .sect5{
-    width: 90%;
+    width: 95%;
     margin: 2rem auto;
     padding: 1rem 0;
 }
@@ -570,7 +570,7 @@ swiper-slide img {
 
 /*FOOTER*/
 footer{
-    width: 90%;
+    width: 95%;
     margin: 2rem auto;
 }
 
@@ -631,7 +631,7 @@ footer{
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 750px) {
     .navlinks{
         display: none;
     }
@@ -698,6 +698,63 @@ footer{
         height: 45vh;
         object-fit: cover;
     }
+
+    /*SECT 4*/
+    .con-head{
+        font-size: 1.6rem;
+    }
+
+    .con-price{
+        max-width: 16rem;
+    }
+
+    .price1{
+        font-size: 1.9rem;
+    }
+
+    .benefits{
+        max-width: 18rem;
+    }
+    .benefits-icon li{
+        font-size: 1.1rem;
+    }
+
+    .benefits-btn{
+        padding: .6rem 1.9rem;
+        font-size: 1rem;
+    }
+
+    .benefits-btn span a{
+        padding: .6rem 1.9rem;
+    }
+
+
+    /*SECT 6*/
+    .sect6-story{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0 1rem;
+        align-items: center;
+    }
+
+    /*FOOTER*/
+    .footer-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .news{
+        width: 25%;
+    }
+
+    .footer-btn{
+        font-size: .8rem;
+        width: 55%;
+        padding: .8rem 1.1rem;
+    }
+
 }
 
 
@@ -795,7 +852,7 @@ footer{
 
     /*sect 2*/
     .sect2{
-        width: 90%;
+        width: 95%;
         margin: 3rem auto;
         padding: 1rem 0;
     }
@@ -837,7 +894,7 @@ footer{
     }
 
     .sect3-container{
-        width: 90%;
+        width: 95%;
         margin: 0 auto;
     }
 
@@ -856,7 +913,7 @@ footer{
 
     /*SECT 4*/
     .sect4{
-        width: 90%;
+        width: 95%;
     }
 
     .sect4-container{
@@ -890,7 +947,7 @@ footer{
 
     /*SECT 5*/
     .sect5{
-        width: 90%;
+        width: 95%;
     }
 
     .sect5-header{
@@ -904,7 +961,7 @@ footer{
     .sect5-image{
         width: 23%;
         /*height: 10rem;*/
-        margin: .5rem .5rem;
+        margin: .5rem .4rem;
     }
 
 
@@ -961,7 +1018,15 @@ footer{
     }
 
     .footer-btn{
-        width: 30%;
+        width: 50%;
+    }
+
+    .news{
+        width: 35%;
+    }
+
+    .footer-item input{
+        width: 100%;
     }
 }
 
