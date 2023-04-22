@@ -219,79 +219,13 @@ footer{
 
 /* Phone Screen and tablets- Max-width 700px */
 @media  screen and (max-width: 1200px) {
-    .navbar{
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 4rem;
-    }
-
-    .nav-title a{
-        font-size: 1.6rem;
-        font-weight: 500;
-    }
-    
-    .navbar{
-        padding: 2rem 1.2rem;
-    }
-
-    .navlinks{
-        display: flex;
-        justify-content: space-between;
-        background-color: unset;
-        position: unset;
-        width: unset;
-        height: unset;
-        top:unset;
-        right: unset;
-    }
-
-    .navlinks li{
-        font-size: 1.3rem;
-    }
-    
-
-    .hamburger{
-        display: none;
-    }
-
-    .fa-times{
-        display: none;
-    }
-
-    .navlinks ul{
-        display: flex;
-    }
-
-    .navlinks ul, .account{
-        position: unset;
-        left: unset;
-        top: unset;
-    }
-
-    .navlinks li{
-        padding: 0 1rem;
-        font-size: 1.1rem;
-        font-family: 'Ubuntu', sans-serif;
-        border-bottom: unset;
-    }
-
-    .account{
-        display: none;
-    }
-
-    .account1{
-        display: block;
-        font-size: 1.1rem;
-    }
-
-    
     .contact-container {
         align-items: start;
     }
 
     .contact-container > div.contact-box{
         flex-direction: column;
-        margin-top: 4rem;
+        margin-top: 7rem;
         width: 90%;
         padding: 1rem;
     }
