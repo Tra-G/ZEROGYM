@@ -1,3 +1,15 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1D1D1D;
+    color: #fff;
+
+}
+
 .contact-container{
     min-height: 100vh;
     background-image: url(../images/img11.jpg);
@@ -144,6 +156,65 @@ section.contact-footer > address{
 }
 
 
+
+footer{
+    width: 87rem;
+    margin: 3rem auto;
+    background-color: var(--primaryColor);
+    /*padding: 1rem 0;*/
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-header{
+    font-size: 1.9rem;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.footer-text1 li{
+    padding: .6rem 0;
+    color: #d0cfd0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-text p{
+    padding: .6rem 0;
+    color: #d0cfd0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    width: 23rem;
+}
+
+.footer-text input{
+    margin: 1rem 0;
+    padding: 0 .8rem;
+    display: block;
+    width: 23rem;
+    height: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+}
+
+.footer-text button{
+    padding: .8rem 2rem;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+    background-color: #DEEF0B;
+    font-family: 'Sono', sans-serif;
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+
+
 /* MEDIA QUERY */
 
 /* Phone Screen and tablets- Max-width 700px */
@@ -154,7 +225,7 @@ section.contact-footer > address{
 
     .contact-container > div.contact-box{
         flex-direction: column;
-        margin-top: 4rem;
+        margin-top: 7rem;
         width: 90%;
         padding: 1rem;
     }

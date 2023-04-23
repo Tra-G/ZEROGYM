@@ -13,7 +13,7 @@ class adminController {
 
         // check if user is an admin
         if (!session_check() || $this->admin == null || $this->admin['role'] != 'admin') {
-            route("login");
+            route("logout");
             exit();
         }
     }
@@ -446,33 +446,56 @@ class adminController {
         $title = pageTitle("Add New Post");
         $errors = [];
 
-        // check if form is submitted
+        // Check if form is submitted
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $user_id = $this->admin['id'];
             $post_title = trim($_POST['title']);
             $post_content = $_POST['content'];
 
             // Validate input
-            $errors = array();
             if (empty($user_id) || empty($post_title) || empty($post_content)) {
                 $errors[] = "All fields are required.";
             }
 
-            // Insert if no error
-            if (count($errors) == 0) {
+            // Handle thumbnail upload
+            if (!empty($_FILES['thumbnail']) && $_FILES['thumbnail']['error'] == UPLOAD_ERR_OK) {
+                $thumbnail_name = $_FILES['thumbnail']['name'];
+                $thumbnail_temp = $_FILES['thumbnail']['tmp_name'];
+                $thumbnail_ext = pathinfo($thumbnail_name, PATHINFO_EXTENSION);
+
+                // Ensure file is an image
+                if (!in_array($thumbnail_ext, ['jpg', 'jpeg', 'png', 'gif'])) {
+                    $errors[] = "The uploaded file must be an image.";
+                }
+
+                // Generate unique file name for thumbnail
+                $thumbnail_filename = uniqid('thumb_') . '.' . $thumbnail_ext;
+
+                // Save thumbnail to server
+                $thumbnail_path = __DIR__ . '/../assets/media/' . $thumbnail_filename;
+                if (!move_uploaded_file($thumbnail_temp, $thumbnail_path)) {
+                    $errors[] = "Thumbnail could not be uploaded";
+                }
+
+            } else {
+                $errors[] = 'Upload a thumbnail for the post';
+            }
+
+            // Insert post if no errors
+            if (empty($errors)) {
                 $data_array = array(
                     'user_id' => $user_id,
                     'title' => $post_title,
                     'content' => $post_content,
+                    'thumbnail_path' => $thumbnail_filename,
                 );
 
                 try {
                     insertRow('blog_posts', $data_array);
                     route("admin/blog");
                     exit();
-                }
-                catch (Exception $e) {
-                    $errors[] = "Something went wrong";
+                } catch (Exception $e) {
+                    $errors[] = "Error adding new post";
                 }
             }
         }
@@ -488,38 +511,69 @@ class adminController {
         $title = pageTitle("Edit Blog Post");
         $errors = [];
 
+        // Check if post exists
         if (getRowBySelector('blog_posts', 'id', $id)) {
             $post = getRowBySelector('blog_posts', 'id', $id);
-        }
-        else {
+        } else {
             route("admin/dashboard");
             exit();
         }
 
-        // check if form is submitted
+        // Handle form submission
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $title = trim($_POST['title']);
-            $content = trim($_POST['content']);
+            $post_title = trim($_POST['title']);
+            $post_content = trim($_POST['content']);
 
-            if (empty($title) || empty($content)) {
+            // Validate input
+            if (empty($post_title) || empty($post_content)) {
                 $errors[] = "Title and content fields are required.";
             }
 
-            // Insert if no error
-            if (count($errors) == 0) {
+            // Handle thumbnail upload
+            if (!empty($_FILES['thumbnail']) && $_FILES['thumbnail']['error'] == UPLOAD_ERR_OK) {
+                $thumbnail_name = $_FILES['thumbnail']['name'];
+                $thumbnail_temp = $_FILES['thumbnail']['tmp_name'];
+                $thumbnail_ext = pathinfo($thumbnail_name, PATHINFO_EXTENSION);
 
+                // Ensure file is an image
+                if (!in_array($thumbnail_ext, ['jpg', 'jpeg', 'png', 'gif'])) {
+                    $errors[] = "The uploaded file must be an image.";
+                }
+
+                // Generate unique file name for thumbnail
+                $thumbnail_filename = uniqid('thumb_') . '.' . $thumbnail_ext;
+
+                // Save thumbnail to server
+                $thumbnail_path = __DIR__ . '/../assets/media/' . $thumbnail_filename;
+
+                $old_path = __DIR__ . '/../assets/media/' . $post['thumbnail_path'];
+
+                // Delete old thumbnail if it exists
+                if (!empty($post['thumbnail_path']) && file_exists($old_path)) {
+                    unlink($old_path);
+                }
+
+                if (!move_uploaded_file($thumbnail_temp, $thumbnail_path)) {
+                    $errors[] = $thumbnail_path;
+                }
+            } else {
+                $thumbnail_filename = $post['thumbnail_path'];
+            }
+
+            // Update post if no errors
+            if (empty($errors)) {
                 $data_array = array(
-                    'title' => $title,
-                    'content' => $content,
+                    'title' => $post_title,
+                    'content' => $post_content,
+                    'thumbnail_path' => $thumbnail_filename,
                 );
 
                 try {
                     updateRowBySelector('blog_posts', $data_array, 'id', $id);
                     route("admin/blog");
                     exit();
-                }
-                catch (Exception $e) {
-                    $errors[] = "Something went wrong";
+                } catch (Exception $e) {
+                    $errors[] = "Error updating post";
                 }
             }
         }

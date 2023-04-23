@@ -1,0 +1,528 @@
+.dashboard-container{
+    background-color: var(--textColor);
+    min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.dashboard-container > .logo{
+    right: 2rem;
+    top: 2rem;
+    color: var(--secondaryColor); 
+    background-color: rgba(0, 0, 0, .2);
+    padding: .25rem;
+    font-weight: 700;
+}
+
+.dashboard-container > .logo > i{
+    font-size: 1.5rem;
+    margin-right: .25rem;
+}
+
+.dashboard-container > .logo > p{
+    color: white;
+}
+
+.dashboard-container > .logo > p > span{
+    color: var(--secondaryColor);
+}
+
+.mobile-menu-open,
+.mobile-menu-close{
+    display: none;
+    cursor: pointer;
+}
+
+.active{
+    background-color: rgba(0, 0, 0, .4);
+    color: var(--secondaryColor);
+}
+
+#sidebar{
+    width: 25%;
+    background-color: var(--primaryColor);
+    color:var(--textColor);
+    padding: 2rem;
+    min-height: 100vh;
+    transition: all .5s linear;
+}
+
+#sidebar > .heading{
+    margin: 1rem 0;
+}
+
+.user-info > .profile-pic{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--textColor);
+    margin: .5rem 0;
+    margin-right: 1.5rem;
+}
+
+.user-info > .profile-pic > img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.user-info > div > .user-name{
+    margin-bottom: .25rem;
+}
+.user-info > div > .plan{
+padding:.1rem .25rem;
+border-radius: 1rem;
+background-color: rgba(218, 165, 32, .2);
+border: 1px solid rgb(218, 165, 32);
+color: goldenrod;
+display: inline-flex;
+}
+
+.membership-status > p > span{
+    color: var(--secondaryColor);
+    font-weight: 800;
+}
+
+.membership-status > small{
+    color: var(--secondaryColor);
+    color: red;
+}
+
+.dashboard-lists{
+    margin: 1.5rem 0;
+}
+
+.dashboard-list{
+    border-bottom: 1px solid var(--textColor);
+    padding-bottom: .25rem;
+    padding-top: 1rem;
+    cursor: pointer;
+    transition: all .25s linear;
+}
+
+.dashboard-list > i{
+    margin-right: 1rem;
+    color: var(--secondaryColor);
+    pointer-events: none;
+}
+
+.dashboard-list > p{
+    pointer-events: none;
+}
+
+.dashboard-list:hover{
+    color: var(--secondaryColor);
+}
+
+#dashboard-display{
+    flex: 1;
+}
+
+.display-heading{
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+}
+
+.dashboard-modal{
+    background-color: white;
+    width: 80%;
+    max-width: 80%;
+    height: 70vh;
+    border-radius: .5rem;
+    box-shadow: 0 0 40px 15px rgba(0, 0, 0, .2);
+}
+
+.dashboard-modal > .welcome{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: #444;
+    flex-direction: column;
+    text-align: center;
+}
+
+.dashboard-modal > .welcome > small{
+    color: #999;
+    font-weight: 500;
+    text-align: center;
+    margin-top: .5rem;
+}
+
+.modal-content{
+    height: 100%;
+    width: 100%;
+}
+
+.modal-content > #calendar{
+    width: 100%;
+    height: 100%;
+    background-color: #444;
+}
+
+.modal-content > .form {
+    height: 100%;
+}
+
+.form > ul{
+    flex-direction: column;
+}
+
+.choose-plan > .plan-heading{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.choose-plan > li > p{
+    padding: .5rem ;
+    font-weight: 700;
+    margin-top: .5rem;
+}
+
+.gold-plan > p{
+    background-color: rgba(218, 165, 32, .2);
+    border: 1px solid rgb(218, 165, 32);
+    color: rgb(138, 104, 17);
+}
+
+.silver-plan > p{
+    background-color: rgba(192, 192, 192, .2);
+    color: rgb(83, 80, 80);
+    border:1px solid rgb(192, 192, 192);
+}
+
+.platinum-plan > p{
+    background-color: rgba(165, 42, 42, .2);
+    color: rgb(165, 42, 42);
+    border: 1px solid rgb(165, 42, 42); 
+}
+
+.plan-submit_btn{
+    background-color: var(--secondaryColor);
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.change-password,
+.edit-profile{
+    height: 100%;
+    width: 100%;
+}
+
+.change-password > form,
+.edit-profile > form{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.change-password > form > input,
+.edit-profile > form > input{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 300px;
+    margin-bottom: 1rem;
+    padding-bottom: .25rem;
+    outline: none;
+}
+
+.change-password > form > button.btn,
+.edit-profile > form > button.btn{
+    width: 300px;
+    background-color: var(--secondaryColor);
+}
+
+.edit-profile > form > h3{
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid black;
+}
+
+.selected-gym{
+    padding: 1rem;
+  
+}
+
+.selected-gym > div > #map{
+    border: 2px solid #ccc;
+    flex: 1;
+    height: calc(100% - 85px);
+    margin-top: .5rem;
+}
+
+.selected-gym > .selected-gym-btns{
+    border: 2px solid #ccc;
+    height: 100%;
+    width: 100%;
+}
+
+.selected-gym-btns > a > button{
+    margin: 0 1rem;
+    border: 1px solid var(--secondaryColor);
+}
+
+.selected-gym-btns > a > button.change-btn{
+    background-color: var(--secondaryColor);
+}
+
+.selected-gym > .view-gym{
+    height: 100%;
+    width: 100%;
+}
+
+.selected-gym > form.gym-options{
+    height: 100%;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.selected-gym > form > ul{
+    height: 100%;
+}
+
+.selected-gym > form > ul{
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.selected-gym > form > ul > h3.heading{
+    margin: 1rem 0;
+    border-bottom: 2px solid #333;
+}
+
+.selected-gym > form > ul > li {
+    display: flex;
+    min-width: 250px;
+    /* border: 1px solid #ccc; */
+    padding: .5rem;
+    margin-bottom: .5rem;
+    color: #333;
+    font-weight: 700;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .2);
+}
+
+.selected-gym > form > ul > li > input{
+    margin: 0 .5rem;
+}
+
+.selected-gym > form > ul > button {
+    background-color: var(--secondaryColor);
+    min-width: 250px;
+    margin-top: 1rem;
+}
+
+.selected-gym > form > ul >  a{
+    background-color: red;
+    min-width: 250px;
+    margin-top: 1rem;
+    padding: .45rem 0;
+    border-radius: .25rem;
+    text-align: center;
+    color: white;
+}
+
+.choose-plan > li > ul,
+.selected-gym > div > ul{
+border: 1px solid #ccc;
+border-top: none;
+padding: .5rem;
+font-size: .85rem;
+transition: all .5 linear;
+}
+
+.selected-gym > div > ul{
+    border: none;
+    height: 80px;
+}
+
+
+.choose-plan > li > ul > li,
+.selected-gym > div > div > ul > li{
+    display: flex;
+    align-items: center;
+}
+
+.choose-plan > li > ul > li > p,
+.selected-gym > div > div > ul >li > p{
+    color: #444;
+    font-weight: 700;
+}
+.choose-plan > li > ul > li > span,
+.selected-gym > div  > div > ul >li > span{
+    color: #888;
+    font-size: .75rem;
+    margin-left: .5rem;
+}
+
+
+.payment-page{
+    min-width: 300px;
+    padding: 1rem;
+    max-width: 320px;
+    background-color: white;
+    border-radius: .25rem;
+    box-shadow: 0 0 25px 2px rgba(0, 0, 0, .2);
+}
+
+.payment-page > ul.payment-info{
+    margin: 1rem 0;
+}
+
+ul.payment-info > li{
+    display: flex;
+    margin-bottom: .5rem;
+}
+
+ul.payment-info > li > span{
+    color: #888;
+    margin-left: .5rem;
+}
+
+.payment-modal{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.payment-page > form {
+    margin: 3rem 0;
+}
+
+.payment-page > form label{
+    font-weight: 700;
+}
+
+.form-control{
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.form-control > li{
+    width: 40%;
+    display: flex;
+}
+
+.form-control > label{
+    margin-bottom: .5rem;
+}
+
+.form-control > i{
+    right: .25rem;
+    bottom: .40rem;
+    font-size: 1.25rem;
+    /* transform: translateY(-50%); */
+}
+
+.form-control > li > input,
+.form-control > input{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaa;
+    padding:0 .25rem;
+    font-size: 1.25rem;
+}
+
+.form-control > li > label{
+    margin-right: .5rem;
+}
+
+form > .form-btns{
+    width: 100%;
+    flex-direction: column;
+    margin: 3rem 0;
+}
+
+form > .form-btns > button{
+    margin-bottom: .25rem;
+    background-color: var(--secondaryColor);
+}
+
+form > .form-btns > button.cancel-payment{
+    margin-bottom: .25rem;
+    background-color: red;
+    color: white;
+}
+
+.card-display{
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+    bottom: 2rem;
+}
+
+
+
+/* Media Query */
+@media screen and (max-width: 1200px) {
+    
+    .dashboard-container{
+        display: block;
+        position: relative;
+    }
+
+    .dashboard-container > .logo{
+        right: 1rem;
+        top: 1rem;
+    }
+
+    #sidebar{
+        position: absolute;
+        z-index: 2;
+        width: 70%;
+        left: -100%;
+        min-height: 100vh;
+    }
+
+    #sidebar > h3.heading{
+        justify-content: space-between;
+    }
+
+    #dashboard-display{
+        width: 100%;
+        min-height: 100vh;
+        padding: 0;
+    }
+
+    .mobile-menu-close{
+        font-size: 1.5rem;
+        display: inline;
+    }
+    
+    .mobile-menu-open{
+        top: 1.2rem;
+        left: 1rem;
+        display: flex;
+    }
+    
+    .mobile-menu-open > i{
+        margin-right: .5rem;
+    }
+
+    .display-heading{
+    top: 70px;
+    font-size: 0.8rem;
+}
+    
+    .dashboard-modal{
+        width: 100%;
+        min-height: 70vh;
+        overflow: scroll;
+    }
+
+    .modal-content,
+    .welcome{
+        padding: 1rem;
+    }
+
+    .planning{
+        padding: 0;
+    }
+
+    .change-password > form > input,
+    .edit-profile > form > input,
+    .change-password > form > button.btn,
+    .edit-profile > form > button.btn
+    {
+        width: 80%;
+    }
+}

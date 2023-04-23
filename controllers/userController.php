@@ -14,7 +14,7 @@ class UserController {
 
         // check if user is properly logged in
         if (!session_check() || $this->user == null || $this->user['role'] != 'user') {
-            route("login");
+            route("logout");
             exit();
         }
 
