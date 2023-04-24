@@ -7,6 +7,8 @@
 body{
     background-color: #1D1D1D;
     color: #fff;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
 }
 
 a{
@@ -30,7 +32,6 @@ li{
 .nav-title a{
     display: flex;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -76,7 +77,6 @@ li{
 .navlinks li{
     padding: 1rem 0;
     font-size: 1.1rem;
-    font-family: 'Ubuntu', sans-serif;
     border-bottom: 1px solid #414040;
 }
 
@@ -90,7 +90,6 @@ li{
 }
 
 .account{
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
 }
 
@@ -105,7 +104,6 @@ li{
 
 .account1{
     display: none;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     background-color: #DEEF0B;
@@ -188,7 +186,6 @@ swiper-slide img {
 
 .cardtext{
     font-size: 1.7rem;
-    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     margin-bottom: 2.7rem;
     color: #fff;
@@ -199,7 +196,6 @@ swiper-slide img {
     outline: none;
     background-color: #DEEF0B;
     padding: .6rem 1rem;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     border-radius: 2rem;
 }
@@ -227,7 +223,6 @@ swiper-slide img {
 .sect2-head{
     text-align: center;
     margin-bottom: 2.2rem;
-    font-family: 'Roboto', sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
 }
@@ -235,11 +230,6 @@ swiper-slide img {
 .flex-container{
     display: block;
 }
-
-.container2{
-    font-family: 'Ubuntu', sans-serif;
-}
-
 .container2-header{
     font-size: 2.1rem;
     margin-top: 2rem;
@@ -265,7 +255,6 @@ swiper-slide img {
     background-color: #DEEF0B;
     color: #000;
     padding: .5rem 1.1rem;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     border-radius: 2rem;
 }
@@ -286,7 +275,6 @@ swiper-slide img {
 .sect3-header h1{
     text-align: center;
     margin: 2rem 0;
-    font-family: 'Ubuntu', sans-serif;
     padding-top: 5rem;
     font-size: 2.1rem;
 }
@@ -320,14 +308,8 @@ swiper-slide img {
 .card-text{
     text-align: center;
 }
-
-.cardtext2{
-    font-family: 'Ubuntu', sans-serif;
-}
-
 .cardtitle{
     margin: 1rem 0;
-    font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
     text-align: center;
@@ -349,7 +331,6 @@ swiper-slide img {
 .sect4header{
     text-align: center;
     margin: 2rem 0;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 2.1rem;
     font-weight: 500;
 }
@@ -369,7 +350,6 @@ swiper-slide img {
     text-align: center;
     margin: 2rem 0;
     font-size: 1.4rem;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 .con-price{
@@ -380,7 +360,6 @@ swiper-slide img {
     box-shadow: 0, 0, 3rem;
     text-align: center;
     border-radius: 1rem;
-    font-family: 'Roboto', sans-serif;
 }
 
 .price1{
@@ -416,7 +395,6 @@ swiper-slide img {
     padding: .4rem 1.7rem;
     border-radius: 1.5rem;
     margin: 2rem 0;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
 }
 
@@ -449,7 +427,6 @@ swiper-slide img {
 
 .sect5-header{
     margin: 3.5rem 0;
-    font-family: 'Ubuntu', sans-serif;
     text-align: center;
     font-size: 2.1rem;
     font-weight: 600;
@@ -492,13 +469,11 @@ swiper-slide img {
 }
 
 .coachname{
-    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
 .coachwork{
-    font-family: 'Roboto', sans-serif;
     font-size: .8rem;
     color: #d0cfd0;
 }
@@ -525,7 +500,6 @@ swiper-slide img {
 
 .sect6-text1{
     font-size: 2.5rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     color: #171717;
     width: 100%;
@@ -594,13 +568,11 @@ footer{
 
 .footer-header{
     font-size: 1.3rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     margin-bottom: .7rem;
 }
 
 .footer-text1 ul{
-    font-family: 'Ubuntu', sans-serif;
     color: #d0cfd0;
 }
 
@@ -614,7 +586,6 @@ footer{
 }
 
 .footer-text p{
-    font-family: 'Ubuntu', sans-serif;
     color: #d0cfd0;
 }
 
@@ -634,7 +605,6 @@ footer{
     border: none;
     outline: none;
     background-color: #DEEF0B;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     font-size: 1rem;
 }
@@ -824,7 +794,6 @@ footer{
     .navlinks li{
         padding: 0 1rem;
         font-size: 1.1rem;
-        font-family: 'Ubuntu', sans-serif;
         border-bottom: unset;
     }
 
@@ -965,7 +934,7 @@ footer{
     }
 
     .sect5-image{
-        width: 23%;
+        width: 30%;
         /*height: 10rem;*/
         margin: .5rem .4rem;
     }
@@ -1003,7 +972,6 @@ footer{
         margin: 1rem 0;
         border: 2px solid #171717;
         color: #000;
-        font-family: 'Sono', sans-serif;
         font-weight: 600;
         padding: 1rem 2rem;
         border-radius: 4rem;
@@ -1016,7 +984,7 @@ footer{
     /*FOOTER*/
     .footer-container{
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .footer-item{
