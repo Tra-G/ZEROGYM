@@ -14,7 +14,7 @@ class UserController {
 
         // check if user is properly logged in
         if (!session_check() || $this->user == null || $this->user['role'] != 'user') {
-            route("login");
+            route("logout");
             exit();
         }
 
@@ -45,10 +45,7 @@ class UserController {
     public function index() {
         $title = pageTitle("Dashboard");
         $plan = getRowBySelector('plans', 'id', $this->membership['plan']);
-        $days = $this->membership['training_days'];
-
-        // get total days
-        $total_training_days = empty($days) ? 0 : count(explode(", ", $days));
+        $days = json_decode($this->membership['training_days']);
 
         if ($this->membership['gym_id']) {
             $gym_select = getRowBySelector('gyms', 'id', $this->membership['gym_id']);
@@ -66,7 +63,6 @@ class UserController {
             'membership' => $this->membership,
             'plan' => $plan,
             'days' => $days,
-            'total_training_days' => $total_training_days,
             'gym' => $gym,
         );
     }

@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $title; ?></title>
     <!--Google font-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Sono:wght@400;500&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!--icon link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!--Stylesheet link-->
     <link rel="stylesheet" href="<?php echo assets('css/style.css'); ?>">
-    <title><?php echo $title; ?></title>
 </head>
 <body>
     <div class="nav">
@@ -25,54 +24,61 @@
             </div>
 
             <div class="navlinks">
+                <i style="color: #fff;" class="fa fa-times" aria-hidden="true"></i>
                 <ul>
-                    <a href="<?php echo redirect("") ?>">
+                    <a href="<?php echo redirect(''); ?>">
                         <li>Home</li>
                     </a>
 
-                    <a href="<?php echo redirect("about") ?>">
-                        <li>About Us</li>
-                    </a>
-
-                    <a href="<?php echo redirect("blog") ?>">
+                    <a href="<?php echo redirect('blog'); ?>">
                         <li>Blog</li>
                     </a>
 
-                    <a href="<?php echo redirect("contact") ?>">
+                    <a href="<?php echo redirect('about'); ?>">
+                        <li>About Us</li>
+                    </a>
+                    <a href="<?php echo redirect('contact'); ?>">
                         <li>Contact Us</li>
                     </a>
 
-                    <a href="<?php echo redirect("register") ?>">
+                    <a href="<?php echo redirect('register'); ?>">
                         <li>Join Us</li>
                     </a>
+
+
                 </ul>
+
+                <div class="account">
+                    <a class="login" href="<?php echo redirect('login'); ?>">
+                        <li>Login</li>
+                    </a>
+                </div>
             </div>
 
-            <div class="account">
-                <a class="login" href="<?php echo redirect("login") ?>">
-                    <li>Login</li>
-                </a>
 
-
-            </div>
 
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+            <div class="account1">
+                <a class="login" href="<?php echo redirect('login'); ?>">
+                    <li>Login</li>
+                </a>
+            </div>
         </div>
     </div>
-
+    </div>
 
     <div class="containerbox">
-        <swiper-container class="sms" navigation="true" effect="fade" space-between="30"
+        <swiper-container class="sms" navigation="false" pagination="true" effect="fade" space-between="30"
                 centered-slides="true" autoplay-delay="5500" loop="true" autoplay-disable-on-interaction="false">
                 <swiper-slide class="slide1">
                     <div class="card-details">
                         <p class="cardtext">Build your perfect body and accelerate a healthy growth</p>
                         <span class="cardbutton">
-                            <a href="<?php echo redirect("about") ?>">
+                            <a href="<?php echo redirect('about'); ?>">
                                 Learn More
                             </a>
                         </span>
@@ -81,9 +87,9 @@
 
                 <swiper-slide class="slide2">
                     <div class="card-details">
-                        <p class="cardtext">Make the most of your workout. Get results you can see and feel.</p>
+                        <p class="cardtext">Make Your Body Shape And Get Results You Can See.</p>
                         <span class="cardbutton">
-                            <a href="<?php echo redirect("about") ?>">
+                            <a href="<?php echo redirect('about'); ?>">
                                 Learn More
                             </a>
                         </span>
@@ -92,18 +98,17 @@
 
                 <swiper-slide class="slide3">
                     <div class="card-details">
-                        <p class="cardtext">Learn Fitness From Professionals. Learn To Defend Your Health.</p>
+                        <p class="cardtext">Learn Fitness From Professionals To Build A Healthy Growth</p>
                         <span class="cardbutton">
-                            <a href="<?php echo redirect("about") ?>">
+                            <a href="<?php echo redirect('about'); ?>">
                                 Learn More
                             </a>
                         </span>
                     </div>
                 </swiper-slide>
 
-
             </swiper-container>
-    </div>
+        </div>
     </div>
 
     <div class="sect2">
@@ -186,25 +191,10 @@
                     </div>
                 </div>
 
-                <div class="cardbox">
-                    <img src="<?php echo assets('images/img26.png'); ?>">
-                    <div class="card-text">
-                        <p class="cardtitle">Power Yoga</p>
-
-                    </div>
-                </div>
-
-                <div class="cardbox">
-                    <img src="<?php echo assets('images/img27.jpg'); ?>">
-                    <div class="card-text">
-                        <p class="cardtitle">Leg Exercise</p>
-
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
+
 
 
     <div class="sect4">
@@ -242,17 +232,17 @@
                             </div>
 
                             <div class="benefits-icon">
-                                <i style="color:#626262;" class="fa fa-times" aria-hidden="true"></i>
+                                <i style="color:#626262;" class="fa fa-check" aria-hidden="true"></i>
                                 <li style="color:#626262;">Weight Lifting</li>
                             </div>
 
                             <div class="benefits-icon">
-                                <i style="color:#626262;" class="fa fa-times" aria-hidden="true"></i>
+                                <i style="color:#626262;" class="fa fa-check" aria-hidden="true"></i>
                                 <li style="color:#626262;">Swimming pool 13:00 - 18:00</li>
                             </div>
 
                             <div class="benefits-icon">
-                                <i style="color:#626262;" class="fa fa-times" aria-hidden="true"></i>
+                                <i style="color:#626262;" class="fa fa-check" aria-hidden="true"></i>
                                 <li style="color:#626262;">Muscle Stretching & Relaxing room</li>
                             </div>
                         </ul>
@@ -298,12 +288,12 @@
                             </div>
 
                             <div class="benefits-icon">
-                                <i style="color: #626262;" class="fa fa-times" aria-hidden="true"></i>
+                                <i style="color: #626262;" class="fa fa-check" aria-hidden="true"></i>
                                 <li style="color:#626262;">Swimming pool 13:00 - 18:00</li>
                             </div>
 
                             <div class="benefits-icon">
-                                <i style="color: #626262;" class="fa fa-times" aria-hidden="true"></i>
+                                <i style="color: #626262;" class="fa fa-check" aria-hidden="true"></i>
                                 <li style="color:#626262;">Muscle Stretching & Relaxing room</li>
                             </div>
                         </ul>
@@ -362,7 +352,7 @@
 
                     <div class="benefits-btn Platinum">
                         <span>
-                            <a href="<?php echo redirect("register") ?>">Join Us</a>
+                            <a href="<?php echo redirect('register'); ?>">Join Us</a>
                         </span>
                     </div>
 
@@ -416,6 +406,8 @@
         </div>
     </div>
 
+
+
     <div class="sect6">
         <div class="sect6-container">
             <div class="sect6-story">
@@ -438,43 +430,37 @@
 
 
     <footer>
-        <div class="footer-container" style="padding-left: 40px; padding-right: 40px">
-
+        <div class="footer-container">
             <div class="footer-item">
                 <div class="footer-header">
                     <p>QUICK LINKS</p>
                 </div>
 
-                <div class="footer-text">
+                <div class="footer-text1">
                     <ul>
-                        <li><a href="<?php echo redirect
-                        (''); ?>">Home</a></li>
-                        <li><a href="<?php echo redirect
-                        ('about'); ?>">About Us</a></li>
-                        <li><a href="<?php echo redirect
-                        ('blog'); ?>">Blog</a></li>
-                        <li><a href="<?php echo redirect
-                        ('contact'); ?>">Contact Us</a></li>
+                        <li><a href="<?php echo redirect(''); ?>">Home</a></li>
+                        <li><a href="<?php echo redirect('about'); ?>">About Us</a></li>
+                        <li><a href="<?php echo redirect('blog'); ?>">Blog</a></li>
+                        <li><a href="<?php echo redirect('contact'); ?>">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-item">
-                <div class="footer-header">
+                <div class="footer-header support">
                     <p>ACCOUNT</p>
                 </div>
 
-                <div class="footer-text">
+                <div class="footer-text1">
                     <ul>
-                        <li><a href="<?php echo redirect
-                        ('login'); ?>">Login</a></li>
-                        <li><a href="<?php echo redirect
-                        ('register'); ?>">Join Us</a></li>
+                        <li><a href="<?php echo redirect('user/dashboard'); ?>">My Account</a></li>
+                        <li><a href="<?php echo redirect('login'); ?>">Login</a></li>
+                        <li><a href="<?php echo redirect('register'); ?>">Join Us</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="footer-item">
+            <div class="footer-item news">
                 <div class="footer-header">
                     <p>NEWSLETTER</p>
                 </div>
@@ -482,11 +468,31 @@
                 <div class="footer-text">
                     <p>Subscribe to our latest newsletter to get news about special discounts.</p>
                     <input type="search" placeholder="Enter your email">
-                    <button>Subscribe</button>
+                    <div class="footerbtn">
+                        <button class="footer-btn">Subscribe</button>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".navlinks");
+        const closeIcon = document.querySelector('.fa-times');
+
+        hamburger.addEventListener("click", function() {
+            menu.classList.toggle("show");
+        });
+
+        closeIcon.addEventListener('click', () => {
+  menu.classList.remove('show');
+});
+
+    </script>
 </body>
 </html>

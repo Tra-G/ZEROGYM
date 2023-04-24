@@ -14,12 +14,15 @@
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <label for="title">Post Title:</label>
         <input type="text" id="title" name="title" required><br>
 
         <label for="content">Content:</label>
         <textarea id="content" name="content" required></textarea><br>
+
+        <label for="image">Thumbnail:</label>
+        <input type="file" name="thumbnail" accept="image/*" required><br>
 
         <input type="submit" value="Add Post">
     </form>
