@@ -8,7 +8,7 @@ class blogController {
     // all blog post
     public function index() {
         $title = "Blog";
-        $posts = getRows('blog_posts', null, null, 'id', 'DESC')['rows'];
+        $posts = getRows('blog_posts', null, null, 'created_at', 'DESC')['rows'];
 
         return array(
             'title' => $title,

@@ -123,7 +123,27 @@ class paymentController {
 
                         // Set start and end dates
                         $currentDate = date("Y-m-d");
-                        $end_date = date("Y-m-d", strtotime("+31 days"));
+                        $end_date = date("Y-m-d", strtotime("+30 days"));
+
+                        // Training days calculation
+                        $current_time = time();
+                        $subscription_end_time = $current_time + ($plan_check['duration'] * 24 * 60 * 60);
+                        $preselect_days = $plan_check['training_days'];
+
+                        // Calculate the length of each interval
+                        $interval_length = floor(($subscription_end_time - $current_time) / ($preselect_days + 1));
+
+                        // Create an array to hold the preselected dates
+                        $preselected_dates = array();
+
+                        // Loop through the number of preselected days and add each date to the array
+                        for ($i = 1; $i <= $preselect_days; $i++) {
+                        $date = date("d/m/Y", strtotime("+ " . $i * $interval_length . " seconds", $current_time));
+                        $preselected_dates[] = $date;
+                        }
+
+                        // Output the preselected dates in JSON format
+                        $training_days = json_encode($preselected_dates);
 
                         // If the order is successful
                         if($payment_status == 'succeeded'){
@@ -133,7 +153,7 @@ class paymentController {
                                 'plan' => $plan,
                                 'start_date' => $currentDate,
                                 'end_date' => $end_date,
-                                'training_days' => NULL,
+                                'training_days' => $training_days,
                                 'amount' => $paidAmount,
                                 'status' => 'active',
                             );

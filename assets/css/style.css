@@ -1,58 +1,30 @@
-
 *, ::before, ::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/*
-FONT
-font-family: 'Roboto', sans-serif;
-font-family: 'Sono', sans-serif;    - for button
-font-family: 'Ubuntu', sans-serif;
-
-
-COLOR
-color:#d0cfd0
-color: #DEEF0B;   - primary color
-color: #fff;  - white
-background-color: #1D1D1D; -  background color
-body{
-    transition-duration: 0.4s;
-    transition-timing-function: ease-in-out;
-}
-*/
-
 body{
     background-color: #1D1D1D;
     color: #fff;
 }
 
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
 .nav{
-    position: fixed;
-    top: 0;
-    left: 0; 
-    width: 100%;
     background-color: #191919;
     box-shadow: 0 0 5px #232323;
-    color: #fff;
-    height: 5.5rem;
-    padding: 1.6rem 0;
-    z-index: 1;
-}
-
-.navbar{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.navtext{
-    font-size: 1.5rem;
-}
-
-.navtext span{
-    color: #DEEF0B;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
 }
 
 .nav-title a{
@@ -60,88 +32,119 @@ body{
     align-items: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
-a{
-    text-decoration: none;
-    color: #fff;
-}
-
-li{
-    list-style: none;
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
 }
 
 .hamburger{
-    display: none;
+    display: block;
 }
 
 .hamburger span{
     display: block;
-    background-color: #fff;
-    width: 25px;
+    width: 2rem;
     height: 2px;
+    background-color: #fff;
     margin: 4px;
-} 
-
-.account{
-    display: flex;
-    align-items: center;
 }
 
-.account a{
-    padding: .4rem 1.4rem;
+.navlinks{
+    display: none;
+    background-color: #1D1D1D;
+    position: absolute;
+    width: 80%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+}
+
+.navlinks > i.fa-times{
+    z-index: 10;
+}
+
+.navlinks ul, .account{
+    position: relative;
+    left: 2rem;
+    top: 4rem;
+}
+
+.navlinks li{
+    padding: 1rem 0;
+    font-size: 1.1rem;
     font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
+    border-bottom: 1px solid #414040;
 }
 
-.login:hover{
-    background-color: #DEEF0B;
-    color: #000;
+.navlinks li:hover{
+    color: #DEEF0B;
 }
 
-.login:hover{
+.navlinks li:hover{
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
 }
 
-.sign:hover{
-    color: #DEEF0B;
-}
-
-.sign:hover{
-    transition-duration: 0.3s;
-}
-
-.login{
-    border: 1px solid #DEEF0B;
-}
-.navlinks ul{
-    display: flex;
-    align-items: center;
-}
-
-.navlinks a{
-    padding: 0 .8rem;
-    font-size: 1.1rem;
+.account{
     font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
+    font-size: 1.1rem;
 }
 
-.navlinks a:hover{
+.account a:hover{
     color: #DEEF0B;
 }
 
-.navlinks a{
-    transition-duration: 0.3s;
+.account:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
 }
+
+.account1{
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background-color: #DEEF0B;
+    padding: .4rem 1.5rem;
+}
+
+.account1 a{
+    color: #000;
+}
+
+.account1:hover {
+    background-color: #9ca704;
+}
+
+.account1:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.navlinks.show {
+    display: block;
+  }
+
+.fa-times{
+    position: absolute;
+    right: 2rem;
+    top: 1.4rem;
+    font-size: 1.8rem;
+}
+
+
+
 /*BACKGROUND IMAGE*/
+.containerbox{
+    margin-top: 95px;
+}
 .sms{
-    margin-top: 5rem;
-    margin-bottom: 3rem;
     width: 100%;
-    height: 89vh;
-    /*border: 2px solid red;*/
+    height: 60vh;
 }
 
 swiper-slide {
@@ -177,23 +180,17 @@ swiper-slide img {
 }
 
 .card-details{
-    width: 35rem;
+    width: 25rem;
     margin-left: 6rem;
     margin-top: 15rem;
-}
-
-.card-details{
-    transition-duration: 0.3s;
+    transform: translate(-14px, -32px);
 }
 
 .cardtext{
-    font-size: 2.7rem;
+    font-size: 1.7rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     margin-bottom: 2.7rem;
-}
-
-.navigation{
     color: #fff;
 }
 
@@ -201,7 +198,7 @@ swiper-slide img {
     border: none;
     outline: none;
     background-color: #DEEF0B;
-    padding: .7rem 1.5rem;
+    padding: .6rem 1rem;
     font-family: 'Sono', sans-serif;
     font-weight: 500;
     border-radius: 2rem;
@@ -217,11 +214,13 @@ swiper-slide img {
 
 .cardbutton:hover{
     transition-duration: 0.3s;
+
 }
 
-/*Section 2*/
+
+/*SECT 2*/
 .sect2{
-    width: 87rem;
+    width: 90%;
     margin: 5rem auto;
 }
 
@@ -234,17 +233,16 @@ swiper-slide img {
 }
 
 .flex-container{
-    display: flex;
-    justify-content: space-between;
+    display: block;
 }
 
 .container2{
-    width: 37rem;
     font-family: 'Ubuntu', sans-serif;
 }
 
 .container2-header{
-    font-size: 3.4rem;
+    font-size: 2.1rem;
+    margin-top: 2rem;
 }
 
 .container2-header span{
@@ -252,49 +250,36 @@ swiper-slide img {
 }
 
 .container2-text{
-    margin: 2.5rem 0;
-    width: 25rem;
+    margin: 2rem 0;
     word-spacing: 3px;
     font-size: 1.1rem;
 }
 
 .container1 img {
-    width: 80%;
-    height: 30rem;
+    width: 100%;
+    height: 20rem;
     object-fit: cover;
 }
 
 .container2-btn{
     background-color: #DEEF0B;
     color: #000;
-    padding: .7rem 1.3rem;
+    padding: .5rem 1.1rem;
     font-family: 'Sono', sans-serif;
     font-weight: 500;
     border-radius: 2rem;
 }
 
-/*
-.sect2-icon{
-    background-color: #DEEF0B;
-    color: #000;
-    padding: 1rem 2.5rem;
-    border-radius: 5rem;
-    position: absolute;
-    left: 24rem;
-    bottom: -25rem;
-    z-index: 2;
-}*/
-
 
 /*SECTION 3*/
 .sect3{
     background-color: #171717;
-    margin: 5rem 0;
+    margin: 3rem 0;
     padding-bottom: 4rem;
 }
 
 .sect3-container{
-    width: 87rem;
+    width: 95%;
     margin: 2rem auto;
 }
 
@@ -303,12 +288,12 @@ swiper-slide img {
     margin: 2rem 0;
     font-family: 'Ubuntu', sans-serif;
     padding-top: 5rem;
-    font-size: 2.4rem;
+    font-size: 2.1rem;
 }
 
 .cardbox img{
     width: 100%;
-    height: 40vh;
+    height: 70vh;
     object-fit: cover;
 }
 
@@ -319,11 +304,9 @@ swiper-slide img {
 }
 
 .cardbox{
-    width: 20rem;
+    width: 100%;
     background-color: #1D1D1D;
     margin: .8rem;
-    /*border-radius: 1rem;
-    overflow: hidden;*/
 }
 
 .cardbox img:hover{
@@ -335,8 +318,6 @@ swiper-slide img {
 }
 
 .card-text{
-    /*margin: .1rem auto;
-    width: 80%;*/
     text-align: center;
 }
 
@@ -357,9 +338,10 @@ swiper-slide img {
 }
 
 
+
 /*SECT 4*/
 .sect4{
-    width: 87rem;
+    width: 95%;
     margin: 5rem auto;
     padding: 2rem 0;
 }
@@ -368,16 +350,15 @@ swiper-slide img {
     text-align: center;
     margin: 2rem 0;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     font-weight: 500;
 }
 
 .sect4-container{
-    display: flex;
+    display: block;
 }
 
 .con{
-    width: 30rem;
     background-color: #171717;
     margin: 1rem;
     padding: 2rem 0;
@@ -387,13 +368,13 @@ swiper-slide img {
 .con-head{
     text-align: center;
     margin: 2rem 0;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-family: 'Ubuntu', sans-serif;
 }
 
 .con-price{
     background-color: #1D1D1D;
-    max-width: 15rem;
+    max-width: 13rem;
     padding: 2rem 0;
     margin: 0 auto;
     box-shadow: 0, 0, 3rem;
@@ -403,7 +384,7 @@ swiper-slide img {
 }
 
 .price1{
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: #DEEF0B;
 }
 
@@ -432,7 +413,7 @@ swiper-slide img {
 
 .benefits-btn span a{
     border: 2px solid #DEEF0B;
-    padding: .6rem 2rem;
+    padding: .4rem 1.7rem;
     border-radius: 1.5rem;
     margin: 2rem 0;
     font-family: 'Sono', sans-serif;
@@ -454,9 +435,10 @@ swiper-slide img {
 
 
 
+
 /*SECT 5*/
 .sect5{
-    width: 87rem;
+    width: 95%;
     margin: 2rem auto;
     padding: 1rem 0;
 }
@@ -469,7 +451,7 @@ swiper-slide img {
     margin: 3.5rem 0;
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     font-weight: 600;
 }
 
@@ -503,7 +485,7 @@ swiper-slide img {
     margin: .5rem .7rem;
 }
 
-.coach{
+.coach span{
     display: block;
     text-align: center;
     margin: .5rem 0;
@@ -511,19 +493,19 @@ swiper-slide img {
 
 .coachname{
     font-family: 'Roboto', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 500;
 }
 
 .coachwork{
     font-family: 'Roboto', sans-serif;
-    font-size: .9rem;
+    font-size: .8rem;
     color: #d0cfd0;
 }
 
 
-/*SECT 6*/
 
+/*SECT 6*/
 .sect6-container{
     padding-top: 1rem;
     background: #DEEF0B;
@@ -531,17 +513,22 @@ swiper-slide img {
 
 .sect6-story{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column-reverse;
+    justify-content: center;
     padding: 0 1rem;
     align-items: center;
 }
 
+.sect6-text{
+    width: 90%;
+}
+
 .sect6-text1{
-    font-size: 5.5rem;
+    font-size: 2.5rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     color: #171717;
-    width: 40rem;
+    width: 100%;
     margin-bottom: 2.5rem;
 }
 
@@ -550,14 +537,13 @@ swiper-slide img {
     border: 2px solid #171717;
     color: #000;
     font-family: 'Sono', sans-serif;
-    /*font-family: 'Ubuntu', sans-serif;*/
     font-weight: 600;
-    padding: 1rem 2rem;
+    padding: .8rem 1.2rem;
     border-radius: 4rem;
     font-size: 1.1rem;
 }
 
-.sect6-text2 a:hover{
+.sect6-text2 a:hover{  
     background-color: #171717;
     color: #fff;
 }
@@ -567,10 +553,15 @@ swiper-slide img {
     transition-timing-function: ease-in-out;
 }
 
+.sect6image{
+    margin-top: 3rem;
+}
+
 .sect6image img{
     margin: 0;
     padding: 0;
     display: block;
+    width: 100%;
 }
 
 .line{
@@ -584,60 +575,195 @@ swiper-slide img {
 }
 
 
+
+
 /*FOOTER*/
 footer{
-    width: 87rem;
-    margin: 3rem auto;
-    /*padding: 1rem 0;*/
+    width: 95%;
+    margin: 2rem auto;
 }
 
 .footer-container{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+.footer-item{
+    padding: 1rem 0;
 }
 
 .footer-header{
-    font-size: 1.9rem;
+    font-size: 1.3rem;
     font-family: 'Ubuntu', sans-serif;
-    text-align: center;
     font-weight: 500;
-    margin: 1rem 0;
+    margin-bottom: .7rem;
 }
 
-.footer-text li{
-    padding: .6rem 0;
+.footer-text1 ul{
+    font-family: 'Ubuntu', sans-serif;
     color: #d0cfd0;
-    font-family: 'Roboto', sans-serif;
+}
+
+.footer-text1 li{
+    margin-bottom: .8rem;
+}
+
+.footer-text1 li:hover{
+    color: #DEEF0B;
+    cursor: pointer;
 }
 
 .footer-text p{
-    padding: .6rem 0;
+    font-family: 'Ubuntu', sans-serif;
     color: #d0cfd0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    width: 23rem;
 }
 
-.footer-text input{
+.footer-item input{
     margin: 1rem 0;
-    padding: 0 .8rem;
-    display: block;
-    width: 23rem;
+    width: 100%;
     height: 3rem;
+    padding: 0 .6rem;
     outline: none;
-    border: none;
-    border-radius: 2rem;
+    border: 1px solid #d0cfd0;
+    background-color: transparent;
 }
 
-.footer-text button{
+.footer-btn{
+    width: 50%;
     padding: .8rem 2rem;
-    outline: none;
     border: none;
-    border-radius: 2rem;
+    outline: none;
     background-color: #DEEF0B;
     font-family: 'Sono', sans-serif;
     font-weight: 500;
-    font-size: .9rem;
+    font-size: 1rem;
+}
+
+
+@media screen and (min-width: 750px) {
+    .navlinks{
+        display: none;
+    }
+
+    /*BACKGROUND*/
+    .sms{
+        height: 70vh;
+    }
+
+    .cardtext{
+        font-size: 2.5rem;
+    }
+
+    .card-details{
+        width: 30rem;
+    }
+
+    .navlinks{
+        display: none;
+        background-color: #1D1D1D;
+        position: absolute;
+        width: 50%;
+        height: 100vh;
+        top: 0;
+        right: 0;
+    }
+
+    /*sect 1*/
+    .sect2{
+        width: 90%;
+    }
+
+    .flex-container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .container2{
+        width: 28rem;
+    }
+
+    .container2-header{
+        font-size: 2.4rem;
+        margin-top: unset;
+    }
+
+    .container1 img {
+        width: 70%;
+        height: 24rem;
+    }
+
+   
+    /*SECT 3*/
+    .sect3-header h1{
+        font-size: 2rem;
+    }
+
+    .cardbox{
+        width: 31%;
+        margin: .5rem;
+    }
+
+    .cardbox img{
+        width: 100%;
+        height: 45vh;
+        object-fit: cover;
+    }
+
+    /*SECT 4*/
+    .con-head{
+        font-size: 1.6rem;
+    }
+
+    .con-price{
+        max-width: 16rem;
+    }
+
+    .price1{
+        font-size: 1.9rem;
+    }
+
+    .benefits{
+        max-width: 18rem;
+    }
+    .benefits-icon li{
+        font-size: 1.1rem;
+    }
+
+    .benefits-btn{
+        padding: .6rem 1.9rem;
+        font-size: 1rem;
+    }
+
+    .benefits-btn span a{
+        padding: .6rem 1.9rem;
+    }
+
+
+    /*SECT 6*/
+    .sect6-story{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0 1rem;
+        align-items: center;
+    }
+
+    /*FOOTER*/
+    .footer-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .news{
+        width: 25%;
+    }
+
+    .footer-btn{
+        font-size: .9rem;
+        width: 55%;
+        padding: .8rem 1.1rem;
+    }
+
 }
 
 
@@ -645,738 +771,271 @@ footer{
 
 
 
-
-
-
-@media screen and (max-width: 400px) {
-    
+@media screen and (min-width: 1024px) {
     .navbar{
         justify-content: space-between;
-        margin: 0 1rem;
+        align-items: center;
+        margin: 0 4rem;
     }
+
+    .nav-title a{
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    
+    .navbar{
+        padding: 2rem 1.2rem;
+    }
+
     .navlinks{
+        display: flex;
+        justify-content: space-between;
+        background-color: unset;
+        position: unset;
+        width: unset;
+        height: unset;
+        top:unset;
+        right: unset;
+    }
+
+    .navlinks li{
+        font-size: 1.3rem;
+    }
+    
+
+    .hamburger{
         display: none;
     }
 
-    .navtext{
-        font-size: 1.3rem; 
+    .fa-times{
+        display: none;
+    }
+
+    .navlinks ul{
+        display: flex;
+    }
+
+    .navlinks ul, .account{
+        position: unset;
+        left: unset;
+        top: unset;
+    }
+
+    .navlinks li{
+        padding: 0 1rem;
+        font-size: 1.1rem;
+        font-family: 'Ubuntu', sans-serif;
+        border-bottom: unset;
     }
 
     .account{
         display: none;
     }
 
-    .hamburger{
+    .account1{
         display: block;
+        font-size: 1.1rem;
     }
 
-    .hamburger span{
-        display: block;
-    }
 
-    /*BACKGROUND IMAGE*/
+    /*BACKGROUND*/
     .sms{
-        height: 70vh;
+        height: 89vh;
     }
 
     .card-details{
-        width: unset;
-        margin-left: 3rem;
-        margin-top: 16rem;
+        width: 40rem;
     }
 
     .cardtext{
-        font-size: 1.5rem;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        margin-bottom: 1.7rem;
+        font-size: 3.5rem;
     }
 
     .cardbutton{
-        padding: .6rem .8rem;
+        padding: 1rem 1.8rem;
     }
 
 
-    /*SECT 2*/
-
+    /*sect 2*/
     .sect2{
-        width: 90%;
-        margin: auto;
-    }
-    
-    .sect2-head{
-        text-align: center;
-        margin: 2rem 0;
-        font-size: 1.8rem;
-    }
-
-    .flex-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .container2{
-        width: unset;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .container2-header{
-        width: unset;
-        margin: 1rem 0 auto;
-        font-size: 1.7rem;
-        text-align: center;
-    }
-
-    .container2-text{
-        margin: 1.5rem 0;
-        width: unset;
-        text-align: center;
-        font-size: 1rem;
-        padding-bottom: 1rem;
-    }
-    
-    .container1 img {
-        width: 100%;
-        height: 20rem;
-        object-fit: cover;
-    }
-
-    .container2-btn{
-       width: 7rem;
-        margin: 0 auto;
-        padding: .5rem .8rem;
-        border-radius: 2rem;
-        text-align: center;
-    }
-    
-
-    /*SECT 3*/
-    .sect3{
-        margin: 3rem 0;
-        padding-bottom: 1rem;
-    }
-
-    .sect3-container{
-        width: unset;
-        margin: unset;
-    }
-    
-    .sect3-header h1{
-        text-align: center;
-        margin: 2.5rem 0;
-        padding-top: 2.5rem;
-        font-size: 2rem;
-    }
-
-    .cardtitle{
-        text-align: center;
-    }
-    
-
-    /*SECT 4*/
-    .sect4{
-        width: unset;
-        margin: 3rem 0;
-        padding: 2rem 0;
-    }
-
-    .sect4-container{
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .sect4header{
-        text-align: center;
-        margin: 2rem 0;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 2.4rem;
-        font-weight: 500;
-    }
-    
-    .con{
-        width: unset;
-        background-color: #171717;
-        margin: 1rem;
-        padding: 2rem 0;
-    }
-
-
-    /*SECT 5*/
-    .sect5{
-        width: unset;
-        margin: 1rem 0;
-        padding: .5rem 0;
-    }
-    
-    .sect5-container{ 
-        margin: 1rem 0;
-    }
-
-
-    /*SECT 6*/
-    .sect6-story{
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sect6image{
-        margin-top: 3rem;
-    }
-
-    .sect6image img{
-        width: 23rem;
-    }
-
-    .sect6-text{
-        text-align: center;
-    }
-
-    .sect6-text1{
-        font-size: 2.5rem;
-        font-family: 'Ubuntu', sans-serif;
-        font-weight: 500;
-        color: #171717;
-        width: 20rem;
-        margin-bottom: 2.5rem;
-    }
-    
-    .sect6-text2 a{
-        margin-top: 1rem;
-        border: 2px solid #171717;
-        color: #000;
-        padding: .7rem;
-        border-radius: 4rem;
-        font-size: 1rem;
-    }
-
-    
-
-    /*FOOTER*/
-    footer{
-        width: unset;
+        width: 95%;
         margin: 3rem auto;
-        /*padding: 1rem 0;*/
-    }
-
-    .footer-container{
-        display: block;
-        flex-direction: column;
-        justify-content: unset;
+        padding: 1rem 0;
     }
     
-    .footer-header{
-        font-size: 1.9rem;
-        font-family: 'Ubuntu', sans-serif;
-        text-align: unset;
-        font-weight: 500;
-        margin: 1rem 0;
-    }
-    
-    .footer-text input{
-        padding: 0 .8rem;
-        display: block;
-        width: 18rem;
-    }
-    
-    .footer-text p{
-        padding: .6rem 0;
-        font-size: 1rem;
-        width: 15rem;
-    }
-
-   
-    
-}
-    
-
-
-
-
-@media screen and (max-width: 500px) {
-    
-    .navbar{
-        justify-content: space-between;
-        margin: 0 1rem;
-    }
-    .navlinks{
-        display: none;
-    }
-
-    .navtext{
-        font-size: 1.3rem; 
-    }
-
-    .account{
-        display: none;
-    }
-
-    .hamburger{
-        display: block;
-    }
-
-    .hamburger span{
-        display: block;
-    }
-
-    /*BACKGROUND IMAGE*/
-    .sms{
-        height: 70vh;
-    }
-
-    .card-details{
-        width: unset;
-        margin-left: 3rem;
-        margin-top: 16rem;
-    }
-
-    .cardtext{
-        font-size: 1.5rem;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        margin-bottom: 1.7rem;
-    }
-
-    .cardbutton{
-        padding: .6rem .8rem;
-    }
-
-
-    /*SECT 2*/
-    .sect2{
-        width: 90%;
-        margin: auto;
-    }
-    
-    .sect2-head{
-        text-align: center;
-        margin: 2rem 0;
-        font-size: 1.8rem;
-    }
-
     .flex-container{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-between;
     }
-    
+
     .container2{
-        width: unset;
-        display: flex;
-        flex-direction: column;
+        width: 37rem;
     }
-    
     .container2-header{
-        width: unset;
-        margin: 1rem 0 auto;
-        font-size: 1.7rem;
-        text-align: center;
+        font-size: 3.4rem;
+        margin-top: unset;
+    }
+
+    .container1 img {
+        width: 80%;
+        height: 30rem;
     }
 
     .container2-text{
-        margin: 1.5rem 0;
-        width: unset;
-        text-align: center;
-        font-size: 1rem;
-        padding-bottom: 1rem;
-    }
-    
-    .container1 img {
-        width: 100%;
-        height: 20rem;
-        object-fit: cover;
+        margin: 2.5rem 0;
+        width: 25rem;
+        word-spacing: 3px;
+        font-size: 1.1rem;
     }
 
     .container2-btn{
-       width: 7rem;
-        margin: 0 auto;
-        padding: .5rem .8rem;
-        border-radius: 2rem;
-        text-align: center;
+        padding: .7rem 1.3rem;
     }
-    
+
+
 
     /*SECT 3*/
     .sect3{
-        margin: 3rem 0;
-        padding-bottom: 1rem;
+        margin: 5rem 0;
     }
 
     .sect3-container{
-        width: unset;
-        margin: unset;
-    }
-    
-    .sect3-header h1{
-        text-align: center;
-        margin: 2.5rem 0;
-        padding-top: 2.5rem;
-        font-size: 2rem;
+        width: 95%;
+        margin: 0 auto;
     }
 
-    .cardtitle{
-        text-align: center;
+    .sect3-header h1{
+        font-size: 2.4rem;
     }
-    
+
+    .cardbox{
+        width: 30%;
+        margin: .5rem;
+    }
+
+    .cardbox img{
+        height: 45vh;
+    }
 
     /*SECT 4*/
     .sect4{
-        width: unset;
-        margin: 3rem 0;
-        padding: 2rem 0;
+        width: 95%;
     }
 
     .sect4-container{
-        flex-direction: column;
-        justify-content: center;
+        display: flex;
+    }
+
+    .con{
+        width: 30rem;
     }
 
     .sect4header{
-        text-align: center;
-        margin: 2rem 0;
-        font-family: 'Ubuntu', sans-serif;
         font-size: 2.4rem;
-        font-weight: 500;
     }
-    
-    .con{
-        width: unset;
-        background-color: #171717;
-        margin: 1rem;
-        padding: 2rem 0;
+
+    .con-head{
+        font-size: 1.6rem;
+    }
+
+    .con-price{
+        max-width: 15rem;
+    }
+
+    .price1{
+        font-size: 2rem;
+    }
+
+    .benefits-btn span a{
+        padding: .6rem 2rem;
     }
 
 
     /*SECT 5*/
     .sect5{
-        width: unset;
-        margin: 1rem 0;
-        padding: .5rem 0;
-    }
-    
-    .sect5-container{ 
-        margin: 1rem 0;
+        width: 95%;
     }
 
-
-    /*SECT 6*/
-    .sect6-story{
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sect6image{
-        margin-top: 3rem;
-    }
-
-    .sect6image img{
-        width: 23rem;
-    }
-
-    .sect6-text{
-        text-align: center;
-    }
-
-    .sect6-text1{
-        font-size: 2.5rem;
-        font-family: 'Ubuntu', sans-serif;
-        font-weight: 500;
-        color: #171717;
-        width: 20rem;
-        margin-bottom: 2.5rem;
-    }
-    
-    .sect6-text2 a{
-        margin-top: 1rem;
-        border: 2px solid #171717;
-        color: #000;
-        padding: .7rem;
-        border-radius: 4rem;
-        font-size: 1rem;
-    }
-
-    
-
-    /*FOOTER*/
-    .footer-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: unset;
-    }
-    
-    .footer-header{
-        font-size: 1.9rem;
-        font-family: 'Ubuntu', sans-serif;
-        text-align: unset;
-        font-weight: 500;
-        margin: 1rem 0;
-    }
-    
-    .footer-text input{
-        padding: 0 .8rem;
-        display: block;
-        width: 18rem;
-    }
-    
-    .footer-text p{
-        padding: .6rem 0;
-        font-size: 1rem;
-        width: 15rem;
-    } 
-    
-}
-   
-
-
-
-
-
-
-@media screen and (max-width: 768px) {
-    
-    .navbar{
-        justify-content: space-between;
-        margin: 0 1rem;
-    }
-    .navlinks{
-        display: none;
-    }
-
-    .navtext{
-        font-size: 1.3rem; 
-    }
-
-    .account{
-        display: none;
-    }
-
-    .hamburger{
-        display: block;
-    }
-
-    .hamburger span{
-        display: block;
-    }
-
-    /*BACKGROUND IMAGE*/
-    .sms{
-        height: 70vh;
-    }
-
-    .card-details{
-        width: unset;
-        margin-left: 3rem;
-        margin-top: 16rem;
-    }
-
-    .cardtext{
-        font-size: 1.5rem;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        margin-bottom: 1.7rem;
-    }
-
-    .cardbutton{
-        padding: .6rem .8rem;
-    }
-
-
-    /*SECT 2*/
-    .sect2{
-        width: 90%;
-        margin: auto;
-    }
-    
-    .sect2-head{
-        text-align: center;
-        margin: 2rem 0;
-        font-size: 1.8rem;
-    }
-
-    .flex-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .container2{
-        width: unset;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .container2-header{
-        width: unset;
-        margin: 1rem 0 auto;
-        font-size: 1.7rem;
-        text-align: center;
-    }
-
-    .container2-text{
-        margin: 1.5rem 0;
-        width: unset;
-        text-align: center;
-        font-size: 1rem;
-        padding-bottom: 1rem;
-    }
-    
-    .container1 img {
-        width: 100%;
-        height: 20rem;
-        object-fit: cover;
-    }
-
-    .container2-btn{
-       width: 7rem;
-        margin: 0 auto;
-        padding: .5rem .8rem;
-        border-radius: 2rem;
-        text-align: center;
-    }
-    
-
-    /*SECT 3*/
-    .sect3{
-        margin: 3rem 0;
-        padding-bottom: 1rem;
-    }
-
-    .sect3-container{
-        width: unset;
-        margin: unset;
-    }
-    
-    .sect3-header h1{
-        text-align: center;
-        margin: 2.5rem 0;
-        padding-top: 2.5rem;
-        font-size: 2rem;
-    }
-
-    .cardtitle{
-        text-align: center;
-    }
-    
-
-    /*SECT 4*/
-    .sect4{
-        width: unset;
-        margin: 3rem 0;
-        padding: 2rem 0;
-    }
-
-    .sect4-container{
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .sect4header{
-        text-align: center;
-        margin: 2rem 0;
-        font-family: 'Ubuntu', sans-serif;
+    .sect5-header{
         font-size: 2.4rem;
-        font-weight: 500;
-    }
-    
-    .con{
-        width: unset;
-        background-color: #171717;
-        margin: 1rem;
-        padding: 2rem 0;
     }
 
+    .coachname{
+        font-size: 1.4rem;
+    }
 
-    /*SECT 5*/
-    .sect5{
-        width: unset;
-        margin: 1rem 0;
-        padding: .5rem 0;
+    .sect5-image{
+        width: 23%;
+        /*height: 10rem;*/
+        margin: .5rem .4rem;
     }
-    
-    .sect5-container{ 
-        margin: 1rem 0;
-    }
+
 
 
     /*SECT 6*/
     .sect6-story{
         display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
+        flex-direction: unset;
+        justify-content: space-around;
+        padding: unset;
         align-items: center;
     }
 
-    .sect6image{
-        margin-top: 3rem;
-    }
-
-    .sect6image img{
-        width: 23rem;
+    .sect6-text1{
+        font-size: 5.5rem;
+        
     }
 
     .sect6-text{
-        text-align: center;
+        width: 50%;
+        margin: 0 auto;
     }
 
-    .sect6-text1{
-        font-size: 2.5rem;
-        font-family: 'Ubuntu', sans-serif;
-        font-weight: 500;
-        color: #171717;
-        width: 20rem;
-        margin-bottom: 2.5rem;
+    .sect6image{
+        margin-top: unset;
     }
-    
+
+    .sect6image img{
+        width: unset;
+    }
+
     .sect6-text2 a{
-        margin-top: 1rem;
+        margin: 1rem 0;
         border: 2px solid #171717;
         color: #000;
-        padding: .7rem;
+        font-family: 'Sono', sans-serif;
+        font-weight: 600;
+        padding: 1rem 2rem;
         border-radius: 4rem;
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
-    
+
+
 
     /*FOOTER*/
     .footer-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: unset;
+        flex-direction: row;
+        justify-content: space-between;
     }
-    
-    .footer-header{
-        font-size: 1.9rem;
-        font-family: 'Ubuntu', sans-serif;
-        text-align: unset;
-        font-weight: 500;
-        margin: 1rem 0;
+
+    .footer-item{
+        padding: unset;
     }
-    
-    .footer-text input{
-        padding: 0 .8rem;
-        display: block;
-        width: 18rem;
+
+    .footer-btn{
+        width: 35%;
+        padding: .8rem 1.4rem;
     }
-    
-    .footer-text p{
-        padding: .6rem 0;
-        font-size: 1rem;
-        width: 15rem;
-    } 
-    
+
+    .news{
+        width: 35%;
+    }
+
+    .footer-item input{
+        width: 100%;
+    }
 }
-
-
-
 
 
 

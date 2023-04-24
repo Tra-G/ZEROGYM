@@ -11,7 +11,12 @@
 
     <b>Plan: <?php echo $plan['name']; ?></b> [<a href="<?php echo redirect('user/plan/cancel'); ?>" onclick="if(confirm('Are you sure you want to cancel this plan?')) { return true; } else { return false; }">Cancel</a>]<br>
 
-    <b>Training Days: <?php echo $total_training_days > 0 ? $days : "[<a href='".redirect('user/training/change')."'>Select Now</a>]" ?>
+    <b>Training Days</b>:
+        <?php
+            foreach ($days as $day) {
+                echo $day.', ';
+            }
+        ?>
 
     <br><b>Selected Gym: <?php echo ($gym !== "None") ? $gym['name'] : $gym; ?></b>
     <?php if ($gym !== "None"): ?>
