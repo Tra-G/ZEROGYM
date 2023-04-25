@@ -8,7 +8,7 @@
 body {
     outline: none;
     color: var(--textColor);
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Roboto', sans-serif;
     
 }
 .container-all {
@@ -24,7 +24,8 @@ body {
 } */
 
 #left-column{
-    padding: 5rem;
+    padding: 4rem;
+    /* padding: 5rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +55,7 @@ body {
 
 .titlehead{
     text-align: center;
-    /* margin: 4.5rem 0; */
+    /* margin-top: 2.5rem; */
 }
 
 a{
@@ -75,11 +76,11 @@ a{
     color:#d0cfd0;
 }
 
-.signup{
+/* .signup{
     width: 20rem;
     margin: auto;
-    /* padding-top: 10px; */
-}
+    padding-top: 10px;
+} */
 
 .textinput{
     display: flex;
@@ -112,6 +113,10 @@ a{
     color: #fff;
 }
 
+.reminder span{
+    padding:1rem;
+}
+
 .signup-btn{
     width: 100%;
     border: none;
@@ -141,17 +146,72 @@ a{
     color: #d0cfd0;
 }
 
-@media screen and (max-width: 971px) {
-    .container-all {
-        grid-template-columns: 50vw 50vw;
-    }
+.bottom{
+    display: flex;
+    /* padding-top: 7rem; */
+    /* padding-top: 9rem; */
+}
 
+@media screen and (max-width: 1280px) {
+      .bottom{
+       padding-top: 9rem;
+}
+
+    
+    
+    
 }
 
 @media screen and (max-width: 971px) {
     .container-all {
+        grid-template-columns: 1fr;
+    }
+    .bottom{
+        padding-top: 13rem;
+    }
+    #right-column{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 915px) {
+  
+
+    .bottom{
+        padding-top: 45rem;
+    }
+
+    
+    
+    
+}
+
+@media screen and (max-width: 880px) {
+  
+
+    .bottom{
+        padding-top: 40rem;
+    }
+
+    
+    
+    
+}
+
+@media screen and (max-width: 475px) {
+    .container-all {
       grid-template-columns: 1fr;
     }
+
+    
+    .bottom{
+        padding-top: 15rem;
+    }
+
+    /* .bottom{
+        padding-top: 6rem;
+    } */
 
     
     
@@ -162,7 +222,29 @@ a{
     .column img {
         display: none;
     }
-}    
+}
 
-
+@media screen and (max-width: 365px) {
   
+
+    .bottom{
+        padding-top: 15rem;
+    }
+
+    
+    
+    
+}
+
+
+@media screen and (max-width: 380px) {
+  
+
+    .bottom{
+        padding-top: 3rem;
+    }
+
+    
+    
+    
+}
