@@ -463,20 +463,38 @@ class adminController {
                 $thumbnail_temp = $_FILES['thumbnail']['tmp_name'];
                 $thumbnail_ext = pathinfo($thumbnail_name, PATHINFO_EXTENSION);
 
-                // Ensure file is an image
-                if (!in_array($thumbnail_ext, ['jpg', 'jpeg', 'png', 'gif'])) {
-                    $errors[] = "The uploaded file must be an image.";
-                }
-
                 // Generate unique file name for thumbnail
                 $thumbnail_filename = uniqid('thumb_') . '.' . $thumbnail_ext;
+                $thumbnail_path = __DIR__ . '/../assets/media/' . $thumbnail_filename;
 
                 // Save thumbnail to server
-                $thumbnail_path = __DIR__ . '/../assets/media/' . $thumbnail_filename;
                 if (!move_uploaded_file($thumbnail_temp, $thumbnail_path)) {
                     $errors[] = "Thumbnail could not be uploaded";
                 }
 
+                // Ensure file is an image
+                if (!in_array($thumbnail_ext, ['jpg', 'jpeg', 'png', 'gif'])) {
+                    unlink($thumbnail_path);
+                    $errors[] = "The uploaded file must be an image.";
+                }
+
+                // Check if the file is an image
+                else if (getimagesize($thumbnail_path) === false) {
+                    unlink($thumbnail_path);
+                    $errors[] = "The uploaded file must be an image.";
+                }
+
+                // Check the image type
+                else if (exif_imagetype($thumbnail_path) === false) {
+                    unlink($thumbnail_path);
+                    $errors[] = "The uploaded file must be an image.";
+                }
+
+                // Check the file size (<20MB)
+                else if (filesize($thumbnail_path) > 20971520) {
+                    unlink($thumbnail_path);
+                    $errors[] = "The uploaded file must be an image.";
+                }
             } else {
                 $errors[] = 'Upload a thumbnail for the post';
             }
@@ -535,26 +553,37 @@ class adminController {
                 $thumbnail_temp = $_FILES['thumbnail']['tmp_name'];
                 $thumbnail_ext = pathinfo($thumbnail_name, PATHINFO_EXTENSION);
 
+                // Generate unique file name for thumbnail
+                $thumbnail_filename = uniqid('thumb_') . '.' . $thumbnail_ext;
+                $thumbnail_path = __DIR__ . '/../assets/media/' . $thumbnail_filename;
+                $old_path = __DIR__ . '/../assets/media/' . $post['thumbnail_path'];
+
+                if (!move_uploaded_file($thumbnail_temp, $thumbnail_path)) {
+                    $errors[] = "File could not be uploaded";
+                }
+
                 // Ensure file is an image
                 if (!in_array($thumbnail_ext, ['jpg', 'jpeg', 'png', 'gif'])) {
+                    unlink($thumbnail_path);
                     $errors[] = "The uploaded file must be an image.";
                 }
 
-                // Generate unique file name for thumbnail
-                $thumbnail_filename = uniqid('thumb_') . '.' . $thumbnail_ext;
-
-                // Save thumbnail to server
-                $thumbnail_path = __DIR__ . '/../assets/media/' . $thumbnail_filename;
-
-                $old_path = __DIR__ . '/../assets/media/' . $post['thumbnail_path'];
-
-                // Delete old thumbnail if it exists
-                if (!empty($post['thumbnail_path']) && file_exists($old_path)) {
-                    unlink($old_path);
+                // Check if the file is an image
+                else if (getimagesize($thumbnail_path) === false) {
+                    unlink($thumbnail_path);
+                    $errors[] = "The uploaded file must be an image.";
                 }
 
-                if (!move_uploaded_file($thumbnail_temp, $thumbnail_path)) {
-                    $errors[] = $thumbnail_path;
+                // Check the image type
+                else if (exif_imagetype($thumbnail_path) === false) {
+                    unlink($thumbnail_path);
+                    $errors[] = "The uploaded file must be an image.";
+                }
+
+                // Check the file size (<20MB)
+                else if (filesize($thumbnail_path) > 20971520) {
+                    unlink($thumbnail_path);
+                    $errors[] = "The uploaded file must be an image.";
                 }
             } else {
                 $thumbnail_filename = $post['thumbnail_path'];
@@ -562,6 +591,12 @@ class adminController {
 
             // Update post if no errors
             if (empty($errors)) {
+
+                // Delete old thumbnail if it exists
+                if (!empty($post['thumbnail_path']) && file_exists($old_path)) {
+                    unlink($old_path);
+                }
+
                 $data_array = array(
                     'title' => $post_title,
                     'content' => $post_content,
@@ -587,15 +622,26 @@ class adminController {
 
     // Delete blog post
     public function blogDelete($id) {
-        if (!getRowBySelector('blog_posts', 'id', $id))
+        $post = getRowBySelector('blog_posts', 'id', $id);
+        if (!$post)
             route("admin/dashboard");
+        else {
+            $delete = deleteRowBySelector('blog_posts', 'id', $id);
+            if ($delete) {
 
-        $delete = deleteRowBySelector('blog_posts', 'id', $id);
-        if ($delete)
-            route("admin/blog");
-        else
-            route("admin/blog/".$id);
-        exit();
+                // Delete old thumbnail if it exists
+                $thumbnail_path = __DIR__ . '/../assets/media/' . $post['thumbnail_path'];
+
+                if (!empty($post['thumbnail_path']) && file_exists($thumbnail_path)) {
+                    unlink($thumbnail_path);
+                }
+
+                route("admin/blog");
+            }
+            else
+                route("admin/blog/".$id);
+            exit();
+        }
     }
 
     // Payments History
