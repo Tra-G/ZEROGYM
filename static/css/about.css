@@ -7,6 +7,7 @@
 body{
     background-color: #1D1D1D;
     color: #fff;
+    font-family: 'Roboto', sans-serif;
 }
 
 a{
@@ -28,7 +29,6 @@ li{
 .nav-title a{
     display: flex;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -70,7 +70,6 @@ li{
 .navlinks li{
     padding: 1rem 0;
     font-size: 1.1rem;
-    font-family: 'Ubuntu', sans-serif;
     border-bottom: 1px solid #414040;
 }
 
@@ -85,7 +84,6 @@ li{
 
 .account{
     display: block;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
 }
 
@@ -100,7 +98,6 @@ li{
 
 .account1{
     display: none;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     background-color: #DEEF0B;
@@ -169,13 +166,11 @@ li{
 
 .photo-span1{
     font-size: 2.2rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
 .photo-span2{
     font-size: 2rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     color: #DEEF0B;
 }
@@ -188,7 +183,6 @@ li{
 
 .about1{
     font-size: 2rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     text-align: center;
 }
@@ -224,14 +218,12 @@ li{
     margin-top: 1.5rem;
     margin-bottom: 2.3rem;
     font-size: 1.5rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
 .sect2text2{
     margin: 2rem 0;
     font-size: .9rem;
-    font-family: 'Roboto', sans-serif;
     white-space: 4px;
     word-spacing: 3px;
     font-weight: 200;
@@ -241,7 +233,6 @@ li{
 .sect2btn{
     padding: .5rem 1.3rem;
     font-size: 1rem;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     background-color: #DEEF0B;
     outline: none;
@@ -258,7 +249,6 @@ li{
 .liststyle li{
     margin-left: 1rem;
     font-size: .9rem;
-    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -276,7 +266,6 @@ li{
 
 .sect5-header{
     margin: 3.5rem 0;
-    font-family: 'Ubuntu', sans-serif;
     text-align: center;
     font-size: 2.4rem;
     font-weight: 600;
@@ -319,13 +308,11 @@ li{
 }
 
 .coachname{
-    font-family: 'Roboto', sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
 }
 
 .coachwork{
-    font-family: 'Roboto', sans-serif;
     font-size: .9rem;
     color: #d0cfd0;
 }
@@ -354,13 +341,11 @@ footer{
 
 .footer-header{
     font-size: 1.3rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     margin-bottom: .7rem;
 }
 
 .footer-text1 ul{
-    font-family: 'Ubuntu', sans-serif;
     color: #d0cfd0;
 }
 
@@ -374,7 +359,6 @@ footer{
 }
 
 .footer-text p{
-    font-family: 'Ubuntu', sans-serif;
     color: #d0cfd0;
 }
 
@@ -515,7 +499,6 @@ footer{
     .navlinks li{
         padding: 0 1rem;
         font-size: 1.1rem;
-        font-family: 'Ubuntu', sans-serif;
         border-bottom: unset;
     }
 
@@ -579,7 +562,7 @@ footer{
 
     /*SECT 5 - OUR TRAINERS*/
     .sect5-image{
-        width: 23%;
+        width: 30%;
         margin: .5rem .5rem;
     }
 
