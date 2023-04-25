@@ -184,9 +184,9 @@ a{
     display: flex;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 1280px) {
     .bottom{
-     padding-top: 9rem;
+     padding-top: 30rem;
     }
 
     .left-column{
@@ -200,13 +200,22 @@ a{
 
     .form-content{
         /* border: 1px solid red; */
-        height: inherit;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-top: 19rem;
+
         
     }
+}
+
+@media screen and (min-width: 1024px) {
+    .form-content{
+        /* padding-top: 9rem; */
+    }
+
 }
 
 
@@ -263,7 +272,7 @@ a{
 
   @media screen and (max-width: 915px) {
       .bottom{
-        padding-top: 55rem;
+        padding-top: 57rem;
     }
 
   }
@@ -297,9 +306,17 @@ a{
     }
 
      .bottom{
-        padding-top: 35rem;
+        padding-top: 40rem;
     }
    
+
+}
+
+@media screen and (max-width: 770px) {
+    .bottom{
+       padding-top: 33rem;
+   }
+  
 
 }
 
@@ -359,7 +376,7 @@ a{
 
 
     .bottom{
-        padding-top: 20rem;
+        padding-top: 25rem;
     }
    
 
