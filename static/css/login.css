@@ -184,9 +184,9 @@ a{
     display: flex;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (max-width: 1280px) {
     .bottom{
-     padding-top: 30rem;
+     padding-top: 9rem;
     }
 
     .left-column{
@@ -200,20 +200,18 @@ a{
 
     .form-content{
         /* border: 1px solid red; */
-        height: 100vh;
+        height: inherit;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-top: 19rem;
-
         
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .form-content{
-        /* padding-top: 9rem; */
+    .form-container{
+        padding-top: 9rem;
     }
 
 }
@@ -272,7 +270,7 @@ a{
 
   @media screen and (max-width: 915px) {
       .bottom{
-        padding-top: 57rem;
+        padding-top: 55rem;
     }
 
   }
@@ -306,17 +304,9 @@ a{
     }
 
      .bottom{
-        padding-top: 40rem;
+        padding-top: 4rem;
     }
    
-
-}
-
-@media screen and (max-width: 770px) {
-    .bottom{
-       padding-top: 33rem;
-   }
-  
 
 }
 
