@@ -1,15 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-</head>
-<body>
-    <h2>Payment Confirmation</h2>
+<?php require_once(__DIR__.'/../inc/header.php'); ?>
 
-    <b>Status: <?php echo $status; ?></b><br>
+<!-- DISPLAY MODAL CONTENT -->
+<section id="dashboard-display" class="relative flex align-center justify-center">
+    <!--Menu For Mobile -->
+    <div class="mobile-menu-open absolute flex align-center">
+        <i class="fa fa-bars"></i> <span>Menu</span>
+    </div>
+    <h4 class="display-heading absolute">
+        <?php echo $status; ?>
+    </h4>
 
-    <br><a href='<?php echo redirect('user/dashboard'); ?>'>Dashboard</a>
-</body>
-</html>
+    <div class="dashboard-modal flex align-center justify-center">
+                <!-- Select Gym Buttons -->
+        <div class="modal-content selected-gym flex justify-center">
+
+            <div class="selected-gym-btns flex align-center justify-center">
+
+                <a href="<?php echo redirect('user/dashboard'); ?>">
+                    <button class="btn change-btn">RETURN TO DASHBOARD</button>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php require_once(__DIR__.'/../inc/footer.php'); ?>
