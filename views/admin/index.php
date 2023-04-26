@@ -1,28 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-</head>
-<body>
-    <h2>Welcome to the Admin Dashboard, <?php echo $admin['name']; ?></h2>
-    <b>Total Users: <?php echo $total_users; ?></b><br>
-    <b>Total Gyms: <?php echo $total_gyms; ?></b><br>
-    <b>Total Plans: <?php echo $total_plans; ?></b><br>
-    <b>Total Blog Posts: <?php echo $total_blog; ?></b><br>
-    <b>Total Revenue: <?php echo $total_revenue; ?></b><br><br>
+<?php require_once(__DIR__.'/inc/header.php'); ?>
 
-    <a href='<?php echo redirect('admin/users'); ?>'>All Users</a><br>
-    <a href='<?php echo redirect('admin/gyms'); ?>'>All Gyms</a><br>
-    <a href='<?php echo redirect('admin/plans'); ?>'>All Plans</a><br>
-    <a href='<?php echo redirect('admin/blog'); ?>'>Blog</a><br>
-    <a href='<?php echo redirect('admin/payments'); ?>'>Payments History</a><br><br>
+<style>
+    .box {
+        width: 30%;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin: auto;
+        display: inline-block;
+        text-align: center;
+        border: 1px solid #ccc;
+    }
+</style>
 
-    <a href='<?php echo redirect('admin/profile'); ?>'>Edit Profile</a><br>
-    <a href='<?php echo redirect('admin/change/password'); ?>'>Change Password</a><br>
+<!-- DISPLAY MODAL CONTENT -->
+<section id="dashboard-display" class="relative flex align-center justify-center">
+    <!--Menu For Mobile -->
+    <div class="mobile-menu-open absolute flex align-center">
+        <i class="fa fa-bars"></i> <span>Menu</span>
+    </div>
+    <h3 class="display-heading absolute">
+        ADMIN DASHBOARD
+    </h3>
 
+    <div class="dashboard-modal flex align-center justify-center">
+        <!-- Show Stats -->
+        <div class="box">
+            <h2>Total Users</h2><br>
+            <b><?php echo $total_users; ?></b>
+        </div>
+        <div class="box">
+            <h2>Total Gyms</h2><br>
+            <b><?php echo $total_gyms; ?></b>
+        </div>
+        <div class="box">
+            <h2>Total Revenue</h2><br>
+            <b><?php echo getenv('CURRENCY') . $total_revenue; ?></b>
+        </div>
+    </div>
+</section>
 
-    <br><br><a href='<?php echo redirect('logout'); ?>'>Logout</a>
-</body>
-</html>
+<?php require_once(__DIR__.'/inc/footer.php'); ?>

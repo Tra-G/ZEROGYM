@@ -1,25 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-</head>
-<body>
-    <h1>Total Posts: <?php echo $total_posts; ?></h1>
-    <b><a href="<?php echo redirect("admin/blog/new"); ?>">Add New Post</a></b>
-    <ol>
-    <?php
-    foreach ($blog_rows as $blog_rows) {
-        echo "<li>";
-        echo $blog_rows['title'];
-        echo " [<a href='".redirect("admin/blog/".$blog_rows['id']."/edit")."'>Edit</a>]";
-        echo "[<a href='".redirect("admin/blog/".$blog_rows['id']."/delete")."' onclick=\"if(confirm('Are you sure you want to delete this blog post?')) { return true; } else { return false; }\">Delete</a>]";
-        echo "</li><br>";
-    }
-    ?>
-    </ol>
+<?php require_once(__DIR__.'/../inc/header.php'); ?>
 
-    <br><a href='<?php echo redirect('admin/dashboard'); ?>'>Dashboard</a>
-</body>
-</html>
+<!-- DISPLAY MODAL CONTENT -->
+<section id="dashboard-display" class="relative flex align-center justify-center">
+    <!--Menu For Mobile -->
+    <div class="mobile-menu-open absolute flex align-center">
+        <i class="fa fa-bars"></i> <span>Menu</span>
+    </div>
+    <h3 class="display-heading absolute">
+        ALL POSTS
+    </h3>
+
+    <div class="dashboard-modal flex align-center justify-center">
+        <ul>
+            <li>
+                <button class="btn plan-submit_btn" onclick="window.location.href='<?php echo redirect('admin/blog/new'); ?>'">Add New Post</button>
+            </li><br><br>
+            <?php
+                $i = 1;
+                foreach ($blog_rows as $post) {
+                    echo "<li>";
+                    echo $i++ . '. ';
+                    echo $post['title'];
+                    echo " [<a style='color: blue;' href='".redirect("admin/blog/".$post['id']."/edit")."'>Edit</a>]";
+                    echo "[<a style='color: blue;' href='".redirect("admin/blog/".$post['id']."/delete")."' onclick=\"if(confirm('Are you sure you want to delete this?')) { return true; } else { return false; }\">Delete</a>]";
+                    echo "</li><br>";
+                }
+            ?>
+        </ul>
+    </div>
+</section>
+
+<?php require_once(__DIR__.'/../inc/footer.php'); ?>

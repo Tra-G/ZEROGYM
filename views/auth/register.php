@@ -71,7 +71,7 @@
 
                         <div class="textinput" style="margin-left: 1rem; ">
                             <i style="color: #DEEF0B;position: absolute;" class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                            <input name="state" type="text" placeholder="Enter your State">
+                            <input name="zip" type="text" placeholder="Enter your Zip Code">
                                     </div>
 
                                     <div class="textinput">
