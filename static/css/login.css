@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.first-half{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primaryColor);
+}
+
+.nav-title a{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+}
+
+.titlehead{
+    text-align: center;
+    margin: 4.5rem 0;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.container-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0;
+}
+
+.titlehead1{
+    margin: .6rem 0;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.titlehead2{
+    font-size: 1rem;
+    color:#d0cfd0;
+}
+
+form{
+    width: 90%;
+}
+
+.textinput{
+    display: flex;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.textinput input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #b5b1b5;
+    width: 100%;
+    padding: 0 1.6rem;
+    color: #fff;
+
+}
+
+.fa{
+    position: relative;
+    left: 1rem;
+    padding-bottom: .4rem;
+}
+
+.reminder{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.signup-btn{
+    background-color: var(--secondaryColor);
+    margin: 1rem 0;
+    padding: .8rem 0;
+    border-radius: .3rem;
+    text-align: center;
+}
+
+.signup-btn a{
+    color: #000;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+.log{
+    text-align: center;
+    color: #d0cfd0;
+}
+
+.second-half{
+    display: none;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .flex-item{
+        display: flex;
+    }
+    .first-half{
+        width: calc(100% - 40%);
+    }
+    .second-half{
+        display: flex;
+        width: 40%;
+        background-color: #fff;
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/img9.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+/*
+@media screen and (max-width: 400px) {
+    .container-flex{
+        margin: 2rem 0;
+    }
+
+    .flex-item{
+        display: unset;
+    }
+
+    .second-half{
+        display: none;
+    }
+
+    .first-half{
+        width: 100%;
+    }
+
+    .signup{
+        width: 100%;
+        margin: unset;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .flex-item{
+        display: unset;
+    }
+
+    .second-half{
+        display: none;
+    }
+
+    .first-half{
+        width: unset;
+    }
+
+    .signup{
+        width: unset;
+        margin: unset;
+    }
+    
+}
+*/
+
+
+
+
+
+
