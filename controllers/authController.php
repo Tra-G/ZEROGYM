@@ -76,20 +76,20 @@ class authController {
             $phone = trim($_POST['phone']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $state = ucfirst(strtolower(trim($_POST['state'])));
+            $zip = trim($_POST['zip']);
 
-            $states = array(
-                "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
-                "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Federal Capital Territory",
-                "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara",
-                "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers",
-                "Sokoto", "Taraba", "Yobe", "Zamfara"
-            );
-            if (!in_array($state, $states)) {
-                $errors[] = "Invalid state";
-            }
+            // $states = array(
+            //     "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
+            //     "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Federal Capital Territory",
+            //     "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara",
+            //     "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers",
+            //     "Sokoto", "Taraba", "Yobe", "Zamfara"
+            // );
+            // if (!in_array($state, $states)) {
+            //     $errors[] = "Invalid state";
+            // }
 
-            if (empty($name) || empty($email) || empty($password) || empty($phone) || empty($address) || empty($city) || empty($state)) {
+            if (empty($name) || empty($email) || empty($password) || empty($phone) || empty($address) || empty($city) || empty($zip)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -121,7 +121,7 @@ class authController {
                     'phone' => $phone,
                     'address' => $address,
                     'city' => $city,
-                    'state' => $state,
+                    'zip' => $zip,
                 );
 
                 $id = insertRow('users', $data_array);

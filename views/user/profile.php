@@ -35,7 +35,7 @@
                 <input type="tel" id="phone" name="phone" value="<?php echo ($user['phone']); ?>" placeholder="Phone">
                 <input type="text" id="address" name="address" value="<?php echo ($user['address']); ?>" placeholder="Address">
                 <input type="text" id="city" name="city" value="<?php echo ($user['city']); ?>" placeholder="City">
-                <input type="text" id="state" name="state" value="<?php echo ($user['state']); ?>" placeholder="State">
+                <input type="text" id="zip" name="zip" value="<?php echo ($user['zip']); ?>" placeholder="Zip">
                 <button class="btn">Save New Changes</button>
             </form>
         </div>
