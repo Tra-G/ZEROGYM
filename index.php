@@ -71,11 +71,6 @@ $routes = array(
         'action' => 'gymSelect',
         'view' => 'user/select'
     ),
-    '|^user/training/change/?$|' => array(
-        'controller' => 'userController',
-        'action' => 'training',
-        'view' => 'user/training'
-    ),
     '|^user/profile/?$|' => array(
         'controller' => 'userController',
         'action' => 'profile',

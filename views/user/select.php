@@ -1,44 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-  </head>
-  <body>
-    <h1>Select Gym</h1>
-    <?php if (!empty($errors)): ?>
-    <ul>
-        <?php foreach ($errors as $error): ?>
-            <li><?php echo $error; ?></li>
-        <?php endforeach; ?>
-    </ul>
-    <?php endif; ?>
+<?php require_once(__DIR__.'/inc/header.php'); ?>
 
-    <b>Gyms within my location:</b>
-    <?php if (!empty($closest_gyms)): ?>
-    <ul>
-    <?php foreach ($closest_gyms as $c_gym): ?>
-            <li><?php echo $c_gym['name']; ?></li>
-        <?php endforeach; ?>
-    </ul>
-    <?php endif; ?>
+<!-- DISPLAY MODAL CONTENT -->
+<section id="dashboard-display" class="relative flex align-center justify-center">
+    <!--Menu For Mobile -->
+    <div class="mobile-menu-open absolute flex align-center">
+        <i class="fa fa-bars"></i> <span>Menu</span>
+    </div>
+    <h3 class="display-heading absolute">
+        SELECT GYM
+    </h3>
 
-    <br><br>
+    <div class="dashboard-modal flex align-center justify-center">
+                <!-- Select Gym Buttons -->
+        <div class="modal-content selected-gym flex justify-center">
+            <?php if (!empty($errors)): ?>
+                <ul>
+                <?php foreach ($errors as $error): ?>
+                    <li><?php echo $error; ?></li>
+                <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+            <form action="" class="gym-options" method="post">
+                <ul class="flex  align-center">
+                    <h3 class="heading"></h3>
+                    <?php foreach ($all_gyms as $gym): ?>
+                    <li>
+                        <input type="radio" id="<?php echo $gym['name'] ; ?>" name="gym_id" value="<?php echo $gym['id'] ; ?>">
+                        <label for="<?php echo $gym['name'] ; ?>"><?php echo $gym['name'] ; ?></label>
+                    </li>
+                    <?php endforeach; ?>
+                    <button type="submit" name="submit" class="btn ">Save Option</button>
+                    <a href="./dashboard_select-gym.html">cancel</a>
+                </ul>
+            </form>
+        </div>
+    </div>
+</section>
 
-    <form method="post" action="">
-        <label for="gym">Select Gym</label><br>
-        <select name="gym_id" id="gym_id">
-            <?php
-            foreach ($all_gyms as $gym) {
-                $selected = ($user_gym['id'] == $gym['id']) ? 'selected' : '';
-                echo "<option value='".$gym['id']."' ".$selected.">".$gym['name']."</option>";
-            }
-            ?>
-        </select>
-        <br>
-        <input type="submit" name="submit" value="Submit">
-    </form>
-
-  </body>
-</html>
+<?php require_once(__DIR__.'/inc/footer.php'); ?>

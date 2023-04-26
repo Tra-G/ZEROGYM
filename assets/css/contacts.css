@@ -17,7 +17,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--textColor);
-    font-family: 'Ubuntu', sans-serif;
     padding-bottom: 2rem;
 }
 
@@ -119,12 +118,12 @@ section.contact-footer{
 
 section.contact-footer > div.subscribe-area{
     flex-direction: column;
-  
+
 }
 
 .subscribe-area{
     width: 30%;
-    
+
 }
 
 .subscribe-area > input{
@@ -248,7 +247,7 @@ footer{
     }
 
     .subscribe-area{
-    width: 100%;   
+    width: 100%;
     }
 
     section.contact-footer > address{
