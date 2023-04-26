@@ -1,33 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-</head>
-<body>
-    <h1><?php echo $title; ?></h1>
-    <?php if (!empty($errors)): ?>
-        <ul>
-            <?php foreach ($errors as $error): ?>
-                <li><?php echo $error; ?></li>
-            <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
-    <form action="" method="post" enctype="multipart/form-data">
-        <label for="title">Post Title:</label>
-        <input type="text" id="title" name="title" required><br>
+<?php require_once(__DIR__.'/../inc/header.php'); ?>
 
-        <label for="content">Content:</label>
-        <textarea id="content" name="content" required></textarea><br>
+<!-- DISPLAY MODAL CONTENT -->
+<section id="dashboard-display" class="relative flex align-center justify-center">
+    <!--Menu For Mobile -->
+    <div class="mobile-menu-open absolute flex align-center">
+        <i class="fa fa-bars"></i> <span>Menu</span>
+    </div>
+    <h3 class="display-heading absolute">
+        Add New Post
+    </h3>
 
-        <label for="image">Thumbnail:</label>
-        <input type="file" name="thumbnail" accept="image/*" required><br>
+    <div class="dashboard-modal flex align-center justify-center">
+        <div class="modal-content edit-profile">
+            <form action="" method="post" class="flex align-center justify-center" enctype="multipart/form-data">
 
-        <input type="submit" value="Add Post">
-    </form>
+                <?php if (!empty($errors)): ?>
+                <ul>
+                    <?php foreach ($errors as $error): ?>
+                        <li><?php echo $error; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
 
-    <br>
-    <a href='<?php echo redirect('admin/dashboard'); ?>'>Dashboard</a>
-</body>
-</html>
+                <h3></h3>
+
+                <input type="text" id="title" name="title" placeholder="Title" required><br>
+
+                <textarea id="content" name="content" placeholder="Content" required></textarea><br>
+
+                <input type="file" name="thumbnail" accept="image/*" placeholder="Thumbnail" required><br>
+
+                <button class="btn">Save New Changes</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<?php require_once(__DIR__.'/../inc/footer.php'); ?>

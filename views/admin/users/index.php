@@ -1,24 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-</head>
-<body>
-    <h1>All Users</h1>
-    <ol>
-    <?php
-    foreach ($user_rows as $user_row) {
-        echo "<li>";
-        echo $user_row['name'];
-        echo "<br>[<a href='".redirect("admin/users/".$user_row['id'])."'>View</a>]";
-        echo "[<a href='".redirect("admin/users/".$user_row['id']."/edit")."'>Edit</a>]";
-        echo "</li><br>";
-    }
-    ?>
-    </ol>
+<?php require_once(__DIR__.'/../inc/header.php'); ?>
 
-    <br><a href='<?php echo redirect('admin/dashboard'); ?>'>Dashboard</a>
-</body>
-</html>
+<!-- DISPLAY MODAL CONTENT -->
+<section id="dashboard-display" class="relative flex align-center justify-center">
+    <!--Menu For Mobile -->
+    <div class="mobile-menu-open absolute flex align-center">
+        <i class="fa fa-bars"></i> <span>Menu</span>
+    </div>
+    <h3 class="display-heading absolute">
+        ALL USERS
+    </h3>
+
+    <div class="dashboard-modal flex align-center justify-center">
+        <!-- List Users -->
+        <ul>
+        <?php
+            $i = 1;
+            foreach ($user_rows as $user_row) {
+                echo "<li>";
+                echo $i++ . '. ';
+                echo $user_row['name'];
+                echo " [<a style='color: blue;' href='".redirect("admin/users/".$user_row['id'])."'>View</a>]";
+                echo "[<a style='color: blue;' href='".redirect("admin/users/".$user_row['id']."/edit")."'>Edit</a>]";
+                echo "</li><br>";
+            }
+            ?>
+        </ul>
+    </div>
+</section>
+
+<?php require_once(__DIR__.'/../inc/footer.php'); ?>
