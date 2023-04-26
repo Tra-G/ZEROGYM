@@ -13,8 +13,20 @@ class paymentController {
 
     public $user;
 
+    public $membership;
+
+    public $plan;
+
     public function __construct() {
         $this->user = getRowBySelector('users', 'id', $_SESSION['user_id']);
+        $this->membership = getRowBySelector('memberships', 'user_id', $this->user['id']);
+
+        if ($this->membership['status'] == 'active')
+            $this->plan = getRowBySelector('plans', 'id', $this->membership['plan']);
+        else {
+            $this->plan = array('name' => 'N/A');
+            $this->membership['end_date'] = 'N/A';
+        }
 
         // check if user is properly logged in
         if (!session_check() || $this->user == null || $this->user['role'] != 'user') {
@@ -31,6 +43,9 @@ class paymentController {
         return array(
             'title' => $title,
             'plans' => $plans,
+            'user_details' => $this->user,
+            'membership_details' => $this->membership,
+            'plan_details' => $this->plan,
         );
     }
 
@@ -49,6 +64,9 @@ class paymentController {
             'title' => $title,
             'plan' => $plan_check,
             'public_key' => getenv('STRIPE_PUBLISHABLE_KEY'),
+            'user_details' => $this->user,
+            'membership_details' => $this->membership,
+            'plan_details' => $this->plan,
         );
     }
 
@@ -215,6 +233,9 @@ class paymentController {
         return array(
             'title' => $title,
             'status' => $statusMsg,
+            'user_details' => $this->user,
+            'membership_details' => $this->membership,
+            'plan_details' => $this->plan,
         );
     }
 }
