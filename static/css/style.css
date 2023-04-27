@@ -68,7 +68,7 @@ li{
     z-index: 10;
 }
 
-.navlinks ul, .account{
+.navlinks div, .account{
     position: relative;
     left: 2rem;
     top: 4rem;
@@ -571,15 +571,15 @@ footer{
     margin-bottom: .7rem;
 }
 
-.footer-text1 ul{
+.footer-text1{
     color: #d0cfd0;
 }
-
-.footer-text1 li{
+.footer-text1 span{
     margin-bottom: .8rem;
+    display: block;
 }
 
-.footer-text1 li:hover{
+.footer-text1 span:hover{
     color: #DEEF0B;
     cursor: pointer;
 }
@@ -780,11 +780,11 @@ footer{
         display: none;
     }
 
-    .navlinks ul{
+    .navlinks div{
         display: flex;
     }
 
-    .navlinks ul, .account{
+    .navlinks div, .account{
         position: unset;
         left: unset;
         top: unset;
