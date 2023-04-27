@@ -6,6 +6,9 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+.flex-item{
+    display: flex;
+}
 
 .first-half{
     width: 100%;
@@ -59,23 +62,29 @@ form{
     display: flex;
     align-items: center;
     margin: 3rem 0;
+    max-width: 100%;
 }
 
 .textinput input{
     background-color: transparent;
     border: none;
     outline: none;
-    border-bottom: 1px solid #b5b1b5;
+    border-bottom: 1px solid ;
     width: 100%;
     padding: 0 1.6rem;
     color: #fff;
-
+    font-size: 1rem;
 }
 
 .fa{
     position: relative;
     left: 1rem;
     padding-bottom: .4rem;
+}
+.fa-eye{
+    position: relative;
+    right: 1.2rem;
+    padding-bottom: .6rem;
 }
 
 .reminder{
@@ -106,7 +115,35 @@ form{
 
 .second-half{
     display: none;
+    width: 40%;
+    background-color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/img9.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+
+@media screen and (min-width: 750px) {
+    .flex-item{
+        display: flex;
+    }
+    .first-half{
+        width: calc(100% - 40%);
+    }
+    .second-half{
+        display: flex;
+    }
+
+    form{
+        width: 65%;
+    }
+    .titlehead1{
+        font-size: 1.8rem;
+    }
+}
+}
+
 
 
 @media screen and (min-width: 1024px) {
@@ -118,63 +155,13 @@ form{
     }
     .second-half{
         display: flex;
-        width: 40%;
-        background-color: #fff;
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/img9.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    }
+
+    form{
+        width: 65%;
+    }
+    .titlehead1{
+        font-size: 1.8rem;
     }
 }
-
-/*
-@media screen and (max-width: 400px) {
-    .container-flex{
-        margin: 2rem 0;
-    }
-
-    .flex-item{
-        display: unset;
-    }
-
-    .second-half{
-        display: none;
-    }
-
-    .first-half{
-        width: 100%;
-    }
-
-    .signup{
-        width: 100%;
-        margin: unset;
-    }
-    
-}
-
-@media screen and (max-width: 500px) {
-    .flex-item{
-        display: unset;
-    }
-
-    .second-half{
-        display: none;
-    }
-
-    .first-half{
-        width: unset;
-    }
-
-    .signup{
-        width: unset;
-        margin: unset;
-    }
-    
-}
-*/
-
-
-
-
-
 
