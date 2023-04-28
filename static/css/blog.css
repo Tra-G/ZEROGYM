@@ -400,7 +400,7 @@ footer{
         border-bottom: unset;
     }
 
-    .account{
+    .account span{
         display: none;
     }
 
