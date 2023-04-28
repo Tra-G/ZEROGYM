@@ -73,20 +73,25 @@ form{
     margin: 3rem 0;
 }
 
+.textinput{
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+.fa-eye{
+    padding-bottom: .6rem;
+    position: relative;
+    left: 90%;
+}
 .textinput input{
     background-color: transparent;
     border: none;
-    outline: none;
-    border-bottom: 1px solid #fff;
-    width: 100%;
-    padding: 0 1.6rem;
+    outline: none;    
     color: #fff;
     font-size: 1rem;
+    padding: 0 .6rem;
 }
 
 .icon{
-    position: relative;
-    left: 1rem;
     padding-bottom: .5rem;
 }
 
