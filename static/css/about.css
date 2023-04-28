@@ -14,11 +14,6 @@ a{
     color: #fff;
     text-decoration: none;
 }
-
-li{
-    list-style: none;
-}
-
 .nav{
     background-color: #191919;
     box-shadow: 0 0 5px #232323;
@@ -61,23 +56,24 @@ li{
     right: 0;
 }
 
-.navlinks ul, .account{
+.navlinks div, .account{
     position: relative;
     left: 2rem;
     top: 4rem;
 }
 
-.navlinks li{
+.navlinks span{
     padding: 1rem 0;
     font-size: 1.1rem;
     border-bottom: 1px solid #414040;
+    display: block;
 }
 
-.navlinks li:hover{
+.navlinks span:hover{
     color: #DEEF0B;
 }
 
-.navlinks li:hover{
+.navlinks span:hover{
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
 }
@@ -246,7 +242,7 @@ li{
     margin: 1.3rem 0;
 }
 
-.liststyle li{
+.liststyle span{
     margin-left: 1rem;
     font-size: .9rem;
 }
@@ -326,7 +322,7 @@ li{
 
 /*FOOTER*/
 footer{
-    width: 90%;
+    width: 95%;
     margin: 2rem auto;
 }
 
@@ -345,15 +341,15 @@ footer{
     margin-bottom: .7rem;
 }
 
-.footer-text1 ul{
+.footer-text1{
     color: #d0cfd0;
 }
-
-.footer-text1 li{
+.footer-text1 span{
     margin-bottom: .8rem;
+    display: block;
 }
 
-.footer-text1 li:hover{
+.footer-text1 span:hover{
     color: #DEEF0B;
     cursor: pointer;
 }
@@ -378,7 +374,6 @@ footer{
     border: none;
     outline: none;
     background-color: #DEEF0B;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     font-size: 1rem;
 }
@@ -474,7 +469,7 @@ footer{
         top:unset;
         right: unset;
     }
-    .navlinks li{
+    .navlinks span{
         font-size: 1.3rem;
     }
 
@@ -486,17 +481,17 @@ footer{
         display: none;
     }
 
-    .navlinks ul{
+    .navlinks div{
         display: flex;
     }
 
-    .navlinks ul, .account{
+    .navlinks div, .account{
         position: unset;
         left: unset;
         top: unset;
     }
 
-    .navlinks li{
+    .navlinks span{
         padding: 0 1rem;
         font-size: 1.1rem;
         border-bottom: unset;
@@ -555,7 +550,7 @@ footer{
         padding: .7rem 2rem;
     }
 
-    .liststyle li{
+    .liststyle span{
         font-size: 1rem;
     }
 

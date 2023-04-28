@@ -509,7 +509,7 @@ footer{
 
 .footer-container{
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .footer-item{
