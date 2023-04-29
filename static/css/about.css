@@ -220,7 +220,7 @@ a{
 .sect2text2{
     margin: 2rem 0;
     font-size: .9rem;
-    white-space: 4px;
+    /*white-space: 4px;*/
     word-spacing: 3px;
     font-weight: 200;
     color: #d0cfd0;

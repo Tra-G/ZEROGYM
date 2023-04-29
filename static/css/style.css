@@ -336,7 +336,7 @@ swiper-slide img {
     background-color: #171717;
     margin: 1rem;
     padding: 2rem 0;
-    box-shadow: 0, 0, 5rem;
+    /*box-shadow: 0, 0, 5px;*/
 }
 
 .con-head{
@@ -350,7 +350,7 @@ swiper-slide img {
     max-width: 13rem;
     padding: 2rem 0;
     margin: 0 auto;
-    box-shadow: 0, 0, 3rem;
+    /*box-shadow: 0, 0, 3rem;*/
     text-align: center;
     border-radius: 1rem;
 }
@@ -534,7 +534,7 @@ swiper-slide img {
     width: 100%;
     background-color: #171717;
     height: 2rem;
-    box-shadow: 0, 0, 5rem;
+    /*box-shadow: 0, 0, 5px;*/
     margin: 0;
     padding: 0;
     display: block;
