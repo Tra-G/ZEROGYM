@@ -113,11 +113,15 @@ form{
     text-align: center;
 }
 
-.signup-btn a{
+.signup-btn button{
+    border: none;
+    outline: none;
+    background-color: transparent;
     color: #000;
     text-align: center;
     font-family: 'Sono', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .log{
