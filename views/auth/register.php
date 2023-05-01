@@ -16,7 +16,7 @@
     <div class="flex-item">
         <div class="first-half">
             <div class="container-flex">
-                <form action="#">
+                <form action="" method="post">
                     <div class="titlehead">
                         <div class="nav-title">
                             <a href="<?php echo redirect(''); ?>">
