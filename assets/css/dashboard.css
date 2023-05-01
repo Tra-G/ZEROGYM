@@ -1,12 +1,13 @@
 .dashboard-container{
     background-color: var(--textColor);
     min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .dashboard-container > .logo{
     right: 2rem;
     top: 2rem;
-    color: var(--secondaryColor);
+    color: var(--secondaryColor); 
     background-color: rgba(0, 0, 0, .2);
     padding: .25rem;
     font-weight: 700;
@@ -193,7 +194,7 @@ display: inline-flex;
 .platinum-plan > p{
     background-color: rgba(165, 42, 42, .2);
     color: rgb(165, 42, 42);
-    border: 1px solid rgb(165, 42, 42);
+    border: 1px solid rgb(165, 42, 42); 
 }
 
 .plan-submit_btn{
@@ -238,7 +239,7 @@ display: inline-flex;
 
 .selected-gym{
     padding: 1rem;
-
+  
 }
 
 .selected-gym > div > #map{
@@ -453,7 +454,7 @@ form > .form-btns > button.cancel-payment{
 
 /* Media Query */
 @media screen and (max-width: 1200px) {
-
+    
     .dashboard-container{
         display: block;
         position: relative;
@@ -486,13 +487,13 @@ form > .form-btns > button.cancel-payment{
         font-size: 1.5rem;
         display: inline;
     }
-
+    
     .mobile-menu-open{
         top: 1.2rem;
         left: 1rem;
         display: flex;
     }
-
+    
     .mobile-menu-open > i{
         margin-right: .5rem;
     }
@@ -501,7 +502,7 @@ form > .form-btns > button.cancel-payment{
     top: 70px;
     font-size: 0.8rem;
 }
-
+    
     .dashboard-modal{
         width: 100%;
         min-height: 70vh;

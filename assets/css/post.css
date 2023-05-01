@@ -7,50 +7,29 @@
 body{
     background-color: #1D1D1D;
     color: #fff;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav{
-    position: fixed;
-    top: 0;
-    left: 0; 
-    width: 100%;
     background-color: #191919;
     box-shadow: 0 0 5px #232323;
-    color: #fff;
-    height: 6.3rem;
-    padding: 2rem 1rem;
-    z-index: 1;
-}
-
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navtext{
-    font-size: 1.8rem;
-}
-
-.navtext span{
-    color: #DEEF0B;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
 }
 
 .nav-title a{
     display: flex;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    font-size: .9rem;
+    font-size: 1.2rem;
 }
 
-a{
-    text-decoration: none;
-    color: #fff;
-}
-
-li{
-    list-style: none;
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
 }
 
 .hamburger{
@@ -59,73 +38,94 @@ li{
 
 .hamburger span{
     display: block;
-    background-color: #fff;
-    width: 25px;
+    width: 2rem;
     height: 2px;
+    background-color: #fff;
     margin: 4px;
-} 
-
-.account{
-    display: none;
-    align-items: center;
-}
-
-.account a{
-    padding: .4rem 1.4rem;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
-}
-
-.login:hover{
-    background-color: #DEEF0B;
-    color: #000;
-}
-
-.login:hover{
-    transition-duration: 0.4s;
-    transition-timing-function: ease-in-out;
-}
-
-.sign:hover{
-    color: #DEEF0B;
-}
-
-.sign:hover{
-    transition-duration: 0.3s;
-}
-
-.login{
-    border: 1px solid #DEEF0B;
 }
 
 .navlinks{
     display: none;
+    background-color: #1D1D1D;
+    position: absolute;
+    width: 80%;
+    height: 100vh;
+    top: 0;
+    right: 0;
 }
 
-.navlinks ul{
-    display: none;
-    align-items: center;
-}
-
-
-.navlinks a{
-    padding: 0 .8rem;
-    font-size: 1.2rem;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-}
-
-.navlinks ul.show {
+.navlinks span{
     display: block;
-  }
+}
 
-.navlinks a:hover{
+.navlinks > i.fa-times{
+    z-index: 10;
+}
+
+.navlinks div, .account{
+    position: relative;
+    left: 2rem;
+    top: 4rem;
+}
+
+.navlinks span{
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #414040;
+}
+
+.navlinks span:hover{
     color: #DEEF0B;
 }
 
-.navlinks a{
-    transition-duration: 0.3s;
+.navlinks span:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.account{
+    font-size: 1.1rem;
+}
+
+.account a:hover{
+    color: #DEEF0B;
+}
+
+.account:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.account1{
+    display: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background-color: #DEEF0B;
+    padding: .4rem 1.5rem;
+}
+
+.account1 a{
+    color: #000;
+}
+
+.account1:hover {
+    background-color: #9ca704;
+}
+
+.account1:hover{
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.navlinks.show {
+    display: block;
+  }
+
+.fa-times{
+    position: absolute;
+    right: 2rem;
+    top: 1.4rem;
+    font-size: 1.8rem;
 }
 
 
@@ -154,19 +154,16 @@ li{
 
 .flex-texts2 .flex-header{
     margin: 1rem 0;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.3rem;
     font-weight: 500;
 }
 
 .flex-texts2 .flex-date{
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     margin-bottom: 1rem;
 }
 
 .flextext .p1{
-    font-family: 'Ubuntu', sans-serif;
     margin-bottom: 1rem;
     color: #d0cfd0;
 }
@@ -175,7 +172,6 @@ li{
     color: #d0cfd0;
     list-style: circle;
     margin-bottom: 1rem;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1rem;
     list-style-position: inside;
 }
@@ -183,7 +179,6 @@ li{
 .arror-key{
     color: #d0cfd0;
     padding: 1rem 0;
-    font-family: 'Ubuntu', sans-serif;
     display: flex;
     justify-content: space-between;
 }
@@ -220,7 +215,6 @@ li{
 .form-head{
     margin-bottom: 1rem;
     font-size: 1.7rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
@@ -263,7 +257,6 @@ li{
     background-color: #DEEF0B;
     font-size: 1rem;
     font-weight: 500;
-    font-family: 'Sono', sans-serif;
 }
 
 /*LINE*/
@@ -275,8 +268,9 @@ li{
 
 
 /*FOOTER*/
+/*FOOTER*/
 footer{
-    width: 90%;
+    width: 95%;
     margin: 2rem auto;
 }
 
@@ -291,27 +285,24 @@ footer{
 
 .footer-header{
     font-size: 1.3rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     margin-bottom: .7rem;
 }
 
-.footer-text1 ul{
-    font-family: 'Ubuntu', sans-serif;
+.footer-text1{
     color: #d0cfd0;
 }
-
-.footer-text1 li{
+.footer-text1 span{
     margin-bottom: .8rem;
+    display: block;
 }
 
-.footer-text1 li:hover{
+.footer-text1 span:hover{
     color: #DEEF0B;
     cursor: pointer;
 }
 
 .footer-text p{
-    font-family: 'Ubuntu', sans-serif;
     color: #d0cfd0;
 }
 
@@ -331,7 +322,6 @@ footer{
     border: none;
     outline: none;
     background-color: #DEEF0B;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     font-size: 1rem;
 }
@@ -339,28 +329,9 @@ footer{
 
 
 
-
-
 @media screen and (min-width: 768px) {
-    .navbar{
-        justify-content: space-around;
-    }
     .navlinks{
-        display: block;
-    }
-
-    .navlinks ul{
-        display: flex;
-        align-items: center;
-    }
-
-    .hamburger{
         display: none;
-    }
-
-    .account{
-        display: flex;
-        align-items: center;
     }
 
     /*BACKGROUND*/
@@ -424,6 +395,139 @@ footer{
 }
 
 
+@media screen and (min-width: 1024px) {
+    .navbar{
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 4rem;
+    }
 
+    .nav-title a{
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    
+    .navbar{
+        padding: 2rem 1.2rem;
+    }
+
+    .navlinks{
+        display: flex;
+        justify-content: space-between;
+        background-color: unset;
+        position: unset;
+        width: unset;
+        height: unset;
+        top:unset;
+        right: unset;
+    }
+
+    .navlinks span{
+        font-size: 1.3rem;
+    }
+    
+
+    .hamburger{
+        display: none;
+    }
+
+    .fa-times{
+        display: none;
+    }
+
+    .navlinks div{
+        display: flex;
+    }
+
+    .navlinks div, .account{
+        position: unset;
+        left: unset;
+        top: unset;
+    }
+
+    .navlinks span{
+        padding: 0 1rem;
+        font-size: 1.1rem;
+        border-bottom: unset;
+    }
+
+    .account span{
+        display: none;
+    }
+
+    .account1{
+        display: block;
+        font-size: 1.1rem;
+    }
+
+/*BACKGROUND*/
+.bg-img{
+    height: 82vh;
+}
+
+/*SECT 1*/
+.flex-texts2 .flex-header{
+    font-size: 2.5rem;
+}
+
+.flex-texts2 .flex-date{
+    font-size: 1.1rem;
+}
+
+.flextext .p1{
+    font-size: 1.2rem;
+}
+
+.flextext li{
+    font-size: 1.2rem;
+}
+
+.arror-key{
+    font-size: 1.2rem;
+}
+
+/*FORM*/
+.form-head{
+    font-size: 2rem;
+}
+
+.form-inputs{
+    flex-direction: row;
+}
+
+.form-inputs input{
+    margin: 0 .5rem;
+    height: 3.7rem;
+    font-size: 1rem;
+}
+
+.form-btn{
+    padding: 1rem 2.5rem;
+}
+
+/*FOOTER*/
+
+.footer-container{
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-item{
+    padding: unset;
+}
+
+.footer-btn{
+    width: 35%;
+    padding: .8rem 1.4rem;
+}
+
+.news{
+    width: 35%;
+}
+
+.footer-item input{
+    width: 100%;
+}
+}
 
 

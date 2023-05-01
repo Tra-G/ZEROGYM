@@ -7,17 +7,13 @@
 body{
     background-color: #1D1D1D;
     color: #fff;
+    font-family: 'Roboto', sans-serif;
 }
 
 a{
     color: #fff;
     text-decoration: none;
 }
-
-li{
-    list-style: none;
-}
-
 .nav{
     background-color: #191919;
     box-shadow: 0 0 5px #232323;
@@ -28,7 +24,6 @@ li{
 .nav-title a{
     display: flex;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -61,31 +56,30 @@ li{
     right: 0;
 }
 
-.navlinks ul, .account{
+.navlinks div, .account{
     position: relative;
     left: 2rem;
     top: 4rem;
 }
 
-.navlinks li{
+.navlinks span{
     padding: 1rem 0;
     font-size: 1.1rem;
-    font-family: 'Ubuntu', sans-serif;
     border-bottom: 1px solid #414040;
+    display: block;
 }
 
-.navlinks li:hover{
+.navlinks span:hover{
     color: #DEEF0B;
 }
 
-.navlinks li:hover{
+.navlinks span:hover{
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
 }
 
 .account{
     display: block;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
 }
 
@@ -100,7 +94,6 @@ li{
 
 .account1{
     display: none;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     background-color: #DEEF0B;
@@ -169,13 +162,11 @@ li{
 
 .photo-span1{
     font-size: 2.2rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
 .photo-span2{
     font-size: 2rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     color: #DEEF0B;
 }
@@ -188,7 +179,6 @@ li{
 
 .about1{
     font-size: 2rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     text-align: center;
 }
@@ -224,15 +214,13 @@ li{
     margin-top: 1.5rem;
     margin-bottom: 2.3rem;
     font-size: 1.5rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
 .sect2text2{
     margin: 2rem 0;
     font-size: .9rem;
-    font-family: 'Roboto', sans-serif;
-    white-space: 4px;
+    /*white-space: 4px;*/
     word-spacing: 3px;
     font-weight: 200;
     color: #d0cfd0;
@@ -241,7 +229,6 @@ li{
 .sect2btn{
     padding: .5rem 1.3rem;
     font-size: 1rem;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     background-color: #DEEF0B;
     outline: none;
@@ -255,10 +242,9 @@ li{
     margin: 1.3rem 0;
 }
 
-.liststyle li{
+.liststyle span{
     margin-left: 1rem;
     font-size: .9rem;
-    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -276,7 +262,6 @@ li{
 
 .sect5-header{
     margin: 3.5rem 0;
-    font-family: 'Ubuntu', sans-serif;
     text-align: center;
     font-size: 2.4rem;
     font-weight: 600;
@@ -319,13 +304,11 @@ li{
 }
 
 .coachname{
-    font-family: 'Roboto', sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
 }
 
 .coachwork{
-    font-family: 'Roboto', sans-serif;
     font-size: .9rem;
     color: #d0cfd0;
 }
@@ -339,7 +322,7 @@ li{
 
 /*FOOTER*/
 footer{
-    width: 90%;
+    width: 95%;
     margin: 2rem auto;
 }
 
@@ -354,27 +337,24 @@ footer{
 
 .footer-header{
     font-size: 1.3rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     margin-bottom: .7rem;
 }
 
-.footer-text1 ul{
-    font-family: 'Ubuntu', sans-serif;
+.footer-text1{
     color: #d0cfd0;
 }
-
-.footer-text1 li{
+.footer-text1 span{
     margin-bottom: .8rem;
+    display: block;
 }
 
-.footer-text1 li:hover{
+.footer-text1 span:hover{
     color: #DEEF0B;
     cursor: pointer;
 }
 
 .footer-text p{
-    font-family: 'Ubuntu', sans-serif;
     color: #d0cfd0;
 }
 
@@ -394,7 +374,6 @@ footer{
     border: none;
     outline: none;
     background-color: #DEEF0B;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     font-size: 1rem;
 }
@@ -490,7 +469,7 @@ footer{
         top:unset;
         right: unset;
     }
-    .navlinks li{
+    .navlinks span{
         font-size: 1.3rem;
     }
 
@@ -502,20 +481,19 @@ footer{
         display: none;
     }
 
-    .navlinks ul{
+    .navlinks div{
         display: flex;
     }
 
-    .navlinks ul, .account{
+    .navlinks div, .account{
         position: unset;
         left: unset;
         top: unset;
     }
 
-    .navlinks li{
+    .navlinks span{
         padding: 0 1rem;
         font-size: 1.1rem;
-        font-family: 'Ubuntu', sans-serif;
         border-bottom: unset;
     }
 
@@ -523,7 +501,7 @@ footer{
         display: block;
     }
 
-    .account{
+    .account span{
         display: none;
     }
 
@@ -572,14 +550,14 @@ footer{
         padding: .7rem 2rem;
     }
 
-    .liststyle li{
+    .liststyle span{
         font-size: 1rem;
     }
 
 
     /*SECT 5 - OUR TRAINERS*/
     .sect5-image{
-        width: 23%;
+        width: 30%;
         margin: .5rem .5rem;
     }
 

@@ -37,12 +37,12 @@ if ($route) {
             include_once('views/' . $view . '.php');
         }
     } else {
-        // If the action does not exist in the controller, redirect to the 404 page
-        include_once('views/404.php');
+        // If the action does not exist in the controller, return 404 error
+        http_response_code(400);
     }
 } else {
     // If the URL is not valid, redirect to the 404 page
-    include_once('views/404.php');
+    http_response_code(400);
 }
 
 ?>

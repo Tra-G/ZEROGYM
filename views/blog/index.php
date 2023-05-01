@@ -26,30 +26,30 @@
 
             <div class="navlinks">
                 <i style="color: #fff;" class="fa fa-times" aria-hidden="true"></i>
-                <ul>
+                <div>
                     <a href="<?php echo redirect(''); ?>">
-                        <li>Home</li>
+                        <span>Home</span>
                     </a>
 
                     <a href="<?php echo redirect('blog'); ?>">
-                        <li>Blog</li>
+                        <span>Blog</span>
                     </a>
 
                     <a href="<?php echo redirect('about'); ?>">
-                        <li>About Us</li>
+                        <span>About Us</span>
                     </a>
                     <a href="<?php echo redirect('contact'); ?>">
-                        <li>Contact Us</li>
+                        <span>Contact Us</span>
                     </a>
 
                     <a href="<?php echo redirect('register'); ?>">
-                        <li>Join Us</li>
+                        <span>Join Us</span>
                     </a>
-                </ul>
+                </div>
 
                 <div class="account">
                     <a class="login" href="<?php echo redirect('login'); ?>">
-                        <li>Login</li>
+                        <span>Login</span>
                     </a>
                 </div>
             </div>
@@ -63,12 +63,12 @@
             </div>
             <div class="account1">
                 <a class="login" href="<?php echo redirect('login'); ?>">
-                    <li>Login</li>
+                    <span>Login</span>
                 </a>
             </div>
         </div>
     </div>
-    </div>
+
 
     <div class="blogpost">
         <div class="blog-image">
@@ -95,7 +95,7 @@
                 <div class="blog-card">
 
                     <div class="blog-img">
-                        <img src="<?php echo redirect('assets/media/'.$post['thumbnail_path']); ?>">
+                        <img src="<?php echo redirect('assets/media/'.$post['thumbnail_path']); ?>" alt="fitness image">
                     </div>
                     <p class="blog-text1"><span style="color: #DEEF0B;">By Admin</span> | <span style="color: #DEEF0B;"><?php echo date("j F, Y", strtotime($post['created_at'])); ?></span></p>
                     <p class="blog-text2">
@@ -112,6 +112,7 @@
                 </div>
                 <?php endforeach; ?>
                 <?php endif; ?>
+
             </div>
 
         </div>
@@ -124,31 +125,31 @@
         <div class="footer-container">
             <div class="footer-item">
                 <div class="footer-header">
-                    <p>QUICK LINKS</p>
+                    <p>INFORMATION</p>
                 </div>
 
                 <div class="footer-text1">
-                    <ul>
-                        <li><a href="<?php echo redirect(''); ?>">Home</a></li>
-                        <li><a href="<?php echo redirect('about'); ?>">About Us</a></li>
-                        <li><a href="<?php echo redirect('blog'); ?>">Blog</a></li>
-                        <li><a href="<?php echo redirect('contact'); ?>">Contact Us</a></li>
-                    </ul>
+                    <span>Our Classes</span>
+                    <span>Product Support</span>
+                    <span>Report Abuse</span>
+                    <span>Redeem Voucher</span>
+                    <span>Checkout</span>
                 </div>
             </div>
 
             <div class="footer-item">
                 <div class="footer-header support">
-                    <p>ACCOUNT</p>
+                    <p>SUPPORT</p>
                 </div>
 
                 <div class="footer-text1">
-                    <ul>
-                        <li><a href="<?php echo redirect('user/dashboard'); ?>">My Account</a></li>
-                        <li><a href="<?php echo redirect('login'); ?>">Login</a></li>
-                        <li><a href="<?php echo redirect('register'); ?>">Join Us</a></li>
-                    </ul>
+                    <span>Policies & Rules</span>
+                    <span>Privacy Policy</span>
+                    <span>Licence Policy</span>
+                    <span>My Account</span>
+                    <span>Locality</span>
                 </div>
+
             </div>
 
             <div class="footer-item news">
@@ -166,6 +167,7 @@
             </div>
         </div>
     </footer>
+
 
 
 
