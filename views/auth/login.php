@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="signup-btn">
-                  <button> Login </button>
+                  <button type="submit">Login</button>
                 </div>
 
                 <div class="log">

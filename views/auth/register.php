@@ -83,9 +83,7 @@
                             </div>
 
                         <div class="signup-btn">
-                            <a href="#">
-                                Sign Up
-                            </a>
+                            <button type="submit">Sign Up</button>
                         </div>
 
                         <div class="log">
