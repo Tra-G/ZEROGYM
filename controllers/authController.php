@@ -43,14 +43,14 @@ class authController {
                     else if ($user["role"] == "user")
                         route("user/dashboard");
                     else
-                        $errors[] = "No user found";
+                        $errors[] = "Incorrect details";
                 }
                 else{
-                    $errors[] = "Incorrect password";
+                    $errors[] = "Incorrect details";
                 }
             }
             else {
-                $errors[] = "Email was not found";
+                $errors[] = "Incorrect details";
             }
         }
 
@@ -106,7 +106,7 @@ class authController {
                 $errors[] = "Phone number is already taken.";
             }
             if (!ctype_digit($phone)) {
-                $errors[] = "Phone number is not valid";
+                $errors[] = "Phone number is not valid.";
             }
 
             // Insert if no error

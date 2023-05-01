@@ -15,61 +15,57 @@
 <body>
     <div class="nav">
         <div class="navbar">
-            <div class="nav-title">
+            <header class="nav-title">
                 <a href="<?php echo redirect(''); ?>">
                     <i class="fa-solid fa-dumbbell fa-2xl" style="color: #DEEF0B;"></i>
                     <p class="navtext">zero<span>gym</span></p>
                     <span class="mdi mdi-weight-lifter"></span>
                 </a>
-            </div>
+            </header>
 
-            <div class="navlinks">
-                <i style="color: #fff;" class="fa fa-times" aria-hidden="true"></i>
-                <ul>
+            <nav class="navlinks">
+                <i style="color: #fff;" class="fa fa-times"></i>
+                <div>
                     <a href="<?php echo redirect(''); ?>">
-                        <li>Home</li>
+                        <span>Home</span>
                     </a>
 
                     <a href="<?php echo redirect('blog'); ?>">
-                        <li>Blog</li>
+                        <span>Blog</span>
                     </a>
 
                     <a href="<?php echo redirect('about'); ?>">
-                        <li>About Us</li>
+                        <span>About Us</span>
                     </a>
                     <a href="<?php echo redirect('contact'); ?>">
-                        <li>Contact Us</li>
+                        <span>Contact Us</span>
                     </a>
 
                     <a href="<?php echo redirect('register'); ?>">
-                        <li>Join Us</li>
+                        <span>Join Us</span>
                     </a>
-
-
-                </ul>
+                </div>
 
                 <div class="account">
                     <a class="login" href="<?php echo redirect('login'); ?>">
-                        <li>Login</li>
+                        <span>Login</span>
                     </a>
                 </div>
-            </div>
-
-
+            </nav>
 
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="account1">
+            <nav class="account1">
                 <a class="login" href="<?php echo redirect('login'); ?>">
-                    <li>Login</li>
+                    <span>Login</span>
                 </a>
-            </div>
+            </nav>
         </div>
     </div>
-    </div>
+
 
     <div class="containerbox">
         <swiper-container class="sms" navigation="false" pagination="true" effect="fade" space-between="30"
@@ -77,17 +73,6 @@
                 <swiper-slide class="slide1">
                     <div class="card-details">
                         <p class="cardtext">Build your perfect body and accelerate a healthy growth</p>
-                        <span class="cardbutton">
-                            <a href="<?php echo redirect('about'); ?>">
-                                Learn More
-                            </a>
-                        </span>
-                    </div>
-                </swiper-slide>
-
-                <swiper-slide class="slide2">
-                    <div class="card-details">
-                        <p class="cardtext">Make Your Body Shape And Get Results You Can See.</p>
                         <span class="cardbutton">
                             <a href="<?php echo redirect('about'); ?>">
                                 Learn More
@@ -107,26 +92,25 @@
                     </div>
                 </swiper-slide>
 
-            </swiper-container>
-        </div>
+        </swiper-container>
     </div>
 
+
     <div class="sect2">
-        <div class="sect2-head">
-            <p>Why choose us?</p>
-        </div>
+        <header class="sect2-head">
+            <p >Why choose us?</p>
+        </header>
+
         <div class="flex-container">
             <div class="container1">
-                <img src="<?php echo assets('images/img29.jpg'); ?>">
-
-
+                <img src="<?php echo assets('images/img29.jpg'); ?>" alt="keep your mind and body">
             </div>
 
             <div class="container2">
                 <h1 class="container2-header">
                     keep your mind and body <span>strong with us!</span>
                 </h1>
-                <p class="container2-text">We provide instructors with years of experirnce to assist your health journey. We also provide nutrition to make your workout effective.</p>
+                <p class="container2-text">We provide instructors with years of experience to assist your health journey. We also provide nutrition to make your workout effective.</p>
                 <a class="container2-btn" href="<?php echo redirect('about'); ?>">
                     About Us
                 </a>
@@ -144,49 +128,31 @@
 
             <div class="card">
                 <div class="cardbox">
-                    <img src="<?php echo assets('images/img15.jpg'); ?>">
+                    <img src="<?php echo assets('images/img15.jpg'); ?>" alt="Weight lifter">
                     <div class="card-text">
-                        <p class="cardtitle">Weight lifter</p>
+                        <header class="cardtitle">
+                            Weight lifter
+                        </header>
 
                     </div>
                 </div>
 
                 <div class="cardbox">
-                    <img src="<?php echo assets('images/img16.jpg'); ?>">
+                    <img src="<?php echo assets('images/img20.jpg'); ?>" alt="Fitness workout">
                     <div class="card-text">
-                        <p class="cardtitle">Cardio strength</p>
+                        <header class="cardtitle">
+                            Fitness Workout
+                        </header>
 
                     </div>
                 </div>
 
                 <div class="cardbox">
-                    <img src="<?php echo assets('images/img20.jpg'); ?>">
+                    <img src="<?php echo assets('images/img25.jpg'); ?>" alt="Push ups">
                     <div class="card-text">
-                        <p class="cardtitle">Fitness workout</p>
-
-                    </div>
-                </div>
-
-                <div class="cardbox">
-                    <img src="<?php echo assets('images/img12.jpg'); ?>">
-                    <div class="card-text">
-                        <p class="cardtitle">Rope Exercise</p>
-
-                    </div>
-                </div>
-
-                <div class="cardbox">
-                    <img src="<?php echo assets('images/img25.jpg'); ?>">
-                    <div class="card-text">
-                        <p class="cardtitle">Push ups</p>
-
-                    </div>
-                </div>
-
-                <div class="cardbox">
-                    <img src="<?php echo assets('images/img28.jpg'); ?>">
-                    <div class="card-text">
-                        <p class="cardtitle">Lever pull</p>
+                        <header class="cardtitle">
+                            Push Up
+                        </header>
 
                     </div>
                 </div>
@@ -199,53 +165,51 @@
 
     <div class="sect4">
         <div>
-            <div class="sect4header">
+            <header class="sect4header">
                 <p class="sect4header">Pricing Plans</p>
-            </div>
+            </header>
 
             <div class="sect4-container">
                 <div class="con">
-                    <div class="con-head">
+                    <header class="con-head">
                         <h3>Silver Package</h3>
-                    </div>
+                    </header>
 
                     <div class="con-price">
-                        <h3 class="price1">$39</h3>
+                        <h3 class="price1">£39</h3>
                         <p class="price2">per month</p>
                     </div>
 
                     <div class="benefits">
-                        <ul>
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>24/7 GYM manager support</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>24/7 GYM manager support</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>01 Sweatshirt</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>01 Sweatshirt</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>Access to Videos</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>Access to Videos</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color:#626262;" class="fa fa-check" aria-hidden="true"></i>
-                                <li style="color:#626262;">Weight Lifting</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color:#626262;" class="fa fa-check"></i>
+                            <span style="color:#626262;">Weight Lifting</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color:#626262;" class="fa fa-check" aria-hidden="true"></i>
-                                <li style="color:#626262;">Swimming pool 13:00 - 18:00</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color:#626262;" class="fa fa-check"></i>
+                            <span style="color:#626262;">Swimming pool 13:00 - 18:00</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color:#626262;" class="fa fa-check" aria-hidden="true"></i>
-                                <li style="color:#626262;">Muscle Stretching & Relaxing room</li>
-                            </div>
-                        </ul>
+                        <div class="benefits-icon">
+                            <i style="color:#626262;" class="fa fa-check"></i>
+                            <span style="color:#626262;">Muscle Stretching & Relaxing room</span>
+                        </div>
                     </div>
 
                     <div class="benefits-btn">
@@ -256,47 +220,45 @@
                 </div>
 
                 <div class="con">
-                    <div class="con-head">
+                    <header class="con-head">
                         <h3>Gold Package</h3>
-                    </div>
+                    </header>
 
                     <div class="con-price">
-                        <h3 class="price1">$69</h3>
+                        <h3 class="price1">£69</h3>
                         <p class="price2">per month</p>
                     </div>
 
                     <div class="benefits">
-                        <ul>
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>24/7 GYM manager support</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>24/7 GYM manager support</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>01 Sweatshirt</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>01 Sweatshirt</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>Access to Videos</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>Access to Videos</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>Weight Lifting</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>Weight Lifting</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #626262;" class="fa fa-check" aria-hidden="true"></i>
-                                <li style="color:#626262;">Swimming pool 13:00 - 18:00</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #626262;" class="fa fa-check"></i>
+                            <span style="color:#626262;">Swimming pool 13:00 - 18:00</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #626262;" class="fa fa-check" aria-hidden="true"></i>
-                                <li style="color:#626262;">Muscle Stretching & Relaxing room</li>
-                            </div>
-                        </ul>
+                        <div class="benefits-icon">
+                            <i style="color: #626262;" class="fa fa-check"></i>
+                            <span style="color:#626262;">Muscle Stretching & Relaxing room</span>
+                        </div>
                     </div>
 
                     <div class="benefits-btn">
@@ -307,47 +269,46 @@
                 </div>
 
                 <div class="con">
-                    <div class="con-head">
+                    <header class="con-head">
                         <h3>Platinum Package</h3>
-                    </div>
+                    </header>
 
                     <div class="con-price">
-                        <h3 class="price1">$129</h3>
+                        <h3 class="price1">£129</h3>
                         <p class="price2">per month</p>
                     </div>
 
                     <div class="benefits">
-                        <ul>
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>24/7 GYM manager support</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>24/7 GYM manager support</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>01 Sweatshirt</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>01 Sweatshirt</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>Access to Videos</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>Access to Videos</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>Weight Lifting</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>Weight Lifting</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>Swimming pool 13:00 - 18:00</li>
-                            </div>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>Swimming pool 13:00 - 18:00</span>
+                        </div>
 
-                            <div class="benefits-icon">
-                                <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                                <li>Muscle Stretching & Relaxing room</li>
-                            </div>
-                        </ul>
+                        <div class="benefits-icon">
+                            <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                            <span>Muscle Stretching & Relaxing room</span>
+                        </div>
+
                     </div>
 
                     <div class="benefits-btn Platinum">
@@ -370,7 +331,7 @@
 
             <div class="sect5-cont">
                 <div class="sect5-image">
-                    <img src="<?php echo assets('images/img2.jpg'); ?>">
+                    <img src="<?php echo assets('images/img2.jpg'); ?>" alt="Crossfit Coach">
                     <div class="coach">
                         <span class="coachname">Jack Foeg</span>
                         <span class="coachwork">Crossfit Coach</span>
@@ -378,28 +339,20 @@
                 </div>
 
                 <div class="sect5-image">
-                    <img src="<?php echo assets('images/img3.jpg'); ?>">
+                    <img src="<?php echo assets('images/img3.jpg'); ?>" alt="Fitness Trainer">
                     <div class="coach">
                         <span class="coachname">Mary Wayne</span>
                         <span class="coachwork">Fitness Trainer</span>
                     </div>
                 </div>
 
-                <div class="sect5-image">
-                    <img src="<?php echo assets('images/img5.png'); ?>">
-
-                    <div class="coach">
-                        <span class="coachname">James loy</span>
-                        <span class="coachwork">Bodybuilding Coach</span>
-                    </div>
-                </div>
 
                 <div class="sect5-image">
-                    <img src="<?php echo assets('images/img24.jpg'); ?>">
+                    <img src="<?php echo assets('images/img24.jpg'); ?>" alt="Bodybuilding Coach">
 
                     <div class="coach">
                         <span class="coachname">Sandy Newman</span>
-                        <span class="coachwork">Zumba Coach</span>
+                        <span class="coachwork">Bodybuilding Coach</span>
                     </div>
                 </div>
             </div>
@@ -412,7 +365,7 @@
         <div class="sect6-container">
             <div class="sect6-story">
                 <div class="sect6image">
-                    <img src="<?php echo assets('images/img17.png'); ?>">
+                    <img src="<?php echo assets('images/img31.webp'); ?>" alt="Success Stories">
                 </div>
 
                 <div class="sect6-text">
@@ -433,31 +386,31 @@
         <div class="footer-container">
             <div class="footer-item">
                 <div class="footer-header">
-                    <p>QUICK LINKS</p>
+                    <p>INFORMATION</p>
                 </div>
 
                 <div class="footer-text1">
-                    <ul>
-                        <li><a href="<?php echo redirect(''); ?>">Home</a></li>
-                        <li><a href="<?php echo redirect('about'); ?>">About Us</a></li>
-                        <li><a href="<?php echo redirect('blog'); ?>">Blog</a></li>
-                        <li><a href="<?php echo redirect('contact'); ?>">Contact Us</a></li>
-                    </ul>
+                    <span>Our Classes</span>
+                    <span>Product Support</span>
+                    <span>Report Abuse</span>
+                    <span>Redeem Voucher</span>
+                    <span>Checkout</span>
                 </div>
             </div>
 
             <div class="footer-item">
                 <div class="footer-header support">
-                    <p>ACCOUNT</p>
+                    <p>SUPPORT</p>
                 </div>
 
                 <div class="footer-text1">
-                    <ul>
-                        <li><a href="<?php echo redirect('user/dashboard'); ?>">My Account</a></li>
-                        <li><a href="<?php echo redirect('login'); ?>">Login</a></li>
-                        <li><a href="<?php echo redirect('register'); ?>">Join Us</a></li>
-                    </ul>
+                    <span>Policies & Rules</span>
+                    <span>Privacy Policy</span>
+                    <span>Licence Policy</span>
+                    <span>My Account</span>
+                    <span>Locality</span>
                 </div>
+
             </div>
 
             <div class="footer-item news">
@@ -467,10 +420,12 @@
 
                 <div class="footer-text">
                     <p>Subscribe to our latest newsletter to get news about special discounts.</p>
-                    <input type="search" placeholder="Enter your email">
-                    <div class="footerbtn">
-                        <button class="footer-btn">Subscribe</button>
-                    </div>
+                    <form action="#">
+                        <input type="search" placeholder="Enter your email">
+                        <div class="footerbtn">
+                            <button class="footer-btn">Subscribe</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -491,6 +446,17 @@
 
         closeIcon.addEventListener('click', () => {
   menu.classList.remove('show');
+});
+
+
+// Add smooth scroll animation to all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
 });
 
     </script>

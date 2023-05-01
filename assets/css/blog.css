@@ -7,15 +7,12 @@
 body{
     background-color: #1D1D1D;
     color: #fff;
+    font-family: 'Roboto', sans-serif;
 }
 
 a{
     color: #fff;
     text-decoration: none;
-}
-
-li{
-    list-style: none;
 }
 
 .nav{
@@ -28,7 +25,6 @@ li{
 .nav-title a{
     display: flex;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -61,30 +57,29 @@ li{
     right: 0;
 }
 
-.navlinks ul, .account{
+.navlinks div, .account{
     position: relative;
     left: 2rem;
     top: 4rem;
 }
 
-.navlinks li{
+.navlinks span{
     padding: 1rem 0;
     font-size: 1.1rem;
-    font-family: 'Ubuntu', sans-serif;
     border-bottom: 1px solid #414040;
+    display: block;
 }
 
-.navlinks li:hover{
+.navlinks span:hover{
     color: #DEEF0B;
 }
 
-.navlinks li:hover{
+.navlinks span:hover{
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
 }
 
 .account{
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
 }
 
@@ -99,7 +94,6 @@ li{
 
 .account1{
     display: none;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     background-color: #DEEF0B;
@@ -131,10 +125,9 @@ li{
 }
 
 
-/*SECT 1*/
+/*BACKGROUND*/
 .blog-header{
     font-size: 3rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
@@ -169,7 +162,6 @@ li{
     background-color: transparent;
     color: #fff;
     padding: 1rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
@@ -178,11 +170,15 @@ li{
     background-color: #DEEF0B;
     outline: none;
     border: none;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
 
 /*SECT 2*/
+.card-details{
+    width: 90%;
+    margin: 3rem auto;
+}
+
 .blog-img img{
     width: 100%;
     display: block;
@@ -191,20 +187,16 @@ li{
 }
 
 .blog-card{
-    width: 20rem;
+    width: 100%;
     height: 34rem;
-    /*box-shadow: 0 0 1rem #383535;*/
     margin: 1rem;
 }
 
 .blog-item1{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-.card-details{
-    margin: 3rem 0;
 }
 
 .blog-card{
@@ -213,11 +205,9 @@ li{
 
 .blog-text1{
     margin: 1rem 0;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 .blog-text2{
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -228,13 +218,11 @@ li{
 }
 
 .blog-text3{
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1rem;
     color: #d0cfd0;
 }
 
 .blog-btn{
-    font-family: 'Sono', sans-serif;
     margin: 1rem 0;
     background-color: #DEEF0B;
     width: 8rem;
@@ -253,7 +241,7 @@ li{
 
 /*FOOTER*/
 footer{
-    width: 90%;
+    width: 95%;
     margin: 2rem auto;
 }
 
@@ -268,27 +256,24 @@ footer{
 
 .footer-header{
     font-size: 1.3rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     margin-bottom: .7rem;
 }
 
-.footer-text1 ul{
-    font-family: 'Ubuntu', sans-serif;
+.footer-text1{
     color: #d0cfd0;
 }
-
-.footer-text1 li{
+.footer-text1 span{
     margin-bottom: .8rem;
+    display: block;
 }
 
-.footer-text1 li:hover{
+.footer-text1 span:hover{
     color: #DEEF0B;
     cursor: pointer;
 }
 
 .footer-text p{
-    font-family: 'Ubuntu', sans-serif;
     color: #d0cfd0;
 }
 
@@ -308,11 +293,9 @@ footer{
     border: none;
     outline: none;
     background-color: #DEEF0B;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     font-size: 1rem;
 }
-
 
 
 
@@ -330,7 +313,13 @@ footer{
         padding: 2rem 0;
     }
 
+    .blog-item1{
+        flex-direction: row;
+    }
 
+    .blog-card{
+        width: 30%;
+    }
 
     /*FOOTER*/
     .footer-container{
@@ -383,7 +372,7 @@ footer{
         right: unset;
     }
 
-    .navlinks li a{
+    .navlinks span a{
         font-size: 1.3rem;
     }
 
@@ -395,24 +384,23 @@ footer{
         display: none;
     }
 
-    .navlinks ul{
+    .navlinks div{
         display: flex;
     }
 
-    .navlinks ul, .account{
+    .navlinks div, .account{
         position: unset;
         left: unset;
         top: unset;
     }
 
-    .navlinks li{
+    .navlinks span{
         padding: 0 1rem;
         font-size: 1.1rem;
-        font-family: 'Ubuntu', sans-serif;
         border-bottom: unset;
     }
 
-    .account{
+    .account span{
         display: none;
     }
 
@@ -427,6 +415,14 @@ footer{
     margin-top: 1rem;
     margin-bottom: 3rem;
     padding: 2rem 0;
+}
+
+.blog-item1{
+    flex-direction: row;
+}
+
+.blog-card{
+    width: 31%;
 }
 
     /*FOOTER*/
