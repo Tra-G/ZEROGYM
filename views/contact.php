@@ -73,15 +73,17 @@
                  <h2 class="contact-heading">
                     Contact Us
                 </h2>
+
+                <h3 class="list-heading">Offical Lines</h3>
                 <ul class="official-contact_list">
-                    <h4 class="list-heading">Offical Lines</h4>
+
                     <li>
                         <i class="fa fa-phone"></i>
                         <span>+234-123-456-789</span>
                     </li>
                     <li>
                         <i class="fa-brands fa-whatsapp"></i>
-                        <span>+234-987-654-321</span>
+                        <span>+234-987-654-331</span>
                     </li>
                     <li>
                         <i class="fa fa-at"></i>
@@ -89,8 +91,10 @@
                     </li>
                 </ul>
 
+
+                <h3 class="list-heading">Social Media Handles</h3>
                 <ul class="social-contact_list">
-                    <h4 class="list-heading">Social Media Handles</h4>
+
                     <li>
                         <i class="fa-brands fa-twitter"></i>
                         <span>@zero_gym</span>
