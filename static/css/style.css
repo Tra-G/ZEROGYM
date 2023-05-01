@@ -473,6 +473,10 @@ swiper-slide img {
 
 
 /*SECT 6*/
+.sect6{
+    width: 95%;
+    margin: auto;
+}
 .sect6-container{
     padding-top: 1rem;
     background: #DEEF0B;
@@ -486,15 +490,14 @@ swiper-slide img {
     align-items: center;
 }
 
-.sect6-text{
+/*.sect6-text{
     width: 90%;
-}
+}*/
 
 .sect6-text1{
     font-size: 2.5rem;
     font-weight: 500;
     color: #171717;
-    width: 100%;
     margin-bottom: 2.5rem;
 }
 
@@ -526,8 +529,9 @@ swiper-slide img {
 .sect6image img{
     margin: 0;
     padding: 0;
-    display: block;
+    height: 80vh;
     width: 100%;
+    object-fit: cover;
 }
 
 .line{
