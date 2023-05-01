@@ -106,7 +106,7 @@ class authController {
                 $errors[] = "Phone number is already taken.";
             }
             if (!ctype_digit($phone)) {
-                $errors[] = "Phone number is not valid";
+                $errors[] = "Phone number is not valid.";
             }
 
             // Insert if no error

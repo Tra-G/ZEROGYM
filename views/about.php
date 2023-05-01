@@ -10,7 +10,7 @@
     <!--icon link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="<?php echo assets('css/about.css'); ?>">
-    <title><?php echo $title; ?></title></title>
+    <title><?php echo $title; ?></title>
 </head>
 <body>
     <div class="nav">

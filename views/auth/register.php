@@ -16,7 +16,7 @@
     <div class="flex-item">
         <div class="first-half">
             <div class="container-flex">
-                <form action="" method="post">
+                <form method="post">
                     <div class="titlehead">
                         <div class="nav-title">
                             <a href="<?php echo redirect(''); ?>">
@@ -43,42 +43,42 @@
                     <div class="signup">
                         <div class="textinput">
                             <i style="color: #DEEF0B;" class="fa fa-user icon" aria-hidden="true"></i>
-                            <input name="name" type="text" placeholder="Enter your full name">
+                            <input name="name" type="text" placeholder="Enter your full name" required>
                         </div>
 
                         <div class="textinput">
                             <i style="color: #DEEF0B;" class="fa fa-envelope icon" aria-hidden="true"></i>
-                            <input name="email" type="text" placeholder="Enter your Email">
+                            <input name="email" type="text" placeholder="Enter your Email" required>
                         </div>
 
                         <div class="textinput">
                             <i style="color: #DEEF0B;" class="fa-solid fa-phone icon"></i>
-                            <input name="phone" type="text" placeholder="Enter your phone number">
+                            <input name="phone" type="text" placeholder="Enter your phone number" required>
                         </div>
 
                         <div class="textinput">
                             <i style="color: #DEEF0B;" class="fa-solid fa-house icon"></i>
-                            <input name="address" type="text" placeholder="Enter your address">
+                            <input name="address" type="text" placeholder="Enter your address" required>
                         </div>
 
                         <div class="textinput">
                             <i style="color: #DEEF0B;" class="fa-solid fa-city icon"></i>
-                            <input name="city" type="text" placeholder="Enter your city">
+                            <input name="city" type="text" placeholder="Enter your city" required>
                         </div>
 
                         <div class="textinput">
                             <i style="color: #DEEF0B;" class="fa-solid fa-location-dot icon"></i>
-                            <input name="zip" type="text" placeholder="Enter your zip code">
+                            <input name="zip" type="text" placeholder="Enter your zip code" required>
                         </div>
 
                         <div class="textinput">
                             <i style="color: #DEEF0B;" class="fa fa-unlock-alt icon"></i>
                             <i onclick="toggleVisibility()" style="color: #deef0b" class="fa-solid fa-eye"></i>
-                            <input name="password" id="password" type="password" placeholder="Enter your Password">
+                            <input name="password" id="password" type="password" placeholder="Enter your Password" required>
                         </div>
 
                         <div class="reminder">
-                                <input type="checkbox">
+                                <input type="checkbox" required>
                                 <span>I read and agree to Terms and Conditions</span>
                             </div>
 
