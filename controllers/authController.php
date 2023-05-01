@@ -43,14 +43,14 @@ class authController {
                     else if ($user["role"] == "user")
                         route("user/dashboard");
                     else
-                        $errors[] = "No user found";
+                        $errors[] = "Incorrect details";
                 }
                 else{
-                    $errors[] = "Incorrect password";
+                    $errors[] = "Incorrect details";
                 }
             }
             else {
-                $errors[] = "Email was not found";
+                $errors[] = "Incorrect details";
             }
         }
 

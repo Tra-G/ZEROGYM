@@ -3,16 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Roboto', sans-serif;
+}
 
 .flex-item{
     display: flex;
 }
-
 .nav-title a{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     font-size: 1.3rem;
     margin-bottom: 3rem;
@@ -21,7 +22,7 @@
 
 .titlehead{
     text-align: center;
-    margin: 4.5rem 0;
+    margin: 4rem 0;
 }
 
 a{
@@ -31,7 +32,7 @@ a{
 
 
 .first-half{
-    width: calc(100% - 45rem);
+    width: 100%;
     height: 100vh;
     background-color: var(--primaryColor);
 }
@@ -40,12 +41,12 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5rem 0;
+    margin: 2rem 0;
 }
 
 .titlehead1{
-    margin: .6rem 0;
-    font-size: 1.6rem;
+    margin: .4rem 0;
+    font-size: 1.4rem;
     font-family: 'Roboto', sans-serif;
     color: #fff;
     font-weight: 600;
@@ -56,8 +57,13 @@ a{
     color:#d0cfd0;
 }
 
+form{
+    width: 90%;
+    margin: auto;
+}
+
 .signup{
-    width: 25rem;
+    width: 100%;
     margin: auto;
 }
 
@@ -67,19 +73,26 @@ a{
     margin: 3rem 0;
 }
 
+.textinput{
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+.fa-eye{
+    padding-bottom: .6rem;
+    position: relative;
+    left: 90%;
+}
 .textinput input{
     background-color: transparent;
     border: none;
     outline: none;
-    border-bottom: 1px solid #fff;
-    width: 100%;
-    padding: 0 1.6rem;
     color: #fff;
+    font-size: 1rem;
+    padding: 0 .6rem;
 }
 
-.fa{
-    position: relative;
-    left: 1rem;
+.icon{
+    padding-bottom: .5rem;
 }
 
 .reminder{
@@ -107,15 +120,16 @@ a{
     font-weight: 500;
 }
 
-
 .log{
     text-align: center;
     color: #d0cfd0;
+    margin: 2rem 0;
 }
 
 .second-half{
-    width: 70rem;
-    height: 100vh;
+    display: none;
+    width: 40%;
+    height: 120vh;
     background-color: #fff;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/img9.jpg);
     background-position: center;
@@ -123,48 +137,36 @@ a{
     background-size: cover;
 }
 
-
-
-@media screen and (max-width: 400px) {
-    .container-flex{
-        margin: 2rem 0;
-    }
-
-    .flex-item{
-        display: unset;
+@media screen and (min-width: 750px) {
+    .first-half{
+        width: calc(100% - 40%);
     }
 
     .second-half{
-        display: none;
+        display: block;
     }
-
-    .first-half{
-        width: 100%;
+    form{
+        width: 65%;
     }
-
-    .signup{
-        width: 100%;
-        margin: unset;
+    .titlehead1{
+        font-size: 1.8rem;
     }
-    
 }
 
-@media screen and (max-width: 500px) {
-    .flex-item{
-        display: unset;
+
+@media screen and (min-width: 1024px) {
+    .first-half{
+        width: calc(100% - 40%);
     }
 
     .second-half{
-        display: none;
+        display: block;
     }
-
-    .first-half{
-        width: unset;
+    form{
+        width: 65%;
     }
-
-    .signup{
-        width: unset;
-        margin: unset;
+    .titlehead1{
+        font-size: 1.8rem;
     }
-    
 }
+
