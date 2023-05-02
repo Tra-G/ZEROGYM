@@ -129,28 +129,15 @@
                 </div>
 
                 <div class="footer-text1">
-                    <span>Our Classes</span>
-                    <span>Product Support</span>
-                    <span>Report Abuse</span>
-                    <span>Redeem Voucher</span>
-                    <span>Checkout</span>
+                    <span><a href="<?php echo redirect(''); ?>">Home</a></span>
+                    <span><a href="<?php echo redirect('about'); ?>">About</a></span>
+                    <span><a href="<?php echo redirect('contact'); ?>">Contact</a></span>
+                    <span><a href="<?php echo redirect('blog'); ?>">Blog</a></span>
+                    <span><a href="<?php echo redirect('login'); ?>">Account</a></span>
                 </div>
             </div>
 
-            <div class="footer-item">
-                <div class="footer-header support">
-                    <p>SUPPORT</p>
-                </div>
 
-                <div class="footer-text1">
-                    <span>Policies & Rules</span>
-                    <span>Privacy Policy</span>
-                    <span>Licence Policy</span>
-                    <span>My Account</span>
-                    <span>Locality</span>
-                </div>
-
-            </div>
 
             <div class="footer-item news">
                 <div class="footer-header">
