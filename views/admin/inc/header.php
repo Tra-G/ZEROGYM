@@ -50,9 +50,9 @@
                     <li class="dashboard-list flex align-center <?php if ($_SERVER['REQUEST_URI'] == '/admin/blog') { echo 'active'; } ?>" data-modal="edit-profile"> <i class="far fa-newspaper"></i> <p>Blog Management</p></li>
                 </a>
 
-                <a href="<?php echo redirect('admin/payments'); ?>">
+                <!-- <a href="<?php echo redirect('admin/payments'); ?>">
                     <li class="dashboard-list flex align-center <?php if ($_SERVER['REQUEST_URI'] == '/admin/payments') { echo 'active'; } ?>" data-modal="edit-profile"> <i class="fas fa-history"></i> <p>Payment History</p></li>
-                </a>
+                </a> -->
 
                 <a href="<?php echo redirect('admin/profile'); ?>">
                     <li class="dashboard-list flex align-center <?php if ($_SERVER['REQUEST_URI'] == '/admin/profile') { echo 'active'; } ?>" data-modal="edit-profile"> <i class="fa fa-user"></i> <p>Edit Profile</p></li>

@@ -90,6 +90,11 @@ function session_check() {
     return (isset($_SESSION['logged']) && isset($_SESSION['user_id']));
 }
 
+// Generate token
+function generate_token($length=32) {
+    return bin2hex(random_bytes($length));
+}
+
 
 /**
  * CRUD OPERATIONS
@@ -260,38 +265,26 @@ function updateRowBySelector($table, $data, $selectorColumn, $selectorValue) {
 }
 
 
-function deleteRowBySelector($table, $selectorColumn, $selectorValue) {
+function deleteRowBySelector($table, $selectorColumn = null, $selectorValue = null) {
     $conn = db_connect();
-    // Construct the SQL query
-    $sql = "DELETE FROM $table WHERE $selectorColumn = " . $conn->real_escape_string($selectorValue);
 
-    // Execute the query
-    if ($conn->query($sql) === TRUE) {
-        // If the query was successful, return the number of rows affected
-        $affected_rows = $conn->affected_rows;
+    // Use prepared statements to prevent SQL injection
+    if ($selectorColumn && $selectorValue) {
+        $stmt = $conn->prepare("DELETE FROM $table WHERE $selectorColumn = ?");
+        $stmt->bind_param("s", $selectorValue);
     } else {
-        // If the query failed, return null
-        $affected_rows = null;
+        $stmt = $conn->prepare("DELETE FROM $table");
     }
 
-    // Close the database connection
+    // Execute the query
+    $stmt->execute();
+    $affected_rows = $stmt->affected_rows;
+
+    // Close the statement and database connection
+    $stmt->close();
     mysqli_close($conn);
 
     return $affected_rows;
-
-    /* Usage:
-    $table = 'users'; // Change this to the name of the table you want to delete from
-    $selectorColumn = 'id'; // Change this to the name of the selector column
-    $selectorValue = 1; // Change this to the selector value you want to use
-
-    $rowsAffected = deleteRowBySelector($table, $selectorColumn, $selectorValue);
-
-    if (is_numeric($rowsAffected)) {
-        echo "Rows affected: " . $rowsAffected;
-    } else {
-        echo $rowsAffected;
-    }
-    */
 }
 
 
