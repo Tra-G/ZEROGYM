@@ -56,7 +56,9 @@ class UserController {
     public function index() {
         $title = pageTitle("Dashboard");
         $plan = getRowBySelector('plans', 'id', $this->membership['plan']);
-        $days = json_decode($this->membership['training_days']);
+        if ($this->membership['training_days']) {
+            $days = json_decode($this->membership['training_days']);
+        }
 
         if ($this->membership['gym_id']) {
             $gym_select = getRowBySelector('gyms', 'id', $this->membership['gym_id']);
@@ -73,7 +75,7 @@ class UserController {
             'user' => $this->user,
             'membership' => $this->membership,
             'plan' => $plan,
-            'days' => $days,
+            'days' => $days ?? null,
             'gym' => $gym,
             'user_details' => $this->user,
             'membership_details' => $this->membership,
