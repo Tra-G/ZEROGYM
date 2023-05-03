@@ -30,6 +30,10 @@
       <div class="email-modal">
         <button type="submit">Reset Password</button>
       </div>
+
+      <div class="email-modal closebtn">
+        <button type="submit">Go back</button>
+      </div>
     </form>
 
 
@@ -131,7 +135,7 @@
 
     let modal = document.querySelector('.modal');
     let background = document.querySelector('.background');
-    let closeBtn = document.querySelector('.email-modal button');
+    let closeBtn = document.querySelector('.closebtn');
     let forgotPassword = document.querySelector('.forgot-password');
 
     function openForm() {
@@ -139,13 +143,13 @@
       modal.style.display = 'block';
     }
 
-    /*function  closeForm() {
+    function  closeForm() {
       background.style.display = 'none';
       modal.style.display = 'none';
-    }*/
+    }
 
     forgotPassword.onclick = openForm;
-    /*closeBtn.onclick = closeForm;*/
+    closeBtn.onclick = closeForm;
 
 
 
