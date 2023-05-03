@@ -1,5 +1,13 @@
 <?php
 
+// Load PHPMailer classes
+require_once(__DIR__.'/PHPMailer/src/PHPMailer.php');
+require_once(__DIR__.'/PHPMailer/src/SMTP.php');
+require_once(__DIR__.'/PHPMailer/src/Exception.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 /**
  * REQUIRED VARIABLES
  *
@@ -93,6 +101,42 @@ function session_check() {
 // Generate token
 function generate_token($length=32) {
     return bin2hex(random_bytes($length));
+}
+
+// email sending function with option for smtp without phpmailer and normal mail
+function send_email($to, $subject, $message, $headers = null) {
+    if (getenv('SMTP_ENABLED') == 'true') {
+        // SMTP enabled
+        $mail = new PHPMailer(true);
+        try {
+            //Server settings
+            $mail->SMTPDebug = 0; // Enable verbose debug output
+            $mail->isSMTP(); // Set mailer to use SMTP
+            $mail->Host = $_ENV['SMTP_HOST']; // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true; // Enable SMTP authentication
+            $mail->Username = $_ENV['SMTP_USERNAME']; // SMTP username
+            $mail->Password = $_ENV['SMTP_PASSWORD']; // SMTP password
+            $mail->SMTPSecure = $_ENV['SMTP_ENCRYPTION']; // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = $_ENV['SMTP_PORT']; // TCP port to connect to
+
+            //Recipients
+            $mail->setFrom($_ENV['SMTP_FROM_EMAIL'], $_ENV['SMTP_FROM_NAME']);
+            $mail->addAddress($to); // Add a recipient
+
+            //Content
+            $mail->isHTML(true); // Set email format to HTML
+            $mail->Subject = $subject;
+            $mail->Body = $message;
+
+            $mail->send();
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    } else {
+        // SMTP disabled
+        return mail($to, $subject, $message, $headers);
+    }
 }
 
 
