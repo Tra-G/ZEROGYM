@@ -1,15 +1,12 @@
 <?php
 
-// check if success is set
-if (isset($success)) {
-    echo $success;
+// check if result is set
+if (isset($result)) {
+    echo $result;
 }
 else {
-    // iterate through errors
-    foreach ($errors as $error)
-    {
-        echo $error;
-    }
+    route('login');
+    exit();
 }
 
 ?>
