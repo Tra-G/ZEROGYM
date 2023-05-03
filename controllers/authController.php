@@ -188,42 +188,55 @@ class authController {
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $errors[] = "Invalid email format.";
             }
+
+            // check if email exists
             if (!getRowBySelector('users', 'email', $email)) {
                 $errors[] = "Email not found.";
             }
 
             if (empty($errors)) {
-                // insert token
-                $user = getRowBySelector('users', 'email', $email);
-                $token = generate_token(16);
-                $data_array = array(
-                    'user_id' => $user['id'],
-                    'email' => $email,
-                    'token' => $token,
-                    'expires_at' => date('Y-m-d H:i:s', strtotime('+20 minutes'))
-                );
+                // check if user has pending token
+                $token = getRowBySelector('password_resets', 'email', $email);
 
-                // insert token
-                if (insertRow('password_resets', $data_array)) {
-                    // send email
-                    $subject = "Password Reset";
-                    $message = "Click the link below to reset your password. <br><br>";
-                    $message .= "<a href='".redirect('reset/'. $token .'')."'>Reset Password</a>";
-                    $message .= "<br><br> If you did not request a password reset, please ignore this email.";
-                    $headers = "From: ".getenv('SITE_NAME')." <".getenv('SMTP_FROM_EMAIL')."> \r\n";
-                    $headers .= "MIME-Version: 1.0" . "\r\n";
-                    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-                    // send the email using smtp or mail
-                    if (send_email($email, $subject, $message, $headers)) {
-                        $success = "A password reset link has been sent to your email.";
-                    }
-                    else {
-                        $errors[] = "Email not sent. Please try again.";
+                if ($token) {
+                    // check if there is a token that has not expired
+                    if (strtotime($token['expires_at']) > strtotime(date('Y-m-d H:i:s'))) {
+                        $result = "A password reset link has already been sent to your email.";
                     }
                 }
                 else {
-                    $errors[] = "Something went wrong. Please try again.";
+                    // generate token
+                    $user = getRowBySelector('users', 'email', $email);
+                    $token = generate_token(16);
+                    $data_array = array(
+                        'user_id' => $user['id'],
+                        'email' => $email,
+                        'token' => $token,
+                        'expires_at' => date('Y-m-d H:i:s', strtotime('+30 minutes'))
+                    );
+
+                    // insert token
+                    if (insertRow('password_resets', $data_array)) {
+                        // send email
+                        $subject = "Password Reset";
+                        $message = "Click the link below to reset your password. The link expires in 30 minutes<br><br>";
+                        $message .= "<a href='".redirect('reset/'. $token .'')."'>Reset Password</a>";
+                        $message .= "<br><br> If you did not request a password reset, please ignore this email.";
+                        $headers = "From: ".getenv('SITE_NAME')." <".getenv('SMTP_FROM_EMAIL')."> \r\n";
+                        $headers .= "MIME-Version: 1.0" . "\r\n";
+                        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                        // send the email using smtp or mail
+                        if (send_email($email, $subject, $message, $headers)) {
+                            $result = "A password reset link has been sent to your email.";
+                        }
+                        else {
+                            $result = "Email not sent. Please try again.";
+                        }
+                    }
+                    else {
+                        $result = "Something went wrong. Please try again.";
+                    }
                 }
             }
         }
@@ -235,8 +248,7 @@ class authController {
 
         return array(
             'title' => $title,
-            'errors' => $errors,
-            'success' => $success ?? null
+            'result' => $result ?? $errors[0],
         );
     }
 
