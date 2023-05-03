@@ -196,7 +196,6 @@ class authController {
                 // insert token
                 $user = getRowBySelector('users', 'email', $email);
                 $token = generate_token(16);
-                $sender = 'noreply@zerogym.com';
                 $data_array = array(
                     'user_id' => $user['id'],
                     'email' => $email,
@@ -211,11 +210,12 @@ class authController {
                     $message = "Click the link below to reset your password. <br><br>";
                     $message .= "<a href='".redirect('reset/'. $token .'')."'>Reset Password</a>";
                     $message .= "<br><br> If you did not request a password reset, please ignore this email.";
-                    $headers = "From: ".getenv('SITE_NAME')." <".$sender."> \r\n";
+                    $headers = "From: ".getenv('SITE_NAME')." <".getenv('SMTP_FROM_EMAIL')."> \r\n";
                     $headers .= "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-                    if (mail($email, $subject, $message, $headers)) {
+                    // send the email using smtp or mail
+                    if (send_email($email, $subject, $message, $headers)) {
                         $success = "A password reset link has been sent to your email.";
                     }
                     else {
@@ -223,7 +223,7 @@ class authController {
                     }
                 }
                 else {
-                    $errors[] = "Couldn't update database. Please try again.";
+                    $errors[] = "Something went wrong. Please try again.";
                 }
             }
         }
