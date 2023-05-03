@@ -232,10 +232,14 @@ class authController {
                         }
                         else {
                             $result = "Email not sent. Please try again.";
+                            // delete token
+                            deleteRowBySelector('password_resets', 'email', $email);
                         }
                     }
                     else {
                         $result = "Something went wrong. Please try again.";
+                        // delete token
+                        deleteRowBySelector('password_resets', 'email', $email);
                     }
                 }
             }

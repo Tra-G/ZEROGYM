@@ -76,7 +76,7 @@
                         <div>
                             <div class="textinput">
                                 <i style="color: #deef0b" class="fa icon fa-envelope" aria-hidden="true"></i>
-                                <input name="email" type="text" placeholder="Email" required>
+                                <input name="email" type="email" placeholder="Email" required>
                             </div>
 
                             <div class="textinput">
