@@ -20,7 +20,7 @@ body{
     background-color: #fff;
     width: 90%;
     margin: auto;
-    height: 45%;
+    height: 60%;
     color: #000;
     font-weight: 500;
     position: fixed;
@@ -233,7 +233,7 @@ form{
 @media screen and (min-width: 1024px) {
     .modal{
         width: 40%;
-        height: 50%;
+        height: 65%;
         top: 30%;
         left: 30%;
     }
