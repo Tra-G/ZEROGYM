@@ -1,3 +1,12 @@
+<?php
+
+// drop the $fetch as javascript variable
+echo "<script>let fetch = ".$fetch_url."</script>";
+
+?>
+
+<script>let fetch = 'http://zerogym.test'</script>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
