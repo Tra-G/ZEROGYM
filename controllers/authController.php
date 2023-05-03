@@ -9,6 +9,7 @@ class authController {
     public function login() {
         $title = pageTitle("Login");
         $errors = [];
+        $fetch_url = redirect('reset');
 
         // Go to dashboard if user is logged in
         if (session_check()){
@@ -54,7 +55,11 @@ class authController {
             }
         }
 
-        return array('title' => $title, 'errors' => $errors);
+        return array(
+            'title' => $title,
+            'errors' => $errors,
+            'fetch_url' => $fetch_url,
+        );
     }
 
     // register page
