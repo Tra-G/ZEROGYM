@@ -26,7 +26,7 @@
                             <p>City: </p> <span><?php echo $gym['city']; ?></span>
                         </li>
                         <li>
-                            <p>Zip Code: </p> <span><?php echo $gym['zip']; ?></span>
+                            <p>Postcode: </p> <span><?php echo $gym['postcode']; ?></span>
                         </li>
                     </ul>
                 </div>

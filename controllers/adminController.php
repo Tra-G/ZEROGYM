@@ -105,9 +105,9 @@ class adminController {
             $phone = trim($_POST['phone']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $zip = trim($_POST['zip']);
+            $postcode = trim($_POST['postcode']);
 
-            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($zip)) {
+            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($postcode)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -128,7 +128,7 @@ class adminController {
                     'phone' => $phone,
                     'address' => $address,
                     'city' => $city,
-                    'zip' => $zip,
+                    'postcode' => $postcode,
                 );
 
                 updateRowBySelector('users', $data_array, 'id', $id);
@@ -195,12 +195,12 @@ class adminController {
             $name = trim($_POST['name']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $zip = trim($_POST['zip']);
+            $postcode = trim($_POST['postcode']);
             $map = trim($_POST['map']);
 
             // Validate input
             $errors = array();
-            if (empty($name) || empty($address) || empty($city) || empty($zip) || empty($map)) {
+            if (empty($name) || empty($address) || empty($city) || empty($postcode) || empty($map)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -210,7 +210,7 @@ class adminController {
                     'name' => $name,
                     'address' => $address,
                     'city' => $city,
-                    'zip' => $zip,
+                    'postcode' => $postcode,
                     'map' => $map,
                 );
 
@@ -263,10 +263,10 @@ class adminController {
             $name = trim($_POST['name']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $zip = trim($_POST['zip']);
+            $postcode = trim($_POST['postcode']);
             $map = trim($_POST['map']);
 
-            if (empty($name) || empty($address) || empty($city) || empty($zip) || empty($map)) {
+            if (empty($name) || empty($address) || empty($city) || empty($postcode) || empty($map)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -277,7 +277,7 @@ class adminController {
                     'name' => $name,
                     'address' => $address,
                     'city' => $city,
-                    'zip' => $zip,
+                    'postcode' => $postcode,
                     'map' => $map,
                 );
 
@@ -754,9 +754,9 @@ class adminController {
             $phone = trim($_POST['phone']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $zip = trim($_POST['zip']);
+            $postcode = trim($_POST['postcode']);
 
-            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($zip)) {
+            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($postcode)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -785,7 +785,7 @@ class adminController {
                     'phone' => $phone,
                     'address' => $address,
                     'city' => $city,
-                    'zip' => $zip,
+                    'postcode' => $postcode,
                 );
 
                 try {
