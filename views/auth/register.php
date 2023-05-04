@@ -68,7 +68,7 @@
 
                         <div class="textinput">
                             <i style="color: #DEEF0B;" class="fa-solid fa-location-dot icon"></i>
-                            <input name="post" type="text" placeholder="Enter your postcode" required>
+                            <input name="postcode" type="text" placeholder="Enter your postcode" required>
                         </div>
 
                         <div class="textinput">
