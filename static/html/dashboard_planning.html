@@ -76,6 +76,30 @@
         </section>
     </section>
 
-    <script src="../index.js"></script>
+    <script>
+        // Calendar Event (Library -- FullCalendar.io)
+    document.addEventListener('DOMContentLoaded', function() {
+    let calendarEl = document.getElementById('calendar');
+    
+    // Workout days
+    let workoutDates = ['2023-05-01', '2023-05-05', '2023-05-09', '2023-05-12', '2023-05-15', '2023-05-21', '2023-05-024', '2023-05-26', '2023-05-30']
+    let planDays = [];
+
+    workoutDates.forEach((item) => {
+        let obj = {};
+        obj.start = item;
+        obj.title = 'Training';
+        planDays.push(obj);
+
+    });
+
+    let calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        events: planDays,
+});
+calendar.render();
+});
+
+    </script>
 </body>
 </html>
