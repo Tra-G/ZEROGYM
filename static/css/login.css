@@ -192,6 +192,13 @@ form{
     background-size: cover;
 }
 
+@media screen and (min-width: 1024px) {
+    .form-container{
+        padding-top: 9rem;
+    }
+
+}
+
 
 @media screen and (min-width: 750px) {
     .email-modal input{

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="<?php echo assets('css/login.css'); ?>">
     <link rel="stylesheet" href="<?php echo assets('css/global.css'); ?>">
     <!--ICON LINK-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -158,6 +158,11 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                     document.getElementById("result").innerHTML = xhr.responseText;
+                    document.getElementById("result").style.color = "red";
+                    if (xhr.responseText == "A password reset link has been sent to your email.") {
+                        document.getElementById("myForm").reset();
+                        document.getElementById("result").style.color = "blue";
+                    }
                 }
             };
             xhr.open("POST", "reset", true);

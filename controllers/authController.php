@@ -81,7 +81,7 @@ class authController {
             $phone = trim($_POST['phone']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $zip = trim($_POST['zip']);
+            $postcode = trim($_POST['postcode']);
 
             // $states = array(
             //     "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
@@ -94,7 +94,7 @@ class authController {
             //     $errors[] = "Invalid state";
             // }
 
-            if (empty($name) || empty($email) || empty($password) || empty($phone) || empty($address) || empty($city) || empty($zip)) {
+            if (empty($name) || empty($email) || empty($password) || empty($phone) || empty($address) || empty($city) || empty($postcode)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -126,7 +126,7 @@ class authController {
                     'phone' => $phone,
                     'address' => $address,
                     'city' => $city,
-                    'zip' => $zip,
+                    'postcode' => $postcode,
                 );
 
                 $id = insertRow('users', $data_array);
