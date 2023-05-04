@@ -158,8 +158,10 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                     document.getElementById("result").innerHTML = xhr.responseText;
+                    document.getElementById("result").style.color = "red";
                     if (xhr.responseText == "A password reset link has been sent to your email.") {
                         document.getElementById("myForm").reset();
+                        document.getElementById("result").style.color = "blue";
                     }
                 }
             };
