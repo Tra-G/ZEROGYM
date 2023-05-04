@@ -1,34 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo pageTitle("Edit User: ".$user['name']); ?></title>
-  </head>
-  <body>
-    <h1>Edit User Details</h1>
-    <?php if (!empty($errors)): ?>
-    <ul>
-        <?php foreach ($errors as $error): ?>
-            <li><?php echo $error; ?></li>
-        <?php endforeach; ?>
-    </ul>
-    <?php endif; ?>
-    <form method="post" action="">
-      <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" value="<?php echo $user['name']; ?>"><br>
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" value="<?php echo $user['email']; ?>"><br>
-      <label for="phone">Phone:</label>
-      <input type="tel" name="phone" id="phone" value="<?php echo $user['phone']; ?>"><br>
-      <label for="address">Address:</label>
-      <input type="text" name="address" id="address" value="<?php echo $user['address']; ?>"><br>
-      <label for="city">City:</label>
-      <input type="text" name="city" id="city" value="<?php echo $user['city']; ?>"><br>
-      <label for="state">State:</label>
-      <input type="text" name="state" id="state" value="<?php echo $user['state']; ?>"><br>
-      <input type="submit" value="Save Changes">
-    </form>
-  </body>
-</html>
+<?php require_once(__DIR__.'/../inc/header.php'); ?>
+
+<!-- DISPLAY MODAL CONTENT -->
+<section id="dashboard-display" class="relative flex align-center justify-center">
+    <!--Menu For Mobile -->
+    <div class="mobile-menu-open absolute flex align-center">
+        <i class="fa fa-bars"></i> <span>Menu</span>
+    </div>
+    <h3 class="display-heading absolute">
+        Edit User
+    </h3>
+
+    <div class="dashboard-modal flex align-center justify-center">
+        <!-- Edit User -->
+        <div class="modal-content edit-profile">
+            <form action="" method="post" class="flex align-center justify-center">
+                <?php if (!empty($errors)): ?>
+                <ul>
+                    <?php foreach ($errors as $error): ?>
+                        <li><?php echo $error; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
+
+                <?php if (!empty($success)): ?>
+                <ul>
+                    <?php foreach ($success as $suc): ?>
+                        <li><?php echo $suc; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
+                <h3></h3>
+                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                <input type="text" id="name" name="name" value="<?php echo ($user['name']); ?>" placeholder="Name">
+                <input type="email" id="email" name="email" value="<?php echo ($user['email']); ?>" placeholder="Email">
+                <input type="tel" id="phone" name="phone" value="<?php echo ($user['phone']); ?>" placeholder="Phone">
+                <input type="text" id="address" name="address" value="<?php echo ($user['address']); ?>" placeholder="Address">
+                <input type="text" id="city" name="city" value="<?php echo ($user['city']); ?>" placeholder="City">
+                <input type="text" id="zip" name="zip" value="<?php echo ($user['zip']); ?>" placeholder="Zip">
+                <button class="btn">Save New Changes</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<?php require_once(__DIR__.'/../inc/footer.php'); ?>

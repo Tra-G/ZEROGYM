@@ -1,34 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-</head>
-<body>
-    <h2>Welcome to your Dashboard, <?php echo $user['name']; ?></h2>
-    <b>Membership Status: <?php echo strtoupper($membership['status']); ?></b> [Expires: <?php echo $membership['end_date']; ?>]<br>
+<?php require_once(__DIR__.'/inc/header.php'); ?>
 
-    <b>Plan: <?php echo $plan['name']; ?></b> [<a href="<?php echo redirect('user/plan/cancel'); ?>" onclick="if(confirm('Are you sure you want to cancel this plan?')) { return true; } else { return false; }">Cancel</a>]<br>
+<!-- DISPLAY MODAL CONTENT -->
+<section id="dashboard-display" class="relative flex align-center justify-center">
+    <!--Menu For Mobile -->
+    <div class="mobile-menu-open absolute flex align-center">
+        <i class="fa fa-bars"></i> <span>Menu</span>
+    </div>
+    <h3 class="display-heading absolute">
+        TRAINING DAYS
+    </h3>
 
-    <b>Training Days</b>:
-        <?php
-            foreach ($days as $day) {
-                echo $day.', ';
-            }
-        ?>
+    <div class="dashboard-modal flex align-center justify-center">
+        <!-- Planning -->
+        <div class="planning modal-content planning">
+            <div id="calendar"></div>
+        </div>
+    </div>
+</section>
 
-    <br><b>Selected Gym: <?php echo ($gym !== "None") ? $gym['name'] : $gym; ?></b>
-    <?php if ($gym !== "None"): ?>
-        [<a href="<?php echo redirect('user/gym/view'); ?>">View</a>]
-    <?php endif; ?>
-    [<a href="<?php echo redirect('user/gym/select'); ?>">
-        <?php echo ($gym !== "None") ? "Change" : "Select"; ?>
-    </a>]<br>
-
-    <br><a href="<?php echo redirect('user/profile'); ?>">Edit Profile</a><br>
-    <a href="<?php echo redirect('user/change/password'); ?>">Change Password</a>
-
-    <br><br><a href='<?php echo redirect('logout'); ?>'>Logout</a>
-</body>
-</html>
+<?php require_once(__DIR__.'/inc/footer.php'); ?>

@@ -1,39 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-</head>
-<body>
-    <h1>Add New Plan</h1>
-    <?php if (!empty($errors)): ?>
-        <ul>
-            <?php foreach ($errors as $error): ?>
-                <li><?php echo $error; ?></li>
-            <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
-    <form action="" method="post">
-        <label for="name">Plan Name:</label>
-        <input type="text" id="name" name="name" required><br>
+<?php require_once(__DIR__.'/../inc/header.php'); ?>
 
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" required><br>
+<!-- DISPLAY MODAL CONTENT -->
+<section id="dashboard-display" class="relative flex align-center justify-center">
+    <!--Menu For Mobile -->
+    <div class="mobile-menu-open absolute flex align-center">
+        <i class="fa fa-bars"></i> <span>Menu</span>
+    </div>
+    <h3 class="display-heading absolute">
+        Add New Plan
+    </h3>
 
-        <label for="price">Price:</label>
-        <input type="number" step="any" id="price" name="price" required><br>
+    <div class="dashboard-modal flex align-center justify-center">
+        <div class="modal-content edit-profile">
+            <form action="" method="post" class="flex align-center justify-center">
 
-        <label for="duration">Duration (days):</label>
-        <input type="number" id="duration" name="duration" required><br>
+                <?php if (!empty($errors)): ?>
+                <ul>
+                    <?php foreach ($errors as $error): ?>
+                        <li><?php echo $error; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
 
-        <label for="training_days">Total Number of Training Days:</label>
-        <input type="number" id="training_days" name="training_days" required><br>
+                <h3></h3>
 
-        <input type="submit" value="Add Plan">
-    </form>
+                <input type="text" id="name" name="name" placeholder="Plan Name">
+                <input type="text" id="description" name="description" required placeholder="Description">
+                <input type="number" step="any" id="price" name="price" placeholder="Price" required>
+                <input type="number" id="duration" name="duration" placeholder="Duration" required>
+                <input type="number" id="training_days" name="training_days" placeholder="Total Training Days" required>
+                <button class="btn">Save New Changes</button>
+            </form>
+        </div>
+    </div>
+</section>
 
-    <br>
-    <a href='<?php echo redirect('admin/dashboard'); ?>'>Dashboard</a>
-</body>
-</html>
+<?php require_once(__DIR__.'/../inc/footer.php'); ?>

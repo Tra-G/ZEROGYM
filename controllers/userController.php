@@ -8,9 +8,12 @@ class UserController {
     public $user;
     public $membership;
 
+    public $plan;
+
     public function __construct() {
         $this->user = getRowBySelector('users', 'id', $_SESSION['user_id']);
         $this->membership = getRowBySelector('memberships', 'user_id', $this->user['id']);
+
 
         // check if user is properly logged in
         if (!session_check() || $this->user == null || $this->user['role'] != 'user') {
@@ -33,6 +36,14 @@ class UserController {
             catch (Exception $e) {
                 route("user/dashboard");
             }
+        }
+
+        // Handle unsubscribed users (for the navbar)
+        if ($this->membership['status'] == 'active')
+            $this->plan = getRowBySelector('plans', 'id', $this->membership['plan']);
+        else {
+            $this->plan = array('name' => 'N/A');
+            $this->membership['end_date'] = 'N/A';
         }
 
         // If no active subscription, go to pay
@@ -64,94 +75,100 @@ class UserController {
             'plan' => $plan,
             'days' => $days,
             'gym' => $gym,
+            'user_details' => $this->user,
+            'membership_details' => $this->membership,
+            'plan_details' => $this->plan,
         );
     }
 
     // user training days
-    public function training() {
-        $title = pageTitle('Training Days');
-        $errors = [];
-        $days = $this->membership['training_days'];
+    // public function training() {
+    //     $title = pageTitle('Training Days');
+    //     $errors = [];
+    //     $days = $this->membership['training_days'];
 
-        // get total days
-        $total_training_days = empty($days) ? 0 : count(explode(", ", $days));
+    //     // get total days
+    //     $total_training_days = empty($days) ? 0 : count(explode(", ", $days));
 
-        // Restrict if training days is set
-        if ($total_training_days > 0) {
-            route("user/dashboard");
-            exit();
-        }
+    //     // Restrict if training days is set
+    //     if ($total_training_days > 0) {
+    //         route("user/dashboard");
+    //         exit();
+    //     }
 
-        // boundaries
-        $start_date = $this->membership['start_date'];
-        $end_date = $this->membership['end_date'];
-        $current_date = date("Y-m-d");
-        $diff = date_diff(date_create($current_date), date_create($end_date));
-        $date_diff = $diff->format("%a");
+    //     // boundaries
+    //     $start_date = $this->membership['start_date'];
+    //     $end_date = $this->membership['end_date'];
+    //     $current_date = date("Y-m-d");
+    //     $diff = date_diff(date_create($current_date), date_create($end_date));
+    //     $date_diff = $diff->format("%a");
 
-        // get user plan
-        $plan = getRowBySelector('plans', 'id', $this->membership['plan']);
+    //     // get user plan
+    //     $plan = getRowBySelector('plans', 'id', $this->membership['plan']);
 
-        // check if form is submitted
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $input_dates = isset($_POST['dates']) ? $_POST['dates'] : '';
-            $dates = explode(', ', $input_dates);
+    //     // check if form is submitted
+    //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //         $input_dates = isset($_POST['dates']) ? $_POST['dates'] : '';
+    //         $dates = explode(', ', $input_dates);
 
-            // validate input
-            if (empty($dates)) {
-                $errors[] = "Please select valid dates";
-            }
+    //         // validate input
+    //         if (empty($dates)) {
+    //             $errors[] = "Please select valid dates";
+    //         }
 
-            // count the total valid dates submitted
-            $validCount = 0;
-            foreach ($dates as $date) {
-                $datetime = DateTime::createFromFormat('d/m/Y', $date);
-                if ($datetime && $datetime->format('d/m/Y') === $date) {
-                    $validCount++;
-                }
-            }
+    //         // count the total valid dates submitted
+    //         $validCount = 0;
+    //         foreach ($dates as $date) {
+    //             $datetime = DateTime::createFromFormat('d/m/Y', $date);
+    //             if ($datetime && $datetime->format('d/m/Y') === $date) {
+    //                 $validCount++;
+    //             }
+    //         }
 
-            // valid count must correspond to plan limit
-            if ($validCount !== $plan['training_days']) {
-                $errors[] = "Please select ".$plan['training_days']." days";
-            }
+    //         // valid count must correspond to plan limit
+    //         if ($validCount !== $plan['training_days']) {
+    //             $errors[] = "Please select ".$plan['training_days']." days";
+    //         }
 
-            // error if valid dates != total of dates
-            if (count($dates) !== $validCount) {
-                $errors[] = "Please select valid dates";
-            }
+    //         // error if valid dates != total of dates
+    //         if (count($dates) !== $validCount) {
+    //             $errors[] = "Please select valid dates";
+    //         }
 
-            // check if valid count is greater than allowed limit
-            if ($validCount > $plan['training_days']) {
-                $errors[] = "Please select valid dates";
-            }
+    //         // check if valid count is greater than allowed limit
+    //         if ($validCount > $plan['training_days']) {
+    //             $errors[] = "Please select valid dates";
+    //         }
 
-            // update if no error
-            if (count($errors) == 0) {
-                $data_array = array(
-                    'training_days' => $input_dates
-                );
+    //         // update if no error
+    //         if (count($errors) == 0) {
+    //             $data_array = array(
+    //                 'training_days' => $input_dates
+    //             );
 
-                try {
-                    updateRowBySelector('memberships', $data_array, 'user_id', $this->membership['user_id']);
-                    route("user/dashboard");
-                    exit();
-                }
-                catch (Exception $e) {
-                    $errors[] = "Something went wrong";
-                }
-            }
-        }
+    //             try {
+    //                 updateRowBySelector('memberships', $data_array, 'user_id', $this->membership['user_id']);
+    //                 route("user/dashboard");
+    //                 exit();
+    //             }
+    //             catch (Exception $e) {
+    //                 $errors[] = "Something went wrong";
+    //             }
+    //         }
+    //     }
 
-        return array(
-            'title' => $title,
-            'errors' => $errors,
-            'start_date' => $start_date,
-            'end_date' =>$end_date,
-            'plan' => $plan,
-            'date_diff' => $date_diff,
-        );
-    }
+    //     return array(
+    //         'title' => $title,
+    //         'errors' => $errors,
+    //         'start_date' => $start_date,
+    //         'end_date' =>$end_date,
+    //         'plan' => $plan,
+    //         'date_diff' => $date_diff,
+    //         'user_details' => $this->user,
+    //         'membership_details' => $this->membership,
+    //         'plan_details' => $this->plan,
+    //     );
+    // }
 
     // user membership cancellation
     public function cancelPlan() {
@@ -180,6 +197,9 @@ class UserController {
         return array(
             'title' => $title,
             'gym' => $gym,
+            'user_details' => $this->user,
+            'membership_details' => $this->membership,
+            'plan_details' => $this->plan,
         );
     }
 
@@ -188,7 +208,7 @@ class UserController {
         $title = pageTitle("Select Gym");
         $user_gym = getRowBySelector('gyms', 'id', $this->membership['gym_id']);
         $all_gyms = getRows('gyms')['rows'];
-        $closest_gyms = getRows('gyms', 'state', $this->user['state'])['rows'];
+        // $closest_gyms = getRows('gyms', 'state', $this->user['state'])['rows'];
         $errors = [];
 
         // check if form is submitted
@@ -213,7 +233,7 @@ class UserController {
 
                 try {
                     updateRowBySelector('memberships', $data_array, 'user_id', $this->membership['user_id']);
-                    route("user/dashboard");
+                    route("user/gym/view");
                     exit();
                 }
                 catch (Exception $e) {
@@ -227,7 +247,9 @@ class UserController {
             'errors' => $errors,
             'user_gym' => $user_gym,
             'all_gyms' => $all_gyms,
-            'closest_gyms' => $closest_gyms,
+            'user_details' => $this->user,
+            'membership_details' => $this->membership,
+            'plan_details' => $this->plan,
         );
     }
 
@@ -244,20 +266,20 @@ class UserController {
             $phone = trim($_POST['phone']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $state = trim($_POST['state']);
+            $zip = trim($_POST['zip']);
 
-            $states = array(
-                "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
-                "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Federal Capital Territory",
-                "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara",
-                "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers",
-                "Sokoto", "Taraba", "Yobe", "Zamfara"
-            );
-            if (!in_array($state, $states)) {
-                $errors[] = "Invalid state";
-            }
+            // $states = array(
+            //     "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
+            //     "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Federal Capital Territory",
+            //     "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara",
+            //     "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers",
+            //     "Sokoto", "Taraba", "Yobe", "Zamfara"
+            // );
+            // if (!in_array($state, $states)) {
+            //     $errors[] = "Invalid state";
+            // }
 
-            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($state)) {
+            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($zip)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -286,7 +308,7 @@ class UserController {
                     'phone' => $phone,
                     'address' => $address,
                     'city' => $city,
-                    'state' => $state,
+                    'zip' => $zip,
                 );
 
                 try {
@@ -305,6 +327,9 @@ class UserController {
             'errors' => $errors,
             'success' => $success,
             'user' => $this->user,
+            'user_details' => $this->user,
+            'membership_details' => $this->membership,
+            'plan_details' => $this->plan,
         );
     }
 
@@ -359,6 +384,9 @@ class UserController {
             'title' => $title,
             'errors' => $errors,
             'success' => $success,
+            'user_details' => $this->user,
+            'membership_details' => $this->membership,
+            'plan_details' => $this->plan,
         );
     }
 }

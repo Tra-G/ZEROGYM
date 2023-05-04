@@ -36,6 +36,7 @@ class adminController {
             'total_plans' => $total_plans,
             'total_blog' => $total_blog,
             'total_revenue' => $total_revenue,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -47,6 +48,7 @@ class adminController {
         return array(
             'title' => $title,
             'user_rows' => $user_rows,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -58,21 +60,37 @@ class adminController {
         else
             route("admin/dashboard");
 
-        if (getRowBySelector('memberships', 'user_id', $id))
+        if (getRowBySelector('memberships', 'user_id', $id)) {
             $plan = getRowBySelector('memberships', 'user_id', $id);
-        else
-            $plan = array('plan' => 'None', 'start_date' => 'None', 'end_date' => 'None', 'training_days' => 'None', 'amount' => 0.00, 'status' => 'Inactive');
+
+            $gym = getRowBySelector('gyms', 'id', $plan['gym_id']);
+            if ($gym)
+                $gym_name = $gym['name'];
+            else
+                $gym_name = 'N/A';
+
+            $plan_fetch = getRowBySelector('plans', 'id', $plan['plan']);
+            $plan_name = $plan_fetch['name'];
+        }
+        else {
+            $plan = array('plan' => 'N/A', 'start_date' => 'N/A', 'end_date' => 'N/A', 'training_days' => 'N/A', 'amount' => 0.00, 'status' => 'INACTIVE');
+            $gym_name = 'N/A';
+            $plan_name = 'N/A';
+        }
 
         return array(
             'title' => $title,
             'user' => $user,
             'user_plan' => $plan,
+            'admin_details' => $this->admin,
+            'gym_name' => $gym_name,
+            'plan_name' => $plan_name,
         );
     }
 
     // Edit user
     public function userEdit($id) {
-        $title = pageTitle("View User");
+        $title = pageTitle("Edit User");
         $errors = [];
 
         if (getRowBySelector('users', 'id', $id))
@@ -87,9 +105,9 @@ class adminController {
             $phone = trim($_POST['phone']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $state = trim($_POST['state']);
+            $zip = trim($_POST['zip']);
 
-            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($state)) {
+            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($zip)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -110,7 +128,7 @@ class adminController {
                     'phone' => $phone,
                     'address' => $address,
                     'city' => $city,
-                    'state' => $state,
+                    'zip' => $zip,
                 );
 
                 updateRowBySelector('users', $data_array, 'id', $id);
@@ -122,6 +140,7 @@ class adminController {
             'title' => $title,
             'errors' => $errors,
             'user' => $user,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -149,6 +168,7 @@ class adminController {
             'title' => $title,
             'gym_rows' => $gym_rows,
             'total_gyms' => $total_gyms,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -162,12 +182,12 @@ class adminController {
             $name = trim($_POST['name']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $state = trim($_POST['state']);
+            $zip = trim($_POST['zip']);
             $map = trim($_POST['map']);
 
             // Validate input
             $errors = array();
-            if (empty($name) || empty($address) || empty($city) || empty($state) || empty($map)) {
+            if (empty($name) || empty($address) || empty($city) || empty($zip) || empty($map)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -177,7 +197,7 @@ class adminController {
                     'name' => $name,
                     'address' => $address,
                     'city' => $city,
-                    'state' => $state,
+                    'zip' => $zip,
                     'map' => $map,
                 );
 
@@ -195,6 +215,7 @@ class adminController {
         return array(
             'title' => $title,
             'errors' => $errors,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -210,6 +231,7 @@ class adminController {
         return array(
             'title' => $title,
             'gym' => $gym,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -228,10 +250,10 @@ class adminController {
             $name = trim($_POST['name']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $state = trim($_POST['state']);
+            $zip = trim($_POST['zip']);
             $map = trim($_POST['map']);
 
-            if (empty($name) || empty($address) || empty($city) || empty($state) || empty($map)) {
+            if (empty($name) || empty($address) || empty($city) || empty($zip) || empty($map)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -242,7 +264,7 @@ class adminController {
                     'name' => $name,
                     'address' => $address,
                     'city' => $city,
-                    'state' => $state,
+                    'zip' => $zip,
                     'map' => $map,
                 );
 
@@ -261,6 +283,7 @@ class adminController {
             'title' => $title,
             'errors' => $errors,
             'gym' => $gym,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -288,6 +311,7 @@ class adminController {
             'title' => $title,
             'plan_rows' => $plan_rows,
             'total_plans' => $total_plans,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -303,6 +327,7 @@ class adminController {
         return array(
             'title' => $title,
             'plan' => $plan,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -352,6 +377,7 @@ class adminController {
         return array(
             'title' => $title,
             'errors' => $errors,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -411,6 +437,7 @@ class adminController {
                 'title' => $title,
                 'errors' => $errors,
                 'plan' => $plan,
+                'admin_details' => $this->admin,
             );
     }
 
@@ -438,6 +465,7 @@ class adminController {
             'title' => $title,
             'blog_rows' => $blog_rows,
             'total_posts' => $total_posts,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -521,6 +549,7 @@ class adminController {
         return array(
             'title' => $title,
             'errors' => $errors,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -617,6 +646,7 @@ class adminController {
             'title' => $title,
             'errors' => $errors,
             'post' => $post,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -649,12 +679,13 @@ class adminController {
         $title = pageTitle("Payments History");
 
         $total_revenue = sumAmounts('payments', 'amount');
-        $all_payments = getRows('payments')['rows'];
+        $all_payments = getRows('payments', NULL, NULL, 'created_at', 'DESC', 10)['rows'];
 
         return array(
             'title' => $title,
             'total_revenue' => $total_revenue,
             'all_payments' => $all_payments,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -671,9 +702,9 @@ class adminController {
             $phone = trim($_POST['phone']);
             $address = trim($_POST['address']);
             $city = trim($_POST['city']);
-            $state = trim($_POST['state']);
+            $zip = trim($_POST['zip']);
 
-            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($state)) {
+            if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($city) || empty($zip)) {
                 $errors[] = "All fields are required.";
             }
 
@@ -702,7 +733,7 @@ class adminController {
                     'phone' => $phone,
                     'address' => $address,
                     'city' => $city,
-                    'state' => $state,
+                    'zip' => $zip,
                 );
 
                 try {
@@ -721,6 +752,7 @@ class adminController {
             'errors' => $errors,
             'success' => $success,
             'admin' => $this->admin,
+            'admin_details' => $this->admin,
         );
     }
 
@@ -775,6 +807,7 @@ class adminController {
             'title' => $title,
             'errors' => $errors,
             'success' => $success,
+            'admin_details' => $this->admin,
         );
     }
 }

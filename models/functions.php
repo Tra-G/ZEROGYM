@@ -274,7 +274,7 @@ function deleteRowBySelector($table, $selectorColumn, $selectorValue) {
 }
 
 
-function getRows($table, $selectorColumn = null, $selectorValue = null, $orderByColumn = null, $orderByDirection = 'ASC') {
+function getRows($table, $selectorColumn = null, $selectorValue = null, $orderByColumn = null, $orderByDirection = 'ASC', $limit = null) {
     global $conn;
     $sql = "SELECT * FROM $table";
 
@@ -286,6 +286,11 @@ function getRows($table, $selectorColumn = null, $selectorValue = null, $orderBy
     if ($orderByColumn) {
         // If an order by column is provided, append the ORDER BY clause to the SQL query
         $sql .= " ORDER BY $orderByColumn $orderByDirection";
+    }
+
+    if ($limit) {
+        // If a limit is provided, append the LIMIT clause to the SQL query
+        $sql .= " LIMIT $limit";
     }
 
     // Prepare the SQL query
@@ -313,14 +318,15 @@ function getRows($table, $selectorColumn = null, $selectorValue = null, $orderBy
     /* Usage:
     $table = 'users'; // Change this to the name of the table you want to select from
 
-    // With selector and order by
+    // With selector, order by and limit
     $selectorColumn = 'id'; // Change this to the name of the selector column
     $selectorValue = 1; // Change this to the selector value you want to use
     $orderByColumn = 'name'; // Change this to the name of the column you want to order by
     $orderByDirection = 'DESC'; // Change this to the order direction you want to use
-    $result = getRows($table, $selectorColumn, $selectorValue, $orderByColumn, $orderByDirection);
+    $limit = 10; // Change this to the number of rows you want to limit to
+    $result = getRows($table, $selectorColumn, $selectorValue, $orderByColumn, $orderByDirection, $limit);
 
-    // Without selector or order by
+    // Without selector, order by or limit
     $result = getRows($table);
 
     $count = $result['count'];

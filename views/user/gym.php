@@ -1,20 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-</head>
-<body>
-    <h2>Gym Details</h2>
+<?php require_once(__DIR__.'/inc/header.php'); ?>
 
-    <b>Name: <?php echo $gym['name']; ?></b><br>
-    <b>Address: <?php echo $gym['address']; ?></b><br>
-    <b>City: <?php echo $gym['city']; ?></b><br>
-    <b>State: <?php echo $gym['state']; ?></b><br><br>
+<!-- DISPLAY MODAL CONTENT -->
+<section id="dashboard-display" class="relative flex align-center justify-center">
+    <!--Menu For Mobile -->
+    <div class="mobile-menu-open absolute flex align-center">
+        <i class="fa fa-bars"></i> <span>Menu</span>
+    </div>
+    <h3 class="display-heading absolute">
+        My Gym Details
+    </h3>
 
-    <?php echo $gym['map']; ?>
+    <div class="dashboard-modal flex align-center justify-center">
+                <!-- Select Gym Buttons -->
+        <div class="modal-content selected-gym flex justify-center">
+            <div class="view-gym">
+                <div class="flex justify-center">
+                    <ul class="gym-address">
+                        <li>
+                            <p>Name:</p> <span><?php echo $gym['name']; ?></span>
+                        </li>
+                        <li>
+                            <p>Address: </p> <span><?php echo $gym['address']; ?></span>
+                        </li>
+                        <li>
+                            <p>City: </p> <span><?php echo $gym['city']; ?></span>
+                        </li>
+                        <li>
+                            <p>Zip Code: </p> <span><?php echo $gym['zip']; ?></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="map" class="flex align-center justify-center">
+                    <?php echo $gym['map']; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <br><br><a href='<?php echo redirect('user/dashboard'); ?>'>Dashboard</a>
-</body>
-</html>
+<?php require_once(__DIR__.'/inc/footer.php'); ?>

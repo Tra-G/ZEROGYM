@@ -7,7 +7,7 @@
 body{
     background-color: #1D1D1D;
     color: #fff;
-
+    font-family: 'Roboto', sans-serif;
 }
 
 .contact-container{
@@ -17,7 +17,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--textColor);
-    font-family: 'Ubuntu', sans-serif;
     padding-bottom: 2rem;
 }
 
