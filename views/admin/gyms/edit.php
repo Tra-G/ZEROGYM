@@ -27,7 +27,7 @@
                 <input type="text" id="name" name="name" value="<?php echo ($gym['name']); ?>" placeholder="Name" required>
                 <input type="text" name="address" id="address" value="<?php echo $gym['address']; ?>" placeholder="Address" required>
                 <input type="text" id="city" name="city" value="<?php echo ($gym['city']); ?>" placeholder="City" required>
-                <input type="text" id="zip" name="zip" value="<?php echo ($gym['zip']); ?>" placeholder="Zip" required>
+                <input type="text" id="postcode" name="postcode" value="<?php echo ($gym['postcode']); ?>" placeholder="Postcode" required>
                 <label for="map">Map Frame URL:</label>
                 <textarea style="width: 200px; height: 100px;" name="map" id="map"><?php echo $gym['map']; ?></textarea><br>
                 <button class="btn">Save New Changes</button>

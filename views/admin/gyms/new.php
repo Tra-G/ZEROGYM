@@ -27,7 +27,7 @@
                 <input type="text" id="name" name="name" placeholder="Name">
                 <input type="text" name="address" id="address" placeholder="Address">
                 <input type="text" id="city" name="city" placeholder="City">
-                <input type="text" id="zip" name="zip" placeholder="Zip">
+                <input type="text" id="postcode" name="postcode" placeholder="Postcode">
                 <label for="map">Map Frame URL:</label>
                 <textarea style="width: 200px; height: 100px;" name="map" id="map"></textarea><br>
                 <button class="btn">Save New Changes</button>

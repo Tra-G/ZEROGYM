@@ -15,7 +15,7 @@
             <li><b>Name:</b> <?php echo $gym['name']; ?></li>
             <li><b>Address:</b> <?php echo $gym['address']; ?></li>
             <li><b>City:</b> <?php echo $gym['city']; ?></li>
-            <li><b>Zip:</b> <?php echo $gym['zip']; ?></li><br>
+            <li><b>Postcode:</b> <?php echo $gym['postcode']; ?></li><br>
             <li><?php echo $gym['map']; ?></li>
         </ul>
     </div>

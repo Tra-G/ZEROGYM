@@ -18,7 +18,7 @@
             <li><b>Phone:</b> <?php echo $user['phone']; ?></li>
             <li><b>Address:</b> <?php echo $user['address']; ?></li>
             <li><b>City:</b> <?php echo $user['city']; ?></li>
-            <li><b>Zip:</b> <?php echo $user['zip']; ?></li>
+            <li><b>Postcode:</b> <?php echo $user['postcode']; ?></li>
             <li><b>Date Joined:</b> <?php echo $user['created_at']; ?></li><br><br>
 
             <?php if ($user_plan): ?>
