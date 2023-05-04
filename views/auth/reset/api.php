@@ -1,15 +1,8 @@
 <?php
 
-// check if success is set
-if (isset($success)) {
-    echo $success;
-}
-else {
-    // iterate through errors
-    foreach ($errors as $error)
-    {
-        echo $error;
-    }
+// check if result is set
+if (isset($result)) {
+    echo $result;
 }
 
 ?>

@@ -259,11 +259,23 @@ class authController {
     // reset password form
     public function changePassword($token) {
         $title = pageTitle("Reset Password");
-        $fetch_url = redirect('reset/api/'. $token .'');
+
+        // check if token is valid
+        $token = trim($token);
+        $token_row = getRowBySelector('password_resets', 'token', $token);
+        if (!$token_row) {
+            route("login");
+            exit();
+        }
+        // check if token has expired
+        if (strtotime($token_row['expires_at']) < time()) {
+            route("login");
+            exit();
+        }
 
         return array(
             'title' => $title,
-            'fetch_url' => $fetch_url,
+            'token' => $token,
         );
     }
 
@@ -278,16 +290,13 @@ class authController {
             exit();
         }
 
-        // check if token is valid
+        // check if token is valid and has not expired
         $token = trim($token);
         $token_row = getRowBySelector('password_resets', 'token', $token);
         if (!$token_row) {
-            route("login");
-            exit();
+            $errors[] = "Invalid token.";
         }
-
-        // check if token is expired
-        if (strtotime($token_row['expires_at']) < time()) {
+        else if (strtotime($token_row['expires_at']) < time()) {
             $errors[] = "Password reset link has expired.";
         }
 
@@ -314,8 +323,8 @@ class authController {
                     // delete all tokens for this user
                     deleteRowBySelector('password_resets', 'user_id', $token_row['user_id']);
 
-                    // set success message
-                    $success = "Password changed successfully. You can now login.";
+                    // set result message
+                    $result = "Password changed successfully. You can now login.";
                 }
                 else {
                     $errors[] = "Something went wrong. Please try again.";
@@ -330,8 +339,7 @@ class authController {
 
         return array(
             'title' => $title,
-            'errors' => $errors,
-            'success' => $success ?? null
+            'result' => $result ?? $errors[0],
         );
     }
 }

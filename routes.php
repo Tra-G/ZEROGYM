@@ -36,7 +36,7 @@ $routes = array(
     r('logout') => router('authController', 'logout'),
     r('reset') => router('authController', 'forgotPassword', 'auth/reset/index'),
     r('reset/{string}') => router('authController', 'changePassword', 'auth/reset/change'),
-    r('reset/api/{string}') => router('authController', 'changePasswordApi', 'auth/reset/api'),
+    r('reset/{string}/change') => router('authController', 'changePasswordApi', 'auth/reset/api'),
 
     // User
     r('user/dashboard') => router('userController', 'index', 'user/index'),

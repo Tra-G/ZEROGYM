@@ -4,9 +4,5 @@
 if (isset($result)) {
     echo $result;
 }
-else {
-    route('login');
-    exit();
-}
 
 ?>
