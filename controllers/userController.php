@@ -58,6 +58,10 @@ class UserController {
         $plan = getRowBySelector('plans', 'id', $this->membership['plan']);
         if ($this->membership['training_days']) {
             $days = json_decode($this->membership['training_days']);
+            foreach ($days as $date) {
+                $new_dates[] = date('Y-m-d', strtotime(str_replace('/', '-', $date)));
+                $formatted_days = "['" . implode("', '", $new_dates) . "']";
+            }
         }
 
         if ($this->membership['gym_id']) {
@@ -75,7 +79,7 @@ class UserController {
             'user' => $this->user,
             'membership' => $this->membership,
             'plan' => $plan,
-            'days' => $days ?? null,
+            'days' => $formatted_days ?? "[]",
             'gym' => $gym,
             'user_details' => $this->user,
             'membership_details' => $this->membership,

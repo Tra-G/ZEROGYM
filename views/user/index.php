@@ -1,4 +1,4 @@
-<?php require_once(__DIR__.'/inc/header.php'); ?>
+<?php require_once(__DIR__ . '/inc/header.php'); ?>
 
 <!-- DISPLAY MODAL CONTENT -->
 <section id="dashboard-display" class="relative flex align-center justify-center">
@@ -18,4 +18,30 @@
     </div>
 </section>
 
-<?php require_once(__DIR__.'/inc/footer.php'); ?>
+<script>
+    // Calendar Event (Library -- FullCalendar.io)
+    document.addEventListener('DOMContentLoaded', function () {
+        let calendarEl = document.getElementById('calendar');
+
+        // Workout days
+        let workoutDates = <?php echo $days; ?>;
+        let planDays = [];
+
+        workoutDates.forEach((item) => {
+            let obj = {};
+            obj.start = item;
+            obj.title = 'Training Day';
+            planDays.push(obj);
+
+        });
+
+        let calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            events: planDays,
+        });
+        calendar.render();
+    });
+
+</script>
+
+<?php require_once(__DIR__ . '/inc/footer.php'); ?>
