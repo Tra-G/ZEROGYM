@@ -14,60 +14,55 @@
 <body>
     <div class="nav">
         <div class="navbar">
-            <div class="nav-title">
+            <header class="nav-title">
                 <a href="index.html">
                     <i class="fa-solid fa-dumbbell fa-2xl" style="color: #DEEF0B;"></i>
                     <p class="navtext">zero<span>gym</span></p>
                     <span class="mdi mdi-weight-lifter"></span>
                 </a>
-            </div>
+            </header>
 
-            <div class="navlinks">
-                <i style="color: #fff;" class="fa fa-times" aria-hidden="true"></i>
-                <ul>
+            <nav class="navlinks">
+                <i style="color: #fff;" class="fa fa-times"></i>
+                <div>
                     <a href="index.html">
-                        <li>Home</li>
+                        <span>Home</span>
                     </a>
                     
                     <a href="blog.html">
-                        <li>Blog</li>
+                        <span>Blog</span>
                     </a>
 
                     <a href="about.html">
-                        <li>About Us</li>
+                        <span>About Us</span>
                     </a>
                     <a href="contacts.html">
-                        <li>Contact Us</li>
+                        <span>Contact Us</span>
                     </a>
 
                     <a href="signup.html">
-                        <li>Join Us</li>
+                        <span>Join Us</span>
                     </a>
-
-                    
-                </ul>
-
+                </div>
+                
                 <div class="account">
                     <a class="login" href="login.html">
-                        <li>Login</li>
+                        <span>Login</span>
                     </a>          
-                </div>
-            </div>
-
-            
+                </div> 
+            </nav>           
 
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="account1">
+            <nav class="account1">
                 <a class="login" href="login.html">
-                    <li>Login</li>
-                </a>          
-            </div>
+                    <span>Login</span>
+                </a> 
+            </nav>
         </div>
-    </div>
     </div>
 
     <section class="contact-container relative flex align-center justify-center">
@@ -78,15 +73,17 @@
                  <h2 class="contact-heading">
                     Contact Us 
                 </h2>
+
+                <h3 class="list-heading">Offical Lines</h3>
                 <ul class="official-contact_list">
-                    <h4 class="list-heading">Offical Lines</h4>
+                    
                     <li>
                         <i class="fa fa-phone"></i>
-                        <span>+234-564-986-877</span>
+                        <span>+44-123-467-890</span>
                     </li>
                     <li>
                         <i class="fa-brands fa-whatsapp"></i>
-                        <span>+234-784-988-443</span>
+                        <span>+44-123-467-890</span>
                     </li>
                     <li>
                         <i class="fa fa-at"></i>
@@ -94,8 +91,10 @@
                     </li>
                 </ul>
                
+
+                <h3 class="list-heading">Social Media Handles</h3>
                 <ul class="social-contact_list">
-                    <h4 class="list-heading">Social Media Handles</h4>
+                    
                     <li>
                         <i class="fa-brands fa-twitter"></i>
                         <span>@zero_gym</span>
@@ -120,7 +119,7 @@
                 <textarea placeholder="message..." class="contact-textarea" name="contact-message" id="contact-message" cols="30" rows="8"></textarea>
                 <button class="btn">Submit</button>
             </article>
-            <section class="absolute contact-footer flex align-center space-between">
+            <!--<section class="absolute contact-footer flex align-center space-between">
                 <div class="subscribe-area flex">
                     <input type="email" placeholder="kindly enter your email">
                     <button class="btn subscribe-btn" title="get all our lastest deals...">Subscribe</button>
@@ -131,55 +130,39 @@
                     <p>- you can also find us in all major cities of the country...</p>
                 </address>
 
-            </section>
+            </section>-->
         </div>
     </section>
 
     <footer>
         <div class="footer-container">
-            <div class="footer-item flex2">
-                <div class="footer-header footer-head">
+            <div class="footer-item">
+                <div class="footer-header">
                     <p>INFORMATION</p>
                 </div>
 
                 <div class="footer-text1">
-                    <ul>
-                        <li>Our Classes</li>
-                        <li>Product Support</li>
-                        <li>Report Abuse</li>
-                        <li>Redeem Voucher</li>
-                        <li>Checkout</li>
-                    </ul>
+                    <span>Home</span>
+                    <span>About</span>
+                    <span>Blog</span>
+                    <span>Contact</span>
+                    
                 </div>
             </div>
 
-            <div class="footer-item flex2">
-                <div class="footer-header footer-head">
-                    <p>SUPPORT</p>
-                </div>
-
-                <div class="footer-text1">
-                    <ul>
-                        <li>Policies & Rules</li>
-                        <li>Privacy Policy</li>
-                        <li>Licence Policy</li>
-                        <li>My Account</li>
-                        <li>Locality</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-item">
-                <div class="footer-header footer-head new">
+            <div class="footer-item news">
+                <div class="footer-header">
                     <p>NEWSLETTER</p>
                 </div>
 
                 <div class="footer-text">
                     <p>Subscribe to our latest newsletter to get news about special discounts.</p>
-                    <input type="search" placeholder="Enter your email">
-                    <div class="footerbtn">
-                        <button>Subscribe</button>
-                    </div>
+                    <form action="#">
+                        <input type="search" placeholder="Enter your email">
+                        <div class="footerbtn">
+                            <button class="footer-btn">Subscribe</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

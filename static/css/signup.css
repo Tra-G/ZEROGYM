@@ -73,20 +73,25 @@ form{
     margin: 3rem 0;
 }
 
+.textinput{
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+.fa-eye{
+    padding-bottom: .6rem;
+    position: relative;
+    left: 90%;
+}
 .textinput input{
     background-color: transparent;
     border: none;
-    outline: none;
-    border-bottom: 1px solid #fff;
-    width: 100%;
-    padding: 0 1.6rem;
+    outline: none;    
     color: #fff;
     font-size: 1rem;
+    padding: 0 .6rem;
 }
 
 .icon{
-    position: relative;
-    left: 1rem;
     padding-bottom: .5rem;
 }
 
@@ -108,11 +113,15 @@ form{
     text-align: center;
 }
 
-.signup-btn a{
+.signup-btn button{
+    border: none;
+    outline: none;
+    background-color: transparent;
     color: #000;
     text-align: center;
     font-family: 'Sono', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .log{
@@ -124,7 +133,7 @@ form{
 .second-half{
     display: none;
     width: 40%;
-    height: 100vh;
+    height: 120vh;
     background-color: #fff;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/img9.jpg);
     background-position: center;

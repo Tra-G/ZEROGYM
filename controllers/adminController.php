@@ -146,14 +146,27 @@ class adminController {
 
     // Delete user
     public function userDelete($id) {
-        if (!getRowBySelector('users', 'id', $id))
-            route("admin/dashboard");
+        $delete_payments = deleteRowBySelector('payments', 'user_id', $id);
+        $delete_memberships = deleteRowBySelector('memberships', 'user_id', $id);
+        $delete_user = deleteRowBySelector('users', 'id', $id);
 
-        $delete = deleteRowBySelector('users', 'id', $id);
-        if ($delete)
+        if ($delete_payments && $delete_memberships && $delete_user)
             route("admin/users");
         else
-            route("admin/users/".$id);
+            route("admin/users");
+        exit();
+    }
+
+    // Delete all users
+    public function usersDeleteAll() {
+        $delete_payments = deleteRowBySelector('payments');
+        $delete_memberships = deleteRowBySelector('memberships');
+        $delete_users = deleteRowBySelector('users', 'role', 'user');
+
+        if ($delete_payments && $delete_memberships && $delete_users)
+            route("admin/users");
+        else
+            route("admin/users");
         exit();
     }
 
@@ -297,6 +310,17 @@ class adminController {
             route("admin/gyms");
         else
             route("admin/gyms/".$id);
+        exit();
+    }
+
+    // Delete all gyms
+    public function gymsDeleteAll() {
+        $delete_gyms = deleteRowBySelector('gyms');
+
+        if ($delete_gyms)
+            route("admin/gyms");
+        else
+            route("admin/gyms");
         exit();
     }
 
@@ -451,6 +475,17 @@ class adminController {
             route("admin/plans");
         else
             route("admin/plans/".$id);
+        exit();
+    }
+
+    // Delete all plans
+    public function plansDeleteAll() {
+        $delete_plans = deleteRowBySelector('plans');
+
+        if ($delete_plans)
+            route("admin/plans");
+        else
+            route("admin/plans");
         exit();
     }
 
@@ -672,6 +707,23 @@ class adminController {
                 route("admin/blog/".$id);
             exit();
         }
+    }
+
+    // Delete all posts
+    public function blogDeleteAll() {
+        $delete = deleteRowBySelector('blog_posts');
+
+        if ($delete) {
+            // unlink all thumbnails in the assets/media folder
+            $thumbnails = glob(__DIR__ . '/../assets/media/thumb_*');
+            foreach ($thumbnails as $thumbnail) {
+                unlink($thumbnail);
+            }
+            route("admin/blog");
+        }
+        else
+            route("admin/blog");
+        exit();
     }
 
     // Payments History

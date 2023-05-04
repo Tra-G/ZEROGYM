@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Form Submission</title>
+	<script>
+		function submitForm() {
+			var xhr = new XMLHttpRequest();
+			var formData = new FormData(document.getElementById("myForm"));
+			xhr.onreadystatechange = function() {
+				if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+					document.getElementById("result").innerHTML = xhr.responseText;
+				}
+			};
+			xhr.open("POST", "result.html", true);
+			xhr.send(formData);
+			return false;
+		}
+	</script>
+</head>
+<body>
+	<h1>AJAX Form Submission</h1>
+	<form id="myForm" onsubmit="return submitForm()" method="post">
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br><br>
+
+		<input type="submit" value="Submit">
+	</form>
+
+	<div id="result"></div>
+</body>
+</html>

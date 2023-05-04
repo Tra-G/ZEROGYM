@@ -1,5 +1,13 @@
 <?php
 
+// Load PHPMailer classes
+require_once(__DIR__.'/phpmailer/src/PHPMailer.php');
+require_once(__DIR__.'/phpmailer/src/SMTP.php');
+require_once(__DIR__.'/phpmailer/src/Exception.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 /**
  * REQUIRED VARIABLES
  *
@@ -90,6 +98,50 @@ function session_check() {
     return (isset($_SESSION['logged']) && isset($_SESSION['user_id']));
 }
 
+// Generate token
+function generate_token($length=32) {
+    return bin2hex(random_bytes($length));
+}
+
+// email sending function with option for smtp without phpmailer and normal mail
+function send_email($to, $subject, $message, $headers = null) {
+    if (getenv('SMTP_ENABLED') == 'true') {
+        // SMTP enabled
+        $mail = new PHPMailer(true);
+        try {
+            //Server settings
+            $mail->SMTPDebug = 0; // Enable verbose debug output
+            $mail->isSMTP(); // Set mailer to use SMTP
+            $mail->Host = $_ENV['SMTP_HOST']; // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true; // Enable SMTP authentication
+            $mail->Username = $_ENV['SMTP_USERNAME']; // SMTP username
+            $mail->Password = $_ENV['SMTP_PASSWORD']; // SMTP password
+            $mail->SMTPSecure = $_ENV['SMTP_ENCRYPTION']; // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = $_ENV['SMTP_PORT']; // TCP port to connect to
+
+            //Recipients
+            $mail->setFrom($_ENV['SMTP_FROM_EMAIL'], $_ENV['SMTP_FROM_NAME']);
+            $mail->addAddress($to); // Add a recipient
+
+            //Content
+            $mail->isHTML(true); // Set email format to HTML
+            $mail->Subject = $subject;
+            $mail->Body = $message;
+
+            $mail->send();
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    } else {
+        // SMTP disabled
+        if (mail($to, $subject, $message, $headers))
+            return true;
+        else
+            return false;
+    }
+}
+
 
 /**
  * CRUD OPERATIONS
@@ -104,16 +156,18 @@ function session_check() {
 
 
 // Database connection
-try {
-    $conn = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME']);
+function db_connect() {
+    try {
+        $conn = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME']);
+    }
+    catch (Exception $e) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    return $conn;
 }
-catch (Exception $e) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
 
 function insertRow($table, $data) {
-    global $conn;
+    $conn = db_connect();
     // Construct the SQL query
     $keys = array_keys($data);
     $values = array_values($data);
@@ -131,11 +185,16 @@ function insertRow($table, $data) {
     // Execute the statement
     if ($stmt->execute()) {
         // If the query was successful, return the ID of the newly created row
-        return $stmt->insert_id;
+        $new_id = $stmt->insert_id;
     } else {
         // If the query failed, return null
-        return null;
+        $new_id = null;
     }
+
+    // Close the database connection
+    mysqli_close($conn);
+
+    return $new_id;
 
     /* Usage:
     $data = array(
@@ -156,7 +215,7 @@ function insertRow($table, $data) {
 
 
 function getRowBySelector($table, $selectorColumn, $selectorValue) {
-    global $conn;
+    $conn = db_connect();
     // Prepare the SQL query
     $stmt = $conn->prepare("SELECT * FROM $table WHERE $selectorColumn = ?");
 
@@ -171,11 +230,16 @@ function getRowBySelector($table, $selectorColumn, $selectorValue) {
 
     if ($result->num_rows > 0) {
         // If there is at least one row, return the data as an associative array
-        return $result->fetch_assoc();
+        $data = $result->fetch_assoc();
     } else {
         // If there are no rows, return null
-        return null;
+        $data = null;
     }
+
+    // Close the database connection
+    mysqli_close($conn);
+
+    return $data;
 
     /* Usage:
     $table = 'users'; // Change this to the name of the table you want to select from
@@ -197,7 +261,7 @@ function getRowBySelector($table, $selectorColumn, $selectorValue) {
 
 
 function updateRowBySelector($table, $data, $selectorColumn, $selectorValue) {
-    global $conn;
+    $conn = db_connect();
     // Construct the SQL query
     $set = array();
     foreach ($data as $key => $value) {
@@ -217,11 +281,15 @@ function updateRowBySelector($table, $data, $selectorColumn, $selectorValue) {
     // Execute the statement
     if ($stmt->execute()) {
         // If the query was successful, return the number of rows affected
-        return $stmt->affected_rows;
+        $affected_rows = $stmt->affected_rows;
     } else {
-        // If the query failed, return null
-        return null;
+        $affected_rows = null;
     }
+
+    // Close the database connection
+    mysqli_close($conn);
+
+    return $affected_rows;
 
     /* Usage:
     $table = 'users'; // Change this to the name of the table you want to update
@@ -244,38 +312,31 @@ function updateRowBySelector($table, $data, $selectorColumn, $selectorValue) {
 }
 
 
-function deleteRowBySelector($table, $selectorColumn, $selectorValue) {
-    global $conn;
-    // Construct the SQL query
-    $sql = "DELETE FROM $table WHERE $selectorColumn = " . $conn->real_escape_string($selectorValue);
+function deleteRowBySelector($table, $selectorColumn = null, $selectorValue = null) {
+    $conn = db_connect();
+
+    // Use prepared statements to prevent SQL injection
+    if ($selectorColumn && $selectorValue) {
+        $stmt = $conn->prepare("DELETE FROM $table WHERE $selectorColumn = ?");
+        $stmt->bind_param("s", $selectorValue);
+    } else {
+        $stmt = $conn->prepare("DELETE FROM $table");
+    }
 
     // Execute the query
-    if ($conn->query($sql) === TRUE) {
-        // If the query was successful, return the number of rows affected
-        return $conn->affected_rows;
-    } else {
-        // If the query failed, null
-        return null;
-    }
+    $stmt->execute();
+    $affected_rows = $stmt->affected_rows;
 
-    /* Usage:
-    $table = 'users'; // Change this to the name of the table you want to delete from
-    $selectorColumn = 'id'; // Change this to the name of the selector column
-    $selectorValue = 1; // Change this to the selector value you want to use
+    // Close the statement and database connection
+    $stmt->close();
+    mysqli_close($conn);
 
-    $rowsAffected = deleteRowBySelector($table, $selectorColumn, $selectorValue);
-
-    if (is_numeric($rowsAffected)) {
-        echo "Rows affected: " . $rowsAffected;
-    } else {
-        echo $rowsAffected;
-    }
-    */
+    return $affected_rows;
 }
 
 
 function getRows($table, $selectorColumn = null, $selectorValue = null, $orderByColumn = null, $orderByDirection = 'ASC', $limit = null) {
-    global $conn;
+    $conn = db_connect();
     $sql = "SELECT * FROM $table";
 
     if ($selectorColumn && $selectorValue) {
@@ -313,6 +374,9 @@ function getRows($table, $selectorColumn = null, $selectorValue = null, $orderBy
     // Get all the matched rows
     $rows = $result->fetch_all(MYSQLI_ASSOC);
 
+    // Close the database connection
+    mysqli_close($conn);
+
     return array('count' => $count, 'rows' => $rows);
 
     /* Usage:
@@ -339,7 +403,7 @@ function getRows($table, $selectorColumn = null, $selectorValue = null, $orderBy
 
 // Get total of a column in a table
 function sumAmounts($table, $amountColumn) {
-    global $conn;
+    $conn = db_connect();
     // Prepare the SQL query
     $stmt = $conn->prepare("SELECT COALESCE(SUM(`$amountColumn`), 0) FROM `$table`");
 
@@ -351,6 +415,9 @@ function sumAmounts($table, $amountColumn) {
 
     // Get the total amount
     $total = $result->fetch_row()[0];
+
+    // Close the database connection
+    mysqli_close($conn);
 
     return $total;
 }

@@ -6,6 +6,64 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+/*MODAL STYLE*/
+.background{
+    display: none;
+    background-color: rgba(187, 183, 183, 0.3);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+.modal{
+    display: none;
+    background-color: #fff;
+    width: 90%;
+    margin: auto;
+    height: 60%;
+    color: #000;
+    font-weight: 500;
+    position: fixed;
+    top: 30%;
+    left: 5%;
+    z-index: 1;
+}
+.modal-header{
+    margin: 4rem 0 2rem;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+.modal-text{
+    color: #716671;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.email-modal{
+    margin: 1.5rem auto;
+    width: 90%;
+}
+.email-modal input{
+    width: 100%;
+    font-size: .9rem;
+    padding: .8rem .5rem;
+    outline: none;
+    border: none;
+    background-color: #F3F2EF;
+}
+.email-modal button{
+    width: 100%;
+    font-size: .9rem;
+    padding: .8rem .5rem;
+    outline: none;
+    border: none;
+    background-color: #1D1D1D;
+    color: #fff;
+    font-weight: 500;
+}
+
+
+
 .flex-item{
     display: flex;
 }
@@ -27,7 +85,7 @@ body{
 
 .titlehead{
     text-align: center;
-    margin: 4.5rem 0;
+    margin: 3rem 0;
 }
 
 a{
@@ -62,35 +120,40 @@ form{
     display: flex;
     align-items: center;
     margin: 3rem 0;
-    max-width: 100%;
+    width: 100%;
 }
-
+.input-wid input{
+    width: 100%;
+}
+.textinput{
+    border-bottom: 1px solid #d0cfd0;
+    width: 100%;
+    padding: 0 .6rem;
+}
 .textinput input{
-    background-color: transparent;
+    color: #fff;
+    padding: 0 1rem;
+    font-size: 1rem;
     border: none;
     outline: none;
-    border-bottom: 1px solid ;
-    width: 100%;
-    padding: 0 1.6rem;
-    color: #fff;
-    font-size: 1rem;
+    background-color: transparent;
 }
-
-.fa{
-    position: relative;
-    left: 1rem;
+.icon{
     padding-bottom: .4rem;
 }
 .fa-eye{
-    position: relative;
-    right: 1.2rem;
     padding-bottom: .6rem;
+    position: relative;
+    left: 95%;
 }
 
 .reminder{
     display: flex;
     justify-content: space-between;
     color: #fff;
+}
+.forgot-password{
+    cursor: pointer;
 }
 
 .signup-btn{
@@ -101,10 +164,14 @@ form{
     text-align: center;
 }
 
-.signup-btn a{
+.signup-btn button{
+    background-color: transparent;
+    border: none;
+    outline: none;
     color: #000;
     text-align: center;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 
@@ -132,6 +199,22 @@ form{
 
 
 @media screen and (min-width: 750px) {
+    .modal{
+        width: 50%;
+        height: 50%;
+        top: 30%;
+        left: 30%;
+    }
+    .email-modal input{
+        padding: 1rem .5rem;
+    }
+    .email-modal button{
+        padding: 1rem .5rem;
+    }
+    .email-modal{
+        width: 80%;
+    }
+
     .flex-item{
         display: flex;
     }
@@ -141,6 +224,7 @@ form{
     .second-half{
         display: flex;
     }
+    
 
     form{
         width: 65%;
@@ -154,6 +238,24 @@ form{
 
 
 @media screen and (min-width: 1024px) {
+    .modal{
+        width: 40%;
+        height: 65%;
+        top: 30%;
+        left: 30%;
+    }
+    .email-modal input{
+        padding: 1rem .5rem;
+    }
+    .email-modal button{
+        padding: 1rem .5rem;
+    }
+    .email-modal{
+        width: 80%;
+    }
+
+
+
     .flex-item{
         display: flex;
     }

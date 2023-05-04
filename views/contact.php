@@ -14,60 +14,55 @@
 <body>
     <div class="nav">
         <div class="navbar">
-            <div class="nav-title">
+            <header class="nav-title">
                 <a href="<?php echo redirect(''); ?>">
                     <i class="fa-solid fa-dumbbell fa-2xl" style="color: #DEEF0B;"></i>
                     <p class="navtext">zero<span>gym</span></p>
                     <span class="mdi mdi-weight-lifter"></span>
                 </a>
-            </div>
+            </header>
 
-            <div class="navlinks">
-                <i style="color: #fff;" class="fa fa-times" aria-hidden="true"></i>
-                <ul>
+            <nav class="navlinks">
+                <i style="color: #fff;" class="fa fa-times"></i>
+                <div>
                     <a href="<?php echo redirect(''); ?>">
-                        <li>Home</li>
+                        <span>Home</span>
                     </a>
 
                     <a href="<?php echo redirect('blog'); ?>">
-                        <li>Blog</li>
+                        <span>Blog</span>
                     </a>
 
                     <a href="<?php echo redirect('about'); ?>">
-                        <li>About Us</li>
+                        <span>About Us</span>
                     </a>
                     <a href="<?php echo redirect('contact'); ?>">
-                        <li>Contact Us</li>
+                        <span>Contact Us</span>
                     </a>
 
                     <a href="<?php echo redirect('register'); ?>">
-                        <li>Join Us</li>
+                        <span>Join Us</span>
                     </a>
-
-
-                </ul>
+                </div>
 
                 <div class="account">
                     <a class="login" href="<?php echo redirect('login'); ?>">
-                        <li>Login</li>
+                        <span>Login</span>
                     </a>
                 </div>
-            </div>
-
-
+            </nav>
 
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="account1">
+            <nav class="account1">
                 <a class="login" href="<?php echo redirect('login'); ?>">
-                    <li>Login</li>
+                    <span>Login</span>
                 </a>
-            </div>
+            </nav>
         </div>
-    </div>
     </div>
 
     <section class="contact-container relative flex align-center justify-center">
@@ -78,8 +73,10 @@
                  <h2 class="contact-heading">
                     Contact Us
                 </h2>
+
+                <h3 class="list-heading">Offical Lines</h3>
                 <ul class="official-contact_list">
-                    <h4 class="list-heading">Offical Lines</h4>
+
                     <li>
                         <i class="fa fa-phone"></i>
                         <span>+234-123-456-789</span>
@@ -94,23 +91,25 @@
                     </li>
                 </ul>
 
+
+                <h3 class="list-heading">Social Media Handles</h3>
                 <ul class="social-contact_list">
-                    <h4 class="list-heading">Social Media Handles</h4>
+
                     <li>
                         <i class="fa-brands fa-twitter"></i>
                         <span>@zero_gym</span>
                     </li>
                     <li>
                         <i class="fa-brands fa-linkedin"></i>
-                        <span>the_zero_gym</span>
+                        <span>zero_gym</span>
                     </li>
                     <li>
                         <i class="fa-brands fa-instagram"></i>
-                        <span>the_real_zerogym</span>
+                        <span>zero_gym</span>
                     </li>
                     <li>
                         <i class="fa-brands fa-facebook"></i>
-                        <span>real_zerogym</span>
+                        <span>zero_gym</span>
                     </li>
 
                 </ul>
@@ -120,7 +119,7 @@
                 <textarea placeholder="message..." class="contact-textarea" name="contact-message" id="contact-message" cols="30" rows="8"></textarea>
                 <button class="btn">Submit</button>
             </article>
-            <section class="absolute contact-footer flex align-center space-between">
+            <!--<section class="absolute contact-footer flex align-center space-between">
                 <div class="subscribe-area flex">
                     <input type="email" placeholder="kindly enter your email">
                     <button class="btn subscribe-btn" title="get all our lastest deals...">Subscribe</button>
@@ -131,52 +130,39 @@
                     <p>- you can also find us in all major cities of the country...</p>
                 </address>
 
-            </section>
+            </section>-->
         </div>
     </section>
 
     <footer>
         <div class="footer-container">
-            <div class="footer-item flex2">
-                <div class="footer-header footer-head">
-                    <p>QUICK LINKS</p>
-                </div>
-
-                <div class="footer-text1">
-                    <ul>
-                        <li><a href="<?php echo redirect(''); ?>">Home</a></li>
-                        <li><a href="<?php echo redirect('about'); ?>">About Us</a></li>
-                        <li><a href="<?php echo redirect('blog'); ?>">Blog</a></li>
-                        <li><a href="<?php echo redirect('contact'); ?>">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-item flex2">
-                <div class="footer-header footer-head">
-                    <p>ACCOUNT</p>
-                </div>
-
-                <div class="footer-text1">
-                    <ul>
-                        <li><a href="<?php echo redirect('user/dashboard'); ?>">My Account</a></li>
-                        <li><a href="<?php echo redirect('login'); ?>">Login</a></li>
-                        <li><a href="<?php echo redirect('register'); ?>">Join Us</a></li>
-                    </ul>
-                </div>
-            </div>
-
             <div class="footer-item">
-                <div class="footer-header footer-head new">
+                <div class="footer-header">
+                    <p>INFORMATION</p>
+                </div>
+
+                <div class="footer-text1">
+                    <span><a href="<?php echo redirect(''); ?>">Home</a></span>
+                    <span><a href="<?php echo redirect('about'); ?>">About</a></span>
+                    <span><a href="<?php echo redirect('contact'); ?>">Contact</a></span>
+                    <span><a href="<?php echo redirect('blog'); ?>">Blog</a></span>
+                    <span><a href="<?php echo redirect('login'); ?>">Account</a></span>
+                </div>
+            </div>
+
+            <div class="footer-item news">
+                <div class="footer-header">
                     <p>NEWSLETTER</p>
                 </div>
 
                 <div class="footer-text">
                     <p>Subscribe to our latest newsletter to get news about special discounts.</p>
-                    <input type="search" placeholder="Enter your email">
-                    <div class="footerbtn">
-                        <button>Subscribe</button>
-                    </div>
+                    <form action="#">
+                        <input type="search" placeholder="Enter your email">
+                        <div class="footerbtn">
+                            <button class="footer-btn">Subscribe</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

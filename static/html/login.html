@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css"> -->
-    <link rel="stylesheet" href=".././css/login.css" />
-    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href=".././css/login.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
     <!--ICON LINK-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   </head>
   <body>
+    <div class="background"></div>
+    <form id="myForm" onsubmit="return submitForm()" method="post" class="modal">
+      <div class="modal-header"> 
+        <p>Forgot Your Password?</p>
+      </div>
+
+      <div id="result" class="modal-text">
+        That's okay, it happens! Enter your email to reset password
+      </div>
+
+      <div class="email-modal">
+        <input class="email-input" type="email" placeholder="Enter your email">
+      </div>
+
+      <div class="email-modal">
+        <button type="submit">Reset Password</button>
+      </div>
+
+      <div class="email-modal closebtn">
+        <button type="submit">Go back</button>
+      </div>
+    </form>
+
+
     <div class="flex-item">
       <div class="first-half">
         <div class="container-flex">
@@ -55,22 +71,26 @@
                 <div class="textinput">
                   <i
                     style="color: #deef0b"
-                    class="fa fa-envelope"
+                    class="fa icon fa-envelope"
                     aria-hidden="true"
                   ></i>
-                  <input type="text" placeholder="Email" />
+                  <input type="text" placeholder="Email"/>
                 </div>
 
                 <div class="textinput">
-                  <i
+                  <div><i
                     style="color: #deef0b"
-                    class="fa fa-unlock-alt"
+                    class="fa icon fa-unlock-alt"
                     aria-hidden="true"
-                  ></i>
-                  <input id="password" type="password" placeholder="Password" />
+                  ></i></div>
+
                   <i onclick="toggleVisibility()"
                   style="color: #deef0b"
                   class="fa-solid fa-eye"></i>
+                  <div class="input-wid">
+                    <input id="password" type="password" placeholder="Password"/>
+                  </div>
+                  
                 </div>
 
                 <div class="reminder">
@@ -79,18 +99,18 @@
                     <span>Remember me</span>
                   </div>
 
-                  <div>
-                    <a href="#">Forgot password?</a>
+                  <div class="forgot-password">
+                    Forgot password
                   </div>
                 </div>
 
                 <div class="signup-btn">
-                  <a href="#"> Login </a>
+                  <button>Login</button>
                 </div>
 
                 <div class="log">
                   Don't have an account?
-                  <a style="color: #fff" href="#">Sign up</a>
+                  <a style="color: #fff" href="signup.html">Sign up</a>
                 </div>
               </div>
             </div>
@@ -111,6 +131,42 @@
 				passwordInput.type = "password";
 			}
 		}
+
+
+    let modal = document.querySelector('.modal');
+    let background = document.querySelector('.background');
+    let closeBtn = document.querySelector('.closebtn');
+    let forgotPassword = document.querySelector('.forgot-password');
+
+    function openForm() {
+      background.style.display = 'block';
+      modal.style.display = 'block';
+    }
+
+    function  closeForm() {
+      background.style.display = 'none';
+      modal.style.display = 'none';
+    }
+
+    forgotPassword.onclick = openForm;
+    closeBtn.onclick = closeForm;
+
+
+
+    //FORGOT PASSWORD
+    function submitForm() {
+			var xhr = new XMLHttpRequest();
+			var formData = new FormData(document.getElementById("myForm"));
+			xhr.onreadystatechange = function() {
+				if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+					document.getElementById("result").innerHTML = xhr.responseText;
+				}
+			};
+			xhr.open("POST", "result.html", true);
+			xhr.send(formData);
+			return false;
+		}
+
     </script>
   </body>
 </html>

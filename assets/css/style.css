@@ -7,15 +7,13 @@
 body{
     background-color: #1D1D1D;
     color: #fff;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
 }
 
 a{
     color: #fff;
     text-decoration: none;
-}
-
-li{
-    list-style: none;
 }
 
 .nav{
@@ -30,7 +28,6 @@ li{
 .nav-title a{
     display: flex;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -63,34 +60,36 @@ li{
     right: 0;
 }
 
+.navlinks span{
+    display: block;
+}
+
 .navlinks > i.fa-times{
     z-index: 10;
 }
 
-.navlinks ul, .account{
+.navlinks div, .account{
     position: relative;
     left: 2rem;
     top: 4rem;
 }
 
-.navlinks li{
+.navlinks span{
     padding: 1rem 0;
     font-size: 1.1rem;
-    font-family: 'Ubuntu', sans-serif;
     border-bottom: 1px solid #414040;
 }
 
-.navlinks li:hover{
+.navlinks span:hover{
     color: #DEEF0B;
 }
 
-.navlinks li:hover{
+.navlinks span:hover{
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
 }
 
 .account{
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
 }
 
@@ -105,7 +104,6 @@ li{
 
 .account1{
     display: none;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     background-color: #DEEF0B;
@@ -165,13 +163,6 @@ swiper-slide img {
     background-size: cover;
 }
 
-.slide2{
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/img10.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .slide3{
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/img11.jpg);
     background-position: center;
@@ -188,7 +179,6 @@ swiper-slide img {
 
 .cardtext{
     font-size: 1.7rem;
-    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     margin-bottom: 2.7rem;
     color: #fff;
@@ -199,7 +189,6 @@ swiper-slide img {
     outline: none;
     background-color: #DEEF0B;
     padding: .6rem 1rem;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     border-radius: 2rem;
 }
@@ -227,7 +216,6 @@ swiper-slide img {
 .sect2-head{
     text-align: center;
     margin-bottom: 2.2rem;
-    font-family: 'Roboto', sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
 }
@@ -235,11 +223,6 @@ swiper-slide img {
 .flex-container{
     display: block;
 }
-
-.container2{
-    font-family: 'Ubuntu', sans-serif;
-}
-
 .container2-header{
     font-size: 2.1rem;
     margin-top: 2rem;
@@ -265,7 +248,6 @@ swiper-slide img {
     background-color: #DEEF0B;
     color: #000;
     padding: .5rem 1.1rem;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     border-radius: 2rem;
 }
@@ -286,7 +268,6 @@ swiper-slide img {
 .sect3-header h1{
     text-align: center;
     margin: 2rem 0;
-    font-family: 'Ubuntu', sans-serif;
     padding-top: 5rem;
     font-size: 2.1rem;
 }
@@ -320,14 +301,8 @@ swiper-slide img {
 .card-text{
     text-align: center;
 }
-
-.cardtext2{
-    font-family: 'Ubuntu', sans-serif;
-}
-
 .cardtitle{
     margin: 1rem 0;
-    font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
     text-align: center;
@@ -349,7 +324,6 @@ swiper-slide img {
 .sect4header{
     text-align: center;
     margin: 2rem 0;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 2.1rem;
     font-weight: 500;
 }
@@ -362,14 +336,13 @@ swiper-slide img {
     background-color: #171717;
     margin: 1rem;
     padding: 2rem 0;
-    box-shadow: 0, 0, 5rem;
+    /*box-shadow: 0, 0, 5px;*/
 }
 
 .con-head{
     text-align: center;
     margin: 2rem 0;
     font-size: 1.4rem;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 .con-price{
@@ -377,10 +350,9 @@ swiper-slide img {
     max-width: 13rem;
     padding: 2rem 0;
     margin: 0 auto;
-    box-shadow: 0, 0, 3rem;
+    /*box-shadow: 0, 0, 3rem;*/
     text-align: center;
     border-radius: 1rem;
-    font-family: 'Roboto', sans-serif;
 }
 
 .price1{
@@ -397,7 +369,7 @@ swiper-slide img {
     margin: 2rem auto;
 }
 
-.benefits li{
+.benefits span{
     padding: .4rem .8rem;
     color: #d0cfd0;
 }
@@ -416,7 +388,6 @@ swiper-slide img {
     padding: .4rem 1.7rem;
     border-radius: 1.5rem;
     margin: 2rem 0;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
 }
 
@@ -449,7 +420,6 @@ swiper-slide img {
 
 .sect5-header{
     margin: 3.5rem 0;
-    font-family: 'Ubuntu', sans-serif;
     text-align: center;
     font-size: 2.1rem;
     font-weight: 600;
@@ -480,8 +450,7 @@ swiper-slide img {
 }
 
 .sect5-image{
-    width: 20rem;
-    /*height: 10rem;*/
+    width: 100%;
     margin: .5rem .7rem;
 }
 
@@ -492,13 +461,11 @@ swiper-slide img {
 }
 
 .coachname{
-    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
 .coachwork{
-    font-family: 'Roboto', sans-serif;
     font-size: .8rem;
     color: #d0cfd0;
 }
@@ -506,6 +473,10 @@ swiper-slide img {
 
 
 /*SECT 6*/
+.sect6{
+    width: 95%;
+    margin: auto;
+}
 .sect6-container{
     padding-top: 1rem;
     background: #DEEF0B;
@@ -519,16 +490,14 @@ swiper-slide img {
     align-items: center;
 }
 
-.sect6-text{
+/*.sect6-text{
     width: 90%;
-}
+}*/
 
 .sect6-text1{
     font-size: 2.5rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     color: #171717;
-    width: 100%;
     margin-bottom: 2.5rem;
 }
 
@@ -560,15 +529,16 @@ swiper-slide img {
 .sect6image img{
     margin: 0;
     padding: 0;
-    display: block;
+    height: 80vh;
     width: 100%;
+    object-fit: cover;
 }
 
 .line{
     width: 100%;
     background-color: #171717;
     height: 2rem;
-    box-shadow: 0, 0, 5rem;
+    /*box-shadow: 0, 0, 5px;*/
     margin: 0;
     padding: 0;
     display: block;
@@ -579,7 +549,7 @@ swiper-slide img {
 
 /*FOOTER*/
 footer{
-    width: 95%;
+    width: 90%;
     margin: 2rem auto;
 }
 
@@ -594,27 +564,24 @@ footer{
 
 .footer-header{
     font-size: 1.3rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     margin-bottom: .7rem;
 }
 
-.footer-text1 ul{
-    font-family: 'Ubuntu', sans-serif;
+.footer-text1{
     color: #d0cfd0;
 }
-
-.footer-text1 li{
+.footer-text1 span{
     margin-bottom: .8rem;
+    display: block;
 }
 
-.footer-text1 li:hover{
+.footer-text1 span:hover{
     color: #DEEF0B;
     cursor: pointer;
 }
 
 .footer-text p{
-    font-family: 'Ubuntu', sans-serif;
     color: #d0cfd0;
 }
 
@@ -634,7 +601,6 @@ footer{
     border: none;
     outline: none;
     background-color: #DEEF0B;
-    font-family: 'Sono', sans-serif;
     font-weight: 500;
     font-size: 1rem;
 }
@@ -798,7 +764,7 @@ footer{
         right: unset;
     }
 
-    .navlinks li{
+    .navlinks span{
         font-size: 1.3rem;
     }
     
@@ -811,24 +777,23 @@ footer{
         display: none;
     }
 
-    .navlinks ul{
+    .navlinks div{
         display: flex;
     }
 
-    .navlinks ul, .account{
+    .navlinks div, .account{
         position: unset;
         left: unset;
         top: unset;
     }
 
-    .navlinks li{
+    .navlinks span{
         padding: 0 1rem;
         font-size: 1.1rem;
-        font-family: 'Ubuntu', sans-serif;
         border-bottom: unset;
     }
 
-    .account{
+    .account span{
         display: none;
     }
 
@@ -965,7 +930,7 @@ footer{
     }
 
     .sect5-image{
-        width: 23%;
+        width: 30%;
         /*height: 10rem;*/
         margin: .5rem .4rem;
     }
@@ -1003,7 +968,6 @@ footer{
         margin: 1rem 0;
         border: 2px solid #171717;
         color: #000;
-        font-family: 'Sono', sans-serif;
         font-weight: 600;
         padding: 1rem 2rem;
         border-radius: 4rem;

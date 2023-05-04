@@ -14,6 +14,7 @@
         <ul>
             <li>
                 <button class="btn plan-submit_btn" onclick="window.location.href='<?php echo redirect('admin/plans/new'); ?>'">Add New Plan</button>
+                <button class="btn plan-submit_btn" onclick="if(confirm('Are you sure you want to delete all plans?')){window.location.href='<?php echo redirect('admin/plans/all/delete'); ?>'}">Delete All Plans</button>
             </li><br><br>
             <?php
                 $i = 1;

@@ -10,7 +10,7 @@
     <!--icon link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="<?php echo assets('css/about.css'); ?>">
-    <title><?php echo $title; ?></title></title>
+    <title><?php echo $title; ?></title>
 </head>
 <body>
     <div class="nav">
@@ -25,34 +25,33 @@
 
             <div class="navlinks">
                 <i style="color: #fff;" class="fa fa-times" aria-hidden="true"></i>
-                <ul>
+                <div>
                     <a href="<?php echo redirect(''); ?>">
-                        <li>Home</li>
+                        <span>Home</span>
                     </a>
 
                     <a href="<?php echo redirect('blog'); ?>">
-                        <li>Blog</li>
+                        <span>Blog</span>
                     </a>
 
                     <a href="<?php echo redirect('about'); ?>">
-                        <li>About Us</li>
+                        <span>About Us</span>
                     </a>
                     <a href="<?php echo redirect('contact'); ?>">
-                        <li>Contact Us</li>
+                        <span>Contact Us</span>
                     </a>
 
                     <a href="<?php echo redirect('register'); ?>">
-                        <li>Join Us</li>
+                        <span>Join Us</span>
                     </a>
-                </ul>
+                </div>
 
                 <div class="account">
                     <a class="login" href="<?php echo redirect('login'); ?>">
-                        <li>Login</li>
+                        <span>Login</span>
                     </a>
                 </div>
             </div>
-
 
             <div class="hamburger">
                 <span></span>
@@ -61,11 +60,10 @@
             </div>
             <div class="account1">
                 <a class="login" href="<?php echo redirect('login'); ?>">
-                    <li>Login</li>
+                    <span>Login</span>
                 </a>
             </div>
         </div>
-    </div>
     </div>
 
 
@@ -81,17 +79,18 @@
     </div>
 
 
+
     <div class="about">
-        <div class="about1">
+        <header class="about1">
             <p>About Us</p>
-        </div>
+        </header>
     </div>
 
 
     <div class="sect2-about">
         <div class="sect2-flex">
             <div class="item-image">
-                <img src="<?php echo assets('images/img25.jpg'); ?>">
+                <img src="<?php echo assets('images/img25.jpg'); ?>" alt="bodybuilding">
             </div>
 
             <div class="text-container">
@@ -101,23 +100,23 @@
                     <button class="sect2btn">Learn More</button>
                 </div>
 
-                <ul class="sect2-li">
+                <div class="sect2-li">
                     <div class="liststyle">
-                        <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                        <li>We make you professional by adding your sincerity as well as professionalism.</li>
+                        <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                        <span>We make you professional by adding your sincerity as well as professionalism.</span>
                     </div>
 
                     <div class="liststyle">
-                        <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                        <li>We always travel with the best equipment, respecting people and the environment.
-                        </li>
+                        <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                        <span>We always travel with the best equipment, respecting people and the environment.</span>
                     </div>
 
                     <div class="liststyle">
-                        <i style="color: #DEEF0B;" class="fa fa-check" aria-hidden="true"></i>
-                        <li>We also provide necessary equipment to give you solid growth and effective </li>
+                        <i style="color: #DEEF0B;" class="fa fa-check"></i>
+                        <span>We also provide necessary equipment to give you solid growth and effective</span>
                     </div>
-                </ul>
+                </div>
+
             </div>
         </div>
     </div>
@@ -125,13 +124,13 @@
 
     <div class="sect5">
         <div class="sect5-container">
-            <div class="sect5-header">
+            <header class="sect5-header">
                 <p>Our <span>Trainers</span> </p>
-            </div>
+            </header>
 
             <div class="sect5-cont">
                 <div class="sect5-image">
-                    <img src="<?php echo assets('images/img2.jpg'); ?>">
+                    <img src="<?php echo assets('images/img12.jpg'); ?>" alt="Crossfit Coach">
                     <div class="coach">
                         <span class="coachname">Jack Foeg</span>
                         <span class="coachwork">Crossfit Coach</span>
@@ -139,7 +138,7 @@
                 </div>
 
                 <div class="sect5-image">
-                    <img src="<?php echo assets('images/img3.jpg'); ?>">
+                    <img src="<?php echo assets('images/img3.jpg'); ?>" alt="Fitness Trainer">
                     <div class="coach">
                         <span class="coachname">Mary Wayne</span>
                         <span class="coachwork">Fitness Trainer</span>
@@ -147,18 +146,10 @@
                 </div>
 
                 <div class="sect5-image">
-                    <img src="<?php echo assets('images/img5.png'); ?>">
-                    <div class="coach">
-                        <span class="coachname">James loy</span>
-                        <span class="coachwork">Bodybuilding Coach</span>
-                    </div>
-                </div>
-
-                <div class="sect5-image">
-                    <img src="<?php echo assets('images/img24.jpg'); ?>">
+                    <img src="<?php echo assets('images/img24.jpg'); ?>" alt="Bodybuilding Coach">
                     <div class="coach">
                         <span class="coachname">Sandy Newman</span>
-                        <span class="coachwork">Zumba Coach</span>
+                        <span class="coachwork">Bodybuilding Coach</span>
                     </div>
                 </div>
             </div>
@@ -172,30 +163,15 @@
         <div class="footer-container">
             <div class="footer-item">
                 <div class="footer-header">
-                    <p>QUICK LINKS</p>
+                    <p>INFORMATION</p>
                 </div>
 
                 <div class="footer-text1">
-                    <ul>
-                        <li><a href="<?php echo redirect(''); ?>">Home</a></li>
-                        <li><a href="<?php echo redirect('about'); ?>">About Us</a></li>
-                        <li><a href="<?php echo redirect('blog'); ?>">Blog</a></li>
-                        <li><a href="<?php echo redirect('contact'); ?>">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-item">
-                <div class="footer-header support">
-                    <p>ACCOUNT</p>
-                </div>
-
-                <div class="footer-text1">
-                    <ul>
-                        <li><a href="<?php echo redirect('user/dashboard'); ?>">My Account</a></li>
-                        <li><a href="<?php echo redirect('login'); ?>">Login</a></li>
-                        <li><a href="<?php echo redirect('register'); ?>">Join Us</a></li>
-                    </ul>
+                    <span><a href="<?php echo redirect(''); ?>">Home</a></span>
+                    <span><a href="<?php echo redirect('about'); ?>">About</a></span>
+                    <span><a href="<?php echo redirect('contact'); ?>">Contact</a></span>
+                    <span><a href="<?php echo redirect('blog'); ?>">Blog</a></span>
+                    <span><a href="<?php echo redirect('login'); ?>">Account</a></span>
                 </div>
             </div>
 
@@ -206,10 +182,12 @@
 
                 <div class="footer-text">
                     <p>Subscribe to our latest newsletter to get news about special discounts.</p>
-                    <input type="search" placeholder="Enter your email">
-                    <div class="footerbtn">
-                        <button class="footer-btn">Subscribe</button>
-                    </div>
+                    <form action="#">
+                        <input type="search" placeholder="Enter your email">
+                        <div class="footerbtn">
+                            <button class="footer-btn">Subscribe</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
