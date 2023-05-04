@@ -135,7 +135,10 @@ function send_email($to, $subject, $message, $headers = null) {
         }
     } else {
         // SMTP disabled
-        return mail($to, $subject, $message, $headers);
+        if (mail($to, $subject, $message, $headers))
+            return true;
+        else
+            return false;
     }
 }
 
