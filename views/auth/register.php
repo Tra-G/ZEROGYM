@@ -77,10 +77,7 @@
                             <input name="password" id="password" type="password" placeholder="Enter your Password" required>
                         </div>
 
-                        <div class="reminder">
-                                <input type="checkbox" required>
-                                <span>I read and agree to Terms and Conditions</span>
-                            </div>
+
 
                         <div class="signup-btn">
                             <button type="submit">Sign Up</button>
