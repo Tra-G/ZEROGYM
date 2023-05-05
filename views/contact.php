@@ -79,15 +79,15 @@
 
                     <li>
                         <i class="fa fa-phone"></i>
-                        <span>+234-123-456-789</span>
+                        <span>+44-123-467-890</span>
                     </li>
                     <li>
                         <i class="fa-brands fa-whatsapp"></i>
-                        <span>+234-987-654-321</span>
+                        <span>+44-123-467-890</span>
                     </li>
                     <li>
                         <i class="fa fa-at"></i>
-                        <span>hello@zerogym.com</span>
+                        <span>zerogym@gmail.com</span>
                     </li>
                 </ul>
 
@@ -101,15 +101,15 @@
                     </li>
                     <li>
                         <i class="fa-brands fa-linkedin"></i>
-                        <span>zero_gym</span>
+                        <span>the_zero_gym</span>
                     </li>
                     <li>
                         <i class="fa-brands fa-instagram"></i>
-                        <span>zero_gym</span>
+                        <span>the_real_zerogym</span>
                     </li>
                     <li>
                         <i class="fa-brands fa-facebook"></i>
-                        <span>zero_gym</span>
+                        <span>real_zerogym</span>
                     </li>
 
                 </ul>
