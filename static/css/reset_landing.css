@@ -24,7 +24,7 @@ body {
 .card {
     background-color: white;
     padding: 50px;
-    width: 30rem;
+    width: 23rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
     margin-top:  1.5rem;
@@ -32,27 +32,35 @@ body {
 label{
     font-weight: 650;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input:focus{
+    outline: none;
+}
 input[type=password] {
     padding: 9px;
     margin: 30px 0;
-    /* border: none; */
-    border-radius: 3px;
-    /* box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2); */
     width: 100%;
-    border-color: 0px solid #f2f2f2;
+    border: 1.9px solid #f2f2f2;
+    border-radius: 5px;
 }
 button {
-    background-color: #Deef0b;;
+    background-color: black;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     cursor: pointer;
     transition: background-color 0.3s;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    font-size:large
+    font-size:large;
+    width: 24.3rem;
+    /* 24.3rem; */
 }
 button:hover {
     background-color: #Deef0b;;
@@ -70,6 +78,9 @@ button:hover {
     .card {
        
         margin-top:  0.5rem;
+    }
+    button{
+        width: 16.3rem;
     }
 
 }
