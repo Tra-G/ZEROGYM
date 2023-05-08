@@ -30,7 +30,6 @@
                     </li>
                     <?php endforeach; ?>
                     <button type="submit" name="submit" class="btn ">Save Option</button>
-                    <a href="./dashboard_select-gym.html">cancel</a>
                 </ul>
             </form>
         </div>

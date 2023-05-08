@@ -218,7 +218,7 @@ class UserController {
         $errors = [];
 
         // check if form is submitted
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['gym_id'])) {
             $gym_id = trim($_POST['gym_id']);
 
             if (empty($gym_id) || !is_numeric($gym_id)) {

@@ -21,11 +21,16 @@ class paymentController {
         $this->user = getRowBySelector('users', 'id', $_SESSION['user_id']);
         $this->membership = getRowBySelector('memberships', 'user_id', $this->user['id']);
 
-        if ($this->membership['status'] == 'active')
-            $this->plan = getRowBySelector('plans', 'id', $this->membership['plan']);
-        else {
+        if ($this->membership) {
+            if ($this->membership['status'] == 'active')
+                $this->plan = getRowBySelector('plans', 'id', $this->membership['plan']);
+            else {
+                $this->plan = array('name' => 'N/A');
+                $this->membership['end_date'] = 'N/A';
+            }
+        } else {
             $this->plan = array('name' => 'N/A');
-            $this->membership['end_date'] = 'N/A';
+            $this->membership = array('end_date' => 'N/A');
         }
 
         // check if user is properly logged in
